@@ -877,9 +877,9 @@ _Internet Printing Protocol (IPP)_
 
 _ASN.1, XDR, ABNF, UTF-8, JSON, ZLIB, GZIP, DEFLATE, LZ4, ZSTD, CBOR, CDDL, and time formats_
 
-- [RFC 1950 - ZLIB Compressed Data Format Specification version 3.3](markdown/rfc1950.txt.md)
-- [RFC 1951 - DEFLATE Compressed Data Format Specification version 1.3](markdown/rfc1951.txt.md)
-- [RFC 1952 - GZIP file format specification version 4.3](markdown/rfc1952.txt.md)
+- [RFC 1950 - ZLIB Compressed Data Format Specification version 3.3](markdown/rfc1950.md)
+- [RFC 1951 - DEFLATE Compressed Data Format Specification version 1.3](markdown/rfc1951.md)
+- [RFC 1952 - GZIP file format specification version 4.3](markdown/rfc1952.md)
 - [RFC 3629 - UTF-8, a transformation format of ISO 10646](markdown/rfc3629.txt.md)
 - [RFC 4506 - XDR: External Data Representation Standard](markdown/rfc4506.txt.md)
 - [RFC 5234 - Augmented BNF for Syntax Specifications: ABNF](markdown/rfc5234.txt.md)
