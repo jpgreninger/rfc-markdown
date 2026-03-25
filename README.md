@@ -24,7 +24,7 @@ All files are located in the `markdown/` directory.
 13. [Network Time and Simple Services](#network-time-and-simple-services) (13 RFCs)
 14. [Directory and Registration](#directory-and-registration) (26 RFCs)
 15. [Printing](#printing) (2 RFCs)
-16. [Data Formats, Compression, and Encoding](#data-formats-and-encoding) (29 RFCs)
+16. [Data Formats, Compression, and Encoding](#data-formats-compression-and-encoding) (29 RFCs)
 17. [Multicast](#multicast) (13 RFCs)
 18. [Transport Extensions](#transport-extensions) (13 RFCs)
 19. [NetBIOS over TCP/IP](#netbios-over-tcpip) (3 RFCs)
