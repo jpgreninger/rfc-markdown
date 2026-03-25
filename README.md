@@ -189,12 +189,18 @@ _QUIC transport protocol and extensions_
 
 ## Security and Cryptography
 
-_TLS, DTLS, IPsec, IKE, X.509, CMS, OAuth, JWT, and RPKI_
+_TLS, DTLS, IPsec, IKE, Macsec, X.509, CMS, OAuth, JWT, and RPKI_
 
 - [RFC 2289 - A One-Time Password System](markdown/rfc2289.txt.md)
 - [RFC 3173 - IP Payload Compression Protocol (IPComp)](markdown/rfc3173.txt.md)
+- [RFC 3711 - The Secure Real-time Transport Protocol (SRTP)](markdown/rfc3711.txt.md)
+- [RFC 4301 - Security Architecture for the Internet Protocol](markdown/rfc4301.txt.md)
+- [RFC 4303 - IP Encapsulating Security Payload (ESP)](markdown/rfc4303.txt.md)
+- [RFC 4305 - Cryptographic Algorithm Implementation Requirements for Encapsulating Security Payload (ESP) and Authentication Header (AH))](markdown/rfc4305.txt.md)
 - [RFC 5652 - Cryptographic Message Syntax (CMS)](markdown/rfc5652.txt.md)
 - [RFC 7296 - Internet Key Exchange Protocol Version 2 (IKEv2)](markdown/rfc7296.txt.md)
+- [RFC 8446 - The Transport Layer Security (TLS) Protocol Version 1.3](markdown/rfc8446.txt.md)
+- [RFC 8447 - IANA Registry Updates for TLS and DTLS](markdown/rfc8447.txt.md)
 - [RFC 8692 - Internet X.509 Public Key Infrastructure: Additional Algorithm Identiﬁers for RSASSA-PSS and ECDSA Using SHAKEs](markdown/rfc8692.md)
 - [RFC 8693 - OAuth 2.0 Token Exchange](markdown/rfc8693.md)
 - [RFC 8696 - Using Pre-Shared Key (PSK) in the Cryptographic Message Syntax (CMS)](markdown/rfc8696.md)
@@ -366,6 +372,8 @@ _TLS, DTLS, IPsec, IKE, X.509, CMS, OAuth, JWT, and RPKI_
 - [RFC 9935 - Internet X.509 Public Key Infrastructure - Algorithm Identifiers for the Module-Lattice-Based Key- Encapsulation Mechanism (ML-KEM)](markdown/rfc9935.md)
 - [RFC 9936 - Use of ML-KEM in the Cryptographic Message Syntax (CMS)](markdown/rfc9936.md)
 - [RFC 9939 - PKCS #8: Private-Key Information Content Types](markdown/rfc9939.md)
+- [IEEE 801.11 - Media Access Control (MAC) Security](markdown/801.11_MacSec.md)
+- [IEEE 801.11 - Media Access Control (MAC) Security Amendment 2: Extended Packet Numbering](markdown/801.11_MacSec_extended_packet_numbering.md)
 
 ## Network Management and SNMP
 
@@ -470,11 +478,15 @@ _SNMP, MIB, IPFIX, NETCONF, YANG, and RESTCONF_
 
 ## Routing Protocols
 
-_OSPF, RIP, BGP, IS-IS, PIM, MPLS, segment routing, and DetNet_
+_OSPF, RIP, BGP, IS-IS, PIM, MPLS, GRE, VXLAN, segment routing, and DetNet_
 
 - [RFC 1722 - RIP Version 2 Protocol Applicability Statement](markdown/rfc1722.txt.md)
 - [RFC 2328 - OSPF Version 2](markdown/rfc2328.txt.md)
 - [RFC 2453 - RIP Version 2](markdown/rfc2453.txt.md)
+- [RFC 2784 - Generic Routing Encapsulation (GRE)](markdown/rfc2784.txt.md)
+- [RFC 2890 - Key and Sequence Number Extensions to GRE](markdown/rfc2890.txt.md)
+- [RFC 7348 - Virtual eXtensible Local Area Network (VXLAN): A Framework for Overlaying Virtualized Layer 2 Networks over Layer 3 Networks](markdown/rfc7348.txt.md)
+- [RFC 7637 - NVGRE: Network Virtualization Using Generic Routing Encapsulation](markdown/rfc7637.txt.md)
 - [RFC 8077 - Pseudowire Status for Static Pseudowires](markdown/rfc8077.txt.md)
 - [RFC 8685 - Path Computation Element Communication Protocol (PCEP) Extensions for the Hierarchical Path Computation Element (H-PCE) Architecture](markdown/rfc8685.md)
 - [RFC 8687 - OSPF Routing with Cross-Address Family Traﬃc Engineering Tunnels](markdown/rfc8687.md)
@@ -861,10 +873,13 @@ _Internet Printing Protocol (IPP)_
 - [RFC 8010 - Internet Printing Protocol/1.1: Model and Semantics](markdown/rfc8010.txt.md)
 - [RFC 8011 - Internet Printing Protocol/1.1: Operations - Set 1 and Set 2](markdown/rfc8011.txt.md)
 
-## Data Formats and Encoding
+## Data Formats, Compression, and Encoding
 
-_ASN.1, XDR, ABNF, UTF-8, JSON, CBOR, CDDL, and time formats_
+_ASN.1, XDR, ABNF, UTF-8, JSON, ZLIB, GZIP, DEFLATE, LZ4, ZSTD, CBOR, CDDL, and time formats_
 
+- [RFC 1950 - ZLIB Compressed Data Format Specification version 3.3](markdown/rfc1950.txt.md)
+- [RFC 1951 - DEFLATE Compressed Data Format Specification version 1.3](markdown/rfc1951.txt.md)
+- [RFC 1952 - GZIP file format specification version 4.3](markdown/rfc1952.txt.md)
 - [RFC 3629 - UTF-8, a transformation format of ISO 10646](markdown/rfc3629.txt.md)
 - [RFC 4506 - XDR: External Data Representation Standard](markdown/rfc4506.txt.md)
 - [RFC 5234 - Augmented BNF for Syntax Specifications: ABNF](markdown/rfc5234.txt.md)
@@ -888,6 +903,9 @@ _ASN.1, XDR, ABNF, UTF-8, JSON, CBOR, CDDL, and time formats_
 - [RFC 9741 - Concise Data Definition Language (CDDL): Additional Control Operators for the Conversion and Processing of Text](markdown/rfc9741.md)
 - [RFC 9781 - A Concise Binary Object Representation (CBOR) Tag for Unprotected CBOR Web Token Claims Sets (UCCS)](markdown/rfc9781.md)
 - [RFC 9839 - Unicode Character Repertoire Subsets](markdown/rfc9839.md)
+- [LZ4F - LZ4 Frame Format](markdown/lz4_Frame_format.md)
+- [LZ4 - LZ4 Block Format](markdown/lz4_Block_format.md)
+- [ZSTD - ZSTD Compression Format](markdown/zstd_compression_format.md)
 
 ## Multicast
 
