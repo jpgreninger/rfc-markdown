@@ -780,7 +780,7 @@ _IPv6 core, extension headers, neighbor discovery, and transition_
 - [RFC 9926 - Prefix Registration for IPv6 Neighbor Discovery](markdown/rfc9926.md)
 - [RFC 9927 - Fixing the C-Flag in the Extended Address Registration Option (EARO)](markdown/rfc9927.md)
 
-## Long Term Evolution (LTE)
+## Long Term Evolution
 
 _LTE, ZUC, Snow, 3gpp_
 
