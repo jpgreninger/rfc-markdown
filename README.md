@@ -19,16 +19,18 @@ All files are located in the `markdown/` directory.
 8. [Routing Protocols](#routing-protocols) (189 RFCs)
 9. [VoIP and Multimedia](#voip-and-multimedia) (66 RFCs)
 10. [IPv6](#ipv6) (32 RFCs)
-11. [Link Layer and Physical](#link-layer-and-physical) (16 RFCs)
-12. [Remote Access and File Transfer](#remote-access-and-file-transfer) (13 RFCs)
-13. [Network Time and Simple Services](#network-time-and-simple-services) (13 RFCs)
-14. [Directory and Registration](#directory-and-registration) (26 RFCs)
-15. [Printing](#printing) (2 RFCs)
-16. [Data Formats, Compression, and Encoding](#data-formats-compression-and-encoding) (29 RFCs)
-17. [Multicast](#multicast) (13 RFCs)
-18. [Transport Extensions](#transport-extensions) (13 RFCs)
-19. [NetBIOS over TCP/IP](#netbios-over-tcpip) (3 RFCs)
-20. [Miscellaneous and Other](#miscellaneous-and-other) (115 RFCs)
+11. [Long Term Evolution](#lte) (9 RFCs)
+12  [RoCEv2 (Infinity Band)](#rocev2) (2 RFCs)
+12. [Link Layer and Physical](#link-layer-and-physical) (16 RFCs)
+13. [Remote Access and File Transfer](#remote-access-and-file-transfer) (13 RFCs)
+14. [Network Time and Simple Services](#network-time-and-simple-services) (13 RFCs)
+15. [Directory and Registration](#directory-and-registration) (26 RFCs)
+16. [Printing](#printing) (2 RFCs)
+17. [Data Formats, Compression, and Encoding](#data-formats-compression-and-encoding) (29 RFCs)
+18. [Multicast](#multicast) (13 RFCs)
+19. [Transport Extensions](#transport-extensions) (13 RFCs)
+20. [NetBIOS over TCP/IP](#netbios-over-tcpip) (3 RFCs)
+21. [Miscellaneous and Other](#miscellaneous-and-other) (116 RFCs)
 
 ---
 
@@ -778,6 +780,27 @@ _IPv6 core, extension headers, neighbor discovery, and transition_
 - [RFC 9926 - Prefix Registration for IPv6 Neighbor Discovery](markdown/rfc9926.md)
 - [RFC 9927 - Fixing the C-Flag in the Extended Address Registration Option (EARO)](markdown/rfc9927.md)
 
+## Long Term Evolution (LTE)
+
+_LTE, ZUC, Snow, 3gpp_
+
+- [LTE Security Architecture v14.1.0](markdown/LTE_Security_Architecture_v14_1_0.md)
+- [Packet Data Convergence Protocol (PDCP) specification v14.1.0](markdown/PDCP_LTE_v14_1_0.md)
+- [Radio Link Control (RLC) protocol specification v13.2.0](markdown/RLC_LTE_v13_2_0.md)
+- [Document 1: UEA2 and UIA2 Specification](markdown/snow_3g_spec.md)
+- [Document 2: SNOW 3G Specification](markdown/snow_3g_algo.md)
+- [Document 1: 128-EEA3 and 128-EIA3 Specification](markdown/zuc_lte_spec.md)
+- [Document 2: ZUC Specification](markdown/zuc_algo.md)
+- [Document 3: Implementor's Test Data](markdown/etsiZucTestData.md)
+- [The ZUC-256 Stream Cipher](markdown/zuc256.md)
+
+## RoCEv2 (Infinity Band)
+
+_RoCEv2, Infinity Band_
+
+- [Supplement to InfiniBand Annex A17: RoCEv2](markdown/Annex17_RoCEv2.md)
+- [Ipsec RoCEv2](markdown/RoCE-BP.md)
+
 ## Link Layer and Physical
 
 _Ethernet, PPP, ARP, Frame Relay, FDDI, ARCNET, and SLIP_
@@ -1070,4 +1093,5 @@ _IoT, OAM, ALTO, DOTS, captive portals, and additional specifications_
 - [RFC 9894 - Dynamic Link Exchange Protocol (DLEP) Diffserv Aware Credit Window Extension](markdown/rfc9894.md)
 - [RFC 9895 - Dynamic Link Exchange Protocol (DLEP) IEEE 802.1Q Aware Credit Window Extension](markdown/rfc9895.md)
 - [RFC 9934 - Privacy-Enhanced Mail (PEM) File Format for Encrypted ClientHello (ECH)](markdown/rfc9934.md)
+- [LaTEX Mathmatical Symbols](markdown/LaTexMath.md)
 
