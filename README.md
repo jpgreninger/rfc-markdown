@@ -14,7 +14,7 @@ All files are located in the `markdown/` directory.
 3. [Email](#email) (32 RFCs)
 4. [Web and HTTP](#web-and-http) (37 RFCs)
 5. [QUIC](#quic) (9 RFCs)
-6. [Security and Cryptography](#security-and-cryptography) (177 RFCs)
+6. [Security and Cryptography](#security-and-cryptography) (185 RFCs)
 7. [Network Management and SNMP](#network-management-and-snmp) (96 RFCs)
 8. [Routing Protocols](#routing-protocols) (189 RFCs)
 9. [VoIP and Multimedia](#voip-and-multimedia) (66 RFCs)
@@ -30,7 +30,7 @@ All files are located in the `markdown/` directory.
 19. [Multicast](#multicast) (13 RFCs)
 20. [Transport Extensions](#transport-extensions) (13 RFCs)
 21. [NetBIOS over TCP/IP](#netbios-over-tcpip) (3 RFCs)
-22. [Miscellaneous and Other](#miscellaneous-and-other) (116 RFCs)
+22. [Miscellaneous and Other](#miscellaneous-and-other) (117 RFCs)
 
 ---
 
@@ -376,6 +376,9 @@ _TLS, DTLS, IPsec, IKE, Macsec, X.509, CMS, OAuth, JWT, and RPKI_
 - [RFC 9939 - PKCS #8: Private-Key Information Content Types](markdown/rfc9939.md)
 - [IEEE 801.11 - Media Access Control (MAC) Security](markdown/801.11_MacSec.md)
 - [IEEE 801.11 - Media Access Control (MAC) Security Amendment 2: Extended Packet Numbering](markdown/801.11_MacSec_extended_packet_numbering.md)
+- [IEEE 802.11-2012 Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications](markdown/802.11-2012.md)
+- [IEEE 802.16e Physical and Medium Access Control Layers for Combined Fixed and Mobile Operation in Licensed Bands](markdown/802.16e-2005.md)
+- [IEEE 802.16.1-2012 WirelessMAN-Advanced Air Interface for Broadband Wireless Access Systems](markdown/802.16.1-2012.md)
 
 ## Network Management and SNMP
 
@@ -1094,4 +1097,5 @@ _IoT, OAM, ALTO, DOTS, captive portals, and additional specifications_
 - [RFC 9895 - Dynamic Link Exchange Protocol (DLEP) IEEE 802.1Q Aware Credit Window Extension](markdown/rfc9895.md)
 - [RFC 9934 - Privacy-Enhanced Mail (PEM) File Format for Encrypted ClientHello (ECH)](markdown/rfc9934.md)
 - [LaTEX Mathmatical Symbols](markdown/LaTexMath.md)
+- [AMBA APB Protocol](markdown/IHI0024C_amba_apb_protocol_spec.md)
 
