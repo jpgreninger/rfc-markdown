@@ -20,7 +20,7 @@ All files are located in the `markdown/` directory.
 9. [VoIP and Multimedia](#voip-and-multimedia) (66 RFCs)
 10. [IPv6](#ipv6) (32 RFCs)
 11. [Long Term Evolution](#long-term-evolution) (9 RFCs)
-12. [Infinity Band](#infinity-band) (2 RFCs)
+12. [InfiniBand](#infiniband) (2 RFCs)
 13. [Link Layer and Physical](#link-layer-and-physical) (16 RFCs)
 14. [Remote Access and File Transfer](#remote-access-and-file-transfer) (13 RFCs)
 15. [Network Time and Simple Services](#network-time-and-simple-services) (13 RFCs)
@@ -794,9 +794,9 @@ _LTE, ZUC, Snow, 3gpp_
 - [Document 3: Implementor's Test Data](markdown/etsiZucTestData.md)
 - [The ZUC-256 Stream Cipher](markdown/zuc256.md)
 
-## Infinity Band
+## InfiniBand
 
-_RoCEv2, Infinity Band_
+_RoCEv2, InfiniBand_
 
 - [Supplement to InfiniBand Annex A17: RoCEv2](markdown/Annex17_RoCEv2.md)
 - [Ipsec RoCEv2](markdown/RoCE-BP.md)
