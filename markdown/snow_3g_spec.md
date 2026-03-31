@@ -1,17 +1,16 @@
-\section*{Specification of the 3GPP Confidentiality and \\ Integrity Algorithms UEA2 \& UIA2. Document 1: UEA2 and UIA2 Specification}
+## Specification of the 3GPP Confidentiality and <br> Integrity Algorithms UEA2 \& UIA2. Document 1: UEA2 and UIA2 Specification
 
-\begin{tabular}{|l|l|l|}
-\hline \multicolumn{3}{|c|}{Document History} \\
-\hline V1.0 & $10^{\text {th }}$ January 2006 & Publication \\
-\hline V1.1 & $6^{\text {th }}$ September 2006 & No change to the algorithm specification at all, just removal of an unwanted page header \\
-\hline
-\end{tabular}
+| Document History |  |  |
+| :--- | :--- | :--- |
+| V1.0 | $10^{\text {th }}$ January 2006 | Publication |
+| V1.1 | $6^{\text {th }}$ September 2006 | No change to the algorithm specification at all, just removal of an unwanted page header |
 
-\section*{PREFACE}
+## PREFACE
 
 This specification has been prepared by the 3GPP Task Force, and gives a detailed specification of the 3GPP confidentiality algorithm UEA2 and the 3GPP integrity algorithm UIA2.
 
 This document is the first of four, which between them form the entire specification of 3GPP Confidentiality and Integrity Algorithms:
+
 - Specification of the 3GPP Confidentiality and Integrity Algorithms UEA2 \& UIA2.
 Document 1: UEA2 and UIA2 Algorithm Specifications.
 - Specification of the 3GPP Confidentiality and Integrity Algorithms UEA2 \& UIA2.
@@ -26,11 +25,10 @@ The informative section of this document includes four informative annexes: Anne
 
 The normative section of the specification of the stream cipher (SNOW 3G) on which they are based is in the main body of Document 2. The annexes to that document, and Documents 3 and 4 above, are purely informative.
 
-\author{
 Blank Page
-}
 
-\section*{TABLE OF CONTENTS}
+## TABLE OF CONTENTS
+
 1. OUTLINE OF THE NORMATIVE PART ..... 8
 2. INTRODUCTORY INFORMATION ..... 8
 2.1. Introduction ..... 8
@@ -60,7 +58,8 @@ ANNEX 4 Simulation Program Listing ..... 23
 4.1. UEAII ..... 23
 4.2. UIAII ..... 24
 
-\section*{REFERENCES}
+## REFERENCES
+
 [1] 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3G Security; Security Architecture (3G TS 33.102 version 6.3.0).
 [2] 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3G Security; Cryptographic Algorithm Requirements; (3G TS 33.105 version 6.0.0).
 [3] Specification of the 3GPP Confidentiality and Integrity Algorithms; Document 1: $\boldsymbol{f} \mathbf{8}$ and $\boldsymbol{f} \mathbf{9}$ specifications; (3GPP TS35.201 Release 6).
@@ -70,19 +69,19 @@ ANNEX 4 Simulation Program Listing ..... 23
 [7] Specification of the 3GPP Confidentiality and Integrity Algorithms UEA2 \& UIA2. Document 4: Design Conformance Test Data.
 [8] P. Ekdahl and T. Johansson, "A new version of the stream cipher SNOW", in Selected Areas in Cryptology (SAC 2002), LNCS 2595, pp. 47-61, SpringerVerlag.
 
-\section*{NORMATIVE SECTION}
+## NORMATIVE SECTION
 
 This part of the document contains the normative specification of the Confidentiality and Integrity algorithms.
 
-\section*{1. OUTLINE OF THE NORMATIVE PART}
+## 1. OUTLINE OF THE NORMATIVE PART
 
 Section 2 introduces the algorithm and describes the notation used in the subsequent sections.
 Section 3 specifies the confidentiality algorithm UEA2.
 Section 4 specifies the integrity algorithm UIA2.
 
-\section*{2. INTRODUCTORY INFORMATION}
+## 2. INTRODUCTORY INFORMATION
 
-\subsection*{2.1. Introduction}
+### 2.1. Introduction
 
 Within the security architecture of the 3GPP system there are standardised algorithms for confidentiality (f8) and integrity (f9). A first set of algorithms for f8 and f9 (UEA1 and UIA1) has already been specified [3]. A second set of algorithms for $\boldsymbol{f} \mathbf{8}$ and $\boldsymbol{f} \mathbf{9 ( U E A 2}$ and UIA2) are fully specified here: The second set of these algorithms is based on the SNOW 3G algorithm that is specified in a companion document [5].
 
@@ -90,24 +89,26 @@ The confidentiality algorithm UEA2 is a stream cipher that is used to encrypt/de
 
 The integrity algorithm UIA2 computes a 32-bit MAC (Message Authentication Code) of a given input message using an integrity key IK. The approach adopted uses SNOW 3G.
 
-\subsection*{2.2 Notation}
+### 2.2 Notation
 
-\subsection*{2.2.1. Radix}
+### 2.2.1. Radix
 
 We use the prefix $\mathbf{0 x}$ to indicate hexadecimal numbers.
 
-\subsection*{2.2.2. Conventions}
+### 2.2.2. Conventions
 
 We use the assignment operator ' $=$ ', as used in several programming languages. When we write
 <variable> = <expression>
 we mean that <variable> assumes the value that <expression> had before the assignment took place. For instance,
+
 $$
 x=x+y+3
 $$
+
 means
 $($ new value of x$)$ becomes $($ old value of x$)+($ old value of y$)+3$.
 
-\subsection*{2.2.3. Bit/Byte ordering}
+### 2.2.3. Bit/Byte ordering
 
 All data variables in this specification are presented with the most significant bit (or byte) on the left hand side and the least significant bit (or byte) on the right hand side. Where a variable is broken down into a number of sub-strings, the left most (most significant) substring is numbered 0 , the next most significant is numbered 1 and so on through to the least significant.
 
@@ -115,6 +116,7 @@ For example an n -bit $\mathbf{M E S S A G E}$ is subdivided into 64-bit substri
 
 0x0123456789ABCDEFFEDCBA98765432108654381AB594FC28786404C50A37...
 we have:
+
 $$
 \begin{aligned}
 & \mathbf{M B}_{0}=0 \times 0123456789 \mathrm{ABCDEF} \\
@@ -125,6 +127,7 @@ $$
 $$
 
 In binary this would be:
+
 $$
 \begin{aligned}
 & 000000010010001101000101011001111000100110101011110011011110111111111110 \\
@@ -135,7 +138,8 @@ $$
 \end{aligned}
 $$
 
-\subsection*{2.2.4. List of Symbols}
+### 2.2.4. List of Symbols
+
 $=\quad$ The assignment operator
 ⊕ The bitwise exclusive-OR operation
 || The concatenation of the two operands.
@@ -144,68 +148,55 @@ $\&_{\mathrm{n}} \quad$ The bitwise AND operation in an n -bit register.
 $\ll_{n} \mathrm{t} \mathrm{t}$-bit left shift in an n -bit register.
 $\gg_{n} \mathrm{t} \mathrm{t}$-bit right shift in an n -bit register
 
-\subsection*{2.3. List of Variables}
+### 2.3. List of Variables
 
-\begin{tabular}{|l|l|}
-\hline BEARER & the 5-bit input to the UEA2 function. \\
-\hline CK & the 128-bit confidentiality key. \\
-\hline COUNT & the 32-bit time variant input to the UEA2 and UIA2 functions (COUNTC for UEA2 and COUNT-I for UIA2) \\
-\hline DIRECTION & the 1-bit input to both the UEA2 and UIA2 functions indicating the direction of transmission (uplink or downlink). \\
-\hline FRESH & the 32-bit random input to the UIA2 function. \\
-\hline IBS & the input bit stream to the UEA2 function. \\
-\hline IK & the 128-bit integrity key. \\
-\hline KS[i] & the $i^{\text {th }}$ bit of keystream produced by the keystream generator. \\
-\hline LENGTH & the input to the UEA2 and UIA2 functions which specifies the number of bits in the input bitstream (1-20000). \\
-\hline MAC-I & the 32-bit message authentication code (MAC) produced by the integrity function UIA2. \\
-\hline MESSAGE & the input bitstream of LENGTH bits that is to be processed by the UIA2 function. \\
-\hline OBS & the output bit stream from the UEA2 function. \\
-\hline $\mathrm{Z}_{1}, \mathrm{Z}_{2}, \ldots$ & the 32-bit words forming the keystream sequence of SNOW 3G. The word produced first is $\mathrm{z}_{1}$, the next word $\mathrm{z}_{2}$ and so on. \\
-\hline
-\end{tabular}
+| BEARER | the 5-bit input to the UEA2 function. |
+| :--- | :--- |
+| CK | the 128-bit confidentiality key. |
+| COUNT | the 32-bit time variant input to the UEA2 and UIA2 functions (COUNTC for UEA2 and COUNT-I for UIA2) |
+| DIRECTION | the 1-bit input to both the UEA2 and UIA2 functions indicating the direction of transmission (uplink or downlink). |
+| FRESH | the 32-bit random input to the UIA2 function. |
+| IBS | the input bit stream to the UEA2 function. |
+| IK | the 128-bit integrity key. |
+| KS[i] | the $i^{\text {th }}$ bit of keystream produced by the keystream generator. |
+| LENGTH | the input to the UEA2 and UIA2 functions which specifies the number of bits in the input bitstream (1-20000). |
+| MAC-I | the 32-bit message authentication code (MAC) produced by the integrity function UIA2. |
+| MESSAGE | the input bitstream of LENGTH bits that is to be processed by the UIA2 function. |
+| OBS | the output bit stream from the UEA2 function. |
+| $\mathrm{Z}_{1}, \mathrm{Z}_{2}, \ldots$ | the 32-bit words forming the keystream sequence of SNOW 3G. The word produced first is $\mathrm{z}_{1}$, the next word $\mathrm{z}_{2}$ and so on. |
 
-\section*{3. CONFIDENTIALITY ALGORITHM UEA2}
+## 3. CONFIDENTIALITY ALGORITHM UEA2
 
-\subsection*{3.1. Introduction}
+### 3.1. Introduction
 
 The confidentiality algorithm UEA2 is a stream cipher that encrypts/decrypts blocks of data between 1 and 20000 bits in length.
 
-\subsection*{3.2. Inputs and Outputs}
+### 3.2. Inputs and Outputs
 
 The inputs to the algorithm are given in Table 1, the output in Table 2:
 
-\begin{table}
-\begin{tabular}{|l|l|l|}
-\hline Parameter & Size (bits) & Comment \\
-\hline COUNT-C & 32 & Frame dependent input COUNT-C[0]...COUNT-C[31] \\
-\hline BEARER & 5 & Bearer identity BEARER[0]...BEARER[4] \\
-\hline DIRECTION & 1 & Direction of transmission DIRECTION[0] \\
-\hline CK & 128 & Confidentiality key CK[0]....CK[127] \\
-\hline LENGTH & 16 & The number of bits to be encrypted/decrypted \\
-\hline IBS & LENGTH & Input bit stream IBS[0]....IBS[LENGTH-1] \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Table 1. UEA2 inputs}
-\end{table}
+| Parameter | Size (bits) | Comment |
+| :--- | :--- | :--- |
+| COUNT-C | 32 | Frame dependent input COUNT-C[0]...COUNT-C[31] |
+| BEARER | 5 | Bearer identity BEARER[0]...BEARER[4] |
+| DIRECTION | 1 | Direction of transmission DIRECTION[0] |
+| CK | 128 | Confidentiality key CK[0]....CK[127] |
+| LENGTH | 16 | The number of bits to be encrypted/decrypted |
+| IBS | LENGTH | Input bit stream IBS[0]....IBS[LENGTH-1] |
 
-\begin{table}
-\begin{tabular}{|l|c|l|}
-\hline Parameter & Size (bits) & Comment \\
-\hline OBS & LENGTH & \begin{tabular}{l} 
-Output bit stream \\
-OBS[0]....OBS[LENGTH-1]
-\end{tabular} \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Table 2. UEA2 output}
-\end{table}
+Table 1. UEA2 inputs
 
-\subsection*{3.3. Components and Architecture}
+| Parameter | Size (bits) | Comment |
+| :--- | :---: | :--- |
+| OBS | LENGTH | Output bit stream <br> OBS[0]....OBS[LENGTH-1] |
+
+Table 2. UEA2 output
+
+### 3.3. Components and Architecture
 
 The keystream generator is based on SNOW 3G that is specified in [5]. SNOW 3G is a word oriented stream cipher and generates a keystream in multiples of 32-bits.
 
-\subsection*{3.4. Initialisation}
+### 3.4. Initialisation
 
 In this section we define how the keystream generator is initialised with the key variables before the generation of keystream bits.
 
@@ -220,69 +211,59 @@ IV ${ }_{1}=$ COUNT-C[0] || COUNT-C[1] || COUNT-C[2] || ... || COUNT-C[31]
 $\mathrm{IV}_{0}=$ BEARER[0] || BEARER[1] | $\ldots|\mid$ BEARER[4] || DIRECTION[0] | 0$||\ldots| \mid 0$
 SNOW 3G is initialised as described in document [5].
 
-\subsection*{3.5. Keystream Generation}
+### 3.5. Keystream Generation
 
 Set $\mathbf{L}=\lceil$ LENGTH $/ 32\rceil$.
 SNOW 3G is run as described in document [5] to produce the keystream consisting of the 32bit words $\mathbf{z}_{1} \ldots \mathbf{z}_{\mathrm{L}}$. The word produced first is $\mathbf{z}_{1}$, the next word $\mathbf{z}_{2}$ and so on.
 
 The sequence of keystream bits is $\mathbf{K S [ 0 ]} .$. KS[LENGTH-1], where KS[0] is the most significant bit and KS[31] is the least significant bit of $\mathbf{z}_{1}, \mathbf{K S [ 3 2 ]}$ is the most significant bit of $\mathbf{z}_{2}$ and so on.
 
-\subsection*{3.6. Encryption/Decryption}
+### 3.6. Encryption/Decryption
 
 Encryption/decryption operations are identical operations and are performed by the exclusiveOR of the input data (IBS) with the generated keystream (KS).
 
 For each integer $\boldsymbol{i}$ with $0 \leq \boldsymbol{i} \leq \mathbf{L E N G T H}-1$ we define:
 $\mathbf{O B S}[i]=\mathbf{I B S}[i] \oplus \mathbf{K S}[i]$.
 
-\section*{4. INTEGRITY ALGORITHM UIA2}
+## 4. INTEGRITY ALGORITHM UIA2
 
-\subsection*{4.1. Introduction}
+### 4.1. Introduction
 
 The integrity algorithm UIA2 computes a Message Authentication Code (MAC) on an input message under an integrity key $\boldsymbol{I} \boldsymbol{K}$. The message may be between 1 and 20000 bits in length.
 
 For ease of implementation the algorithm is based on the same stream cipher (SNOW 3G) as is used by the confidentiality algorithm UEA2.
 
-\subsection*{4.2. Inputs and Outputs}
+### 4.2. Inputs and Outputs
 
 The inputs to the algorithm are given in table 3 , the output in table 4 :
 
-\begin{table}
-\begin{tabular}{|l|l|l|}
-\hline Parameter & Size (bits) & Comment \\
-\hline COUNT-I & 32 & Frame dependent input COUNT-I[0]…COUNTI[31] \\
-\hline FRESH & 32 & Random number FRESH[0]...FRESH[31] \\
-\hline DIRECTION & 1 & Direction of transmission DIRECTION[0] \\
-\hline IK & 128 & Integrity key IK[0]...IK[127] \\
-\hline LENGTH & 64 & The number of bits to be 'MAC'd \\
-\hline MESSAGE & LENGTH & Input bit stream \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Table 3. UIA2 inputs}
-\end{table}
+| Parameter | Size (bits) | Comment |
+| :--- | :--- | :--- |
+| COUNT-I | 32 | Frame dependent input COUNT-I[0]…COUNTI[31] |
+| FRESH | 32 | Random number FRESH[0]...FRESH[31] |
+| DIRECTION | 1 | Direction of transmission DIRECTION[0] |
+| IK | 128 | Integrity key IK[0]...IK[127] |
+| LENGTH | 64 | The number of bits to be 'MAC'd |
+| MESSAGE | LENGTH | Input bit stream |
 
-\begin{table}
-\begin{tabular}{|l|r|l|}
-\hline Parameter & Size (bits) & Comment \\
-\hline MAC-I & 32 & \begin{tabular}{l} 
-Message authentication code MAC-I[0]...MAC- \\
-I[31]
-\end{tabular} \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Table 4. UIA2 output}
-\end{table}
+Table 3. UIA2 inputs
 
-\subsection*{4.3. Components and Architecture}
+| Parameter | Size (bits) | Comment |
+| :--- | ---: | :--- |
+| MAC-I | 32 | Message authentication code MAC-I[0]...MAC- <br> I[31] |
 
-\subsection*{4.3.1. SNOW 3G}
+Table 4. UIA2 output
+
+### 4.3. Components and Architecture
+
+### 4.3.1. SNOW 3G
 
 The integrity function uses SNOW 3G that is specified in [5]. SNOW 3G is a word oriented stream cipher and generates from the key and an initialisation variable five 32-bit-words $\mathbf{z}_{1}, \mathbf{z}_{2}$, $\mathbf{Z}_{3}, \mathbf{z}_{4}$ and $\mathbf{z}_{5}$.
 
-\subsection*{4.3.2. MULx}
+### 4.3.2. MULx
 
 MULx maps 128 bits to 64 bits. Let $V$ and $c$ be 64-bit input values. Then MULx is defined: If the leftmost (i.e. the most significant) bit of $V$ equals 1 , then
+
 $$
 \begin{aligned}
 & \operatorname{MULx}(V, c)=\left(V \ll_{64} 1\right) \oplus c, \\
@@ -291,26 +272,32 @@ $$
 \end{aligned}
 $$
 
-\subsection*{4.3.3. MULxPOW}
+### 4.3.3. MULxPOW
 
 MULxPOW maps 128 bits and a positive integer $i$ to 64 bit. Let $V$ and $c$ be 64-bit input values, then $\mathrm{MULxPOW}(V, i, c)$ is recursively defined:
 If $i$ equals 0 , then
+
 $$
 \operatorname{MULxPOW}(V, i, c)=V,
 $$
+
 else
+
 $$
 \operatorname{MULxPOW}(V, i, c)=\operatorname{MULx}(\operatorname{MULxPOW}(V, i-1, c), c) .
 $$
+
 4.3.4. MUL
 
 MUL maps 192 bits to 64 bit. Let $V, P$ and $c$ be 64-bit input values.
 Then the 64-bit output result of $\operatorname{MUL}(V, P, c)$ is computed as follows:
+
 - result $=0$.
 - for $i=0$ to 63 inclusive
 - if $\left(P \gg_{64} i\right) \&_{64} 0 \times 01$ equals $0 \times 01$, then result $=$ result $\oplus \operatorname{MULxPOW}(V, i, c)$.
 
-\subsection*{4.4. Initialisation}
+
+### 4.4. Initialisation
 
 In this section we define how the keystream generator is initialised with the key and initialisation variables before the generation of keystream bits.
 
@@ -326,7 +313,7 @@ $\mathbf{I V}_{\mathbf{0}}=\mathbf{F R E S H}[0]\|\mathbf{F R E S H}[1]\| \ldots
 
 SNOW 3G is initialised as described in document [5].
 
-\subsection*{4.5. Calculation}
+### 4.5. Calculation
 
 Set $\mathbf{D}=\lceil$ LENGTH $/ 64\rceil+1$.
 SNOW 3G is run as described in document [5] in order to produce 5 keystream words $\mathbf{z}_{1}, \mathbf{z}_{2}$, $\mathbf{Z}_{3}, \mathbf{Z}_{4}, \mathbf{z}_{5}$.
@@ -334,16 +321,20 @@ SNOW 3G is run as described in document [5] in order to produce 5 keystream word
 Set $\quad \mathbf{P}=\mathbf{z}_{1} \| \mathbf{z}_{2}$
 and $\mathbf{Q}=\mathbf{z}_{3} \| \mathbf{z}_{4}$.
 Let OTP[0], OTP[1], OTP[2], ..., OTP[31] be bit-variables such that
+
 $$
 \mathbf{z}_{5}=\mathbf{O T P}[0]\|\mathbf{O T P}[1]\| \ldots \| \mathbf{O T P}[31]
 $$
+
 i.e. OTP $[0]$ is the most and OTP $[31]$ the least significant bit of $\mathbf{z}_{5}$.
 For $0 \leq i \leq \mathbf{D}-3$ set
+
 $$
 \mathbf{M}_{i}=\mathbf{M E S S A G E}[64 i] \| \text { MESSAGE }[64 i+1]\|. . .\| \text { MESSAGE }[64 i+63] .
 $$
 
 Set
+
 $$
 \mathbf{M}_{\mathbf{D}-2}=\text { MESSAGE[64(D-2)] }\|\ldots\| \text { MESSAGE[LENGTH-1] } \| 0 \ldots 0 .
 $$
@@ -352,31 +343,34 @@ Let LENGTH[0], LENGTH[1], ..., LENGTH[63] be the bits of the 64-bit representati
 
 Set $\mathbf{M}_{\mathbf{D}-1}=\mathbf{L E N G T H}[0]\|\mathbf{L E N G T H}[1]\| \ldots \|$ LENGTH[63].
 Compute the function Eval_M:
+
 - Set the 64-bit variable EVAL $=0$.
 - for $i=0$ to $\mathbf{D}-2$ inclusive:
 
 ○ $\mathbf{E V A L}=\operatorname{Mul}\left(\mathbf{E V A L} \oplus \mathbf{M}_{i}, \mathbf{P}\right.$, 0x000000000000001b ).
 Set EVAL $=\mathbf{E V A L} \oplus \mathbf{M}_{D-1}$
 Now we multiply EVAL by Q:
+
 $$
 \mathbf{E V A L}=\operatorname{Mul}(\mathbf{E V A L}, \mathbf{Q}, 0 \times 000000000000001 \mathrm{~b})
 $$
 
 Let $\mathbf{E V A L}=\mathbf{e}_{0}\left\|\mathbf{e}_{1}\right\| \ldots \| \mathbf{e}_{63}$ with $\mathbf{e}_{0}$ the most and $\mathbf{e}_{63}$ the least significant bit.
 For $0 \leq i \leq 31$, set
+
 $$
 \mathbf{M A C}-\mathbf{I}[i]=\mathbf{e}_{i} \oplus \mathbf{O T P}[i]
 $$
 
 The bits $\mathbf{e}_{32}, \ldots, \mathbf{e}_{63}$ are discarded.
 
-\section*{INFORMATIVE SECTION}
+## INFORMATIVE SECTION
 
 This part of the document is purely informative and does not form part of the normative specification of the Confidentiality and Integrity algorithms.
 
-\section*{ANNEX 1 \\ Remarks about the mathematical background of some operations of the UIA2 Algorithm}
+## ANNEX 1 <br> Remarks about the mathematical background of some operations of the UIA2 Algorithm
 
-\subsection*{1.1. The function EVAL_M}
+### 1.1. The function EVAL_M
 
 The first part (the function EVAL_M) of the calculations for the UIA2 algorithm corresponds to the evaluation of a polynomial at a secret point: From the bits and the length of MESSAGE a polynomial $\mathbf{M} \in \mathrm{GF}\left(2^{64}\right)[X]$ is defined. This polynomial is evaluated at the point $\mathbf{P} \in \mathrm{GF}\left(2^{64}\right)$ defined by $\mathbf{z}_{1} \| \mathbf{z}_{2}$.
 
@@ -396,11 +390,11 @@ $\left.\mathbf{M}(\mathbf{P})=\mathbf{M}_{0} \mathbf{P}^{\mathbf{D}-1}+\mathbf{M
 
 This is done in the function Eval_M in 4.5.
 
-\subsection*{1.2 The function $\operatorname{MUL}(\mathrm{V}, \mathrm{P}, \mathrm{c})$}
+### 1.2 The function $\operatorname{MUL}(\mathrm{V}, \mathrm{P}, \mathrm{c})$
 
 The function $\operatorname{MUL}(V, P, \mathrm{c})$ (see 4.3.4) corresponds to a multiplication of $V$ by $P$ in $\mathrm{GF}\left(2^{64}\right)$. Here $\mathrm{GF}\left(2^{64}\right)$ is described as $\mathrm{GF}(2)(\beta)$ where $\beta$ is a root of the $\mathrm{GF}(2)[\mathrm{x}]$ polynomial $\mathrm{x}^{64}+ \mathrm{c}_{0} \mathrm{x}^{63}+\ldots+\mathrm{c}_{62} \mathrm{x}+\mathrm{c}_{63}$ and $\mathrm{c}=\mathrm{c}_{0}\left\|\mathrm{c}_{1}\right\| \ldots \| \mathrm{c}_{63}$.
 
-\section*{ANNEX 2 \\ Implementation options for some operations of the UIA2 Algorithm}
+## ANNEX 2 <br> Implementation options for some operations of the UIA2 Algorithm
 
 The function MUL (see 4.3.4) can be implemented using table lookups. This might accelerate execution of the function EVAL_M, as for the evaluation of the polynomial only multiplication by a constant factor $P$ is needed.
 
@@ -410,13 +404,14 @@ In order to execute MUL by table-lookups first Pre_Mul_P (see 2.1) is executed, 
 
 Hence in 4.5 instead of $\mathbf{E V A L}=\operatorname{Mul}\left(\mathrm{EVAL} \oplus \mathbf{M}_{i}, \mathbf{P}\right.$, 0x1b ) we can use $\mathbf{E V A L}=$ Mul_P $\left(\mathbf{E V A L} \oplus \mathbf{M}_{i}\right)$.
 
-\subsection*{2.1. Procedure Pre_Mul_P}
+### 2.1. Procedure Pre_Mul_P
 
 In order to be able to compute Mul_P (see 2.2) the procedure Pre_Mul_P is executed once before the first call of Mul_P.
 Pre_Mul_P computes from the 64-bit input $\mathbf{P}$ eight tables $\mathrm{PM}[0], \mathrm{PM}[1], \ldots, \mathrm{PM}[7]$. Each of these tables contains 256 entries PM[j][0], PM[j][1], ..., PM[j][255] with 64 bits.
 
 For $0 \leq \mathrm{j} \leq 7$ and $0 \leq X \leq 255$ the value $\mathrm{PM}[\mathrm{j}][X]$ corresponds to $X \mathbf{P} \mathrm{x}^{8 \mathrm{j}}$.
 Let $r$ be the 64-bit value 0x000000000000001b.
+
 - The tables are computed as follows:
 $\mathrm{PM}[0][0]=\mathrm{PM}[1][0]=\mathrm{PM}[2][0]=\mathrm{PM}[3][0]=\mathrm{PM}[4][0]=\mathrm{PM}[5][0]=\mathrm{PM}[6][0]= \mathrm{PM}[7][0]=0$.
 - $\mathrm{PM}[0][1]=\mathrm{P}$.
@@ -429,7 +424,8 @@ $\mathrm{PM}\left[i \gg_{8} 3\right]\left[1 \ll_{8}\left(i \&_{8} 0 \mathrm{x} 0
 - for $k=1$ to $\left(1 \ll_{8} j\right)-1$ inclusive
 - $\mathrm{PM}[i]\left[\left(1 \ll_{8} j\right)+k\right]=\mathrm{PM}[i]\left[1 \ll_{8} j\right] \oplus \mathrm{PM}[i][k]$.
 
-\subsection*{2.2 Function Mul_P}
+
+### 2.2 Function Mul_P
 
 The function Mul_P maps a 64-bit input $X$ to a 64-bit output.
 
@@ -437,31 +433,23 @@ Let $X=X_{0}\left\|X_{1}\right\| X_{2}\left\|X_{3}\right\| X_{4}\left\|X_{5}\rig
 Compute Mul_ $\mathrm{P}(X)$ as
 $\operatorname{Mul\_ P}(X)=\mathrm{PM}[0]\left[X_{7}\right] \oplus \mathrm{PM}[1]\left[X_{6}\right] \oplus \mathrm{PM}[2]\left[X_{5}\right] \oplus \mathrm{PM}[3]\left[X_{4}\right] \oplus \mathrm{PM}[4]\left[X_{3}\right] \oplus \mathrm{PM}[5]\left[X_{2}\right] \oplus \mathrm{PM}[6]\left[X_{1}\right] \oplus \mathrm{PM}[7]\left[\mathrm{X}_{0}\right]$.
 
-\section*{ANNEX 3 \\ Figures of the UEA2 and UIA2 Algorithms}
+## ANNEX 3 <br> Figures of the UEA2 and UIA2 Algorithms
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-20.jpg?height=840&width=1762&top_left_y=826&top_left_x=146}
-\captionsetup{labelformat=empty}
-\caption{Figure 1: UEA2 Keystream Generator}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-20.jpg?height=840&width=1762&top_left_y=826&top_left_x=146)
+Figure 1: UEA2 Keystream Generator
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-21.jpg?height=992&width=1630&top_left_y=242&top_left_x=406}
-\captionsetup{labelformat=empty}
-\caption{Figure 2: UIA2 Integrity function, part 1}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-21.jpg?height=992&width=1630&top_left_y=242&top_left_x=406)
+Figure 2: UIA2 Integrity function, part 1
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-22.jpg?height=1395&width=1102&top_left_y=335&top_left_x=504}
-\captionsetup{labelformat=empty}
-\caption{Figure 3: UIA2 Integrity function, part 2}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/385f8b5b-fd9b-4f2d-b7fd-b443bf1750cf-22.jpg?height=1395&width=1102&top_left_y=335&top_left_x=504)
+Figure 3: UIA2 Integrity function, part 2
 
-\section*{ANNEX 4 \\ Simulation Program Listing}
+## ANNEX 4 <br> Simulation Program Listing
 
-\subsection*{4.1. UEAII}
+### 4.1. UEAII
 
-\subsection*{4.1.1 Header File}
+### 4.1.1 Header File
+
 ```
 /*-------------------------------------------------------
     * f8.h
@@ -487,7 +475,8 @@ void f8( u8 *key, int count, int bearer, int dir, u8 *data, int length );
 ```
 
 
-\subsection*{4.1.2 Code}
+### 4.1.2 Code
+
 ```
 /*------------------------------------------------------
     * f8.c
@@ -549,9 +538,10 @@ stream */
 ```
 
 
-\subsection*{4.2. UIAII}
+### 4.2. UIAII
 
-\subsection*{4.2.1 Header File}
+### 4.2.1 Header File
+
 ```
 /*-------------------------------------------------------
     * f9.h
@@ -574,7 +564,8 @@ u8* f9( u8* key, int count, int fresh, int dir, u8 *data, u64 length);
 ```
 
 
-\subsection*{4.2.2 Code}
+### 4.2.2 Code
+
 ```
 /*------------------------------------------------------
     * f9.C
@@ -739,3 +730,4 @@ mask) ;
 /* End of f9.c */
 /*--------------------------------------------------------------------------
 ```
+

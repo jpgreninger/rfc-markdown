@@ -1,11 +1,9 @@
-\title{
-3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3GPP System Architecture Evolution (SAE); Security architecture (Release 14)
-}
+# 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3GPP System Architecture Evolution (SAE); Security architecture (Release 14) 
 
 Keywords
 LTE, GSM, UMTS, security, architecture
 
-\section*{3GPP}
+## 3GPP
 
 Postal address
 
@@ -17,7 +15,7 @@ Tel.: +33 492944200 Fax: +33 493654716
 Internet
 http://www.3gpp.org
 
-\section*{Copyright Notification}
+## Copyright Notification
 
 No part may be reproduced except as authorized by written permission.
 The copyright and the foregoing restriction extend to reproduction in all media.
@@ -28,7 +26,8 @@ UMTS ${ }^{\text {TM }}$ is a Trade Mark of ETSI registered for the benefit of i
 LTE ${ }^{\text {TM }}$ is a Trade Mark of ETSI registered for the benefit of its Members and of the 3GPP Organizational Partners
 GSM® and the GSM logo are registered and owned by the GSM Association
 
-\section*{Contents}
+## Contents
+
 Foreword ..... 9
 1 Scope ..... 10
 2 References ..... 10
@@ -321,7 +320,7 @@ H. 5 Handover procedures ..... 146
 H. 6 LWIP radio link failure ..... 147
 Annex I (informative): Change history ..... 148
 
-\section*{Foreword}
+## Foreword
 
 This Technical Specification has been produced by the $3{ }^{\text {rd }}$ Generation Partnership Project (3GPP).
 The contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:
@@ -335,13 +334,14 @@ x the first digit:
 y the second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.
 z the third digit is incremented when editorial only changes have been incorporated in the document.
 
-\section*{1 Scope}
+## 1 Scope
 
 The present document specifies the security architecture, i.e., the security features and the security mechanisms for the Evolved Packet System and the Evolved Packet Core, and the security procedures performed within the evolved Packet System (EPS) including the Evolved Packet Core (EPC) and the Evolved UTRAN (E-UTRAN).
 
-\section*{2 References}
+## 2 References
 
 The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
 - References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.
 - For a specific reference, subsequent revisions do not apply.
 - For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.
@@ -363,33 +363,31 @@ The following documents contain provisions which, through reference in this text
 [17] NIST Special Publication 800-38B (2001): "Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication".
 [18] - [20] Void.
 
-\begin{tabular}{|l|l|}
-\hline [21] & 3GPP TS 36.331:"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Resource Control (RRC); Protocol specification". \\
-\hline [22] & 3GPP TS 23.216: "Single Radio Voice Call Continuity (SRVCC); Stage 2". \\
-\hline [23] & 3GPP TS 22.101: "3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service aspects; Service principles". \\
-\hline [24] & 3GPP TS 25.331: "3rd Generation Partnership Project; Technical Specification Group Radio Access Network; Radio Resource Control (RRC); Protocol Specification ". \\
-\hline [25] & 3GPP TS 44.060: "3rd Generation Partnership Project; Technical Specification Group GSM/EDGE Radio Access Network; General Packet Radio Service (GPRS); Mobile Station (MS) - Base Station System (BSS) interface; Radio Link Control/Medium Access Control (RLC/MAC) protocol. \\
-\hline [26] & 3GPP TS 23.122: "3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Non-Access-Stratum (NAS) functions related to Mobile Station (MS) in idle mode". \\
-\hline [27] & 3GPP TS 33.320: "3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Security of Home Node B (HNB) / Home evolved Node B (HeNB)". \\
-\hline [28] & (void) \\
-\hline [29] & ETSI TS 102484 V10.0.0: "Smart Cards; Secure channel between a UICC and an end-point terminal". \\
-\hline [30] & 3GPP TS 36.300: "Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2". \\
-\hline [31] & 3GPP TS 31.116 "Remote APDU Structure for (Universal) Subscriber Identity Module (U)SIM Toolkit applications". \\
-\hline [32] & ETSI TS 102221 V9.2.0: "Smart Cards; UICC-Terminal interface; Physical and logical characteristics". \\
-\hline [33] & 3GPP TS 35.221: "Confidentiality and Integrity Algorithms EEA3 \& EIA3; Document 1: EEA3 and EIA3 specifications". \\
-\hline [34] & RFC 4301: "Security Architecture for the Internet Protocol". \\
-\hline [35] & 3GPP TS 22.346: "Isolated Evolved Universal Terrestrial Radio Access Network (E-UTRAN) operation for public safety; Stage 1". \\
-\hline [36] & 3GPP TS 33.210: "3G security; Network Domain Security (NDS); IP network layer security". \\
-\hline [37] & 3GPP TS.33.310: "Network Domain Security (NDS); Authentication Framework (AF)". \\
-\hline [38] & IETF RFC 7296: " Internet Key Exchange Protocol Version 2 (IKEv2)". \\
-\hline [39] & IEEE 802.11, Part 11: "Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications, IEEE Std.". \\
-\hline [40] & 3GPP TS 36.463: " Evolved Universal Terrestrial Radio Access Network (E-UTRAN) and Wireless LAN (WLAN); Xw application protocol (XwAP)". \\
-\hline
-\end{tabular}
+| [21] | 3GPP TS 36.331:"Evolved Universal Terrestrial Radio Access (E-UTRA) Radio Resource Control (RRC); Protocol specification". |
+| :--- | :--- |
+| [22] | 3GPP TS 23.216: "Single Radio Voice Call Continuity (SRVCC); Stage 2". |
+| [23] | 3GPP TS 22.101: "3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service aspects; Service principles". |
+| [24] | 3GPP TS 25.331: "3rd Generation Partnership Project; Technical Specification Group Radio Access Network; Radio Resource Control (RRC); Protocol Specification ". |
+| [25] | 3GPP TS 44.060: "3rd Generation Partnership Project; Technical Specification Group GSM/EDGE Radio Access Network; General Packet Radio Service (GPRS); Mobile Station (MS) - Base Station System (BSS) interface; Radio Link Control/Medium Access Control (RLC/MAC) protocol. |
+| [26] | 3GPP TS 23.122: "3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Non-Access-Stratum (NAS) functions related to Mobile Station (MS) in idle mode". |
+| [27] | 3GPP TS 33.320: "3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Security of Home Node B (HNB) / Home evolved Node B (HeNB)". |
+| [28] | (void) |
+| [29] | ETSI TS 102484 V10.0.0: "Smart Cards; Secure channel between a UICC and an end-point terminal". |
+| [30] | 3GPP TS 36.300: "Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2". |
+| [31] | 3GPP TS 31.116 "Remote APDU Structure for (Universal) Subscriber Identity Module (U)SIM Toolkit applications". |
+| [32] | ETSI TS 102221 V9.2.0: "Smart Cards; UICC-Terminal interface; Physical and logical characteristics". |
+| [33] | 3GPP TS 35.221: "Confidentiality and Integrity Algorithms EEA3 \& EIA3; Document 1: EEA3 and EIA3 specifications". |
+| [34] | RFC 4301: "Security Architecture for the Internet Protocol". |
+| [35] | 3GPP TS 22.346: "Isolated Evolved Universal Terrestrial Radio Access Network (E-UTRAN) operation for public safety; Stage 1". |
+| [36] | 3GPP TS 33.210: "3G security; Network Domain Security (NDS); IP network layer security". |
+| [37] | 3GPP TS.33.310: "Network Domain Security (NDS); Authentication Framework (AF)". |
+| [38] | IETF RFC 7296: " Internet Key Exchange Protocol Version 2 (IKEv2)". |
+| [39] | IEEE 802.11, Part 11: "Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications, IEEE Std.". |
+| [40] | 3GPP TS 36.463: " Evolved Universal Terrestrial Radio Access Network (E-UTRAN) and Wireless LAN (WLAN); Xw application protocol (XwAP)". |
 
-\section*{3 Definitions, symbols and abbreviations}
+## 3 Definitions, symbols and abbreviations
 
-\subsection*{3.1 Definitions}
+### 3.1 Definitions
 
 For the purposes of the present document, the terms and definitions given in TR 21.905 [1], in TS 33.102 [4] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].
 
@@ -448,137 +446,132 @@ Local EPC: a Local EPC is an entity which provides functionality that eNBs in IO
 Macro EPC: the EPC which serves an eNB when it is not in IOPS mode of operation.
 Nomadic EPS: a deployable system which has the capability to provide radio access (via deployable IOPS-capable eNB(s)), local IP connectivity and Public Safety services to IOPS-enabled UEs in the absence of normal EPS.IOPSenabled UE: is an UE that is configured to use networks operating in IOPS mode.
 
-\subsection*{3.2 Symbols}
+### 3.2 Symbols
 
 For the purposes of the present document, the following symbols apply:
 || Concatenation
 ⊕ Bitwise Exclusive Or (XOR) operation
 
-\subsection*{3.3 Abbreviations}
+### 3.3 Abbreviations
 
 For the purposes of the present document, the abbreviations given in TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in TR 21.905 [1].
 
-\begin{tabular}{|l|l|}
-\hline AES & Advanced Encryption Standard \\
-\hline AK & Anonymity Key \\
-\hline AKA & Authentication and Key Agreement \\
-\hline AMF & Authentication Management Field \\
-\hline AN & Access Network \\
-\hline AS & Access Stratum \\
-\hline AUTN & Authentication token \\
-\hline AV & Authentication Vector \\
-\hline ASME & Access Security Management Entity \\
-\hline Cell-ID & Cell Identity as used in TS 36.331 [21] \\
-\hline CK & Cipher Key \\
-\hline CKSN & Cipher Key Sequence Number \\
-\hline C-RNTI & Cell RNTI as used in TS 36.331 [21] \\
-\hline CRL & Certificate Revocation List \\
-\hline DeNB & Donor eNB \\
-\hline DoS & Denial of Service \\
-\hline DSCP & Differentiated Services Code Point \\
-\hline EARFCN-DL & E-UTRA Absolute Radio Frequency Channel Number-Down Link \\
-\hline ECM & EPS Connection Management \\
-\hline EEA & EPS Encryption Algorithm \\
-\hline EIA & EPS Integrity Algorithm \\
-\hline eKSI & Key Set Identifier in E-UTRAN \\
-\hline EMM & EPS Mobility Management \\
-\hline eNB & Evolved Node-B \\
-\hline EPC & Evolved Packet Core \\
-\hline EPS & Evolved Packet System \\
-\hline EPS-AV & EPS authentication vector \\
-\hline E-UTRAN & Evolved UTRAN \\
-\hline GERAN & GSM EDGE Radio Access Network \\
-\hline GUTI & Globally Unique Temporary Identity \\
-\hline HE & Home Environment \\
-\hline HFN & Hyper Frame Number \\
-\hline HO & Hand Over \\
-\hline HSS & Home Subscriber Server \\
-\hline IK & Integrity Key \\
-\hline IKE & Internet Key Exchange \\
-\hline IMEI & International Mobile Station Equipment Identity \\
-\hline IMEISV & International Mobile Station Equipment Identity and Software Version number \\
-\hline IMSI & International Mobile Subscriber Identity \\
-\hline IOPS & Isolated E-UTRAN Operation for Public Safety \\
-\hline IRAT & Inter-Radio Access Technology \\
-\hline ISR & Idle Mode Signaling Reduction \\
-\hline KDF & Key Derivation Function \\
-\hline KSI & Key Set Identifier \\
-\hline LWIP & LTE WLAN RAN Level Integration using IPSec \\
-\hline LSB & Least Significant Bit \\
-\hline LSM & Limited Service Mode \\
-\hline LWA & LTE-WLAN Aggregation \\
-\hline MAC-I & Message Authentication Code for Integrity (terminology of TS36.323 [12]) \\
-\hline MACT & Message Authentication Code T used in AES CMAC calculation \\
-\hline MeNB & Master eNB \\
-\hline ME & Mobile Equipment \\
-\hline MME & Mobility Management Entity \\
-\hline MME-RN & MME serving the RN \\
-\hline MS & Mobile Station \\
-\hline
-\end{tabular}
+| AES | Advanced Encryption Standard |
+| :--- | :--- |
+| AK | Anonymity Key |
+| AKA | Authentication and Key Agreement |
+| AMF | Authentication Management Field |
+| AN | Access Network |
+| AS | Access Stratum |
+| AUTN | Authentication token |
+| AV | Authentication Vector |
+| ASME | Access Security Management Entity |
+| Cell-ID | Cell Identity as used in TS 36.331 [21] |
+| CK | Cipher Key |
+| CKSN | Cipher Key Sequence Number |
+| C-RNTI | Cell RNTI as used in TS 36.331 [21] |
+| CRL | Certificate Revocation List |
+| DeNB | Donor eNB |
+| DoS | Denial of Service |
+| DSCP | Differentiated Services Code Point |
+| EARFCN-DL | E-UTRA Absolute Radio Frequency Channel Number-Down Link |
+| ECM | EPS Connection Management |
+| EEA | EPS Encryption Algorithm |
+| EIA | EPS Integrity Algorithm |
+| eKSI | Key Set Identifier in E-UTRAN |
+| EMM | EPS Mobility Management |
+| eNB | Evolved Node-B |
+| EPC | Evolved Packet Core |
+| EPS | Evolved Packet System |
+| EPS-AV | EPS authentication vector |
+| E-UTRAN | Evolved UTRAN |
+| GERAN | GSM EDGE Radio Access Network |
+| GUTI | Globally Unique Temporary Identity |
+| HE | Home Environment |
+| HFN | Hyper Frame Number |
+| HO | Hand Over |
+| HSS | Home Subscriber Server |
+| IK | Integrity Key |
+| IKE | Internet Key Exchange |
+| IMEI | International Mobile Station Equipment Identity |
+| IMEISV | International Mobile Station Equipment Identity and Software Version number |
+| IMSI | International Mobile Subscriber Identity |
+| IOPS | Isolated E-UTRAN Operation for Public Safety |
+| IRAT | Inter-Radio Access Technology |
+| ISR | Idle Mode Signaling Reduction |
+| KDF | Key Derivation Function |
+| KSI | Key Set Identifier |
+| LWIP | LTE WLAN RAN Level Integration using IPSec |
+| LSB | Least Significant Bit |
+| LSM | Limited Service Mode |
+| LWA | LTE-WLAN Aggregation |
+| MAC-I | Message Authentication Code for Integrity (terminology of TS36.323 [12]) |
+| MACT | Message Authentication Code T used in AES CMAC calculation |
+| MeNB | Master eNB |
+| ME | Mobile Equipment |
+| MME | Mobility Management Entity |
+| MME-RN | MME serving the RN |
+| MS | Mobile Station |
 
-\begin{tabular}{|l|l|}
-\hline MSC & Mobile Switching Center \\
-\hline MSIN & Mobile Station Identification Number \\
-\hline NAS & Non Access Stratum \\
-\hline NAS-MAC & Message Authentication Code for NAS for Integrity (called MAC in TS24.301 [9]) \\
-\hline NASDVM & Non Access Stratum - Data via MME \\
-\hline NCC & Next hop Chaining Counter \\
-\hline NH & Next Hop \\
-\hline OCSP & Online Certificate Status Protocol \\
-\hline OTA & Over-The-Air (update of UICCs) \\
-\hline PCI & Physical Cell Identity as used in TS 36.331 [21] \\
-\hline PDCP & Packet Data Convergence Protocol \\
-\hline PLMN & Public Land Mobile Network \\
-\hline PRNG & Pseudo Random Number Generator \\
-\hline PSK & Pre-shared Key \\
-\hline P-TMSI & Packet- Temporary Mobile Subscriber Identity \\
-\hline RAND & RANDom number \\
-\hline RAU & Routing Area Update \\
-\hline RN & Relay Node \\
-\hline RRC & Radio Resource Control \\
-\hline SCG & Secondary Cell Group \\
-\hline SEG & Security Gateway \\
-\hline SGSN & Serving GPRS Support Node \\
-\hline SIM & Subscriber Identity Module \\
-\hline SMC & Security Mode Command \\
-\hline SeNB & Secondary eNB \\
-\hline SN & Serving Network \\
-\hline SN id & Serving Network identity \\
-\hline SQN & Sequence Number \\
-\hline SRB & Source Route Bridge \\
-\hline SRVCC & Single Radio Voice Call Continuity \\
-\hline S-TMSI & S-Temporary Mobile Subscriber Identity \\
-\hline TAI & Tracking Area Identity \\
-\hline TAU & Tracking Area Update \\
-\hline UE & User Equipment \\
-\hline UEA & UMTS Encryption Algorithm \\
-\hline UIA & UMTS Integrity Algorithm \\
-\hline UICC & Universal Integrated Circuit Card \\
-\hline UMTS & Universal Mobile Telecommunication System \\
-\hline UP & User Plane \\
-\hline USIM & Universal Subscriber Identity Module \\
-\hline UTRAN & Universal Terrestrial Radio Access Network \\
-\hline WT & WLAN Termination as used in TS 36.300 [30] \\
-\hline XRES & Expected Response \\
-\hline
-\end{tabular}
 
-\subsection*{3.4 Conventions}
+| MSC | Mobile Switching Center |
+| :--- | :--- |
+| MSIN | Mobile Station Identification Number |
+| NAS | Non Access Stratum |
+| NAS-MAC | Message Authentication Code for NAS for Integrity (called MAC in TS24.301 [9]) |
+| NASDVM | Non Access Stratum - Data via MME |
+| NCC | Next hop Chaining Counter |
+| NH | Next Hop |
+| OCSP | Online Certificate Status Protocol |
+| OTA | Over-The-Air (update of UICCs) |
+| PCI | Physical Cell Identity as used in TS 36.331 [21] |
+| PDCP | Packet Data Convergence Protocol |
+| PLMN | Public Land Mobile Network |
+| PRNG | Pseudo Random Number Generator |
+| PSK | Pre-shared Key |
+| P-TMSI | Packet- Temporary Mobile Subscriber Identity |
+| RAND | RANDom number |
+| RAU | Routing Area Update |
+| RN | Relay Node |
+| RRC | Radio Resource Control |
+| SCG | Secondary Cell Group |
+| SEG | Security Gateway |
+| SGSN | Serving GPRS Support Node |
+| SIM | Subscriber Identity Module |
+| SMC | Security Mode Command |
+| SeNB | Secondary eNB |
+| SN | Serving Network |
+| SN id | Serving Network identity |
+| SQN | Sequence Number |
+| SRB | Source Route Bridge |
+| SRVCC | Single Radio Voice Call Continuity |
+| S-TMSI | S-Temporary Mobile Subscriber Identity |
+| TAI | Tracking Area Identity |
+| TAU | Tracking Area Update |
+| UE | User Equipment |
+| UEA | UMTS Encryption Algorithm |
+| UIA | UMTS Integrity Algorithm |
+| UICC | Universal Integrated Circuit Card |
+| UMTS | Universal Mobile Telecommunication System |
+| UP | User Plane |
+| USIM | Universal Subscriber Identity Module |
+| UTRAN | Universal Terrestrial Radio Access Network |
+| WT | WLAN Termination as used in TS 36.300 [30] |
+| XRES | Expected Response |
+
+### 3.4 Conventions
 
 All data variables in the present document are presented with the most significant substring on the left hand side and the least significant substring on the right hand side. A substring may be a bit, byte or other arbitrary length bitstring. Where a variable is broken down into a number of substrings, the leftmost (most significant) substring is numbered 0 , the next most significant is numbered 1 , and so on through to the least significant.
 
-\section*{4 Overview of Security Architecture}
+## 4 Overview of Security Architecture
 
 Figure 4-1 gives an overview of the complete security architecture.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-016.jpg?height=780&width=1540&top_left_y=456&top_left_x=258}
-\captionsetup{labelformat=empty}
-\caption{Figure 4-1: Overview of the security architecture}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-016.jpg?height=780&width=1540&top_left_y=456&top_left_x=258)
+Figure 4-1: Overview of the security architecture
 
 Five security feature groups are defined. Each of these feature groups meets certain threats and accomplishes certain security objectives:
+
 - Network access security (I): the set of security features that provide users with secure access to services, and which in particular protect against attacks on the (radio) access link.
 - Network domain security (II): the set of security features that enable nodes to securely exchange signalling data, user data (between AN and SN and within AN), and protect against attacks on the wireline network.
 - User domain security (III): the set of security features that secure access to mobile stations.
@@ -589,17 +582,17 @@ NOTE 1: Relay nodes are not explicitly shown in Figure 4-1. They combine the fun
 
 NOTE 2: There is an option for some uplink and downlink user data to be sent via the MME. This is referred to as "data via MME" and within the context of TS 33.401 the abbreviation NASDVM is used.
 
-\section*{5 Security Features}
+## 5 Security Features
 
-\subsection*{5.1 User-to-Network security}
+### 5.1 User-to-Network security
 
-\subsection*{5.1.0 General}
+### 5.1.0 General
 
 The statements relating to eNBs in clause 5.1 apply also to RNs regarding the security between a UE and a relay node.
 
 The statements relating to UEs in clause 5.1 apply also to RNs regarding the security between a relay node and a Donor eNB and between a relay node and its MME unless stated otherwise.
 
-\subsection*{5.1.1 User identity and device confidentiality}
+### 5.1.1 User identity and device confidentiality
 
 User identity confidentiality is as defined by TS 33.102 [4] subclause 5.1.1
 From subscriber's privacy point of view, the MSIN, the IMEI, and the IMEISV should be confidentiality protected.
@@ -613,13 +606,13 @@ NOTE 1: When the UE has no IMSI, no valid GUTI, or no valid P-TMSI during emerge
 The IMEI or IMEISV shall be sent in the NAS protocol.
 NOTE 2: In some cases, e.g., the very first attach procedure, MSIN has to be sent to network in cleartext. When NAS confidentiality protection is beyond an operator option, IMEI and IMEISV can not be confidentiality protected.
 
-\subsection*{5.1.2 Entity authentication}
+### 5.1.2 Entity authentication
 
 Entity authentication is as defined by TS 33.102 [4] subclause 5.1.2
 
-\subsection*{5.1.3 User data and signalling data confidentiality}
+### 5.1.3 User data and signalling data confidentiality
 
-\subsection*{5.1.3.1 Ciphering requirements}
+### 5.1.3.1 Ciphering requirements
 
 Ciphering may be provided to RRC-signalling to prevent UE tracking based on cell level measurement reports, handover message mapping, or cell level identity chaining. RRC signalling confidentiality is an operator option.
 
@@ -637,29 +630,28 @@ NOTE 3: Confidentiality protection for RRC and UP is applied at the PDCP layer, 
 User data sent via MME may be confidentiality protected
 NOTE 4: Confidentiality protection of user data sent via MME is recommended to be used.
 
-\subsection*{5.1.3.2 Algorithm Identifier Values}
+### 5.1.3.2 Algorithm Identifier Values
 
 All algorithms specified in this subclause are algorithms with a 128-bit input key except Null ciphering algorithm.
 NOTE: Deviations from the above requirement have to be indicated explicitly in the algorithm identifier list below.
 
 Each EPS Encryption Algorithm (EEA) will be assigned a 4-bit identifier. Currently, the following values have been defined for NAS, RRC and UP ciphering:
 
-\begin{tabular}{lll} 
-& "00002" & EEA0 \\
-"00012" & Null ciphering algorithm \\
-"0010 " & 128-EEA1 & SNOW 3G based algorithm \\
-"0011 " & 128-EEA3 & AES based algorithm \\
-ZUC based algorithm
-\end{tabular}
+|  | "00002" | EEA0 |
+| :--- | :--- | :--- |
+| "00012" | Null ciphering algorithm |  |
+| "0010 " | 128-EEA1 | SNOW 3G based algorithm |
+| "0011 " | 128-EEA3 | AES based algorithm |
+| ZUC based algorithm |  |  |
 
 The remaining values have been reserved for future use.
 UEs and eNBs shall implement EEA0, 128-EEA1 and 128-EEA2 for both RRC signalling ciphering and UP ciphering. UEs and eNBs may implement 128-EEA3 for both RRC signalling ciphering and UP ciphering.
 
 UEs and MMEs shall implement EEA0, 128-EEA1 and 128-EEA2 for NAS signalling ciphering. UEs and MMEs may implement 128-EEA3 for NAS signalling ciphering.
 
-\subsection*{5.1.4 User data and signalling data integrity}
+### 5.1.4 User data and signalling data integrity
 
-\subsection*{5.1.4.1 Integrity requirements}
+### 5.1.4.1 Integrity requirements
 
 Synchronization of the input parameters for integrity protection shall be ensured for the protocols involved in the integrity protection.
 
@@ -672,18 +664,18 @@ User plane packets between the eNB and the UE shall not be integrity protected o
 
 All user data packets sent via the MME shall be integrity protected.
 
-\subsection*{5.1.4.2 Algorithm Identifier Values}
+### 5.1.4.2 Algorithm Identifier Values
 
 All algorithms specified in this subclause are algorithms with a 128-bit input key.
 NOTE: Deviations from the above requirement have to be indicated explicitly in the algorithm identifier list below.
 
 Each EPS Integrity Algorithm (EIA) will be assigned a 4-bit identifier. Currently, the following values have been defined:
 
-\begin{tabular}{lll} 
-"00002" & EIA0 & Null Integrity Protection algorithm \\
-"00012" & 128-EIA1 & SNOW 3G based algorithm \\
-"00102" & 128-EIA2 & AES based algorithm
-\end{tabular}
+| "00002" | EIA0 | Null Integrity Protection algorithm |
+| :--- | :--- | :--- |
+| "00012" | 128-EIA1 | SNOW 3G based algorithm |
+| "00102" | 128-EIA2 | AES based algorithm |
+
 "0011 ${ }^{\prime \prime}$ 128-EIA3 ZUC based algorithm
 The remaining values have been reserved for future use.
 UEs and eNBs shall implement 128-EIA1 and 128-EIA2 for RRC signalling integrity protection. UEs and eNBs may implement 128-EIA3 for RRC signalling integrity protection.
@@ -694,24 +686,28 @@ UEs shall implement EIA0 for integrity protection of NAS and RRC signalling. As 
 
 Implementation of EIA0 in MMEs, RNs and eNBs is optional, EIA0, if implemented, shall be disabled in MMEs, RNs and eNBs in the deployments where support of unauthenticated emergency calling is not a regulatory requirement.
 
-\subsection*{5.2 Security visibility and configurability}
+### 5.2 Security visibility and configurability
 
 Although in general the security features should be transparent to the user, for certain events and according to the user's concern, greater user visibility of the operation of following security feature shall be provided:
+
 - indication of access network encryption: the property that the user is informed whether the confidentiality of user data is protected on the radio access link, in particular when non-ciphered calls are set-up;
 
 The ciphering indicator feature is specified in 3GPP TS 22.101 [23].
 Configurability is the property that the user can configure whether the use or the provision of a service should depend on whether a security feature is in operation. A service can only be used if all security features, which are relevant to that service and which are required by the configurations of the user, are in operation. The following configurability features are suggested:
+
 - enabling/disabling user-USIM authentication: the user should be able to control the operation of user-USIM authentication, e.g., for some events, services or use.
 
-\subsection*{5.3 Security requirements on eNodeB}
 
-\subsection*{5.3.1 General}
+### 5.3 Security requirements on eNodeB
+
+### 5.3.1 General
 
 The security requirements given in this section apply to all types of eNodeBs. More stringent requirements for specific types of eNodeBs may be defined in other 3GPP specifications.
 
-\subsection*{5.3.2 Requirements for eNB setup and configuration}
+### 5.3.2 Requirements for eNB setup and configuration
 
 Setting up and configuring eNBs shall be authenticated and authorized so that attackers shall not be able to modify the eNB settings and software configurations via local or remote access.
+
 1. The support of security associations is required between the Evolved Packet Core (EPC) and the eNB and between adjacent eNBs, connected via X2. These security association establishments shall be mutually authenticated and used for user and control plane communication between the entities. However, in cases when a DeNB acts as proxy for control or user plane messages to and from a RN, hop-by-hop security associations shall be used for user and control plane. The security associations shall be realized according to clauses 11 and 12 of the present document except for the Un interface between RN and DeNB. The decision on whether or not to use the certificate enrolment mechanism specified in TS 33.310 [6] for eNB is left to operators.
 2. Communication between the O\&M systems and the eNB shall be confidentiality, integrity and replay protected from unauthorized parties. The support of security associations is required between the eNB and an entity in the Evolved Packet Core (EPC) or in an O\&M domain trusted by the operator. These security association establishments shall be mutually authenticated. The security associations shall be realized according to clause 13 for eNBs and clause D.2.5 for RNs.
 3. The eNB shall be able to ensure that software/data change attempts are authorized
@@ -720,30 +716,34 @@ Setting up and configuring eNBs shall be authenticated and authorized so that at
 6. Confidentiality of software transfer towards the eNB shall be ensured.
 7. Integrity protection of software transfer towards the eNB shall be ensured.
 
-\subsection*{5.3.3 Requirements for key management inside eNB}
+### 5.3.3 Requirements for key management inside eNB
 
 TheEPC provides subscriber specific session keying material for the eNBs, which also hold long term keys used for authentication and security association setup purposes. Protecting all these keys is important.
+
 1. Keys stored inside eNBs shall never leave a secure environment within the eNB except when done in accordance with this or other 3GPP specifications.
 
-\subsection*{5.3.4 Requirements for handling User plane data for the eNB}
+### 5.3.4 Requirements for handling User plane data for the eNB
 
 It is eNB's task to cipher and decipher user plane packets between the Uu reference point and the S1/X2 reference points and to handle integrity protection for user plane packets for the S1/X2 reference points.
+
 1. User plane data ciphering/deciphering and integrity handling shall take place inside the secure environment where the related keys are stored.
 2. The transport of user data over S1-U and X2-U shall be integrity, confidentially and replay-protected from unauthorized parties. If this is to be accomplished by cryptographic means, clause 12 shall be applied except for the Un interface between RN and DeNB.
 
 NOTE: The use of cryptographic protection on S1-U and X2-U is an operator's decision. In case the eNB has been placed in a physically secured environment then the 'secure environment' may include other nodes and links beside the eNB.
 
-\subsection*{5.3.4a Requirements for handling Control plane data for the eNB}
+### 5.3.4a Requirements for handling Control plane data for the eNB
 
 It is eNB's task to provide confidentiality and integrity protection for control plane packets on the S1/X2 reference points.
+
 1. Control plane data ciphering/deciphering and integrity handling shall take place inside the secure environment where the related keys are stored.
 2. The transport of control plane data over S1-MME and X2-C shall be integrity-, confidentiality- and replayprotected from unauthorized parties. If this is to be accomplished by cryptographic means, clause 11 shall be applied except for the Un interface between RN and DeNB.
 
 NOTE: The use of cryptographic protection on S1-MME and X2-C is an operator's decision. In case the eNB has been placed in a physically secured environment then the 'secure environment' may include other nodes and links beside the eNB.
 
-\subsection*{5.3.5 Requirements for secure environment of the eNB}
+### 5.3.5 Requirements for secure environment of the eNB
 
 The secure environment is logically defined within the eNB and is a composition of functions for the support of sensitive operations.
+
 1. The secure environment shall support secure storage of sensitive data, e.g. long term cryptographic secrets and vital configuration data.
 2. The secure environment shall support the execution of sensitive functions, e.g. en-/decryption of user data and the basic steps within protocols which use long term secrets (e.g. in authentication protocols).
 3. Sensitive data used within the secure environment shall not be exposed to external entities.
@@ -751,18 +751,18 @@ The secure environment is logically defined within the eNB and is a composition 
 5. The secure environment's integrity shall be assured.
 6. Only authorised access shall be granted to the secure environment, i.e. to data stored and used within, and to functions executed within.
 
-\subsection*{5.4 Void}
+### 5.4 Void
 
-\section*{6 Security Procedures between UE and EPC Network Elements}
+## 6 Security Procedures between UE and EPC Network Elements
 
-\subsection*{6.0 General}
+### 6.0 General
 
 The statements relating to eNBs in clause 6 apply also to RNs regarding the security between a UE and a relay node.
 The statements relating to UEs and MEs in clause 6 apply also to RNs regarding the security between a relay node and a Donor eNB and between a relay node and its MME unless stated otherwise.
 
-\subsection*{6.1 Authentication and key agreement}
+### 6.1 Authentication and key agreement
 
-\subsection*{6.1.1 AKA procedure}
+### 6.1.1 AKA procedure
 
 NOTE 1: Authentication data in this subclause stands for EPS Authentication vector(s).
 EPS AKA is the authentication and key agreement procedure that shall be used over E-UTRAN.
@@ -791,27 +791,22 @@ Otherwise UE shall send an authentication failure message with a CAUSE value ind
 The MME checks that the RES equals XRES. If so the authentication is successful. If not, depending on type of identity used by the UE in the initial NAS message, the MME may initiate further identity requests or send an authentication reject message towards the UE (see TS 24.301 [9]).
 
 Figure 6.1.1-1 describes EPS AKA procedure, which is based on UMTS AKA (see TS 33.102[4]). The following keys are shared between UE and HSS:
+
 - $\mathbf{K}$ is the permanent key stored on the USIM on a UICC and in the Authentication Centre AuC.
 - CK, IK is the pair of keys derived in the AuC and on the USIM during an AKA run. CK, IK shall be handled differently depending on whether they are used in an EPS security context or a legacy security context, as described in subclause 6.1.2.
 
 As a result of the authentication and key agreement, an intermediate key Kasme shall be shared between UE and MME i.e. the ASME for EPS.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-022.jpg?height=371&width=949&top_left_y=1708&top_left_x=566}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.1.1-1: Successful EPS AKA authentication}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-022.jpg?height=371&width=949&top_left_y=1708&top_left_x=566)
+Figure 6.1.1-1: Successful EPS AKA authentication
 
-\subsection*{6.1.2 Distribution of authentication data from HSS to serving network}
+### 6.1.2 Distribution of authentication data from HSS to serving network
 
 NOTE 1: Authentication data in this subclause stands for EPS Authentication vector(s).
 The purpose of this procedure is to provide the MME with one or more EPS authentication vectors (RAND, AUTN, XRES, $\mathrm{K}_{\mathrm{ASME}}$ ) from the user's HE (HSS) to perform user authentication. Each EPS authentication vector can be used to authenticate the UE.
 
-\begin{figure}
-\captionsetup{labelformat=empty}
-\caption{NOTE 2: It is recommended that the MME fetch only one EPS authentication vector at a time as the need to perform AKA runs has been reduced in EPS through the use of a more elaborate key hierarchy. In particular, service requests can be authenticated using a stored $\mathrm{K}_{\mathrm{Asme}}$ without the need to perform AKA. Furthermore, the sequence number management schemes in TS 33.102, Annex C [4], designed to avoid re-synchronisation problems caused by interleaving use of batches of authentication vectors, are only optional. Re-synchronisation problems in EPS can be avoided, independently of the sequence number management scheme, by immediately using an authentication vector retrieved from the HSS in an authentication procedure between UE and MME.}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-023.jpg?height=307&width=688&top_left_y=623&top_left_x=676}
-\end{figure}
+NOTE 2: It is recommended that the MME fetch only one EPS authentication vector at a time as the need to perform AKA runs has been reduced in EPS through the use of a more elaborate key hierarchy. In particular, service requests can be authenticated using a stored $\mathrm{K}_{\mathrm{Asme}}$ without the need to perform AKA. Furthermore, the sequence number management schemes in TS 33.102, Annex C [4], designed to avoid re-synchronisation problems caused by interleaving use of batches of authentication vectors, are only optional. Re-synchronisation problems in EPS can be avoided, independently of the sequence number management scheme, by immediately using an authentication vector retrieved from the HSS in an authentication procedure between UE and MME.
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-023.jpg?height=307&width=688&top_left_y=623&top_left_x=676)
 
 Figure 6.1.2-1: Distribution of authentication data from HE to MME
 
@@ -829,21 +824,18 @@ NOTE 4: The HSS needs to ensure that the MME requesting the authentication data 
 
 The HE sends an authentication response back to the MME that contains the requested information. If multiple EPS authentication vectors had been requested then they are ordered based on their sequence numbers. The MME shall be aware of the order of the EPS authentication vectors and shall use that the EPS authentication vectors in order.
 
-\subsection*{6.1.3 User identification by a permanent identity}
+### 6.1.3 User identification by a permanent identity
 
 The user identification mechanism should be invoked by the serving network whenever the user cannot be identified by means of a temporary identity (GUTI). In particular, it should be used when the serving network cannot retrieve the IMSI based on the GUTI by which the user identifies itself on the radio path.
 
 The mechanism described in figure 6.1.3-1 allows the identification of a user on the radio path by means of the permanent subscriber identity (IMSI).
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-024.jpg?height=223&width=1047&top_left_y=246&top_left_x=511}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.1.3-1: User identity query}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-024.jpg?height=223&width=1047&top_left_y=246&top_left_x=511)
+Figure 6.1.3-1: User identity query
 
 The mechanism is initiated by the MME that requests the user to send its permanent identity. The user's response contains the IMSI in cleartext. This represents a breach in the provision of user identity confidentiality.
 
-\subsection*{6.1.4 Distribution of IMSI and authentication data within one serving network domain}
+### 6.1.4 Distribution of IMSI and authentication data within one serving network domain
 
 NOTE 1: Authentication data in this subclause stands for EPS security contexts and EPS authentication vector(s).
 The purpose of this procedure is to provide a newly visited MME with authentication data from a previously visited MME within the same serving network domain.
@@ -852,11 +844,8 @@ NOTE 2: The following procedure in this clause is based on TAU procedure and it 
 
 The procedure is shown in Figure 6.1.4-1
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-024.jpg?height=632&width=1081&top_left_y=1308&top_left_x=493}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.1.4-1: Distribution of IMSI and authentication data within one serving domain}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-024.jpg?height=632&width=1081&top_left_y=1308&top_left_x=493)
+Figure 6.1.4-1: Distribution of IMSI and authentication data within one serving domain
 
 The procedure shall be invoked by the newly visited MMEn after the receipt of a Tracking Area update request from the user wherein the user is identified by means of a temporary user identity GUTIo and the Tracking area identity TAIo under the jurisdiction of a previously visited MMEo that belongs to the same serving network domain as the newly visited MMEn.
 
@@ -880,17 +869,18 @@ The same procedure does not apply to distribution of EPS authentication data bet
 
 NOTE 3: This is due to the fact that EPS authentication data does not contain CK and IK and, hence, is not useful for the SGSN.
 
-\subsection*{6.1.5 Distribution of IMSI and authentication data between different serving network domains}
+### 6.1.5 Distribution of IMSI and authentication data between different serving network domains
 
 NOTE 1: Authentication data in this subclause stands for EPS security contexts and EPS authentication vector(s).
 In general, the distribution of IMSI and authentication data between MMEs belonging to different serving network domains of shall be performed as described for the distribution of IMSI and authentication data within the same service network domain in subclause 6.1.4. In particular, the current EPS security context data may be transferred between MMEs belonging to different serving network domains. However, there is the following restriction:
+
 - Unused EPS authentication vectors, or non-current EPS security contexts, shall not be distributed between MMEs belonging to different serving domains (PLMNs).
 
 The same procedure does not apply to distribution of EPS authentication data between MME and SGSN in different serving network domains, i.e. EPS authentication data shall not be forwarded from an MME towards an SGSN.
 
 NOTE 2: This is due to the fact that EPS authentication data does not contain CK and IK and, hence, is not useful for the SGSN.
 
-\subsection*{6.1.6 Distribution of IMSI and UMTS authentication vectors between MMEs or between MME and SGSN}
+### 6.1.6 Distribution of IMSI and UMTS authentication vectors between MMEs or between MME and SGSN
 
 This subclause applies to both distribution of UMTS authentication vectors within one serving network domain and distribution of UMTS authentication vectors between different serving network domains. The following rules apply to the distribution of UMTS authentication vectors between two MMEs, and between an SGSN and an MME:
 a) MME to MME
@@ -904,34 +894,36 @@ c) MME to SGSN
 UMTS AVs which were previously stored in the MME may be forwarded back towards the same SGSN.
 UMTS AVs which were previously stored in the MME shall not be forwarded towards other SGSNs.
 
-\subsection*{6.2 EPS key hierarchy}
+### 6.2 EPS key hierarchy
 
 Requirements on EPC and E-UTRAN related to keys:
 a) The EPC and E-UTRAN shall allow for use of encryption and integrity protection algorithms for AS and NAS protection having keys of length 128 bits and for future use the network interfaces shall be prepared to support 256 bit keys.
 b) The keys used for UP, NAS and AS protection shall be dependent on the algorithm with which they are used.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-026.jpg?height=1025&width=1428&top_left_y=641&top_left_x=354}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2-1: Key hierarchy in E-UTRAN}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-026.jpg?height=1025&width=1428&top_left_y=641&top_left_x=354)
+Figure 6.2-1: Key hierarchy in E-UTRAN
 
 The key hierarchy (see Figure 6.2-1) includes following keys: Kenb, Knasint, Knasenc, Kupenc, Krrcint, Krrcenc and Kupint
+
 - $\mathbf{K}_{\mathbf{e n B}}$ is a key derived by ME and MME from $\mathrm{K}_{\mathrm{ASME}}$ or by ME and target eNB.
 
 Keys for NAS traffic:
+
 - Kenasint is a key, which shall only be used for the protection of NAS traffic with a particular integrity algorithm This key is derived by ME and MME from $\mathrm{K}_{\mathrm{ASME}}$, as well as an identifier for the integrity algorithm using the KDF as specified in clause A.7.
 - Knasenc is a key, which shall only be used for the protection of NAS traffic with a particular encryption algorithm. This key is derived by ME and MME from $\mathrm{K}_{\mathrm{ASME}}$, as well as an identifier for the encryption algorithm using the KDF as specified in clause A.7.
 
 Keys for UP traffic:
+
 - Kupenc is a key, which shall only be used for the protection of UP traffic with a particular encryption algorithm. This key is derived by ME and eNB from $\mathrm{K}_{\mathrm{eNB}}$, as well as an identifier for the encryption algorithm using the KDF as specified in clause A.7.
 - Kupint is a key, which shall only be used for the protection of UP traffic between RN and DeNB with a particular integrity algorithm. This key is derived by RN and DeNB from $\mathrm{K}_{\mathrm{eNB}}$, as well as an identifier for the integrity algorithm using the KDF as specified in clause A.7.
 
 Keys for RRC traffic:
+
 - $\mathbf{K}_{\mathbf{R R C} \text { int }}$ is a key, which shall only be used for the protection of RRC traffic with a particular integrity algorithm. $\mathrm{K}_{\text {RRCint }}$ is derived by ME and eNB from $\mathrm{K}_{\text {eNB }}$, as well as an identifier for the integrity algorithm using the KDF as specified in clause A.7.
 - Krrcenc is a key, which shall only be used for the protection of RRC traffic with a particular encryption algorithm. $\mathrm{K}_{\mathrm{RRCenc}}$ is derived by ME and eNB from $\mathrm{K}_{\mathrm{eNB}}$ as well as an identifier for the encryption algorithm using the KDF as specified in clause A.7.
 
 Intermediate keys:
+
 - NH is a key derived by ME and MME to provide forward security as described in clause 7.2.8.
 - $\mathbf{K}_{\mathbf{e N B}}{ }^{\boldsymbol{*}}$ is a key derived by ME and eNB when performing an horizontal or vertical key derivation as specified in clause 7.2.8 using a KDF as specified in clause A5.
 
@@ -939,23 +931,17 @@ Figure 6.2-2 shows the dependencies between the different keys, and how they are
 
 NOTE: Figures 6.2-2 and 6.2-3 do not cover the derivations at IRAT mobility (see clauses 9 and 10).
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-027.jpg?height=1324&width=1614&top_left_y=1105&top_left_x=230}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2-2: Key distribution and key derivation scheme for EPS (in particular E-UTRAN) for network nodes.}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-027.jpg?height=1324&width=1614&top_left_y=1105&top_left_x=230)
+Figure 6.2-2: Key distribution and key derivation scheme for EPS (in particular E-UTRAN) for network nodes.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-028.jpg?height=1276&width=1541&top_left_y=294&top_left_x=294}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2-3: Key derivation scheme for EPS (in particular E-UTRAN) for the ME.}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-028.jpg?height=1276&width=1541&top_left_y=294&top_left_x=294)
+Figure 6.2-3: Key derivation scheme for EPS (in particular E-UTRAN) for the ME.
 
 As the figures 6.2-2 and 6.2-3 show, the length of $\mathrm{K}_{\mathrm{ASME}}, \mathrm{K}_{\mathrm{enb}}$ and NH is 256 bits, 256 -bit NAS, UP and RRC keys are always derived from $\mathrm{K}_{\mathrm{ASME}}$ and $\mathrm{K}_{\mathrm{eNB}}$ respectively. In case the encryption or integrity algorithm used to protect NAS, UP or RRC requires a 128-bit key as input, the key is truncated and the 128 least significant bits are used. Figures 6.2-2 and 6.2-3 illustrate the truncation to 128 bits keys.
 
 The function Trunc takes as input a 256-bit string, and returns a truncated output as defined in Annex A.7.
 
-\subsection*{6.3 EPS key identification}
+### 6.3 EPS key identification
 
 The key $\mathrm{K}_{\mathrm{ASME}}$ shall be identified by the key set identifier eKSI. eKSI may be either of type $\mathrm{KSI}_{\mathrm{ASME}}$ or of type $\mathrm{KSI}_{\text {SGSN }}$. An eKSI shall be stored in the UE and the MME together with $\mathrm{K}_{\text {ASME }}$ and the temporary identifier GUTI, if available.
 
@@ -971,7 +957,7 @@ The format of eKSI shall allow a recipient of such a parameter to distinguish wh
 The value '111' in the other direction from network to mobile station is reserved.
 NOTE 2: In addition to EPS security contexts, the UE may also cache UMTS security contexts. These UMTS security contexts are identified by the KSI, as defined in TS 33.102 [4].
 
-\subsection*{6.4 Handling of EPS security contexts}
+### 6.4 Handling of EPS security contexts
 
 Any EPS security context shall be deleted from the ME if:
 a) the UICC is removed from the ME when the ME is in power on state;
@@ -993,16 +979,18 @@ The full native EPS NAS security context (except for $\mathrm{K}_{\text {NASenc 
 
 NOTE 2: Only native EPS NAS security context is stored in the EMM parameters file on the USIM or in nonvolatile ME memory. A mapped EPS NAS security context is never stored in these two places.
 
-\subsection*{6.5 Handling of NAS COUNTs}
+### 6.5 Handling of NAS COUNTs
 
 Each separate $\mathrm{K}_{\mathrm{Asme}}$ has a distinct pair of NAS COUNTs, one NAS COUNT for uplink and one NAS COUNT for downlink, associated with it.
 
 It is essential that the NAS COUNTs for a particular $\mathrm{K}_{\mathrm{ASME}}$ are not reset to the start values (that is the NAS COUNTs only have their start value when a new $\mathrm{K}_{\mathrm{ASME}}$ is created). This prevents the security issue of using the same NAS COUNTs with the same NAS keys, e.g. key stream re-use, in the case a UE moves back and forth between two MMEs and the same NAS keys are re-derived.
 
 The NAS COUNTs shall only be set to the start value in the following cases:
+
 - for a partial native EPS NAS security context created by a successful AKA run,
 
 NOTE: The NAS COUNTs are not actually needed at the UE for a native context until it has successfully received the first NAS Security Mode Command for that security context. The NAS COUNTs are not needed at the MME until it sends the first NAS Security Mode Command for that security context. Before the MME sends the first NAS Security Mode Command for a given partial native security context, the MME sets the NAS COUNTs for the security context to 0 . After the NAS SMC message is sent for that partial native security context the NAS COUNTs for that partial native context are increased for each following sent NAS message as specified in TS 24.301.
+
 - or for an EPS NAS security context created through a context mapping during a handover from UTRAN/GERAN to E-UTRAN,
 - or for an EPS NAS security context created through a context mapping during idle mode mobility from UTRAN/GERAN to E-UTRAN.
 
@@ -1010,29 +998,29 @@ The NAS COUNTs shall not be reset during idle mode mobility or handover for an a
 
 The start value of NAS COUNT shall be zero (0).
 
-\section*{Security Procedures between UE and EPS Access Network Elements}
+## Security Procedures between UE and EPS Access Network Elements
 
-\subsection*{7.0 General}
+### 7.0 General
 
 The statements relating to eNBs in clause 7 apply also to RNs regarding the security between a UE and a relay node.
 The statements relating to UEs in clause 7 apply also to RNs regarding the security between a relay node and a Donor eNB and between a relay node and its MME unless stated otherwise.
 
-\subsection*{7.1 Mechanism for user identity confidentiality}
+### 7.1 Mechanism for user identity confidentiality
 
 The MME shall allocate a GUTI to a UE in order to support the subscriber identity confidentiality. The GUTI is defined in TS 23.003 [3].
 
 S-TMSI, the shortened form of the GUTI, is used to support the subscriber identity confidentiality with more efficient radio signalling procedures (e.g. paging and Service Request). A new GUTI shall be sent to the UE only after a successful activation of NAS security.
 
-\subsection*{7.2 Handling of user-related keys in E-UTRAN}
+### 7.2 Handling of user-related keys in E-UTRAN
 
-\subsection*{7.2.1 E-UTRAN key setting during AKA}
+### 7.2.1 E-UTRAN key setting during AKA
 
 Authentication and key setting are triggered by the authentication procedure. Authentication and key setting may be initiated by the network as often as the network operator wishes. Key setting can occur as soon as the identity of the mobile subscriber (i.e. GUTI or IMSI) is known by the MME. A successful run of AKA results in a new $\mathrm{K}_{\mathrm{ASME}}$ that is stored in the UE and MME.
 
 NAS keys, $\mathrm{K}_{\mathrm{enb}}$ and the RRC and UP keys are derived from $\mathrm{K}_{\mathrm{Asme}}$ using the KDFs specified in Annex A.
 The NAS keys derived from the new $\mathrm{K}_{\mathrm{ASME}}$ are taken in use in the MME and the UE by means of the NAS security mode set-up procedure (see subclause 7.2.4.4). The AS keys are taken into use with the AS security mode set-up procedure (see subclause 7.2.4.5) or with the key change on the fly procedure (see subclause 7.2.9.2).
 
-\subsection*{7.2.2 E-UTRAN key identification}
+### 7.2.2 E-UTRAN key identification
 
 Clause 6.3 of this specification states how the key $\mathrm{K}_{\mathrm{ASME}}$ is identified, namely by the key set identifier eKSI. Keys $\mathrm{K}_{\text {NASenc }}$ and $\mathrm{K}_{\text {NASint }}$ in the E-UTRAN key hierarchy specified in clause 6.2, which are derived from $\mathrm{K}_{\text {ASME }}$, can be uniquely identified by eKSI together with those parameters from the set \{algorithm distinguisher, algorithm identifier\}, which are used to derive these keys from $\mathrm{K}_{\mathrm{ASME}}$ according to Annex A.
 
@@ -1042,21 +1030,24 @@ Intermediate key $\mathrm{K}_{\text {eNB }}$ *, defined in clause 7, as well as 
 
 It is specified in the remainder of clause 7, as well as in clause 9 and 10, which of the above parameters need to be included in a security-relevant message to allow the entity receiving the message to uniquely identify a certain key.
 
-\subsection*{7.2.3 E-UTRAN key lifetimes}
+### 7.2.3 E-UTRAN key lifetimes
 
 All E-UTRAN keys are derived based on a $\mathrm{K}_{\text {Asme }}$. The key hierarchy which is described in clause 6.2 does not allow direct update to RRC and UP keys, but fresh RRC and UP keys are derived based on a fresh $\mathrm{K}_{\mathrm{eNB}}$, which is bound to certain dynamic parameters (like PCI) or fresh key derivation parameter(s) in state transitions (like NAS uplink COUNT). This results as fresh RRC and UP keys in the eNB between inter-eNB handovers and state transitions (see subclauses 7.2.6 to 7.2.8). The handling (creation, modification and update) of the E-UTRAN keys in the various state transitions is described in clauses 7.2.5, 7.2.6, 7.2.7 and 7.2.8.
 $\mathrm{K}_{\mathrm{Asme}}$ shall be created only by running a successful AKA or by the inter-RAT procedures towards E-UTRAN (cf clauses 9 and 10). In case the UE does not have a valid $\mathrm{K}_{\mathrm{ASMe}}$, a $\mathrm{KSI}_{\mathrm{ASMe}}$ with value "111" shall be sent by the UE to the network, which can initiate (re-)authentication procedure to get a new $\mathrm{K}_{\mathrm{ASME}}$ based on a successful AKA authentication.
 
-\subsection*{7.2.4 Security mode command procedure and algorithm negotiation}
+### 7.2.4 Security mode command procedure and algorithm negotiation
 
-\subsection*{7.2.4.1 Requirements for algorithm selection}
+### 7.2.4.1 Requirements for algorithm selection
+
 a) An active UE and a serving network shall agree upon algorithms for
+
 - $\quad$ RRC ciphering and RRC integrity protection (to be used between UE and eNB)
 - UP ciphering (to be used between UE and eNB)
 - NAS ciphering and NAS integrity protection (to be used between UE and MME)
 
 An active RN and a network serving the RN shall additionally agree upon algorithms for UP integrity.
 b) The serving network shall select the algorithms to use dependent on
+
 - the UE security capabilities of the UE,
 - the configured allowed list of security capabilities of the currently serving network entity
 c) The same set of ciphering and integrity algorithms shall be supported by the UE both for AS and NAS level.
@@ -1068,41 +1059,42 @@ b. User plane ciphering shall be activated at the same time as RRC ciphering.
 c. User plane integrity shall be activated at the same time as RRC ciphering. User plane integrity shall be applied to a data radio bearer if integrity protection is configured for that data radio bearer at the time of data radio bearer set-up.
 g) It shall be possible that the selected AS and NAS algorithms are different at a given point of time.
 
-\subsection*{7.2.4.2 Procedures for AS algorithm selection}
 
-\subsection*{7.2.4.2.1 Initial AS security context establishment}
+### 7.2.4.2 Procedures for AS algorithm selection
+
+### 7.2.4.2.1 Initial AS security context establishment
 
 Each eNB shall be configured via network management with lists of algorithms which are allowed for usage. There shall be one list for integrity algorithms, and one for ciphering algorithms. These lists shall be ordered according to a priority decided by the operator. When AS security context is established in the eNB, the MME shall send the UE EPS security capabilities to the eNB. The eNB shall choose the ciphering algorithm which has the highest priority from its configured list and is also present in the UE EPS security capabilities. The eNB shall choose the integrity algorithm which has the highest priority from its configured list and is also present in the UE EPS security capabilities. The chosen algorithms shall be indicated to the UE in the AS SMC. The ciphering algorithm is used for ciphering of the user plane and RRC traffic. The integrity algorithm is used for integrity protection of the RRC traffic, and, if applicable, for the integrity protection of user plane traffic between RN and DeNB.
 
-\subsection*{7.2.4.2.2 X2-handover}
+### 7.2.4.2.2 X2-handover
 
 At handover from a source eNB over X2 to a target eNB, the source eNB shall include the UE EPS security capabilities and ciphering and integrity algorithms used in the source cell in the handover request message. The target eNB shall select the algorithm with highest priority from the UE EPS security capabilities according to the prioritized locally configured list of algorithms (this applies for both integrity and ciphering algorithms). The chosen algorithms shall be indicated to the UE in the handover command if the target eNB selects different algorithms compared to the source eNB. If the UE does not receive any selection of integrity and ciphering algorithms it continues to use the same algorithms as before the handover (see TS 36.331 [21]). In the path-switch message, the target eNB shall send the UE EPS security capabilities received from the source eNB to the MME. The MME shall verify that the UE EPS security capabilities received from the eNB are the same as the UE EPS security capabilities that the MME has stored. If there is a mismatch, the MME may log the event and may take additional measures, such as raising an alarm.
 
 NOTE: Transferring the ciphering and integrity algorithms used in the source cell to the target eNB in the handover request message is for the target eNB to decipher and integrity verify the RRCReestablishmentComplete message on SRB1 in the potential RRCConnectionRe-establishment procedure. The information is also used by the target eNB to decide if it is necessary to include a new selection of security algorithms in the handover command.
 
-\subsection*{7.2.4.2.3 S1-handover}
+### 7.2.4.2.3 S1-handover
 
 At handover from a source eNB to a target eNB over S1 (possibly including an MME change and hence a transfer of the UE security capabilities from source MME to target MME), the target MME shall send the UE EPS security capabilities to the target eNB in the S1 AP HANDOVER REQUEST message. The target eNB shall select the algorithm with highest priority from the UE EPS security capabilities according to the prioritized locally configured list of algorithms (this applies for both integrity and ciphering algorithms). The chosen algorithms shall be indicated to the UE in the handover command if the target eNB selects different algorithms compared to the source eNB. If the UE does not receive any selection of integrity and ciphering algorithms it continues to use the same algorithms as before the handover (see TS 36.331 [21]).
 
-\subsection*{7.2.4.2.4 Intra-eNB handover}
+### 7.2.4.2.4 Intra-eNB handover
 
 It is not required to change the AS security algorithm during intra-eNB handover. If the UE does not receive any selection of new AS security algorithms during an intra-eNB handover, the UE continues to use the same algorithms as before the handover (see TS 36.331 [21]).
 
-\subsection*{7.2.4.3 Procedures for NAS algorithm selection}
+### 7.2.4.3 Procedures for NAS algorithm selection
 
-\subsection*{7.2.4.3.1 Initial NAS security context establishment}
+### 7.2.4.3.1 Initial NAS security context establishment
 
 Each MME shall be configured via network management with lists of algorithms which are allowed for usage. There shall be one list for NAS integrity algorithms, and one for NAS ciphering algorithms. These lists shall be ordered according to a priority decided by the operator.
 
 To establish the NAS security context, the MME shall choose one NAS ciphering algorithm and one NAS integrity protection algorithm. The MME shall then initiate a NAS security mode command procedure, and include the chosen algorithms and UE security capabilities (to detect modification of the UE security capabilities by an attacker) in the message to the UE (see clause 7.2.4.4). The MME shall select the NAS algorithms which have the highest priority according to the ordered lists.
 
-\subsection*{7.2.4.3.2 MME change}
+### 7.2.4.3.2 MME change
 
 In case there is change of MMEs and algorithms to be used for NAS, the target MME shall initiate a NAS security mode command procedure and include the chosen algorithms and the UE security capabilities (to detect modification of the UE security capabilities by an attacker) in the message to the UE (see clause 7.2.4.4). The MME shall select the NAS algorithms which have the highest priority according to the ordered lists (see 7.2.4.3.1).
 
 NOTE: After an S1-handover with MME change a TAU procedure is executed. The same is true for an inter-RAT handover to E-UTRAN and for both inter- and intra-RAT idle mode mobility resulting in a change of MMEs.
 
-\subsection*{7.2.4.4 NAS security mode command procedure}
+### 7.2.4.4 NAS security mode command procedure
 
 The NAS SMC procedure consists of a roundtrip of messages between MME and UE. The MME sends the NAS Security Mode Command to the UE and the UE replies with the NAS Security Mode Complete message. The primary purpose of the NAS SMC procedure is to securely establish a NAS security context between the UE and MME. It is also used to provide protection against a man-in-the-middle modifying Attach Request or TAU Request.
 
@@ -1134,13 +1126,10 @@ If any verification of the NAS Security Mode Command is not successful in the ME
 
 NOTE4: If the uplink NAS COUNT will wrap around by sending the Security Mode Reject message, the UE releases the NAS connection as specified in TS 24.301 [9] instead of sending the Security Mode Reject message.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-035.jpg?height=668&width=1118&top_left_y=1528&top_left_x=242}
-\captionsetup{labelformat=empty}
-\caption{Figure 7.2.4.4-1: NAS Security Mode Command procedure}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-035.jpg?height=668&width=1118&top_left_y=1528&top_left_x=242)
+Figure 7.2.4.4-1: NAS Security Mode Command procedure
 
-\subsection*{7.2.4.5 AS security mode command procedure}
+### 7.2.4.5 AS security mode command procedure
 
 The AS SMC procedure consists of a roundtrip of messages between eNB and UE. The eNB sends the AS security mode command to the UE and the UE replies with the AS security mode complete message. See figure 7.2.4.5-1.
 
@@ -1156,26 +1145,20 @@ If any control of the AS security mode command is not successful in the ME, the 
 
 AS security mode command always changes the AS keys.
 
-\begin{table}
-\begin{tabular}{|l|l|}
-\hline ME & eNB \\
-\hline & AS Security Mode Command (Integrity algorithm, Ciphering algorithm, MAC-I) \\
-\hline \multicolumn{2}{|c|}{\begin{tabular}{l}
-Verify AS SMC integrity. If succesful, start RRC integrity protection, RRC/UP downlink deciphering, and send AS Security Mode Complete. \\
-AS Security Mode Complete (MAC-I)
-\end{tabular}} \\
-\hline Start RRC/UP uplink ciphering & Start RRC/UP uplink deciphering \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 7.2.4.5-1: AS security setup}
-\end{table}
+| ME | eNB |
+| :--- | :--- |
+|  | AS Security Mode Command (Integrity algorithm, Ciphering algorithm, MAC-I) |
+| Verify AS SMC integrity. If succesful, start RRC integrity protection, RRC/UP downlink deciphering, and send AS Security Mode Complete. <br> AS Security Mode Complete (MAC-I) |  |
+| Start RRC/UP uplink ciphering | Start RRC/UP uplink deciphering |
 
-\subsection*{7.2.4a Algorithm negotiation for unauthenticated UEs in LSM}
+Figure 7.2.4.5-1: AS security setup
+
+### 7.2.4a Algorithm negotiation for unauthenticated UEs in LSM
 
 UEs that are in limited service mode (LSM) and that cannot be authenticated by the MME (for whatever reason) may still be allowed to establish emergency calls by sending the emergency attach request message. It shall be possible to configure whether the MME allows unauthenticated UEs in LSM to establish bearers for emergency calls or not. If an MME allows unauthenticated UEs in LSM to establish bearers for an emergency call, the MME shall for the NAS protocol use EIA0 and EEA0 as the integrity and ciphering algorithm respectively.
 
 If the MME allows an unauthenticated UE in LSM to establish bearers for emergency calls after it has received the emergency attach request message from the UE, the MME shall:
+
 - Select EIA0 and EEA0, regardless of the supported algorithms announced previously by the UE as the NAS algorithms and signal this to the UE via the NAS security mode command procedure when activating the EPS NAS security context.
 - Set the UE EPS security capabilities to only contain EIA0 and EEA0 when sending these to the eNB in the following messages:
 - S1 UE INITIAL CONTEXT SETUP
@@ -1188,23 +1171,26 @@ The rules for when the MME shall select EIA0 for NAS integrity protection, and w
 
 NOTE 2: A Rel-8 eNB that is the target eNB of a handover, where EIA0 is the only integrity protection algorithm in the UE's EPS security capabilities, rejects the handover since the eNB does not support EIA0.
 
-\subsection*{7.2.5 Key handling at state transitions to and away from EMMDEREGISTERED}
+### 7.2.5 Key handling at state transitions to and away from EMMDEREGISTERED
 
-\subsection*{7.2.5.1 Transition to EMM-DEREGISTERED}
+### 7.2.5.1 Transition to EMM-DEREGISTERED
 
 There are different reasons for transition to the EMM-DEREGISTERED state. If a NAS messages leads to state transition to EMM-DEREGISTERED, it shall be security protected by the current EPS NAS security context (mapped or native), if such exists in the UE or MME.
 
 NOTE: The present specification only considers the states EMM-DEREGISTERED and EMM-REGISTERED and transitions between these two states. Other specifications define additional EMM states (see, e.g., TS 24.301 [9]).
 
 On transitioning to EMM-DEREGISTERED, the UE and MME shall do the following:
+
 1. If they have a full non-current native EPS NAS security context and a current mapped EPS NAS security context, then they shall make the non-current native EPS NAS security context the current one.
 2. They shall delete any mapped or partial EPS NAS security contexts they hold.
 
 Handling of the remaining authentication data for each of these cases are given below:
+
 1. Attach reject: All authentication data shall be removed from the UE and MME
 2. Detach:
 a. UE-initiated
 i. If the reason is switch off then all the remaining authentication data shall be removed from the UE and MME with the exception of:
+
 - the current native EPS NAS security context (as in clause 6.1.1), which should remain stored in the MME and UE, and
 - any unused authentication vectors, which may remain stored in the MME.
 ii. If the reason is not switch off then MME and UE shall keep all the remaining authentication data.
@@ -1212,6 +1198,7 @@ b. MME-initiated
 i. Explicit: all the remaining authentication data shall be kept in the UE and MME if the detach type is reattach.
 ii. Implicit: all the remaining authentication data shall be kept in the UE and MME.
 c. HSS-initiated: If the message is "subscription withdrawn" then all the remaining authentication data shall be removed from the UE and MME.
+
 3. TAU reject: There are various reasons for TAU reject. The action to be taken shall be as given in TS 24.301.
 
 Storage of the full native EPS NAS security context, excluding the UE security capabilities and the keys $\mathrm{K}_{\text {NASint }}$ and $\mathrm{K}_{\mathrm{NASenc}}$, in the UE when the UE transitions to EMM-DEREGISTERED state is done as follows:
@@ -1221,9 +1208,9 @@ c) If the USIM does not support EMM parameters storage, then the ME shall store 
 
 For the case that the MME or the UE enter EMM-DEREGISTERED state without using any of the above procedures, the handling of the remaining authentication data shall be as specified in TS 24.301 [9].
 
-\subsection*{7.2.5.2 Transition away from EMM-DEREGISTERED}
+### 7.2.5.2 Transition away from EMM-DEREGISTERED
 
-\subsection*{7.2.5.2.1 General}
+### 7.2.5.2.1 General
 
 When starting the transition away from EMM-DEREGISTERED state with the intent to eventually transitioning to EMM-REGISTERED state, if no current EPS NAS security context is available in the ME, the ME shall retrieve native EPS NAS security context stored on the USIM if the USIM supports EMM parameters storage and if the stored native EPS NAS security context on the USIM is marked as valid. If the USIM does not support EMM parameters storage the ME shall retrieve stored native EPS NAS security context from its non-volatile memory if the native EPS NAS security context is marked as valid. The ME shall derive the KNASint and K ${ }_{\text {NASenc }}$ after retrieving the stored EPS NAS security context; see clause A. 7 on NAS key derivation. The retrieved native EPS NAS security context with the derived $\mathrm{K}_{\text {NASint }}$ and $\mathrm{K}_{\text {NASenc }}$ shall then become the current EPS NAS security context.
 
@@ -1235,7 +1222,7 @@ NOTE: The present specification only considers the states EMM-DEREGISTERED and E
 
 When the UE transits from EMM-DEREGISTERED to EMM-REGISTERED/ECM-CONNECTED, there are two cases to consider, either a full native EPS NAS security context exists, or it does not.
 
-\subsection*{7.2.5.2.2 With existing native EPS NAS security context}
+### 7.2.5.2.2 With existing native EPS NAS security context
 
 The UE shall transmit a NAS Attach Request message. This message is integrity protected and for the case that the EPS NAS security context used by the UE is non-current in the MME, the rules in clause 6.4 apply. Furthermore provided there is no NAS SMC procedure before the AS SMC the NAS COUNT of the Attach Request message shall be used to derive the $\mathrm{K}_{\mathrm{enb}}$ with the KDF as specified in clause A.3. As a result of the NAS Attach Request, the eNB shall send an AS SMC to the UE to activate AS security. The $\mathrm{K}_{\mathrm{eNB}}$ used, is derived in the current EPS NAS security context.
 
@@ -1247,7 +1234,7 @@ In addition, there is a need for the MME to send a NAS SMC to the UE to indicate
 
 If there is a NAS Security Mode Command after the Attach Request but before the AS SMC, the UE and MME use the NAS COUNT of the most recent NAS Security Mode Complete (i.e. the uplink NAS COUNT) and the related $\mathrm{K}_{\mathrm{Asme}}$ as the parameter in the derivation of the $\mathrm{K}_{\mathrm{eNB}}$. From this $\mathrm{K}_{\mathrm{eNB}}$ the RRC protection keys and the UP protection keys are derived as described in subclause 7.2.1.
 
-\subsection*{7.2.5.2.3 With run of EPS AKA}
+### 7.2.5.2.3 With run of EPS AKA
 
 If in the process described in clause 7.2.5.2.2, there is no full native EPS NAS security context available in the MME (i.e. either the UE has sent an unprotected Attach Request message or the UE has protected the Attach Request message with a current native EPS security context which no longer is stored in the MME) an EPS AKA run is required. If there is a full native EPS NAS security context available in the MME, then the MME may (according to MME policy) decide to run a new EPS AKA and a NAS SMC procedure (which activates the new EPS NAS security context based on the $\mathrm{K}_{\mathrm{ASMe}}$ derived during the EPS AKA run) after the Attach Request but before the corresponding AS SMC. The NAS (uplink and downlink) COUNTs are set to start values, and the start value of the uplink NAS COUNT shall be used as freshness parameter in the $\mathrm{K}_{\mathrm{eNB}}$ derivation from the fresh $\mathrm{K}_{\mathrm{ASME}}$ (after AKA) when UE receives AS SMC the $\mathrm{K}_{\mathrm{eNB}}$ is derived from the current EPS NAS security context, i.e., the fresh $\mathrm{K}_{\mathrm{ASME}}$ is used to derive the $\mathrm{K}_{\mathrm{eNB}}$ The KDF as specified in clause A. 3 shall be used to derive the $\mathrm{K}_{\mathrm{enb}}$.
 
@@ -1255,9 +1242,9 @@ NOTE: Using the start value for the uplink NAS COUNT in this case cannot lead to
 
 The NAS SMC complete message shall include the start value of the uplink NAS COUNT that is used as freshness parameter in the $\mathrm{K}_{\mathrm{enb}}$ derivation and the $\mathrm{K}_{\mathrm{ASME}}$ is fresh. After an AKA, a NAS SMC needs to be sent from the MME to the UE in order to take the new NAS keys into use. Both NAS SMC and NAS SMC Complete messages are protected with the new NAS keys.
 
-\subsection*{7.2.6 Key handling in ECM-IDLE to ECM-CONNECTED and ECM-CONNECTED to ECM-IDLE transitions}
+### 7.2.6 Key handling in ECM-IDLE to ECM-CONNECTED and ECM-CONNECTED to ECM-IDLE transitions
 
-\subsection*{7.2.6.1 ECM-IDLE to ECM-CONNECTED transition}
+### 7.2.6.1 ECM-IDLE to ECM-CONNECTED transition
 
 The UE sends an initial NAS message to initiate transition from ECM-IDLE to ECM-CONNECTED state [9]. On transitions to ECM-CONNECTED, the MME should be able to check whether a new authentication is required, e.g. because of prior inter-provider handover.
 
@@ -1266,7 +1253,7 @@ When cryptographic protection for radio bearers is established RRC protection ke
 The initial NAS message shall be integrity protected by the current EPS NAS security context if such exists. If no current EPS NAS security context exists the ME shall signal "no key available" in the initial NAS message.
 $\mathrm{K}_{\mathrm{ASME}}$ may have been established in the MME as a result of an AKA run, or as a result of a security context transfer from another MME during handover or idle mode mobility. When the eNB releases the RRC connection the UE and the eNB shall delete the keys they store such that state in the network for ECM-IDLE state UEs will only be maintained in the MME.
 
-\subsection*{7.2.6.2 Establishment of keys for cryptographically protected radio bearers}
+### 7.2.6.2 Establishment of keys for cryptographically protected radio bearers
 
 The procedure the UE uses to establish cryptographic protection for radio bearers is initiated by an (extended) NAS Service Request message or TAU Request message with the active flag set from the UE to the MME. The MME may
 initiate the procedure to establish cryptographic protection for radio bearers when the "active flag" is not set in the TAU request and there is pending downlink UP data or pending downlink signalling.
@@ -1279,15 +1266,17 @@ NOTE: At the UE, the NH derivation associated with NCC $=1$ could be delayed unt
 
 If the NAS procedure establishing radio bearers contains an EPS AKA run (which is optional), the NAS uplink and downlink COUNT for the new $\mathrm{K}_{\mathrm{ASMe}}$ shall be set to the start values (i.e. zero). If the NAS procedure establishing radio bearers contains a NAS SMC (which is optional), the value of the uplink NAS COUNT from the most recent NAS Security Mode Complete shall be used as freshness parameter in the $\mathrm{K}_{\mathrm{enb}}$ derivation from fresh $\mathrm{K}_{\mathrm{ASME}}$ of the current EPS NAS security context when executing an AS SMC. The KDF as specified in Annex A. 3 shall be used for the $\mathrm{K}_{\mathrm{eNB}}$ derivation also in this case.
 
-\subsection*{7.2.6.3 ECM-CONNECTED to ECM-IDLE transition}
+### 7.2.6.3 ECM-CONNECTED to ECM-IDLE transition
 
 On ECM-CONNECTED to ECM-IDLE transitions the eNB does no longer need to store state information about the corresponding UE.
 
 In particular, on ECM-CONNECTED to ECM-IDLE transitions:
+
 - The eNB and the UE shall release all radio bearers and delete the AS security context.
 - MME and the UE shall keep the EPS NAS security context stored with the following exception: if there is a new and an old $\mathrm{K}_{\text {asme }}$ according to rules $3,4,8$ or 9 in clause 7.2.10 of this specification then the MME and the UE shall delete the old $\mathrm{K}_{\mathrm{Asme}}$ and the corresponding eKSI. The MME shall delete NH and NCC.
 
-\subsection*{7.2.7 Key handling for the TAU procedure when registered in E-UTRAN}
+
+### 7.2.7 Key handling for the TAU procedure when registered in E-UTRAN
 
 Before the UE can initiate the TAU procedure, the UE needs to transition to ECM-CONNECTED state. The UE shall use the current EPS security context to protect the TAU Request and include the corresponding GUTI and eKSI value. The TAU Request shall be integrity-protected, but not confidentiality-protected. UE shall use the current EPS security context algorithms to protect the TAU Request message. For the case that this security context is non-current in the MME, the rules in clause 6.4 apply.
 
@@ -1299,19 +1288,16 @@ assure that the NAS keys used to verify the integrity of the NAS SMC are derived
 
 If there is a NAS Security Mode Command after the TAU Request but before the AS SMC, the UE and MME use the NAS COUNT of the most recent NAS Security Mode Complete (i.e. the uplink NAS COUNT) and the related $\mathrm{K}_{\mathrm{Asme}}$ as the parameter in the derivation of the $\mathrm{K}_{\mathrm{eNB}}$. From this $\mathrm{K}_{\mathrm{eNB}}$ the RRC protection keys and the UP protection keys are derived as described in subclause 7.2.1.
 
-\subsection*{7.2.8 Key handling in handover}
+### 7.2.8 Key handling in handover
 
-\subsection*{7.2.8.1 General}
+### 7.2.8.1 General
 
-\subsection*{7.2.8.1.1 Access stratum}
+### 7.2.8.1.1 Access stratum
 
 The general principle of key handling at handovers is depicted in Figure 7.2.8.1-1.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-041.jpg?height=764&width=1406&top_left_y=950&top_left_x=319}
-\captionsetup{labelformat=empty}
-\caption{Figure 7.2.8.1-1 Model for the handover key chaining}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-041.jpg?height=764&width=1406&top_left_y=950&top_left_x=319)
+Figure 7.2.8.1-1 Model for the handover key chaining
 
 The following is an outline of the key handling model to clarify the intended structure of the key derivations. The detailed specification is provided in subclauses 7.2.8.3 and 7.2.8.4.
 
@@ -1329,7 +1315,7 @@ The UE and the eNB use the $\mathrm{K}_{\mathrm{eNB}}$ to secure the communicati
 
 As NH parameters are only computable by the UE and the MME, it is arranged so that NH parameters are provided to eNBs from the MME in such a way that forward security can be achieved.
 
-\subsection*{7.2.8.1.2 Non access stratum}
+### 7.2.8.1.2 Non access stratum
 
 A NAS aspect that needs to be considered is possible NAS algorithm change at MME change that could occur at a handover. At an eNB handover with MME relocation, there is the possibility that the source MME and the target MME do not support the same set of NAS algorithms or have different priorities regarding the use of NAS algorithms. In this case, the target MME re-derives the NAS keys from $\mathrm{K}_{\mathrm{ASME}}$ using the NAS algorithm identities as input to the NAS key derivation functions (see clause A.7) and sends NAS SMC. All inputs, in particular the Kasme, will be the same in the re-derivation except for the NAS algorithm identity.
 
@@ -1338,9 +1324,9 @@ In case the target MME decides to use NAS algorithms different from the ones use
 This NAS Key and algorithm handling also applies to other MME changes e.g. TAU with MME changes.
 NOTE: It is per operator's policy how to configure selection of handover types. Depending on an operator's security requirements, the operator can decide whether to have X2 or S1 handovers for a particular eNB according to the security characteristics of a particular eNB.
 
-\subsection*{7.2.8.2 Void}
+### 7.2.8.2 Void
 
-\subsection*{7.2.8.3 Key derivations for context modification procedure}
+### 7.2.8.3 Key derivations for context modification procedure
 
 As outlined in subclause 7.2.8.1, whenever a fresh $\mathrm{K}_{\mathrm{eNB}}$ is calculated from the $\mathrm{K}_{\mathrm{ASME}}$ (as described in Annex A.3), the MME shall transfer the $\mathrm{K}_{\mathrm{eNB}}$ to the serving eNB in a message modifying the security context in the eNB. The MME and the UE shall also compute the NH parameter from the $\mathrm{K}_{\mathrm{ASME}}$ and the fresh $\mathrm{K}_{\mathrm{eNB}}$ as described in Annex A. 4 according to the rules in clause 7.2.9.2. An NCC value 1 is associated with the NH parameter derived from the fresh $\mathrm{K}_{\mathrm{eNB}}$ and NCC value 0 with the $\mathrm{K}_{\mathrm{enb}}$. The UE shall compute $\mathrm{K}_{\mathrm{enb}}$ and NH in the same way as the MME. From the newly computed $\mathrm{K}_{\mathrm{eNB}}$, the eNB and the UE shall compute the temporary $\mathrm{K}_{\mathrm{eNB}}$ * and then the final $\mathrm{K}_{\mathrm{eNB}}$ from that $\mathrm{K}_{\mathrm{eNB}}$ * as described in clause 7.2.9.2.
 
@@ -1350,15 +1336,15 @@ NOTE 2: One of the rules specified for the MME in subclause 7.2.8.4 of this spec
 
 NOTE 3: At the UE, the NH derivation associated with NCC=1 could be delayed until the first handover performing vertical key derivation.
 
-\subsection*{7.2.8.4 Key derivations during handovers}
+### 7.2.8.4 Key derivations during handovers
 
-\subsection*{7.2.8.4.1 Intra-eNB Handover}
+### 7.2.8.4.1 Intra-eNB Handover
 
 When the eNB decides to perform an intra-eNB handover it shall derive $\mathrm{K}_{\mathrm{eNB}}$ * as in Annex A. 5 using target PCI, its frequency EARFCN-DL, and either NH or the current $\mathrm{K}_{\mathrm{eNB}}$ depending on the following criteria: the eNB shall use the NH for deriving $\mathrm{K}_{\mathrm{eNB}}{ }^{*}$ if an unused $\{\mathrm{NH}, \mathrm{NCC}\}$ pair is available in the eNB (this is referred to as a vertical key derivation), otherwise if no unused $\{\mathrm{NH}, \mathrm{NCC}\}$ pair is available in the eNB , the eNB shall derive $\mathrm{K}_{\mathrm{eNB}}{ }^{*}$ from the current $\mathrm{K}_{\mathrm{eNB}}$ (this is referred to as a horizontal key derivation).
 
 The eNB shall use the $\mathrm{K}_{\mathrm{eNB}}$ * as the $\mathrm{K}_{\mathrm{eNB}}$ after handover. The eNB shall send the NCC used for $\mathrm{K}_{\mathrm{eNB}}$ * derivation to UE in HO Command message.
 
-\subsection*{7.2.8.4.2 X2-handover}
+### 7.2.8.4.2 X2-handover
 
 As in intra-eNB handovers, for X2 handovers the source eNB shall perform a vertical key derivation in case it has an unused \{NH, NCC\} pair. The source eNB shall first compute $\mathrm{K}_{\mathrm{eNB}}{ }^{*}$ from target PCI, its frequency EARFCN-DL, and either from currently active $\mathrm{K}_{\mathrm{eNB}}$ in case of horizontal key derivation or from the NH in case of vertical key derivation as described in Annex A.5.
 
@@ -1368,7 +1354,7 @@ When the target eNB has completed the handover signaling with the UE, it shall s
 
 NOTE: Because the path switch message is transmitted after the radio link handover, it can only be used to provide keying material for the next handover procedure and target eNB. Thus, for X2-handovers key separation happens only after two hops because the source eNB knows the target eNB keys. The target eNB can immediately initiate an intra-cell handover to take the new NH into use once the new NH has arrived in the S1 PATH SWITCH REQUEST ACKNOWLEDGE.
 
-\subsection*{7.2.8.4.3 S1-Handover}
+### 7.2.8.4.3 S1-Handover
 
 Upon reception of the HANDOVER REQUIRED message the source MME shall increase its locally kept NCC value by one and compute a fresh NH from its stored data using the function defined in Annex A.4. The source MME shall store that fresh pair and send it to the target MME in the S10 FORWARD RELOCATION REQUEST message. The S10 FORWARD RELOCATION REQUEST message shall in addition contain the $\mathrm{K}_{\text {ASME }}$ that is currently used to compute $\{\mathrm{NH}, \mathrm{NCC}\}$ pairs and its corresponding eKSI.
 
@@ -1381,7 +1367,7 @@ NOTE: The source MME may be the same as the target MME in the description in thi
 
 For S1-handover, the source eNB shall include AS algorithms used in the source cell (ciphering and integrity algorithms) in the source to target transparent container that shall be sent to the target eNB. The AS algorithms used by in the source cell are provided to the target eNB so that it can decipher and integrity verify the RRCReestablishmentComplete message on SRB1 in the potential RRCConnectionRe-establishment procedure.
 
-\subsection*{7.2.8.4.4 UE handling}
+### 7.2.8.4.4 UE handling
 
 The UE behaviour is the same regardless if the handover is S1, X2 or intra-eNB.
 If the NCC value the UE received in the HO Command message from target eNB via source eNB is equal to the NCC value associated with the currently active $\mathrm{K}_{\mathrm{eNB}}$, the UE shall derive the $\mathrm{K}_{\mathrm{eNB}}$ * from the currently active $\mathrm{K}_{\mathrm{eNB}}$ and the target PCI and its frequency EARFCN-DL using the function defined in Annex A.5.
@@ -1390,9 +1376,9 @@ If the UE received an NCC value that was different from the NCC associated with 
 
 The UE shall use the $\mathrm{K}_{\mathrm{eNB}}$ * as the $\mathrm{K}_{\mathrm{eNB}}$ when communicating with the target eNB.
 
-\subsection*{7.2.9 Key-change-on-the fly}
+### 7.2.9 Key-change-on-the fly
 
-\subsection*{7.2.9.1 General}
+### 7.2.9.1 General
 
 Key-change-on-the fly consists of re-keying or key-refresh.
 Key refresh shall be possible for $\mathrm{K}_{\text {eNb }}, \mathrm{K}_{\text {RRC-enc }}, \mathrm{K}_{\text {RRC-int }}, \mathrm{K}_{\text {UP-int }}$, and $\mathrm{K}_{\text {UP-enc }}$ and shall be initiated by the eNB when a PDCP COUNTs is about to be re-used with the same Radio Bearer identity and with the same $\mathrm{K}_{\mathrm{enb}}$. The procedure is described in clause 7.2.9.3.
@@ -1405,9 +1391,10 @@ Re-keying of the entire EPS key hierarchy including $\mathrm{K}_{\text {ASME }}$
 
 AS Key change on-the-fly is accomplished using a procedure based on intra-cell handover. The following AS key changes on-the-fly shall be possible: local $\mathrm{K}_{\mathrm{eNB}}$ refresh (performed when PDCP COUNTs are about to wrap around), $\mathrm{K}_{\mathrm{eNB}}$ re-keying performed after an AKA run, activation of a native context after handover from UTRAN or GERAN.
 
-\subsection*{7.2.9.2 $\quad \mathrm{K}_{\mathrm{enb}}$ re-keying}
+### 7.2.9.2 $\quad \mathrm{K}_{\mathrm{enb}}$ re-keying
 
 The $\mathrm{K}_{\mathrm{eNB}}$ re-keying procedure is initiated by the MME. It may be used under the following conditions:
+
 - after a successful AKA run with the UE as part of activating a partial native EPS security context, or
 - as part of re-activating a non-current full native EPS security context after handover from GERAN or UTRAN according to subclauses 9.2.2.1 and 10.3.2, or
 - to create a new $\mathrm{K}_{\mathrm{eNB}}$ from the current $\mathrm{K}_{\mathrm{ASME}}$
@@ -1423,24 +1410,27 @@ From this temporary $\mathrm{K}_{\mathrm{eNB}}$ the UE shall derive the $\mathrm
 If the AS level re-keying fails, then the MME shall complete another NAS security mode procedure before initiating a new AS level re-keying. This ensures that a fresh $\mathrm{K}_{\mathrm{eNB}}$ is used.
 
 The NH parameter shall be handled according to the following rules:
+
 - UE and MME shall use NH derived from old $\mathrm{K}_{\mathrm{ASME}}$ before the context modification is complete, i.e. for the UE when it sends the RRC Connection Reconfiguration Complete, and for the MME when it receives the UE CONTEXT MODIFICATION RESPONSE. In particular, the MME shall send an NH derived from old $\mathrm{K}_{\mathrm{ASME}}$ in the S1AP HANDOVER RESOURCE ALLOCATION, S10 FORWARD RELOCATION, and S1AP PATH SWITCH REQUEST ACKNOWLEDGE messages before the context modification is complete.
 - The eNB shall delete any old NH upon completion of the context modification.
 - The UE and MME shall delete any old NH upon completion of the context modification. After the completion of the context modification, the UE and the MME shall derive any new NH parameters from the $\mathrm{K}_{\mathrm{enb}}$ calculated from the uplink NAS COUNT and the $\mathrm{K}_{\mathrm{ASME}}$ used to calculate that $\mathrm{K}_{\mathrm{enB}}$ according to Annex A.4.
 
-\subsection*{7.2.9.3 KeNB refresh}
+
+### 7.2.9.3 KeNB refresh
 
 This procedure is based on an intra-cell handover. The $\mathrm{K}_{\mathrm{eNB}}$ chaining that is performed during a handover ensures that the $\mathrm{K}_{\mathrm{eNB}}$ is re-freshed w.r.t. the RRC and UP COUNT after the procedure.
 
-\subsection*{7.2.9.4 NAS key re-keying}
+### 7.2.9.4 NAS key re-keying
 
 After an AKA has taken place, new NAS keys from a new $\mathrm{K}_{\mathrm{ASME}}$ shall be derived, according to Annex A.7.
 To re-activate a non-current full native EPS security context after handover from GERAN or UTRAN, cf. clause 9.2.2 B step 7, the UE and the MME take the NAS keys into use by running a NAS SMC procedure according to clause 7.2.4.5.
 
 MME shall activate fresh NAS keys from an EPS AKA run or activate native security context with sufficiently low NAS COUNT values before the NAS uplink or downlink COUNT wraps around with the current security context.
 
-\subsection*{7.2.10 Rules on Concurrent Running of Security Procedures}
+### 7.2.10 Rules on Concurrent Running of Security Procedures
 
 Concurrent runs of security procedures may, in certain situations, lead to mismatches between security contexts in the network and the UE. In order to avoid such mismatches, the following rules shall be adhered to:
+
 1. MME shall not initiate any of the S1 procedures Initial Context Setup or UE Context Modification including a new $\mathrm{K}_{\mathrm{eNB}}$ towards a UE if a NAS Security Mode Command procedure is ongoing with the UE.
 2. The MME shall not initiate a NAS Security Mode Command towards a UE if one of the S1 procedures Initial Context Setup or UE Context Modification including a new $\mathrm{K}_{\mathrm{eNB}}$ is ongoing with the UE.
 3. When the UE has cryptographically protected radio bearers established and the MME has initiated a NAS SMC procedure in order to take a new $\mathrm{K}_{\mathrm{ASME}}$ into use, the MME shall continue to include AS security context parameters based on the old $\mathrm{K}_{\mathrm{ASME}}$ in the HANDOVER REQUEST or PATH SWITCH REQUEST ACKNOWLEDGE message, until the MME takes a $\mathrm{K}_{\mathrm{eNB}}$ derived from the new $\mathrm{K}_{\mathrm{ASME}}$ into use by means of a UE Context Modification procedure.
@@ -1452,13 +1442,13 @@ Concurrent runs of security procedures may, in certain situations, lead to misma
 9. When an MME receives a S10 FORWARD RELOCATION message including both the old $\mathrm{K}_{\mathrm{ASME}}$ with the corresponding eKSI, NH, and NCC, and a full EPS NAS security context based on the new $\mathrm{K}_{\text {ASME }}$ the MME shall use the new $\mathrm{K}_{\mathrm{ASME}}$ in NAS procedures, but shall continue to include AS security context parameters based on the old $\mathrm{K}_{\text {ASME }}$ in the HANDOVER REQUEST or PATH SWITCH REQUEST ACKNOWLEDGE message until the completion of a UE Context Modification procedure, which takes a $\mathrm{K}_{\mathrm{eNB}}$ derived from the new $\mathrm{K}_{\mathrm{ASME}}$ into use.
 10. Once the source MME has sent an S10 FORWARD RELOCATION message to the target MME at an interMME handover, the source MME shall not send any downlink NAS messages to the UE until it is aware that the handover has either failed or has been cancelled.
 
-\subsection*{7.2.11 Suspend and resume of RRC connection}
+### 7.2.11 Suspend and resume of RRC connection
 
-\subsection*{7.2.11.1 General}
+### 7.2.11.1 General
 
 The purpose of this procedure is to allow the eNB to suspend an RRC connection to be resumed by the UE at a later time. The UE may resume the RRC connection in the same or different eNB than where thesuspend took place. The UE and eNB store the AS security context at suspend and reactivate the AS security context at resume.
 
-\subsection*{7.2.11.2 RRC connection suspend}
+### 7.2.11.2 RRC connection suspend
 
 When the eNB initiates the RRC Connection Suspend procedure it sends S1-AP UE Context Suspend Request message to the MME. Upon reception of the S1-AP UE Context Suspend Request message the MME shall check its local policy. If the local policy indicates that a new NH derivation is needed, the MME shall increase its locally kept NCC value by one and compute a fresh NH from its stored data using the function defined in Annex A.4. The MME shall store that fresh $\{\mathrm{NH}, \mathrm{NCC}\}$ pair and send it to the eNB in the S1-AP UE Context Suspend Response message.
 
@@ -1470,11 +1460,12 @@ If the eNB has a fresh $\{\mathrm{NH}, \mathrm{NCC}\}$ pair, the eNB shall keep 
 
 When the the UE receives the RRC Connection Suspend message from the eNB, then the UE shall store the Resume ID together with the current UE context including the AS security context until the UE decides to resume the RRC connection.
 
-\subsection*{7.2.11.3 RRC connection resume to a new eNB}
+### 7.2.11.3 RRC connection resume to a new eNB
 
 When the UE decides to resume the RRC connection, the UE sends the RRC Connection Resume Request message on SRB0 and hence it is not integrity protected. The UE shall include information to be used for context identification and re-establishment in the RRC Connection Resume Request message: the Resume ID and a ShortResumeMAC-I. The ShortResumeMAC-I is a message authentication token, which shall be calculated with the following inputs: source CRNTI, source PCI, resume constant and target Cell-ID as defined by VarShortResumeMAC-Input in TS 36.331 [21] and using the stored $\mathrm{K}_{\text {RRCint }}$ used with the source eNB where the UE was suspended.
 
 The Resume ID was assigned to the UE in the cell where the UE was suspended (the source cell). The source PCI and source C-RNTI are associated with the cell where the UE was suspended. The target Cell-ID is the identity of the target cell where the UE sends the RRC Connection Resume Request message. The resume constant allows differentiation of VarShortResumeMAC from VarShortMAC. The integrity algorithm shall be the negotiated EIA-algorithm from the stored AS security context from the source eNB.
+
 - KEY shall be set to $\mathrm{K}_{\text {RRCint }}$ of the source cell;
 - all BEARER bits shall be set to 1 ;
 - DIRECTION bit shall be set to 1 ;
@@ -1492,7 +1483,7 @@ Security is fully resumed on UE side after reception and processing of RRC conne
 
 After a successful resume the target eNB shall perform Path Switch procedure as is done in case of X2-handover.
 
-\subsection*{7.2.11.4 RRC connection resume to the same eNB}
+### 7.2.11.4 RRC connection resume to the same eNB
 
 The target eNB may be the same as the source eNB in the description in the previous subclause. If so the single eNB performs the roles of both the source and target eNB. In particular, a new $\mathrm{K}_{\mathrm{eNB}}$ * shall be derived even if the UE is resuming to the same cell from where it was suspended. However, there is the following difference.
 
@@ -1500,15 +1491,15 @@ After a successful resume the eNB shall send S1-AP UE Context Resume Request mes
 
 Upon receipt of the S1-AP UE Context Resume Response message from the MME and if the message includes a \{NH, NCC\} pair, the eNB shall store the fresh\{NH, NCC\} pair in the S1-AP UE Context Resume Response message and remove any existing unused stored $\{\mathrm{NH}, \mathrm{NCC}\}$ pairs. The $\{\mathrm{NH}, \mathrm{NCC}\}$ pair may be used in the next suspend/resume or X2-handover procedures.
 
-\subsection*{7.3 UP security mechanisms}
+### 7.3 UP security mechanisms
 
-\subsection*{7.3.1 UP confidentiality mechanisms}
+### 7.3.1 UP confidentiality mechanisms
 
 The user plane data is ciphered by the PDCP protocol between the UE and the eNB as specified in TS 36.323 [12]..
 The use and mode of operation of the 128-EEA algorithms are specified in Annex B.
 The input parameters to the 128-bit EEA algorithms as described in Annex B are an 128-bit cipher key Kupenc as KEY, a 5-bit bearer identity BEARER which value is assigned as specified by TS 36.323 [12], the 1-bit direction of transmission DIRECTION, the length of the keystream required LENGTH and a bearer specific, time and direction dependent 32-bit input COUNT which corresponds to the 32-bit PDCP COUNT.
 
-\subsection*{7.3.2 UP integrity mechanisms}
+### 7.3.2 UP integrity mechanisms
 
 This subclause applies only to the user plane on the Un interface between RN and DeNB:
 The user plane data is integrity-protected by the PDCP protocol between the RN and the DeNB as specified in TS 36.323 [12]. Replay protection shall be activated when integrity protection is activated. Replay protection shall ensure that the receiver only accepts each particular incoming PDCP COUNT value once using the same AS security context.
@@ -1521,9 +1512,9 @@ The supervision of failed UP integrity checks shall be performed both in the RN 
 
 NOTE: The handling of UP integrity check failures by an RN is an implementation issue. TS 36.323 [12] intentionally does not mandate any action for a failed integrity check (not even sending an indication of failure to higher layers). Consequently, depending on the implementation, the message failing integrity check is, or is not, silently discarded. This is in contrast to the handling of a failed RRC integrity check by a UE, cf. the NOTE in clause 7.4.1 of the present document.
 
-\subsection*{7.4 RRC security mechanisms}
+### 7.4 RRC security mechanisms
 
-\subsection*{7.4.1 RRC integrity mechanisms}
+### 7.4.1 RRC integrity mechanisms
 
 RRC integrity protection shall be provided by the PDCP layer between UE and eNB and no layers below PDCP shall be integrity protected. Replay protection shall be activated when integrity protection is activated (except for when the selected integrity protection algorithm is EIA0, see Annex B). Replay protection shall ensure that the receiver only accepts each particular incoming PDCP COUNT value once using the same AS security context.
 
@@ -1534,13 +1525,13 @@ The supervision of failed RRC integrity checks shall be performed both in the ME
 
 NOTE: This text does not imply that the concerned message is silently discarded. In fact, TS 36.331 [21] specifies that the UE shall trigger a recovery procedure upon detection of a failed RRC integrity check. When the cause for integrity protection failure is not a context mismatch, such as a key or HFN mismatch, the run of a recovery procedure unnecessarily adds load to the system. However, in the absence of a means for the UE to reliably detect the cause of an integrity protection failure and the fact that the only identified consequence of an active attack is limited to non-persistent DoS effects, priority was given to a procedure allowing recovery from the deadlock caused by a context mismatch.
 
-\subsection*{7.4.2 RRC confidentiality mechanisms}
+### 7.4.2 RRC confidentiality mechanisms
 
 RRC confidentiality protection is provided by the PDCP layer between UE and eNB.
 The use and mode of operation of the 128-EEA algorithms are specified in Annex B.
 The input parameters to the 128 -bit EEA algorithms as described in Annex B are an 128-bit cipher Key KrRCenc as KEY, a 5-bit bearer identity BEARER which corresponds to the radio bearer identity, the 1-bit direction of transmission DIRECTION, the length of the keystream required LENGTH and a bearer specific, time and direction dependent 32-bit input COUNT which corresponds to the 32-bit PDCP COUNT.
 
-\subsection*{7.4.3 Kens* and Token Preparation for the RRCConnectionReestablishment Procedure}
+### 7.4.3 Kens* and Token Preparation for the RRCConnectionReestablishment Procedure
 
 The $\mathrm{K}_{\mathrm{eNB}}{ }^{*}$ and token calculation at handover preparation are cell specific instead of eNB specific. At potential RRC Connection re-establishment (e.g, in handover failure case), the UE may select a cell different from the target cell to initiate the re-establishment procedure. To ensure that the UE RRCConnectionRe-establishment attempt is successful when the UE selects another cell under the control of the target eNB at handover preparation, the serving eNB could
 prepare multiple $\mathrm{K}_{\mathrm{eNB}}{ }^{*} \mathrm{~s}$ and tokens for multiple cells which are under the control of the target eNB. The serving eNB may prepare cells belonging to the serving eNB itself.
@@ -1548,6 +1539,7 @@ prepare multiple $\mathrm{K}_{\mathrm{eNB}}{ }^{*} \mathrm{~s}$ and tokens for m
 The preparation of these cells includes sending security context containing $\mathrm{K}_{\mathrm{eNB}}{ }^{*} \mathrm{~s}$ and tokens for each cell to be prepared, as well as the corresponding NCC, the UE EPS security capabilities, and the security algorithms used in the source cell for computing the token, to the target eNB. The source eNB shall derive the $\mathrm{K}_{\mathrm{eNB}}{ }^{*} \mathrm{~s}$ as described in Annex A. 5 based on the corresponding target cell's physical cell ID and frequency EARFCN-DL.
 
 In order to calculate the token, the source eNB shall use the negotiated EIA-algorithm from the AS Security context from the source eNB with the following inputs: source C-RNTI, source PCI and target Cell-ID as defined by VarShortMAC-Input in TS 36.331 [21], where source PCI and source C-RNTI are associated with the cell the UE last had an active RRC connection with and target cell ID is the identity of the target cell where the RRCConnectionReestablishmentRequest is sent to.
+
 - KEY shall be set to $\mathrm{K}_{\text {RRCint }}$ of the source cell;
 - all BEARER bits shall be set to 1;
 - DIRECTION bit shall be set to 1 ;
@@ -1566,38 +1558,37 @@ NOTE: When the AS algorithms transferred by source eNB are not supported by the 
 
 The UE shall respond with an RRCReestablishmentComplete on SRB1, integrity protected and ciphered using these new keys. The RRCConnectionReconfiguration procedure used to re-establish the remaining radio bearers shall only include integrity protected and ciphered messages.
 
-\subsection*{7.5 Signalling procedure for periodic local authentication}
+### 7.5 Signalling procedure for periodic local authentication
 
 The following procedure is used optionally by the eNB to periodically perform a local authentication. At the same time, the amount of data sent during the AS connection is periodically checked by the eNB and the UE for both up and down streams. If UE receives the Counter Check request, it shall respond with Counter Check Response message.
 
 The eNB is monitoring the PDCP COUNT values associated to each radio bearer. The procedure is triggered whenever any of these values reaches a critical checking value. The granularity of these checking values and the values themselves are defined by the visited network. All messages in the procedure are integrity protected.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-051.jpg?height=549&width=1141&top_left_y=653&top_left_x=454}
-\captionsetup{labelformat=empty}
-\caption{Figure 7.5-1: eNB periodic local authentication procedure}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-051.jpg?height=549&width=1141&top_left_y=653&top_left_x=454)
+Figure 7.5-1: eNB periodic local authentication procedure
+
 1. When a checking value is reached (e.g. the value in some fixed bit position in the hyperframe number is changed), a Counter Check message is sent by the eNB. The Counter Check message contains the most significant parts of the PDCP COUNT values (which reflect amount of data sent and received) from each active radio bearer.
 2. The UE compares the PDCP COUNT values received in the Counter Check message with the values of its radio bearers. Different UE PDCP COUNT values are included within the Counter Check Response message.
 3. If the eNB receives a counter check response message that does not contain any PDCP COUNT values, the procedure ends. If the eNB receives a counter check response that contains one or several PDCP COUNT values, the eNB may release the connection or report the difference of the PDCP COUNT values for the serving MME or O\&M server for further traffic analysis for e.g. detecting the attacker.
 
-\section*{8 Security mechanisms for non-access stratum signalling and data via MME}
+## 8 Security mechanisms for non-access stratum signalling and data via MME
 
-\subsection*{8.0 General}
+### 8.0 General
 
 The statements relating to UEs in clause 8 apply also to RNs regarding the security between a relay node and its MME.
 Clause 8 also applies to the security procedures for data sent via the MME.
 
-\subsection*{8.1 NAS integrity mechanisms}
+### 8.1 NAS integrity mechanisms
 
 Integrity protection for NAS signalling messages shall be provided as part of the NAS protocol.
 
-\subsection*{8.1.1 NAS input parameters and mechanism}
+### 8.1.1 NAS input parameters and mechanism
 
 Input parameters to the NAS 128-bit integrity algorithms as described in Annex B are an 128-bit integrity key K ${ }_{\text {NASint }}$ as KEY, an 5-bit bearer identity BEARER which shall equal the constant value 0x00, the direction of transmission DIRECTION, and a bearer specific, time and direction dependent 32-bit input COUNT which is constructed as follows:
 
 COUNT := 0x00 || NAS OVERFLOW || NAS SQN
 Where
+
 - the leftmost 8 bits are padding bits including all zeros.
 - NAS OVERFLOW is a 16-bit value which is incremented each time the NAS SQN is incremented from the maximum value.
 - NAS SQN is the 8-bit sequence number carried within each NAS message.
@@ -1607,7 +1598,7 @@ NOTE: The BEARER identity is not necessary since there is only one NAS signallin
 The use and mode of operation of the 128-bit integrity algorithms are specified in Annex B.
 The supervision of failed NAS integrity checks shall be performed both in the ME and the MME. In case of failed integrity check (i.e. faulty or missing NAS-MAC) is detected after the start of NAS integrity protection, the concerned message shall be discarded except for some NAS messages specified in TS 24.301 [9]. For those exceptions the MME shall take the actions specified in TS 24.301 [9] when receiving a NAS message with faulty or missing NAS-MAC. Discarding NAS messages can happen on the MME side or on the ME side.
 
-\subsection*{8.1.2 NAS integrity activation}
+### 8.1.2 NAS integrity activation
 
 NAS integrity shall be activated using the NAS SMC procedure or after a handover to E-UTRAN from UTRAN/GERAN. Replay protection shall be activated when integrity protection is activated (except for when the selected integrity protection algorithm is EIA0, see Annex B). Replay protection shall ensure that the receiver only accepts each particular incoming NAS COUNT value once using the same NAS security context. Once NAS integrity has been activated, NAS messages without integrity protection shall not be accepted by the UE or MME. Before NAS integrity has been activated, NAS messages without integrity protection shall only be accepted by the UE or MME in certain cases where it is not possible to apply integrity protection as specified in TS 24.301 [9]. While some NAS messages such as reject messages need to be accepted by the UE without integrity protection, the MME shall only send a reject message that causes the CSG list on the UE to be modified after the start of NAS security. The UE shall discard any message modifying the CSG list if it is not integrity protected.
 
@@ -1615,7 +1606,7 @@ NAS integrity stays activated until the EPS security context is deleted in eithe
 
 The use and mode of operation of the 128-EIA algorithms are specified in Annex B.
 
-\subsection*{8.2 NAS confidentiality mechanisms}
+### 8.2 NAS confidentiality mechanisms
 
 The input parameters for the NAS 128-bit ciphering algorithms shall be the same as the ones used for NAS integrity protection as described in clause 8.1, with the exception that a different key, $\mathrm{K}_{\mathrm{NASenc}}$, is used as KEY , and there is an additional input parameter, namely the length of the key stream to be generated by the encryption algorithms.
 
@@ -1624,23 +1615,23 @@ If UE in EMM-IDLE mode uses Control Plane CIoT EPS optimisation for data transpo
 The use and mode of operation of the 128 -bit ciphering algorithms are specified in Annex B.
 NOTE: In the context of the present subclause, a message is considered ciphered also when the NULL encryption algorithm EEA0 is applied.
 
-\section*{9 Security interworking between E-UTRAN and UTRAN}
+## 9 Security interworking between E-UTRAN and UTRAN
 
-\subsection*{9.1 RAU and TAU procedures}
+### 9.1 RAU and TAU procedures
 
-\subsection*{9.1.1 RAU procedures in UTRAN}
+### 9.1.1 RAU procedures in UTRAN
 
 This subclause covers both the cases of idle mode mobility from E-UTRAN to UTRAN and of Idle Mode Signaling Reduction (ISR), as defined in TS 23.401 [2].
 
 NOTE 1: TS 23.401 states conditions under which a valid P-TMSI or a P-TMSI that is mapped from a valid GUTI ("mapped GUTI") is inserted in the Information Element "old P-TMSI" in the Routing Area Update Request. It depends on the old P-TMSI which security context can be taken into use after completion of the Routing Area Update procedure.
 
-\section*{Use of an existing UMTS security context}
+## Use of an existing UMTS security context
 
 If the UE sends the RAU Request with the "old P-TMSI" Information Element including a valid P-TMSI it shall also include the KSI relating to this P-TMSI. This KSI is associated with the UMTS security context stored on the UE, and it indicates this fact to the SGSN. In this case the UE shall include P-TMSI signature into the RAU Request if a P-TMSI signature was assigned by the old SGSN. If the network does not have a valid security context for this KSI it shall run AKA. In case of an SGSN change keys from the old SGSN shall overwrite keys in the new SGSN if any.
 
 NOTE 2: if the UE has a valid UMTS security context then this context is stored on the USIM according to TS 33.102 [4].
 
-\section*{Mapping of EPS security context to UMTS security context}
+## Mapping of EPS security context to UMTS security context
 
 If the UE sends the RAU Request with the "old P-TMSI" Information Element including mapped GUTI it shall also include the KSI equal to the value of the eKSI associated with the current EPS security context (cf. clause 3). The UE shall include a truncated NAS-token, as defined in this clause further below, into the P-TMSI signature IE. The MME shall transfer UE's UTRAN and GERAN security capabilities and CK' $\|$ IK' with KSI equal to the value of the eKSI associated with the current EPS security context to SGSN with Context Response/SGSN Context Response message. The MME and UE shall derive CK' and IK' from the Kasme and the NAS uplink COUNT value corresponding to the truncated NAS-token received by the MME from SGSN as specified in clause A.13. Keys CK' and IK' and KSI sent from the MME shall replace all the UTRAN PS key parameters CK, IK, s KSI in the target SGSN if any. Keys CK' and IK' and the KSI shall replace all the currently stored UTRAN PS key parameters CK, IK, KSI values on both USIM and ME. The handling of START ${ }_{\text {PS }}$ shall comply with the rules in 3GPP TS 25.331 [24]. The UE may set the START ${ }_{\text {PS }}$ value to 0 if it is done before establishment of the RRC connection.
 
@@ -1662,7 +1653,7 @@ SGSN shall forward the P-TMSI signature including the truncated NAS token to the
 
 To avoid possible race condition problems, the MME shall compare the received truncated NAS-token with the 16 least significant bits of NAS-tokens generated from the current NAS uplink COUNT value up to current NAS uplink COUNT value +L, i.e. the interval [current NAS uplink COUNT, current NAS uplink COUNT+L]. A suitable value for the parameter L can be configured by the network operator. MME shall not accept the same NAS-token for the same UE twice except in retransmission cases happening for the same mobility event. If the MME finds a match, it shall set the stored uplink NAS COUNT value as though it had successfully received an integrity protected NAS message with the uplink NAS COUNT value that created the match.
 
-\subsection*{9.1.2 TAU procedures in E-UTRAN}
+### 9.1.2 TAU procedures in E-UTRAN
 
 This subclause covers both the cases of idle mode mobility from UTRAN to E-UTRAN and of Idle Mode Signaling Reduction, as defined in TS 23.401 [2].
 
@@ -1672,13 +1663,14 @@ In this procedure, the START values shall be kept in the volatile memory of the 
 
 NOTE 1: TS 23.401 states conditions under which a valid GUTI or a GUTI that is mapped from a valid P-TMSI is inserted in the Information Element "old GUTI" in the Tracking Area Update Request. The value in the "old" GUTI IE informs the MME, which SGSN/MME to fetch the UE context from.
 
-\section*{Case 1: P-TMSI not included in "old GUTI" IE in TAU Request}
+## Case 1: P-TMSI not included in "old GUTI" IE in TAU Request
 
 This case is identical to that described in clause 7.2.7.
 
-\section*{Case 2: Mapped P-TMSI included in "old GUTI" IE in TAU Request}
+## Case 2: Mapped P-TMSI included in "old GUTI" IE in TAU Request
 
 The UE shall include in the TAU Request:
+
 - the KSI with corresponding P-TMSI and old RAI to point to the right source SGSN and key set there. This allows the UE and MME to generate the mapped EPS NAS security context, as described below, if current EPS NAS security context is not available in the UE and network. The KSI shall correspond to the set of keys most recently generated (either by a successful UMTS AKA run in UTRAN (which may or may not yet have been taken into use by the UE and SGSN) or a UMTS security context mapped from an EPS NAS security context during a previous visit in UTRAN).
 - a P-TMSI signature, if the UE was previously connected to UTRAN where the SGSN assigned a P-TMSI signature to the UE
 - a 32bit NONCE ${ }_{\text {UE }}$ (see clause A. 11 for requirements on the randomness of NONCE ${ }_{\text {UE }}$ ).
@@ -1701,9 +1693,9 @@ If the TAU Request had the active flag set or the MME chooses to establish radio
 
 The TAU Accept shall be protected using the current EPS NAS security context.
 
-\subsection*{9.2 Handover}
+### 9.2 Handover
 
-\subsection*{9.2.1 From E-UTRAN to UTRAN}
+### 9.2.1 From E-UTRAN to UTRAN
 
 NAS and AS security shall always be activated before handover from E-UTRAN to UTRAN can take place. Consequently the source system in the handover shall always send a key set to the target system during handover. The security policy of the target PLMN determines the selected algorithms to be used within the UTRAN HO command.
 
@@ -1736,9 +1728,9 @@ MME shall transfer the UE security capabilities to the SGSN. The selection of th
 
 If the handover is not completed successfully, the new mapped UMTS security context can not be used in the future. The SGSN shall delete the new mapped UMTS security context and the stored UMTS security context which has the same KSI as the new mapped UMTS security context.
 
-\subsection*{9.2.2 From UTRAN to E-UTRAN}
+### 9.2.2 From UTRAN to E-UTRAN
 
-\subsection*{9.2.2.1 Procedure}
+### 9.2.2.1 Procedure
 
 The procedure for handover from UTRAN to E-UTRAN, as far as relevant for security, proceeds in the following two consecutive steps:
 A) Handover signalling using the mapped EPS security context (cf. also Figure 9.2.2.1-1);
@@ -1762,19 +1754,18 @@ iv) Both AS and NAS ciphering and integrity protection algorithms shall be selec
 
 The above four principles consequentially always activate ciphering (potentially NULL ciphering) in E-UTRAN even if it was not active in the source system.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-058.jpg?height=1348&width=1374&top_left_y=242&top_left_x=347}
-\captionsetup{labelformat=empty}
-\caption{Figure 9.2.2.1-1: Handover from UTRAN to E-UTRAN}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-058.jpg?height=1348&width=1374&top_left_y=242&top_left_x=347)
+Figure 9.2.2.1-1: Handover from UTRAN to E-UTRAN
 
-\section*{A) Handover signalling in case of successful handover}
+## A) Handover signalling in case of successful handover
 
 Before attempting a handover for a UE, the source RNC may check if the UE is authenticated using UMTS AKA. If the UE is not authenticated using UMTS AKA and the UE does not have an ongoing emergency call, then the source RNC may decide not to perform a handover to E-UTRAN (to avoid triggering unnecessary handover attempts to E-UTRAN which will be rejected by the target MME). The check can be performed by analysing the active CK and IK as follows:
+
 - If the 64 most significant bits of the CK are not identical to the 64 least significant bits of the CK, the RNC can deduce that the UE was authenticated via UMTS AKA. (The bits are identical if the CK is derived from a Kc via the c4 key conversion function [4], and it is very unlikely that they are equal for a CK derived from UMTS ΑΚΑ.)
 - If the 64 most significant bits of the CK are identical to the 64 list significant bits of the CK, the RNC can further check if the IK fulfils the equation given by the c5 key conversion function [4]. If the IK does not fulfil this equation, the RNC can deduce that the UE was authenticated with UMTS AKA, and if the IK does, then the RNC can deduce that the UE was authenticated using GSM AKA.
 
 If the source RNC does not conclude that the UE is authenticated using UMTS AKA, the source RNC may select an appropriate network for the UE at the handover decision stage and may send a Relocation Required message to the SGSN. This message does not contain any security-relevant parameters.
+
 1. The SGSN shall transfer MM context (including CK and IK (or the Kc), KSI and the UE security capabilities) to MME in the Forward relocation request message. In case the MM context in the Forward relocation request message indicates GSM security mode(i.e., it contains a Kc), the MME shall abort the non-emergency call procedure. The UE security capabilities, including the UE EPS security capabilities, were sent by the UE to the SGSN via the UE Network Capability IE, in Attach Request and RAU Request. It is possible that an SGSN
 does not forward the UE EPS security capabilities to the MME. When the MME does not receive UE EPS security capabilities from the SGSN, the MME shall assume that the following default set of EPS security algorithms is supported by the UE (and shall set the UE EPS security capabilities in the mapped EPS NAS security context according to this default set):
 a. EEA0, 128-EEA1 and 128-EEA2 for NAS signalling ciphering, RRC signalling ciphering and UP ciphering;
@@ -1799,7 +1790,7 @@ step 4. The UE shall send a RRCConnectionReconfiguration Complete messages to th
 
 If the handover is not completed successfully, the new mapped EPS security context can not be used in the future. The MME shall delete the new mapped EPS security context.
 
-\section*{B) Subsequent NAS signalling}
+## B) Subsequent NAS signalling
 
 In order to prevent that successful bidding down on the UE security capabilities in a previous RAT have an effect on the selection of EPS security algorithm for NAS and AS, the UE security capabilities shall be included in the TAU request after IRAT-HO and be verified by the MME.
 
@@ -1808,6 +1799,7 @@ NOTE 4: Any TAU request following the handover will be integrity protected. Deta
 In any case UE security capability information received from the UE overwrites any capabilities received with the context transfer as specified in TS 23.401 [2].
 
 It can happen that the MME receives different UE EPS security capabilities in the TAU Request from the already stored UE EPS security capabilities in MME (received from the source SGSN or the default UE EPS security capabilities when MME uses the default set of EPS security algorithms for the UE according to A) step 1 above). If it happens, the MME shall perform as follows:
+
 - In case the TAU Request contains a higher priority NAS algorithm (according to the priority list stored in the MME), the MME run a NAS security mode command procedure to change the NAS algorithms according to subclause 7.2.4.4.
 - MME shall send an S1 CONTEXT MODIFICATION REQUEST message to inform the eNB about the correct UE EPS security capabilities.
 
@@ -1839,22 +1831,22 @@ NOTE 7: The run of a NAS SMC procedure ensures that the uplink NAS COUNT has inc
 
 NOTE 8: For the handling of native and mapped EPS NAS security contexts after a state transition to EMMDEREGISTERED cf. subclause 7.2.5.1.
 
-\subsection*{9.2.2.2 Derivation of NAS keys and $\mathrm{K}_{\mathrm{enb}}$ during Handover from UTRAN to E-UTRAN}
+### 9.2.2.2 Derivation of NAS keys and $\mathrm{K}_{\mathrm{enb}}$ during Handover from UTRAN to E-UTRAN
 
 MME and UE shall derive the NAS keys from the mapped key $\mathrm{K}_{\text {ASME }}$ as specified in clause A.7.
 The MME and UE shall derive $\mathrm{K}_{\mathrm{eNB}}$ by applying the KDF defined in Annex A. 3 using the mapped key $\mathrm{K}^{\prime}$ Asme and $2^{32}-1$ as the value of the uplink NAS COUNT parameter.
 
 NOTE: The MME and UE only uses the $2^{32}-1$ as the value of the uplink NAS COUNT for the purpose of deriving $\mathrm{K}_{\mathrm{eNB}}$ and do not actually set the uplink NAS COUNT to $2^{32}-1$. The reason for choosing such a value not in the normal NAS COUNT range, i.e., $\left[0,2^{24}-1\right]$ is to avoid any possibility that the value may be used to derive the same $\mathrm{K}_{\mathrm{eNB}}$ again.
 
-\subsection*{9.3 Recommendations on AKA at IRAT-mobility to E-UTRAN}
+### 9.3 Recommendations on AKA at IRAT-mobility to E-UTRAN
 
 After a handover from GERAN or UTRAN into E-UTRAN, it is strongly recommended to run an AKA and perform a key change on-the-fly of the entire key hierarchy as soon as possible after the handover if there is no native security context in E-UTRAN.
 
 When a UE moves in IDLE mode from GERAN or UTRAN into E-UTRAN, it is strongly recommended to run an AKA if there is no native security context in E-UTRAN, either after the TAU procedure that establishes an EPS security context in the MME and UE, or when the UE establishes cryptographically protected radio bearers.
 
-\subsection*{9.4 Attach procedures}
+### 9.4 Attach procedures
 
-\subsection*{9.4.1 Attach in UTRAN}
+### 9.4.1 Attach in UTRAN
 
 This subclause covers the case that the UE includes a mapped GUTI into the "old P-TMSI" Information Element of the Attach Request.
 
@@ -1874,56 +1866,62 @@ The ME shall use CK' and IK' to derive the GPRS Kc using the c3 function specifi
 
 NOTE 2: Due to replacing all the UTRAN PS key parameters CK, IK, KSI with CK', IK' and eKSI on USIM and in ME, a new GPRS Kc needs to be derived from the new UTRAN PS key parameters CK and IK (i.e. CK' and IK'), which is part of the new UMTS security context as well, as any old GPRS Kc stored on USIM and in ME belongs to an old UMTS security context and can no longer be taken into use.
 
-\section*{10 Security interworking between E-UTRAN and GERAN}
+## 10 Security interworking between E-UTRAN and GERAN
 
-\subsection*{10.1 General}
+### 10.1 General
 
 An SGSN supporting interworking between E-UTRAN and GERAN is capable of handling UMTS security contexts and supports the key conversion function c3 specified in TS 33.102 [4]. Such a SGSN is, according to TS 33.102, required to ensure that the UE is authenticated using UMTS AKA, if the UE supports UMTS AKA. Furthermore, the UE must have a USIM to be able to access EPS, except for unauthenticated emergency calls if allowed by regulations. Hence, UMTS AKA is used when the UE is authenticated to the SGSN supporting interworking between E-UTRAN and GERAN even when attached to GERAN, and UMTS security contexts are available. The security procedures for interworking between E-UTRAN and GERAN are therefore quite similar to those between E-UTRAN and UTRAN.
 
-\subsection*{10.2 RAU and TAU procedures}
+### 10.2 RAU and TAU procedures
 
-\subsection*{10.2.1 RAU procedures in GERAN}
+### 10.2.1 RAU procedures in GERAN
 
 This subclause covers both the cases of idle mode mobility from E-UTRAN to GERAN and of Idle Mode Signaling Reduction, as defined in TS 23.401 [2].
 
 As the target SGSN and UE are capable of handling UMTS security contexts clause 9.1.1 applies here with the following changes
+
 - the target SGSN shall derive GPRS cipher key Kc from CK' and IK' with the help of the key conversion function c3 defined by TS 33.102 [4] , and the target SGSN and UE shall derive GPRS $\mathrm{Kc}_{128}$ as defined by TS 33.102 [4] from CK' and IK' when the new encryption algorithm selected by the target SGSN requires $\mathrm{Kc}_{128}$; the target SGSN and UE shall assign the eKSI value (associated with the CK' and IK') to the GPRS CKSN associated with the GPRS $\mathrm{Kc}_{128}$.
 - the target SGSN shall select the encryption algorithm to use in GERAN.
 
-\subsection*{10.2.2 TAU procedures in E-UTRAN}
+
+### 10.2.2 TAU procedures in E-UTRAN
 
 This subclause covers both the cases of idle mode mobility from GERAN to E-UTRAN and of Idle Mode Signaling Reduction, as defined in TS 23.401 [2].
 
 As the SGSN shares a UMTS security context with the UE clause 9.1.2 applies here without changes.
 
-\subsection*{10.3 Handover}
+### 10.3 Handover
 
-\subsection*{10.3.1 From E-UTRAN to GERAN}
+### 10.3.1 From E-UTRAN to GERAN
 
 As the target SGSN and the UE are capable of handling UMTS security contexts clause 9.2 .1 applies here with the following changes:
+
 - the target SGSN shall derive GPRS cipher key Kc from CK' and IK' with the help of the key conversion function c3 as defined by TS 33.102 [4], and target SGSN and UE shall derive GPRS $\mathrm{Kc}_{128}$ as defined by TS 33.102 [4] from CK' and IK' when the new encryption algorithm selected by the target SGSN requires $\mathrm{Kc}_{128}$. The target SGSN and UE shall assign the eKSI value (associated with the CK' and IK') to the GPRS CKSN associated with the GPRS $\mathrm{Kc}_{128}$.
 - the target SGSN shall select the encryption algorithm to use in GERAN after handover.
 - Whether ciphering is considered active in the target GERAN after handover from E-UTRAN shall be determined according to the principles for handover to GERAN in TS 44.060 [25].
 
-\subsection*{10.3.2 From GERAN to E-UTRAN}
 
-\subsection*{10.3.2.1 Procedures}
+### 10.3.2 From GERAN to E-UTRAN
+
+### 10.3.2.1 Procedures
 
 As the SGSN shares a UMTS security context with the UE clause 9.2.2 applies here without changes.
 
-\subsection*{10.4 Recommendations on AKA at IRAT-mobility to E-UTRAN}
+### 10.4 Recommendations on AKA at IRAT-mobility to E-UTRAN
 
 See recommendation provided by subclause 9.3.
 
-\subsection*{10.5 Attach procedures}
+### 10.5 Attach procedures
 
-\subsection*{10.5.1 Attach in GERAN}
+### 10.5.1 Attach in GERAN
 
 As the SGSN is capable of handling UMTS security contexts clause 9.1.1 applies here with the following changes
+
 - the SGSN and UE shall derive GSM cipher key Kc as defined by TS 33.102 [4] from CK' and IK', and the SGSN and UE shall derive $\mathrm{Kc}_{128}$ as defined by TS 33.102 [4] from CK' and IK' when the new encryption algorithm selected by the target SGSN requires $\mathrm{Kc}_{128}$;
 - SGSN shall select the encryption algorithm to use in GERAN.
 
-\section*{11 Network Domain Control Plane protection}
+
+## 11 Network Domain Control Plane protection
 
 The protection of IP based control plane signalling for EPS and E-UTRAN shall be done according to NDS/IP as specified in TS 33.210 [5]. S3, S6a and S10 interfaces carry subscriber specific sensitive data, e.g. cryptographic keys. Thus in addition to the mandatory integrity protection according to NDS/IP, traffic on these interfaces shall be confidentiality-protected according to NDS/IP.
 
@@ -1937,7 +1935,7 @@ If the sender of IPsec traffic uses DiffServ Code Points (DSCPs) to distinguish 
 
 Other 3GPP specifications may specify other IKEv2 and certificate profiles and IPsec implementation details for specific types of eNBs. The provisions in such other 3GPP specifications shall take precedence over the provisions in the present clause for those specific eNB types only if explicitly listed here. In particular, the provisions for HeNBs specified in TS 33.320 [27] shall take precedence over the provisions in this clause.
 
-\section*{12 Backhaul link user plane protection}
+## 12 Backhaul link user plane protection
 
 The protection of user plane data between the eNB and the UE by user specific security associations is covered by clause 5.1.3 and 5.1.4.
 
@@ -1954,7 +1952,7 @@ For both S1 and X2 user plane, IKEv2 with certificates based authentication shal
 
 NOTE 2: In case S1 and X2 user plane interfaces are trusted (e.g. physically protected), the use of IPsec/IKEv2 based protection is not needed.
 
-\section*{13 Management plane protection over the S1 interface}
+## 13 Management plane protection over the S1 interface
 
 For the management plane protection of relay nodes the provisions in clause D.2.5 apply instead of the provisions given in this clause.
 
@@ -1974,9 +1972,9 @@ The provisions in such other 3GPP specifications shall take precedence over the 
 NOTE 1: X2 does not carry management plane traffic.
 NOTE 2: In case the S1 management plane interfaces are trusted (e.g. physically protected), the use of protection based on IPsec/IKEv2 or equivalent mechanisms is not needed
 
-\section*{14 SRVCC between E-UTRAN and Circuit Switched UTRAN/GERAN}
+## 14 SRVCC between E-UTRAN and Circuit Switched UTRAN/GERAN
 
-\subsection*{14.1 From E-UTRAN to Circuit Switched UTRAN/GERAN}
+### 14.1 From E-UTRAN to Circuit Switched UTRAN/GERAN
 
 Single Radio Voice Call Continuity (SRVCC) is specified in 3GPP TS 23.216 [22].
 The MME shall select the current NAS downlink COUNT value to use in the handover and then increase the stored NAS downlink COUNT value by 1 .
@@ -2009,15 +2007,15 @@ Non-voice bearers may be handed over during the SRVCC handover operation. For th
 
 If the SRVCC handover is not completed successfully, the new mapped $\mathrm{CK}_{\text {SRVCC }}$, $\mathrm{IK}_{\text {SRVCC }}$ and $\mathrm{KSI}_{\text {SRVCC }}$ can not be used in the future. The MSC server enhanced for SRVCC shall delete the new mapped $\mathrm{CK}_{\text {SRVCC }}, \mathrm{IK}_{\text {SRVCC }}$ and $\mathrm{KSI}_{\text {SRVCC }}$ and the stored parameters $\mathrm{CK}_{\mathrm{CS}}$ and $\mathrm{IK}_{\mathrm{CS}}$ which has the same KSI as the new mapped $\mathrm{CK}_{\text {SRVCC }}$, $\mathrm{IK}_{\text {SRVCC }}$ (if such exist).
 
-\subsection*{14.2 Emergency call in SRVCC from E-UTRAN to circuit switched UTRAN/GERAN}
+### 14.2 Emergency call in SRVCC from E-UTRAN to circuit switched UTRAN/GERAN
 
 If the SRVCC is for an emergency call and the session in EUTRAN complies with clause 15.2.1, the security procedure in clause 14.1 shall be applied.
 
 If the SRVCC is for an emergency call and the session in EUTRAN complies with clause 15.2.2, the security procedure in clause 14.1 shall not be applied, i.e., no key derivation is needed.
 
-\subsection*{14.3 SRVCC from circuit switched UTRAN/GERAN to E-UTRAN}
+### 14.3 SRVCC from circuit switched UTRAN/GERAN to E-UTRAN
 
-\subsection*{14.3.1 Procedure}
+### 14.3.1 Procedure
 
 The procedure for SRVCC handover from UTRAN/GERAN CS to E-UTRAN, as far as relevant for security, proceeds as described below.
 
@@ -2035,17 +2033,15 @@ iv) Both AS and NAS ciphering and integrity protection algorithms shall be selec
 
 The above four principles consequentially always activate ciphering (potentially NULL ciphering) in E-UTRAN even if it was not active in the source system.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-068.jpg?height=1260&width=1673&top_left_y=244&top_left_x=196}
-\captionsetup{labelformat=empty}
-\caption{Figure 14.3.1-1: SRVCC handover from UTRAN/GERAN to E-UTRAN. Key derivations in the figure are only shown for UMTS subscribers.}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-068.jpg?height=1260&width=1673&top_left_y=244&top_left_x=196)
+Figure 14.3.1-1: SRVCC handover from UTRAN/GERAN to E-UTRAN. Key derivations in the figure are only shown for UMTS subscribers.
 
-\section*{Handover signalling in case of successful handover}
+## Handover signalling in case of successful handover
 
 Before attempting a handover for a UE, the source RNC/BSC may check if the UE is authenticated using UMTS AKA as described in clause 9.2.2.1 of the present document, and may avoid doing a SRVCC handover to E-UTRAN in case the UE is not authenticated using UMTS AKA and does not have an ongoing emergency call.
 
 NOTE 1: The numbering in the followingrefers to the signalling numbering in Figure 14.3.1-1.
+
 1. The source BSC/RNC sends HO required to the source MSC server enhanced for SRVCC.
 2. For UMTS and GSM subscribers, the source MSC server enhanced for SRVCC shall generate a NONCE ${ }_{\text {MSC }}$.
 
@@ -2095,9 +2091,9 @@ The text regarding subsequent NAS signalling in bullet B) in clause 9.2.2.1 of t
 
 In SRVCC handover from GERAN/UTRAN to E-UTRAN, the START ${ }_{\text {PS }}$ and START ${ }_{\text {CS }}$ values used in UTRAN shall be kept in the volatile memory of the ME, cf. also clause 6.8.11 of TS 33.102 [4].
 
-\section*{15 Security Aspects of IMS Emergency Session Handling}
+## 15 Security Aspects of IMS Emergency Session Handling
 
-\subsection*{15.1 General}
+### 15.1 General
 
 Support for IMS Emergency Sessions is defined in the TS 23.401 [2]. Limited service state of a UE is defined in TS 23.122 [26]. IMS Emergency Sessions can be made by normally attached UEs or UEs attached for EPS emergency bearer services. IMS Emergency Services can be authenticated or unauthenticated as defined in clauses below. It depends on the serving network policy if unauthenticated IMS Emergency Sessions are allowed. Any behaviour not explicitly specified as being special to IMS Emergency Sessions is handled in accordance to normal procedures.
 
@@ -2113,17 +2109,17 @@ selected and corresponding NAS COUNTs shall be removed when the UE goes to EMM-D
 
 The MME or UE shall always release any established non-emergency bearers, when the authentication fails in the UE or in the MME.
 
-\subsection*{15.2 Security procedures and their applicability}
+### 15.2 Security procedures and their applicability
 
-\subsection*{15.2.1 Authenticated IMS Emergency Sessions}
+### 15.2.1 Authenticated IMS Emergency Sessions
 
-\subsection*{15.2.1.1 General}
+### 15.2.1.1 General
 
 UEs that are not in limited service state, shall initiate normal initial attach when not already attached to receive EPS emergency bearer services.
 
 The security mode control procedure shall be applied as part of EPS emergency bearer establishment as defined in TS 23.401 [2]. Thus, integrity protection (and optionally ciphering) shall be applied as for normal EPS bearers. If authentication fails for any reason, the handling of the EPS emergency bearer services shall be handled as specified in clauses 15.2.1 and 15.2.2 below. Once the IMS Emergency Session is in progress with NAS and AS integrity protection (and optionally ciphering) applied, failure of integrity checking or ciphering (for both NAS and AS) is an unusual circumstance and shall be treated as in the case of a normal EPS bearer.
 
-\subsection*{15.2.1.2 UE and MME share a current security context}
+### 15.2.1.2 UE and MME share a current security context
 
 If the UE already has a current EPS security context and attempts to set up an IMS Emergency Session, the UE shall use this EPS security context to protect NAS, RRC and UP traffic. If the MME successfully validates a request for EPS emergency bearer services using the current EPS security context, the MME should accept this request. A request for EPS emergency bearer services is defined to be, for the purposes of this document, an Attach request message for EPS emergency bearer services or a PDN Connectivity request message for EPS emergency bearer services.
 
@@ -2145,20 +2141,23 @@ NOTE 3: Regardless of if the authentication failed in the UE or in the MME, the 
 
 If AKA is run while a PDN connection for emergency bearer services exists, the MME and UE shall behave as follows:
 UE behavior:
+
 - Upon successful authentication verification in the UE, the UE shall send RES to the MME.
 
 NOTE 4: If the authentication failure is detected in the MME, the UE is not aware of the failure in the MME if the MME continues to use the current security context with the UE. The UE consider itself to be in normal service, if it was normal attached before the PDN connectivity request procedure for EPS emergency bearer services was initiated, until the MME releases the non-emergency bearers established with the UE.
+
 - Alternatively, upon authentication verification failure in the UE, the UE shall send an Authentication Failure message to the MME. The UE shall continue using the current EPS security context. If the UE receives a NAS security mode command selecting NULL integrity and ciphering algorithms, the UE shall accept this as long as the IMS Emergency session progresses.
 
 MME behavior:
+
 - If the serving network policy requires IMS Emergency Sessions to be authenticated, the MME shall, after the unsuccessful comparison of RES to XRES, i.e. AKA failure, proceed as if the request for EPS emergency bearers was a request for normal EPS bearer services. The MME should not send an Authentication Reject message if authentication failed in the MME and the serving network policy allows unauthenticated IMS Emergency Sessions. If the MME does not send an Authentication Reject message it shall continue using the current security context with the UE.
 - After receiving both, the EC Indication and the Authentication Failure message, the MME shall continue using the current security context with the UE for establishing an EPS emergency bearer.
 
 NOTE: In the case that NAS COUNT values are about to wrap around, and AKA fails, or if the MME is unable to fetch new authentication vectors, the handling of the EPS emergency beares are as described by TS 24.301 [9].
 
-\subsection*{15.2.2 Unauthenticated IMS Emergency Sessions}
+### 15.2.2 Unauthenticated IMS Emergency Sessions
 
-\subsection*{15.2.2.1 General}
+### 15.2.2.1 General
 
 Authentication may fail for a UE attached for EPS emergency bearer services just as for a UE attached for normal EPS bearer services when the UE tries to establish an IMS Emergency Session.
 
@@ -2171,6 +2170,7 @@ c) Authentication is impossible because the USIM is in limited service mode in t
 d) Authentication is possible but the serving network cannot successfully authenticate the USIM.
 
 If the ME receives a NAS SMC selecting EIA0 (NULL integrity) for integrity protection, and EEA0 (NULL ciphering) for encryption protection, then:
+
 - the ME shall mark any stored native EPS NAS security context on the USIM /non-volatile ME memory as invalid; and
 - the ME shall not update the USIM/non-volatile ME memory with the current EPS NAS security context.
 
@@ -2184,7 +2184,7 @@ Since a UE with a 2G SIM cannot be in authenticated via EPS AKA, it shall be con
 
 A handover from E-UTRAN to another RAT, of an unauthenticated IMS Emergency Session, shall result in an unauthenticated IMS Emergency Session or a circuit switched emergency call (depending on if it is a PS handover or SRVCC) in the other RAT.
 
-\subsection*{15.2.2.2 UE and MME share no security context}
+### 15.2.2.2 UE and MME share no security context
 
 If the MME attempts to authenticate the UE after receiving the EPS emergency bearer setup request and the authentication failed and if the serving network policy does not allow unauthenticated IMS Emergency Sessions, the UE and MME shall proceed as for normal EPS bearer setup requests as described in clause 6.1.1.
 
@@ -2194,53 +2194,57 @@ The confluence of EPS emergency bearer setup and authentication failure means th
 
 UE behavior:
 After sending EC Indication to the serving network the UE shall know of its own intent to establish an IMS Emergency Session.
+
 - The UE will proceed as specified for the non-emergency case in clauses 6 and 7 of this specification except that the UE shall accept a NAS SMC selecting EEA0 and EIA0 algorithms from the MME.
 
 NOTE: In case of authentication success the MME will send a NAS SMC selecting algorithms as defined in clause 7 of this specification, i.e. with a non-NULL integrity algorithm, and the UE will accept it.
 
 MME behavior:
 After receiving EC Indication from the UE, the MME knows of that UE's intent to establish an IMS Emergency Session.
+
 - If the MME cannot identify the subscriber, or cannot obtain authentication vectors, the MME shall send NAS SMC with NULL algorithms to the UE regardless of the supported algorithms announced previously by the UE.
 
 NOTE: The case where the MME cannot obtain authentication vectors includes also all the cases where IMSI is required by the MME (see TS 23.401[2], clause 4.3.12.1).
+
 - After the unsuccessful comparison of RES to XRES, i.e. AKA failure, the MME shall send NAS SMC with NULL algorithms to the UE regardless of the supported algorithms announced previously by the UE.
 - After the receiving of both, the EC Indication and the Authentication Failure messages, the MME shall send NAS SMC with NULL algorithms to the UE regardless of the supported algorithms announced previously by the UE.
 
 If the serving network policy does not allow unauthenticated IMS Emergency Sessions, the MME shall reject the unauthenticated EPS emergency bearer setup request from the UE.
 
-\subsection*{15.2.3 Void}
+### 15.2.3 Void
 
-\subsection*{15.2.4 Key generation procedures for unauthenticated IMS Emergency Sessions}
+### 15.2.4 Key generation procedures for unauthenticated IMS Emergency Sessions
 
-\subsection*{15.2.4.1 General}
+### 15.2.4.1 General
 
 An unauthenticated UE does not share a complete EPS NAS security context with the network. Since there has been no successful EPS AKA run, the UE and the MME does not share a $\mathrm{K}_{\mathrm{ASME}}$. When the UE and the MME does not share a $\mathrm{K}_{\mathrm{ASME}}$ the only possibility for an MME that allows unauthenticated IMS Emergency Sessions is to run with the NULL integrity algorithm EIA0 and the NULL ciphering algorithm EEA0. These algorithms are not affected by the choice of key. Therefore the UE and the MME independently generate a $\mathrm{K}_{\text {ASME }}$ in an implementation defined way and populate the EPS NAS security context with this $\mathrm{K}_{\mathrm{ASME}}$ to be used when activating an EPS NAS security context for which no successful EPS AKA run has been made. After this EPS NAS security context is activated all key derivations proceed as if they were based on a $\mathrm{K}_{\mathrm{ASME}}$ generated from an EPS AKA run.
 
 Even if no confidentiality or integrity protection is provided by EIA0 and EEA0, the UE and network treat the EPS security context with the independently generated $\mathrm{K}_{\mathrm{ASME}}$ as if it contained a normally generated $\mathrm{K}_{\mathrm{ASME}}$ and hence share an EPS security context (see TS 24.301[9]).
 
-\subsection*{15.2.4.2 Handover}
+### 15.2.4.2 Handover
 
 When UE attempts to make X2/S1 handover, UE and eNB derive and transfer the keys as normal to re-use the normal handover mechanism. Since the derived keys have no ability to affect the output of the NULL algorithms it is irrelevant that the network and the UE derive different keys. Furthermore, section 7.2.4a describes how the algorithm selection is handled for unauthenticated emergency call. This implies that source eNB will forward UE EPS security capability which contains EIA0 and EEA0 only to target eNB. So the target eNB can only select EIA0 for integrity protection and EEA0 for confidential protection. If the UE does not receive any selection of new AS security algorithms during a intraeNB handover, the UE continues to use the same algorithms as before the handover (see TS 36.331 [21]).
 
 NOTE: If the target eNB is a Rel-8 eNB, it can't support EIA0 and EEA0. The handover will be rejected because of the failure of algorithm negotiation.
 
-\section*{16 Void}
+## 16 Void
 
-\section*{Annex A (normative): Key derivation functions}
+## Annex A (normative): Key derivation functions
 
-\section*{A. 1 KDF interface and input parameter construction}
+## A. 1 KDF interface and input parameter construction
 
-\section*{A.1.1 General}
+## A.1.1 General
 
 All key derivations (including input parameter encoding) for EPS shall be performed using the key derivation function (KDF) specified in TS 33.220 [8]. This clause specifies how to construct the input string, S, to the KDF (which is input together with the relevant key). For each of the distinct usages of the KDF, the input parameters S are specified below.
 
-\section*{A.1.2 FC value allocations}
+## A.1.2 FC value allocations
 
 The FC number space used is controlled by TS 33.220 [8], FC values allocated for this specification are in range of 0x10-0x1F.
 
-\section*{A. $2 \mathrm{~K}_{\text {asme }}$ derivation function}
+## A. $2 \mathrm{~K}_{\text {asme }}$ derivation function
 
 When deriving a $\mathrm{K}_{\mathrm{Asme}}$ from CK, IK and SN id when producing authentication vectors, and when the UE computes $\mathrm{K}_{\mathrm{ASMe}}$ during AKA, the following parameters shall be used to form the input S to the KDF.
+
 - $\mathrm{FC}=0 \mathrm{x} 10$,
 - P0 = SN id,
 - L0 = length of SN id (i.e. 0x00 0x03),
@@ -2251,28 +2255,21 @@ The exclusive or of the Sequence Number (SQN) and the Anonymity Key (AK) is sent
 
 The SN id consists of MCC and MNC, and shall be encoded as an octet string according to Figure A.2-1.
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline 8 & 7 & 5 & 4 & 3 & 1 & \multirow[b]{4}{*}{\begin{tabular}{l}
-octet 1 \\
-octet 2 \\
-octet 3
-\end{tabular}} \\
-\hline & MCC digit 2 & & & MCC digit 1 & & \\
-\hline & MNC digit 3 & & & MCC digit 3 & & \\
-\hline & MNC digit 2 & & & MNC digit 1 & & \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure A.2-1 Encoding of SN id as an octet string}
-\end{table}
+| 8 | 7 | 5 | 4 | 3 | 1 | octet 1 <br> octet 2 <br> octet 3 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|  | MCC digit 2 |  |  | MCC digit 1 |  |  |
+|  | MNC digit 3 |  |  | MCC digit 3 |  |  |
+|  | MNC digit 2 |  |  | MNC digit 1 |  |  |
+
+Figure A.2-1 Encoding of SN id as an octet string
 
 The coding of the digits of MCC and MNC shall be done according to TS 24.301 [9].
 The input key Key shall be equal to the concatenation CK $\|$ IK of CK and IK.
 
-\section*{A. $3 \mathrm{~K}_{\text {enb }}$ derivation function}
+## A. $3 \mathrm{~K}_{\text {enb }}$ derivation function
 
 When deriving a $\mathrm{K}_{\mathrm{eNB}}$ from $\mathrm{K}_{\mathrm{ASME}}$ and the uplink NAS COUNT in the UE and the MME the following parameters shall be used to form the input S to the KDF.
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 11$,
 - P0 = Uplink NAS COUNT,
 - L0 = length of uplink NAS COUNT (i.e. 0x00 0x04)
@@ -2280,9 +2277,10 @@ When deriving a $\mathrm{K}_{\mathrm{eNB}}$ from $\mathrm{K}_{\mathrm{ASME}}$ an
 The input key shall be the 256 -bit $\mathrm{K}_{\mathrm{Asme}}$.
 This function is applied when cryptographically protected E-UTRAN radio bearers are established and when a key change on-the-fly is performed.
 
-\section*{A. 4 NH derivation function}
+## A. 4 NH derivation function
 
 When deriving a NH from $\mathrm{K}_{\mathrm{ASME}}$ the following parameters shall be used to form the input S to the KDF.
+
 - $\mathrm{FC}=0 \mathrm{x} 12$
 - P0 = SYNC-input
 - L0 = length of SYNC-input (i.e. 0x00 0x20)
@@ -2291,9 +2289,10 @@ The SYNC-input parameter shall be the newly derived $\mathrm{K}_{\mathrm{eNB}}$ 
 
 The input key shall be the 256 -bit $\mathrm{K}_{\mathrm{ASME}}$.
 
-\section*{A. $5 \mathrm{~K}_{\text {ens }}{ }^{*}$ derivation function}
+## A. $5 \mathrm{~K}_{\text {ens }}{ }^{*}$ derivation function
 
 When deriving a $\mathrm{K}_{\mathrm{eNB}}{ }^{*}$ from current $\mathrm{K}_{\mathrm{eNB}}$ or from fresh NH and the target physical cell ID in the UE and eNB as specified in clause 7.2.8 for handover purposes the following parameters shall be used to form the input S to the KDF.
+
 - $\mathrm{FC}=0 \mathrm{x} 13$
 - P0 = PCI (target physical cell id)
 - L0 = length of PCI (i.e. 0x00 0x02)
@@ -2304,11 +2303,12 @@ NOTE: The length of EARFCN-DL cannot be generally set to 3 bytes for backward co
 
 The input key shall be the 256 -bit NH when the index in the handover increases, otherwise the current 256 -bit $\mathrm{K}_{\mathrm{enB}}$.
 
-\section*{A. 6 Void}
+## A. 6 Void
 
-\section*{A. 7 Algorithm key derivation functions}
+## A. 7 Algorithm key derivation functions
 
 When deriving keys for NAS integrity and NAS encryption algorithms from $\mathrm{K}_{\mathrm{ASME}}$ and algorithm types and algorithm IDs, and keys for RRC integrity, UP integrity in the case of relay nodes, and RRC/UP encryption algorithms from $\mathrm{K}_{\mathrm{eNB}}$, in the UE, MME and eNB the following parameters shall be used to form the string S.
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 15$
 - P0 = algorithm type distinguisher
 - L0 = length of algorithm type distinguisher (i.e. 0x00 0x01)
@@ -2317,23 +2317,16 @@ When deriving keys for NAS integrity and NAS encryption algorithms from $\mathrm
 
 The algorithm type distinguisher shall be NAS-enc-alg for NAS encryption algorithms and NAS-int-alg for NAS integrity protection algorithms. The algorithm type distinguisher shall be RRC-enc-alg for RRC encryption algorithms, RRC-int-alg for RRC integrity protection algorithms, UP-enc-alg for UP encryption algorithms and, in the case of relay nodes, UP-int-alg for UP integrity protection algorithms (see table A.7-1). The values 0x07 to 0xf0 are reserved for future use, and the values 0xf1 to 0xff are reserved for private use.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table A.7-1: Algorithm type distinguishers}
-\begin{tabular}{|c|c|}
-\hline \begin{tabular}{c} 
-Algorithm \\
-distinguisher
-\end{tabular} & Value \\
-\hline NAS-enc-alg & $0 \times 01$ \\
-\hline NAS-int-alg & $0 \times 02$ \\
-\hline RRC-enc-alg & $0 \times 03$ \\
-\hline RRC-int-alg & $0 \times 04$ \\
-\hline UP-enc-alg & $0 \times 05$ \\
-\hline UP-int-alg & $0 \times 06$ \\
-\hline
-\end{tabular}
-\end{table}
+Table A.7-1: Algorithm type distinguishers
+| Algorithm <br> distinguisher | Value |
+| :---: | :---: |
+| NAS-enc-alg | $0 \times 01$ |
+| NAS-int-alg | $0 \times 02$ |
+| RRC-enc-alg | $0 \times 03$ |
+| RRC-int-alg | $0 \times 04$ |
+| UP-enc-alg | $0 \times 05$ |
+| UP-int-alg | $0 \times 06$ |
+
 
 The algorithm identity (as specified in clause 5) shall be put in the four least significant bits of the octet. The two least significant bits of the four most significant bits are reserved for future use, and the two most significant bits of the most significant nibble are reserved for private use. The entire four most significant bits shall be set to all zeros.
 
@@ -2341,28 +2334,31 @@ For NAS algorithm key derivations, the input key shall be the 256-bit $\mathrm{K
 
 For an algorithm key of length n bits, where n is less or equal to 256 , the n least significant bits of the 256 bits of the KDF output shall be used as the algorithm key.
 
-\section*{A. 8 K $\mathrm{K}_{\text {asme }}$ to CK', IK' derivation at handover}
+## A. 8 K $\mathrm{K}_{\text {asme }}$ to CK', IK' derivation at handover
 
 This input string is used when there is a need to derive $\mathrm{CK}^{\prime} \| \mathrm{IK}$ ' from $\mathrm{K}_{\mathrm{ASME}}$ during mapping of security contexts from E-UTRAN to GERAN/UTRAN at handover. K ${ }_{\text {Asme }}$ is a 256-bit entity, and so is the concatenation of CK and IK (which are 128 bits each). The following input parameters shall be used.
+
 - $\mathrm{FC}=0 \times 16$
 - P0 = NAS downlink COUNT value
 - L0 = length of NAS downlink COUNT value (i.e. 0x00 0x04)
 
 The input key shall be $\mathrm{K}_{\mathrm{Asme}}$.
 
-\section*{A. 9 NAS token derivation for inter-RAT mobility}
+## A. 9 NAS token derivation for inter-RAT mobility
 
 The NAS-token used to ensure that a RAU is originating from the correct UE during IDLE mode mobility from EUTRAN to UTRAN and GERAN, shall use the following input parameters.
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 17$
 - P0 = Uplink NAS COUNT
 - L0 = length of uplink NAS COUNT (i.e. 0x00 0x04)
 
 The input key shall be the 256 -bit $\mathrm{K}_{\mathrm{Asme}}$.
 
-\section*{A. 10 K'asme from CK, IK derivation during handover}
+## A. 10 K'asme from CK, IK derivation during handover
 
 This input string is used when there is a need to derive a $\mathrm{K}_{\text {ASME }}{ }_{\text {ASM }}$ from concatenation of CK and IK and a NONCE ${ }_{\text {MME }}$ during mapping of security contexts between GERAN/UTRAN and E-UTRAN during handover to E-UTRAN.
 $\mathrm{K}_{\text {ASME }}$ is a 256-bit value. The NONCE ${ }_{\text {mme }}$ is a 32-bit value. The following input parameters shall be used.
+
 - $\mathrm{FC}=0 \times 18$
 - P0 = NONCE $_{\text {MME }}$
 - L0 = length of NONCE ${ }_{\text {MME }}$ (i.e. 0x00 0x04)
@@ -2372,9 +2368,10 @@ The generation of NONCE ${ }_{\text {MME }}$ shall be sufficiently random such t
 
 NOTE: A well-seeded strong PRNG would meet this requirement. A true RNG is not required.
 
-\section*{A. 11 K'asme from CK, IK derivation during idle mode mobility}
+## A. 11 K'asme from CK, IK derivation during idle mode mobility
 
 This input string is used when there is a need to derive a K' ${ }_{\text {asme }}$ from CK $\| \mathrm{IK}$, NONCE ${ }_{\text {ue }}$, and NONCE ${ }_{\text {mme }}$ during mapping of security contexts from GERAN/UTRAN to E-UTRAN. K' concatenation of CK and IK (which are 128 bits each). The following input parameters shall be used, where NONCEs are 32 bits long.
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 19$,
 - P0 = NONCE ${ }_{\text {UE }}$
 - L0 = length of the NONCE ${ }_{\text {UE }}$ (i.e. 0x00 0x04)
@@ -2387,49 +2384,54 @@ The generation of NONCE ${ }_{\text {UE }}$ shall be sufficiently random such th
 NOTE: A well-seeded strong PRNG would meet this requirement. A true RNG is not required.
 The generation of NONCE ${ }_{\text {mme }}$ shall be as defined in clause A.10.
 
-\section*{A. $12 \mathrm{~K}_{\text {ASME }}$ to $\mathrm{CK}_{\text {SRVCC }}$, $\mathrm{IK}_{\text {SRVCC }}$ derivation}
+## A. $12 \mathrm{~K}_{\text {ASME }}$ to $\mathrm{CK}_{\text {SRVCC }}$, $\mathrm{IK}_{\text {SRVCC }}$ derivation
 
 This input string is used when there is a need to derive $\mathrm{CK}_{\text {SRVCC }} \| \mathrm{IK}_{\text {SRVCC }}$ used in CS domain from $\mathrm{K}_{\text {ASME }}$ during mapping of security contexts between E-UTRAN and GERAN/UTRAN. K ${ }_{\text {ASME }}$ is a 256-bit element, and so is the concatenation of $\mathrm{CK}_{\text {SRVCC }}$ and $\mathrm{IK}_{\text {SRVCC }}$ (which are 128 bits each).
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 1 \mathrm{~A}$
 - P0 = NAS downlink COUNT value
 - L0 = length of NAS downlink COUNT value (i.e. $0 \times 00$ 0x04)
 
 The input key shall be $\mathrm{K}_{\mathrm{Asme}}$.
 
-\section*{A. 13 Kasme to CK', IK' derivation at idle mobility}
+## A. 13 Kasme to CK', IK' derivation at idle mobility
 
 This input string is used when there is a need to derive CK' $\|$ IK' from $\mathrm{K}_{\text {ASME }}$ during mapping of security contexts from E-UTRAN to GERAN/UTRAN at idle mobility. Kasme is a 256-bit entity, and so is the concatenation of CK and IK (which are 128 bits each). The following input parameters shall be used.
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 1 \mathrm{~B}$
 - P0 = NAS uplink COUNT value
 - L0 = length of NAS uplink COUNT value (i.e. 0x00 0x04)
 
 The input key shall be $\mathrm{K}_{\mathrm{Asme}}$.
 
-\section*{A. 14 (Void)}
+## A. 14 (Void)
 
-\section*{A. 15 Derivation of S-Kenb for dual connectivity}
+## A. 15 Derivation of S-Kenb for dual connectivity
 
 This input string is used when the MeNB and UE derive S- $\mathrm{K}_{\mathrm{eNB}}$ from $\mathrm{K}_{\mathrm{eNB}}$ during dual connectivity. The following input parameters shall be used:
+
 - $\mathrm{FC}=0 \mathrm{x} 1 \mathrm{C}$
 - P0 = Value of the SCG Counter as a non-negative integer
 - L0 = length of the SCG Counter value (i.e. 0x00 0x02)
 
 The input key shall be $\mathrm{K}_{\mathrm{eNB}}$ of the MeNB .
 
-\section*{A. 16 Derivation of LWIP-PSK}
+## A. 16 Derivation of LWIP-PSK
 
 This input string is used when the eNB and UE derive LWIP-PSK from $\mathrm{K}_{\mathrm{enB}}$ during LTE WLAN integration using IPSec. The following input parameters shall be used:
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 1 \mathrm{E}$
 - P0 = Value of the LWIP Counter as a non-negative integer
 - L0 = length of the LWIP Counter value (i.e. 0x00 0x02)
 
 The input key shall be $\mathrm{K}_{\mathrm{eNB}}$ of the eNB .
 
-\section*{A. 17 Derivation of K_n for IOPS subscriber key separation}
+## A. 17 Derivation of K_n for IOPS subscriber key separation
 
 This key derivation is for use with the IOPS subscriber key separation mechanism described in Annex F of the present specification.
 
 The input key 'Key' is equal to MK. The following parameters are used to form the input S to the KDF:
+
 - $\quad \mathrm{FC}=0 \times 1 \mathrm{D}$
 - $\quad$ P0 = f(n)
 - $\quad$ L0 $=$ length of $\mathrm{f}(\mathrm{n})$
@@ -2438,18 +2440,19 @@ The input key 'Key' is equal to MK. The following parameters are used to form th
 
 Here $\mathrm{f}(\mathrm{n})$ is proprietary, cf. Annex F of the present specification.
 
-\section*{A. 18 Derivation of S-K ${ }_{\text {WT }}$ for LWA}
+## A. 18 Derivation of S-K ${ }_{\text {WT }}$ for LWA
 
 This input string is used when the eNB and UE derive S-K ${ }_{\text {wt }}$ from $\mathrm{K}_{\text {enb }}$ during LTE WLAN Aggregation. The following input parameters shall be used:
+
 - $\quad \mathrm{FC}=0 \mathrm{x} 1 \mathrm{~F}$
 - P0 = Value of the WT Counter as a non-negative integer
 - L0 = length of the WT Counter value (i.e. 0x00 0x02)
 
 The input key shall be $\mathrm{K}_{\mathrm{eNB}}$ of the eNB.
 
-\section*{Annex B (normative): \\ Algorithms for ciphering and integrity protection}
+## Annex B (normative): <br> Algorithms for ciphering and integrity protection
 
-\section*{B. 0 Null ciphering and integrity protection algorithms}
+## B. 0 Null ciphering and integrity protection algorithms
 
 The EEA0 algorithm shall be implemented such that it has the same effect as if it generates a KEYSTREAM of all zeroes (see subclause B.1.1). The length of the KEYSTREAM generated shall be equal to the LENGTH input parameter. The generated KEYSTREAM requires no other input parameters but the LENGTH. Apart from this, all processing performed in association with ciphering shall be exactly the same as with any of the ciphering algorithms specified in this Annex.
 
@@ -2460,29 +2463,26 @@ NOTE 1: The reason for mentioning the replay protection here is that replay prot
 NOTE 2: a UE with a 2G SIM is considered to be in LSM in E-UTRAN.
 NOTE 3: EEA0 and EIA0 provide no security.
 
-\section*{B. 1 128-bit ciphering algorithm}
+## B. 1 128-bit ciphering algorithm
 
-\section*{B.1.1 Inputs and outputs}
+## B.1.1 Inputs and outputs
 
 The input parameters to the ciphering algorithm are a 128 -bit cipher key named KEY, a 32 -bit COUNT, a 5 -bit bearer identity BEARER, the 1-bit direction of the transmission i.e. DIRECTION, and the length of the keystream required i.e. LENGTH. The DIRECTION bit shall be 0 for uplink and 1 for downlink.
 
 Figure B.1-1 illustrates the use of the ciphering algorithm EEA to encrypt plaintext by applying a keystream using a bit per bit binary addition of the plaintext and the keystream. The plaintext may be recovered by generating the same keystream using the same input parameters and applying a bit per bit binary addition with the ciphertext.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-082.jpg?height=741&width=1411&top_left_y=258&top_left_x=328}
-\captionsetup{labelformat=empty}
-\caption{Figure B.1-1: Ciphering of data}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-082.jpg?height=741&width=1411&top_left_y=258&top_left_x=328)
+Figure B.1-1: Ciphering of data
 
 Based on the input parameters the algorithm generates the output keystream block KEYSTREAM which is used to encrypt the input plaintext block PLAINTEXT to produce the output ciphertext block CIPHERTEXT.
 
 The input parameter LENGTH shall affect only the length of the KEYSTREAM BLOCK, not the actual bits in it.
 
-\section*{B.1.2 128-EEA1}
+## B.1.2 128-EEA1
 
 128-EEA1 is based on SNOW 3G and is identical to UEA2 as specified in [14]. The used IV is constructed the same way as in subclause 3.4 of that TS.
 
-\section*{B.1.3 128-EEA2}
+## B.1.3 128-EEA2
 
 128-EEA2 is based on 128-bit AES [15] in CTR mode [16]
 The sequence of 128-bit counter blocks needed for CTR mode $\mathrm{T}_{1}, \mathrm{~T}_{2}, \ldots, \mathrm{~T}_{\mathrm{i}}, \ldots$ shall be constructed as follows:
@@ -2491,31 +2491,28 @@ The most significant 64 bits of $\mathrm{T}_{1}$ consist of COUNT[0] .. COUNT[31
 The least significant 64 bits of $\mathrm{T}_{1}$ are all 0 .
 Subsequent counter blocks are then obtained by applying the standard integer incrementing function (according to Appendix B1 in [16]) mod $2^{64}$ to the least significant 64 bits of the previous counter block.
 
-\section*{B.1.4 128-EEA3}
+## B.1.4 128-EEA3
 
 128-EEA3 is based on ZUC and specified in [33].
 
-\section*{B. 2 128-Bit integrity algorithm}
+## B. 2 128-Bit integrity algorithm
 
-\section*{B.2.1 Inputs and outputs}
+## B.2.1 Inputs and outputs
 
 The input parameters to the integrity algorithm are a 128 -bit integrity key named KEY, a 32 -bit COUNT, a 5 -bit bearer identity called BEARER, the 1-bit direction of the transmission i.e. DIRECTION, and the message itself i.e MESSAGE. The DIRECTION bit shall be 0 for uplink and 1 for downlink. The bit length of the MESSAGE is LENGTH.
 
 Figure B.2-1 illustrates the use of the integrity algorithm EIA to authenticate the integrity of messages.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-083.jpg?height=518&width=1609&top_left_y=753&top_left_x=214}
-\captionsetup{labelformat=empty}
-\caption{Figure B.2-1: Derivation of MAC-I/NAS-MAC (or XMAC-I/XNAS-MAC)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-083.jpg?height=518&width=1609&top_left_y=753&top_left_x=214)
+Figure B.2-1: Derivation of MAC-I/NAS-MAC (or XMAC-I/XNAS-MAC)
 
 Based on these input parameters the sender computes a 32-bit message authentication code (MAC-I/NAS-MAC) using the integrity algorithm EIA. The message authentication code is then appended to the message when sent. For integrity protection algorithms other than EIA0 the receiver computes the expected message authentication code (XMAC-I/XNAS-MAC) on the message received in the same way as the sender computed its message authentication code on the message sent and verifies the data integrity of the message by comparing it to the received message authentication code, i.e. MAC-I/NAS-MAC.
 
-\section*{B.2.2 128-EIA1}
+## B.2.2 128-EIA1
 
 128-EIA1 is based on SNOW 3G and is implemented in the same way as UIA2 as specified in [14]. The used IV is constructed the same way as in subclause 4.4 of that TS, with the only difference being that FRESH [0], ... FRESH [31] shall be replaced by BEARER[0] ... BEARER[4] | $0^{27}$ (i.e. 27 zero bits)
 
-\section*{B.2.3 128-EIA2}
+## B.2.3 128-EIA2
 
 128-EIA2 is based on 128-bit AES [15] in CMAC mode [17].
 The bit length of MESSAGE is BLENGTH.
@@ -2532,36 +2529,37 @@ B.2.4 128-EIA3
 
 128-EIA3 is based on ZUC and specified in [33].
 
-\section*{Annex C (informative): Algorithm test data}
+## Annex C (informative): Algorithm test data
 
-\section*{C. 1 128-EEA2}
+## C. 1 128-EEA2
 
 This section includes six test data sets; all are presented in hex, while the first is also presented in binary. Some intermediate computational values are included to assist implementers in tracing bugs. Some notation is taken from the specification of CTR mode [16].
 
 Bit ordering should be largely self explanatory, but in particular:
+
 - The 5 -bit BEARER is written in hex in a "right aligned" form, i.e. as a two-hex-digit value in the range 00 to 1 F inclusive, with BEARER [0] as the msb of the first digit.
 - Similarly the single DIRECTION bit is written in hex in "right aligned" form, i.e. the DIRECTION bit is the lsb of the hex digit.
 - Where the length of plaintext and ciphertext is not a multiple of 32 bits, they are written in hex in a "left aligned" form, i.e. the least significant few bits of the last word will be zero.
 
-\section*{C.1.1 Test Set 1}
 
-\begin{tabular}{|l|}
-\hline Key = (hex) d3c5d592 327fb11c 4035c668 0af8c6d1 \\
-\hline Key = (bin) 1101001111000101110101011001001000110010011111111011000100011100 0100000000110101110001100110100000001010111110001100011011010001 \\
-\hline Count = (hex) 398a59b4 \\
-\hline Count = (bin) 00111001100010100101100110110100 \\
-\hline Bearer = (hex) 15 \\
-\hline Bearer = (bin) 10101 \\
-\hline Direction = (hex) 1 \\
-\hline Direction = (bin) 1 \\
-\hline Length = 253 bits \\
-\hline Plaintext = (hex) 981ba682 4c1bfb1a b4854720 29b71d80 8ce33e2c c3c0b5fc 1f3de8a6 dc66b1f0 \\
-\hline Plaintext = (bin) 1001100000011011101001101000001001001100000110111111101100011010 \\
-\hline 1011010010000101010001110010000000101001101101110001110110000000 1000110011100011001111100010110011000011110000001011010111111100 0001111100111101111010001010011011011100011001101011000111110 \\
-\hline Counter block T1 = (hex) 398a59b4 ac000000 0000000000000000 \\
-\hline Counter block T1 = (bin) 0011100110001010010110011011010010101100000000000000000000000000 \\
-\hline
-\end{tabular}
+## C.1.1 Test Set 1
+
+| Key = (hex) d3c5d592 327fb11c 4035c668 0af8c6d1 |
+| :--- |
+| Key = (bin) 1101001111000101110101011001001000110010011111111011000100011100 0100000000110101110001100110100000001010111110001100011011010001 |
+| Count = (hex) 398a59b4 |
+| Count = (bin) 00111001100010100101100110110100 |
+| Bearer = (hex) 15 |
+| Bearer = (bin) 10101 |
+| Direction = (hex) 1 |
+| Direction = (bin) 1 |
+| Length = 253 bits |
+| Plaintext = (hex) 981ba682 4c1bfb1a b4854720 29b71d80 8ce33e2c c3c0b5fc 1f3de8a6 dc66b1f0 |
+| Plaintext = (bin) 1001100000011011101001101000001001001100000110111111101100011010 |
+| 1011010010000101010001110010000000101001101101110001110110000000 1000110011100011001111100010110011000011110000001011010111111100 0001111100111101111010001010011011011100011001101011000111110 |
+| Counter block T1 = (hex) 398a59b4 ac000000 0000000000000000 |
+| Counter block T1 = (bin) 0011100110001010010110011011010010101100000000000000000000000000 |
+
 $$
 000000000000000000000000000000000000000000000000000000000000000
 $$
@@ -2575,6 +2573,7 @@ Counter block T2 = (bin) 0011100110001010010110011011010010101100000000000000000
 0000000000000000000000000000000000000000000000000000000000000001
 Keystream block 2 = (hex) 3eede9f6 11328620 231f3f1b 328b3f88
 Keystream block 2 = (bin) 0011111011101101111010011111011000010001001100101000011000100000 0010001100011111001111110001101100110010100010110011111110001000
+
 $$
 \begin{aligned}
 \text { Ciphertext }= & (\mathrm{hex}) \text { e9fed8a6 3d155304 d71df20b f3e82214 b20ed7da d2f233dc 3c22d7bd eeed8e78 } \\
@@ -2585,7 +2584,7 @@ $$
 \end{aligned}
 $$
 
-\section*{C.1.2 Test Set 2}
+## C.1.2 Test Set 2
 
 Key = 2bd6459f 82c440e0 952c4910 4805ff4
 Count = c675a64b
@@ -2614,7 +2613,7 @@ Keystream block 7 = 8b4f1b53 87da3277 a56f567d 8066fce2
 
 Ciphertext = 59616053 53c64bdc a15b195e 288553a9 10632506 d6200aa7 90c4c806 c99904cf 2445cc50 bb1cf168 a4967373 4e081b57 e324ce52 59c0e78d 4cd97b87 0976503c 0943f2cb 5ae8f052 c7b7d392 239587b8 956086bc ab188360 42e2e6ce 42432a17 105c53d0
 
-\section*{C.1.3 Test Set 3}
+## C.1.3 Test Set 3
 
 Key = 0a8b6bd8 d9b08b08 d64e32d1 817777fb
 Count $=544 \mathrm{~d} 49 \mathrm{~cd}$
@@ -2632,7 +2631,7 @@ Keystream block 3 = 158c20f6 a275b8f5 0e8ae073 997c58ed
 
 Ciphertext = 75750d37 b4bba2a4 dedb3423 5bd68c66 45acdaac a48138a3 b0c471e2 a7041a57 6423d292 7287f000
 
-\section*{C.1.4 Test Set 4}
+## C.1.4 Test Set 4
 
 Key = aa1f95ae a533bcb3 2eb63bf5 2d8f831a
 Count =72d8c671
@@ -2664,7 +2663,7 @@ Ciphertext = dfb440ac b3773549 efc04628 aeb8d815 6275230b dc690d94 b00d8d95 f28c
 9a22f8ef 29590bc4 eb57c9fa f7c41524 a885b897 9c423f2f 8f8e0592 a9879201
 be7ff977 7a162ab8 10feb324 ba74c4c1 56e04d39 09720965 3ac33e5a 5f2d8864
 
-\section*{C.1.5 Test Set 5}
+## C.1.5 Test Set 5
 
 Key = 9618ae46 891f8657 8eebe90e f7a1202e
 Count $=\mathrm{c} 675 \mathrm{a} 64 \mathrm{~b}$
@@ -2702,7 +2701,7 @@ df2f36bd 513e3d0c 8578c7a0 fcf043e0 3aa3a39f baad7d15 be074faa 5d9029f7
 cf245d16 22aafe92 1f7566c4 f5d644f2 f1fc0ec6 84ddb213 49747622 e209295d
 27ff3f95 623371d4 9b147c0a f486171f 22cd04b1 cbeb2658 223e6938
 
-\section*{C.1.6 Test Set 6}
+## C.1.6 Test Set 6
 
 Key = 54f4e2e0 4c83786e ec8fb5ab e8e36566
 Count = aca4f50f
@@ -2794,18 +2793,20 @@ cf23cccc d4280767 bee8eeb2 3d865246 1db64931 03003baf 89f5e182 61ea43c8
 4a92ebff ffe4909d c46c5192 f825f770 600b9602 c557b5f8 b431a79d 45977dd9
 c41b863d a9e142e9 0020cfd0 74d6927b 7ab3b672 5d1a6f3f 98b9c9da a8982aff 06782800
 
-\section*{C. 2 128-EIA2}
+## C. 2 128-EIA2
 
 This section includes eight test data sets; all are presented in hex, while the first is also presented in binary. Many intermediate computational values are included to assist implementers in tracing bugs. Some notation is taken from the specification of CMAC mode [17].
 
 Bit ordering should be largely self explanatory, but in particular:
+
 - The 5-bit BEARER is written in hex in a "right aligned" form, i.e. as a two-hex-digit value in the range 00 to 1 F inclusive, with BEARER [0] as the msb of the first digit.
 - Similarly the single DIRECTION bit is written in hex in "right aligned" form, i.e. the DIRECTION bit is the lsb of the hex digit.
 - Where the length of the message, or of a message sub-block, is not a multiple of 32 bits, it is written in hex in a "left aligned" form, i.e. the least significant few bits of the last word will be zero.
 
 NOTE: This section provides both byte aligned and non byte aligned test data sets. For EPS implementation verification, byte alignment test data sets ( 2,5 and 8 ) can be used, as EPS RRC and EPS NAS messages are byte aligned. The non byte aligned test data sets may be used to verify implementations that support non byte aligned messages.
 
-\section*{C.2.1 Test Set 1}
+## C.2.1 Test Set 1
+
 ```
 Count-I = (hex) 38a6f056
 Count-I = (bin) 00111000 10100110 11110000 01010110
@@ -2824,29 +2825,27 @@ Message = (bin) 00110011 00110010001101000110001001100011001110010011100001
 CMAC(K, M):
 K = (hex) 2bd6459f 82c5b300 952c4910 4881ff48
 K = (bin) 0010101111010110010001011001111110000010110001011011001100000000
-    1001010100101100010010010001000001001000100000011111111101001000
+1001010100101100010010010001000001001000100000011111111101001000
 Mlen = 122
 M = (hex) 38a6f056 c0000000 3332346263393840
 M = (bin) 0011100010100110111100000101011011000000000000000000000000000000
 0011001100110010001101000110001001100011001110010011100001
 
 Subkey Generation:
+
 ```
 L = (hex) 6e426138 5adfc1fc b7c85f0c 469fb20c
 L = (bin) 01101110 01000010 01100001 00111000 01011010 11011111 11000001 11111100
     10110111 11001000 01011111 00001100 01000110 10011111 10110010 00001100
 ```
 
-
-\begin{tabular}{|l|l|}
-\hline & K1 = (hex) dc84c270 b5bf83f9 6f90be18 8d3f6418 \\
-\hline K1 & = (bin) 1101110010000100110000100111000010110101101111111000001111111001 \\
-\hline & 0110111110010000101111100001100010001101001111110110010000011000 \\
-\hline K2 & = (hex) b90984e1 6b7f07f2 df217c31 1a7ec8b7 \\
-\hline K2 & = (bin) 1011100100001001100001001110000101101011011111110000011111110010 \\
-\hline & 1101111100100001011111000011000100011010011111101100100010110111 \\
-\hline
-\end{tabular}
+|  | K1 = (hex) dc84c270 b5bf83f9 6f90be18 8d3f6418 |
+| :--- | :--- |
+| K1 | = (bin) 1101110010000100110000100111000010110101101111111000001111111001 |
+|  | 0110111110010000101111100001100010001101001111110110010000011000 |
+| K2 | = (hex) b90984e1 6b7f07f2 df217c31 1a7ec8b7 |
+| K2 | = (bin) 1011100100001001100001001110000101101011011111110000011111110010 |
+|  | 1101111100100001011111000011000100011010011111101100100010110111 |
 
 MAC Generation:
 n $\quad=1$
@@ -2868,7 +2867,7 @@ C1 = (bin) 0001000110001100011011101011100010110111011101010001010001001011 0000
 MACT = (hex) 118c6eb8
 MACT = (bin) 00010001100011000110111010111000
 
-\section*{C.2.2 Test Set 2}
+## C.2.2 Test Set 2
 
 Count-I = 398a59b4
 Bearer = 1a
@@ -2897,7 +2896,7 @@ C1 = b93787e6 493ff113 ad73d3e0 1e826d73
 
 MACT = b93787e6
 
-\section*{C.2.3 Test Set 3}
+## C.2.3 Test Set 3
 
 Count-I = 36af6144
 Bearer $=18$
@@ -2930,7 +2929,7 @@ C3 = 1f60b01d e05aa666 3bda32c6 1771e70b
 
 MACT = 1f60b01d
 
-\section*{C.2.4 Test Set 4}
+## C.2.4 Test Set 4
 
 Count-I = c7590ea9
 Bearer $=17$
@@ -2970,7 +2969,7 @@ C5 = 6846a2f0 a0b6be7a 4fb26a15 7e914c53
 
 MACT = 6846a2f0
 
-\section*{C.2.5 Test Set 5}
+## C.2.5 Test Set 5
 
 Count-I = 36af6144
 Bearer $=0 \mathrm{f}$
@@ -2984,14 +2983,12 @@ Message = 35c68716 633c66fb 750c2668 65d53c11 ea05b1e9 fa49c839 8d48e1ef a5909d3
 CMAC(K, M):
 K = 83fd23a2 44a74cf3 58da3019 f1722635
 
-\begin{tabular}{|l|l|}
-\hline Mlen & = 832 \\
-\hline M & = 36af6144 7c000000 35c68716 633c66fb 750c2668 65d53c11 ea05b1e9 fa49c839 \\
-\hline & 8d48e1ef a5909d39 47902837 f5ae96d5 a05bc8d6 1ca8dbef 1b13a4b4 abfe4fb1 \\
-\hline & 006045b6 74bb5472 9304c382 be53a5af 05556176 f6eaa2ef 1d05e4b0 83181ee6 \\
-\hline & 74cda5a4 85f74d7a \\
-\hline
-\end{tabular}
+| Mlen | = 832 |
+| :--- | :--- |
+| M | = 36af6144 7c000000 35c68716 633c66fb 750c2668 65d53c11 ea05b1e9 fa49c839 |
+|  | 8d48e1ef a5909d39 47902837 f5ae96d5 a05bc8d6 1ca8dbef 1b13a4b4 abfe4fb1 |
+|  | 006045b6 74bb5472 9304c382 be53a5af 05556176 f6eaa2ef 1d05e4b0 83181ee6 |
+|  | 74cda5a4 85f74d7a |
 
 Subkey Generation:
 L = 9df61c57 3c86acac 704db9d5 b0dea444
@@ -3020,7 +3017,7 @@ C7 = e657e182 5298f2fa ee2ca1e0 7373bc7e
 
 MACT = e657e182
 
-\section*{C.2.6 Test Set 6}
+## C.2.6 Test Set 6
 
 Count-I = 36af6144
 
@@ -3058,7 +3055,8 @@ C4 = f0668c1e 4197300b 1243 f834 25d06c25
 
 MACT = f0668c1e
 
-\section*{C.2.7 Test Set 7}
+## C.2.7 Test Set 7
+
 ```
 Count-I = 7827fab2
 Bearer = 05
@@ -3077,7 +3075,6 @@ Message = 70dedf2d c42c5cbd 3a96f8a0 b11418b3 608d5733 604a2cd3 6aabc70c e3193bb
     a15464ea a733385d bbeb6fd7 3509b857 e6a419dc a1d8907a f977fbac 4dfa35ec
 ```
 
-
 CMAC(K, M):
 K = 5d0a80d8 134ae196 77824b67 1e838af4
 Mlen = 2622
@@ -3091,66 +3088,62 @@ K2 = 60cb88a7 eee4e5c2 f3deca08 fb93f87a
 
 MAC Generation:
 
-\begin{tabular}{|l|l|}
-\hline n & $=21$ \\
-\hline $\mathrm{Mn}{ }^{*}$ & = f977fbac 4dfa35ec \\
-\hline Mn & = 99bc730b a31ed02c f3deca08 fb93f87a \\
-\hline C0 & = 00000000000000000000000000000000 \\
-\hline M1 & = 7827fab2 2c000000 70dedf2d c42c5cbd \\
-\hline C1 & = 6c9b07c0 35b7a016 3aad1405 1f57f3e0 \\
-\hline M2 & = 3a96f8a0 b11418b3 608d5733 604a2cd3 \\
-\hline C2 & = ec9c6b75 1d027216 3412fad4 f01cebba \\
-\hline M3 & = 6aabc70c e3193bb5 153be2d3 c06dfdb2 \\
-\hline C3 & = 3c83db67 ff87c86b 57ae4742 42c9816b \\
-\hline M4 & = d16e9c35 7158be6a 41d6b861 e491db3f \\
-\hline C4 & = e6e894ee 7e148494 44afcb75 9752e555 \\
-\hline M5 & = bfeb518e fcf048d7 d5895373 0ff30c9e \\
-\hline C5 & = cbf27df1 0fd514f0 489dd303 d2dbee51 \\
-\hline M6 & = c470ffcd 663dc342 01c36add c0111c35 \\
-\hline C6 & = 6989143a 39de09ab 2680fe6c 41f0a7c1 \\
-\hline M7 & = b38afee7 cfdb582e 3731f8b4 baa8d1a8 \\
-\hline C7 & = fe4049fa 655ee010 49299c58 c91024ff \\
-\hline M8 & = 9c06e811 99a97162 27be344e fcb436dd \\
-\hline C8 & = 1e9dab32 48d5ee47 c7e3a420 6f18b17b \\
-\hline M9 & = d0f096c0 64c3b5e2 c399993f c77394f9 \\
-\hline C9 & = 9da578a5 00a0c7f1 e825a4ca 71557055 \\
-\hline M10 & = e09720a8 11850ef2 3b2ee05d 9e617360 \\
-\hline C10 & = 4141c882 a23da353 2b11642a 85fea2bf \\
-\hline M11 & = 9d86e1c0 c18ea51a 012a00bb 413b9cb8 \\
-\hline C11 & = 18467572 0bdfcb5b 6bb71899 a6cafcc7 \\
-\hline M12 & = 188a703c d6bae31c c67b34b1 b00019e6 \\
-\hline C12 & = 156a70e5 af77f9a4 74d08303 e8c0412a \\
-\hline M13 & = a2b2a690 f02671fe 7c9ef8de c0094e53 \\
-\hline C13 & = dba504a1 26fa047f 8b8c295f 73e90a5c \\
-\hline M14 & = 3763478d 58d2c5f5 b827a014 8c5948a9 \\
-\hline
-\end{tabular}
+| n | $=21$ |
+| :--- | :--- |
+| $\mathrm{Mn}{ }^{*}$ | = f977fbac 4dfa35ec |
+| Mn | = 99bc730b a31ed02c f3deca08 fb93f87a |
+| C0 | = 00000000000000000000000000000000 |
+| M1 | = 7827fab2 2c000000 70dedf2d c42c5cbd |
+| C1 | = 6c9b07c0 35b7a016 3aad1405 1f57f3e0 |
+| M2 | = 3a96f8a0 b11418b3 608d5733 604a2cd3 |
+| C2 | = ec9c6b75 1d027216 3412fad4 f01cebba |
+| M3 | = 6aabc70c e3193bb5 153be2d3 c06dfdb2 |
+| C3 | = 3c83db67 ff87c86b 57ae4742 42c9816b |
+| M4 | = d16e9c35 7158be6a 41d6b861 e491db3f |
+| C4 | = e6e894ee 7e148494 44afcb75 9752e555 |
+| M5 | = bfeb518e fcf048d7 d5895373 0ff30c9e |
+| C5 | = cbf27df1 0fd514f0 489dd303 d2dbee51 |
+| M6 | = c470ffcd 663dc342 01c36add c0111c35 |
+| C6 | = 6989143a 39de09ab 2680fe6c 41f0a7c1 |
+| M7 | = b38afee7 cfdb582e 3731f8b4 baa8d1a8 |
+| C7 | = fe4049fa 655ee010 49299c58 c91024ff |
+| M8 | = 9c06e811 99a97162 27be344e fcb436dd |
+| C8 | = 1e9dab32 48d5ee47 c7e3a420 6f18b17b |
+| M9 | = d0f096c0 64c3b5e2 c399993f c77394f9 |
+| C9 | = 9da578a5 00a0c7f1 e825a4ca 71557055 |
+| M10 | = e09720a8 11850ef2 3b2ee05d 9e617360 |
+| C10 | = 4141c882 a23da353 2b11642a 85fea2bf |
+| M11 | = 9d86e1c0 c18ea51a 012a00bb 413b9cb8 |
+| C11 | = 18467572 0bdfcb5b 6bb71899 a6cafcc7 |
+| M12 | = 188a703c d6bae31c c67b34b1 b00019e6 |
+| C12 | = 156a70e5 af77f9a4 74d08303 e8c0412a |
+| M13 | = a2b2a690 f02671fe 7c9ef8de c0094e53 |
+| C13 | = dba504a1 26fa047f 8b8c295f 73e90a5c |
+| M14 | = 3763478d 58d2c5f5 b827a014 8c5948a9 |
 
 101
 3GPP TS 33.401 V14.1.0 (2016-12)
 
-\begin{tabular}{|l|l|}
-\hline C14 & = ab1a2703 3472acc8 e36c221b b7a0e530 \\
-\hline M15 & = 6931acf8 4f465a64 e62ce740 07e991e3 \\
-\hline C15 & = 04ceffcd e7618885 43c7e837 0f3bce6d \\
-\hline M16 & = 7ea823fa 0fb21923 b79905b7 33b631e6 \\
-\hline C16 & = 215ec3bf 5f3a303e 53db5269 e6c99fc2 \\
-\hline M17 & = c7d6860a 3831ac35 1a9c730c 52ff72d9 \\
-\hline C17 & = 8622e51b 45a660f3 d98fcf74 e5cc36b3 \\
-\hline M18 & = d308eedb ab21fde1 43a0ea17 e23edc1f \\
-\hline C18 & = 6e998fa6 196d5a4c 1ded2973 c09c0f8c \\
-\hline M19 & = 74cbb363 8a2033aa a15464ea a733385d \\
-\hline C19 & = 1710bc91 22e54289 244a87ce 23438f41 \\
-\hline M20 & = bbeb6fd7 3509b857 e6a419dc a1d8907a \\
-\hline C20 & = 3e18b029 a8ef18da b9968614 96552fd7 \\
-\hline M21 & = 99bc730b a31ed02c f3deca08 fb93f87a \\
-\hline C21 & = f4cc8fa3 59e6e2e7 6e09c45d 6ea5e0de \\
-\hline
-\end{tabular}
+| C14 | = ab1a2703 3472acc8 e36c221b b7a0e530 |
+| :--- | :--- |
+| M15 | = 6931acf8 4f465a64 e62ce740 07e991e3 |
+| C15 | = 04ceffcd e7618885 43c7e837 0f3bce6d |
+| M16 | = 7ea823fa 0fb21923 b79905b7 33b631e6 |
+| C16 | = 215ec3bf 5f3a303e 53db5269 e6c99fc2 |
+| M17 | = c7d6860a 3831ac35 1a9c730c 52ff72d9 |
+| C17 | = 8622e51b 45a660f3 d98fcf74 e5cc36b3 |
+| M18 | = d308eedb ab21fde1 43a0ea17 e23edc1f |
+| C18 | = 6e998fa6 196d5a4c 1ded2973 c09c0f8c |
+| M19 | = 74cbb363 8a2033aa a15464ea a733385d |
+| C19 | = 1710bc91 22e54289 244a87ce 23438f41 |
+| M20 | = bbeb6fd7 3509b857 e6a419dc a1d8907a |
+| C20 | = 3e18b029 a8ef18da b9968614 96552fd7 |
+| M21 | = 99bc730b a31ed02c f3deca08 fb93f87a |
+| C21 | = f4cc8fa3 59e6e2e7 6e09c45d 6ea5e0de |
 
 MACT = f4cc8fa3
 
-\section*{C.2.8 Test Set 8}
+## C.2.8 Test Set 8
 
 Count-I = 296f393c
 Bearer = 0b
@@ -3192,278 +3185,270 @@ C2 = 7a923db9 b053f844 9e706b27 378aeae0
 M3 = e3968346 f0a3b8a7 c02a018a e6407652
 C3 = 59d30ebc 8eb2314c 74fe3a04 1a248463
 
-\begin{tabular}{|l|l|}
-\hline M4 & = 26b987c9 13e6cbf0 83570016 cf83efbc \\
-\hline C4 & = 78db898b 6396784c 34f8edbd e7a747c5 \\
-\hline M5 & = 61c08251 3e21561a 427c009d 28c298ef \\
-\hline C5 & = 7c29e481 44ac6afa 3aca8a4a 7208ce99 \\
-\hline M6 & = ace78ed6 d56c2d45 05ad032e 9c04dc60 \\
-\hline C6 & = 7220fde3 3a769298 c9406349 6ad867d3 \\
-\hline M7 & = e73a8169 6da665c6 c48603a5 7b45ab33 \\
-\hline C7 & = 46e63f6e c6529a3b 2a7aa97c 0e280443 \\
-\hline M8 & = 221585e6 8ee31691 87fb0239 528632dd \\
-\hline C8 & = 79803306 ad490c46 3d971205 dc99a211 \\
-\hline M9 & = 656c807e a3248b7b 46d002b2 b5c7458e \\
-\hline C9 & = 4d74cec4 f07795ab f6127db4 529dfb57 \\
-\hline M10 & = b85b9ce9 5879e034 0859055e 3b0abbc3 \\
-\hline C10 & = a6eb9d1e 93820f49 d9c5f9e1 760cb686 \\
-\hline M11 & = eace8719 caa80265 c97205d5 dc4bcc90 \\
-\hline C11 & = 8f95155b d32ad9a3 463e905d 7ba480ee \\
-\hline M12 & = 2fe18396 29ed7132 8a0f0449 f588557e \\
-\hline C12 & = 6f120bf0 e6f4c66f a5c67815 65133712 \\
-\hline M13 & = 6898860e 042aecd8 4b2404c2 12c9222d \\
-\hline C13 & = db74500e 895db74a ef3b3b87 25087f2b \\
-\hline M14 & = a5bf8a89 ef679787 0cf50771 a60f66a2 \\
-\hline C14 & = f5879d17 7c0ddf7d 5772993a c137aeab \\
-\hline M15 & = ee628536 57addf04 cdde07fa 414e11f1 \\
-\hline C15 & = b18a88a1 bceb93e0 a4b7ae95 4479bbfe \\
-\hline M16 & = 2b4d81b9 b4e8ac53 8ea30666 688d881f \\
-\hline C16 & = 7d75c4a5 e87bff2f 07471eb4 46fcdb73 \\
-\hline M17 & = 6c348421 992f31b9 4f8806ed 8fccff4c \\
-\hline C17 & = b3456ccb e8f3e8d7 33568c84 f89d2145 \\
-\hline M18 & = 9123b896 42527ad6 13b109bf 75167485 \\
-\hline C18 & = b5363e85 edabc25d bd1a400d 5952742e \\
-\hline M19 & = f1268bf8 84b4cd23 d29a0934 925703d6 \\
-\hline C19 & = 55abea1b 574ea033 45df9cd1 46f1c8e9 \\
-\hline M20 & = 34098f77 67f1be74 91e708a8 bb949a38 \\
-\hline C20 & = 8efc00fd 5d245efc de807875 cd46423d \\
-\hline M21 & = 73708aef 4a36239e 50cc0823 5cd5ed6b \\
-\hline
-\end{tabular}
+| M4 | = 26b987c9 13e6cbf0 83570016 cf83efbc |
+| :--- | :--- |
+| C4 | = 78db898b 6396784c 34f8edbd e7a747c5 |
+| M5 | = 61c08251 3e21561a 427c009d 28c298ef |
+| C5 | = 7c29e481 44ac6afa 3aca8a4a 7208ce99 |
+| M6 | = ace78ed6 d56c2d45 05ad032e 9c04dc60 |
+| C6 | = 7220fde3 3a769298 c9406349 6ad867d3 |
+| M7 | = e73a8169 6da665c6 c48603a5 7b45ab33 |
+| C7 | = 46e63f6e c6529a3b 2a7aa97c 0e280443 |
+| M8 | = 221585e6 8ee31691 87fb0239 528632dd |
+| C8 | = 79803306 ad490c46 3d971205 dc99a211 |
+| M9 | = 656c807e a3248b7b 46d002b2 b5c7458e |
+| C9 | = 4d74cec4 f07795ab f6127db4 529dfb57 |
+| M10 | = b85b9ce9 5879e034 0859055e 3b0abbc3 |
+| C10 | = a6eb9d1e 93820f49 d9c5f9e1 760cb686 |
+| M11 | = eace8719 caa80265 c97205d5 dc4bcc90 |
+| C11 | = 8f95155b d32ad9a3 463e905d 7ba480ee |
+| M12 | = 2fe18396 29ed7132 8a0f0449 f588557e |
+| C12 | = 6f120bf0 e6f4c66f a5c67815 65133712 |
+| M13 | = 6898860e 042aecd8 4b2404c2 12c9222d |
+| C13 | = db74500e 895db74a ef3b3b87 25087f2b |
+| M14 | = a5bf8a89 ef679787 0cf50771 a60f66a2 |
+| C14 | = f5879d17 7c0ddf7d 5772993a c137aeab |
+| M15 | = ee628536 57addf04 cdde07fa 414e11f1 |
+| C15 | = b18a88a1 bceb93e0 a4b7ae95 4479bbfe |
+| M16 | = 2b4d81b9 b4e8ac53 8ea30666 688d881f |
+| C16 | = 7d75c4a5 e87bff2f 07471eb4 46fcdb73 |
+| M17 | = 6c348421 992f31b9 4f8806ed 8fccff4c |
+| C17 | = b3456ccb e8f3e8d7 33568c84 f89d2145 |
+| M18 | = 9123b896 42527ad6 13b109bf 75167485 |
+| C18 | = b5363e85 edabc25d bd1a400d 5952742e |
+| M19 | = f1268bf8 84b4cd23 d29a0934 925703d6 |
+| C19 | = 55abea1b 574ea033 45df9cd1 46f1c8e9 |
+| M20 | = 34098f77 67f1be74 91e708a8 bb949a38 |
+| C20 | = 8efc00fd 5d245efc de807875 cd46423d |
+| M21 | = 73708aef 4a36239e 50cc0823 5cd5ed6b |
 
-\begin{tabular}{|l|l|}
-\hline C21 & = aa07abd7 b26d40b0 53945cfa 6aafab45 \\
-\hline M22 & = be578668 a17b58c1 171d0b90 e813a9e4 \\
-\hline C22 & = 4739c2bb 17ae5960 7ac250e2 c4c172fa \\
-\hline M23 & = f58a89d7 19b11042 d6360b1b 0f52deb7 \\
-\hline C23 & = eda48d2b 146feccf 11c45d3b 2aac4c37 \\
-\hline M24 & = 30a58d58 faf46315 954b0a87 26914759 \\
-\hline C24 & = 4dbbb4e3 9e344d41 d05ca472 50186527 \\
-\hline M25 & = 77dc88c0 d733feff 54600a0c c1d0300a \\
-\hline C25 & = ecda3d93 5776d708 42c9c5da 9a09dbe3 \\
-\hline M26 & = aaeb9457 2c6e95b0 1ae90de0 4f1dce47 \\
-\hline C26 & = 58a010aa f0149da7 5dfe9049 4676b663 \\
-\hline M27 & = f87e8fa7 bebf77e1 dbc20d6b a85cb914 \\
-\hline C27 & = d611b8cb bb9fb2ac f82aa88b fd6aab42 \\
-\hline M28 & = 3d518b28 5dfa04b6 98bf0cf7 819f20fa \\
-\hline C28 & = a23131a6 d7352c69 e9790a6b 26b0292a \\
-\hline M29 & = 7a288eb0 703d995c 59940c7c 66de57a9 \\
-\hline C29 & = 9026e0dd c60dc7fe 3ff024e4 5c853be8 \\
-\hline M30 & = b70f8237 9b70e203 1e450fcf d2181326 \\
-\hline C30 & = af09e79e 54d8c2e1 85b08d12 d638d687 \\
-\hline M31 & = fcd28d88 23baaa80 df6e0f44 35596475 \\
-\hline C31 & = f7bc7632 8b116b03 f5d1fd78 3f4d866d \\
-\hline M32 & = 39fd8907 c0ffd9d7 9c130ed8 1c9afd9b \\
-\hline C32 & = 0c2a4710 a2362a1f 7967fd45 1a7d188d \\
-\hline M33 & = 7e848c9f ed38443d 5d380e53 fbdb8ac8 \\
-\hline C33 & = df3fc64e ff5998be 926a71d8 7836cf38 \\
-\hline M34 & = c3d3f068 76054f12 2461107d e92fea09 \\
-\hline C34 & = 11133bc0 6cdef5b2 0ba5cf12 b293ea83 \\
-\hline M35 & = c6f6923a 188d53af e54a10f6 0e6e9d5a \\
-\hline C35 & = fe95113c c42ac4c4 bd53dfcb 41d01f1a \\
-\hline M36 & = 03d996b5 fbc820f8 a637116a 27ad04b4 \\
-\hline C36 & = fbd5a26b 824d7a62 bdcad592 0ef8d4c8 \\
-\hline M37 & = 44a0932d d60fbd12 671c11e1 c0ec73e7 \\
-\hline C37 & = e75a94c8 e5b631b8 6e0f1153 f88b87aa \\
-\hline M38 & = 89879faa 3d42c64d 20cd1252 742a3768 \\
-\hline C38 & = 773a8452 8fb77154 baaa0445 d517de8f \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|}
-\hline M39 & = c25a9015 85888ece e1e612d9 936b403b \\
-\hline C39 & = b53b90f0 6dce6530 593171f8 42eb5ab7 \\
-\hline M40 & = 0775949a 66cdfd99 a29b1345 baa8d9d5 \\
-\hline C40 & = 2d211e99 76cad436 d37bb281 74fd9aaf \\
-\hline M41 & = 400c9102 4b0a6073 63b013ce 5de9ae86 \\
-\hline C41 & = 71f3983e 65f0af4d 028c1308 6488de12 \\
-\hline M42 & = 9d3b8d95 b0570b3c 2d391422 d32450cb \\
-\hline C42 & = 0d292597 f79f9c95 f213724a 55e54437 \\
-\hline M43 & = cfae9665 2286e96d ec1214a9 34652798 \\
-\hline C43 & = 9b3ba456 072cdaa2 5bc5dae7 ab5e5c36 \\
-\hline M44 & = 0a8192ea c1c39a3a af6f1535 1da6be76 \\
-\hline C44 & = 0a3b8e65 0bf406a9 267783f1 69979a3e \\
-\hline M45 & = 4df89772 ec0407d0 6e4415be fae7c925 \\
-\hline C45 & = 6a6cb8da bfaca611 7b7f1996 b83d4c92 \\
-\hline M46 & = 80df9bf5 07497c8f 2995160d 4e218daa \\
-\hline C46 & = 6ed66263 70b356c4 bea4e69b fa281190 \\
-\hline M47 & = cb02944a bf83340c e8be1686 a960faf9 \\
-\hline C47 & = 65cf4cda 156b2025 b5b43852 022b0211 \\
-\hline M48 & = 0e2d90c5 5cc6475b abc3171a 80a36317 \\
-\hline C48 & = 96cff0a9 6e209fd5 065c9f34 e0edc899 \\
-\hline M49 & = 4954955d 7101dab1 6ae81791 67e21444 \\
-\hline C49 & = 61158848 8fb6a12b a2a155bc fa279420 \\
-\hline M50 & = b443a9ea aa7c91de 36d118c3 9d389f8d \\
-\hline C50 & = 79a1892a 63751231 f45163bb cb8a7729 \\
-\hline M51 & = d4469a84 6c9a262b f7fa1848 7a79e8de \\
-\hline C51 & = 25c71838 32d36692 22379a7b a086716c \\
-\hline M52 & = 11699e0b 8fdf557c b48719d4 53ba7130 \\
-\hline C52 & = 466dbaf4 10f27161 202bd3e2 ce7fc5f3 \\
-\hline M53 & = 56109b93 a218c896 75ac195f b4fb0663 \\
-\hline C53 & = adcb04f6 86696807 38756fa3 7a350ccc \\
-\hline M54 & = 9b379714 4955b3c9 327d1aec 003d42ec \\
-\hline C54 & = 802a2d59 0b3a457a f449ba39 f8bad584 \\
-\hline M55 & = d0ea98ab f19ffb4a f3561a67 e77c35bf \\
-\hline C55 & = b6bbd86d 5e708389 d18413f9 ddd9a92a \\
-\hline M56 & = 15c59c24 12da881d b02b1bfb cebfac51 \\
-\hline
-\end{tabular}
+| C21 | = aa07abd7 b26d40b0 53945cfa 6aafab45 |
+| :--- | :--- |
+| M22 | = be578668 a17b58c1 171d0b90 e813a9e4 |
+| C22 | = 4739c2bb 17ae5960 7ac250e2 c4c172fa |
+| M23 | = f58a89d7 19b11042 d6360b1b 0f52deb7 |
+| C23 | = eda48d2b 146feccf 11c45d3b 2aac4c37 |
+| M24 | = 30a58d58 faf46315 954b0a87 26914759 |
+| C24 | = 4dbbb4e3 9e344d41 d05ca472 50186527 |
+| M25 | = 77dc88c0 d733feff 54600a0c c1d0300a |
+| C25 | = ecda3d93 5776d708 42c9c5da 9a09dbe3 |
+| M26 | = aaeb9457 2c6e95b0 1ae90de0 4f1dce47 |
+| C26 | = 58a010aa f0149da7 5dfe9049 4676b663 |
+| M27 | = f87e8fa7 bebf77e1 dbc20d6b a85cb914 |
+| C27 | = d611b8cb bb9fb2ac f82aa88b fd6aab42 |
+| M28 | = 3d518b28 5dfa04b6 98bf0cf7 819f20fa |
+| C28 | = a23131a6 d7352c69 e9790a6b 26b0292a |
+| M29 | = 7a288eb0 703d995c 59940c7c 66de57a9 |
+| C29 | = 9026e0dd c60dc7fe 3ff024e4 5c853be8 |
+| M30 | = b70f8237 9b70e203 1e450fcf d2181326 |
+| C30 | = af09e79e 54d8c2e1 85b08d12 d638d687 |
+| M31 | = fcd28d88 23baaa80 df6e0f44 35596475 |
+| C31 | = f7bc7632 8b116b03 f5d1fd78 3f4d866d |
+| M32 | = 39fd8907 c0ffd9d7 9c130ed8 1c9afd9b |
+| C32 | = 0c2a4710 a2362a1f 7967fd45 1a7d188d |
+| M33 | = 7e848c9f ed38443d 5d380e53 fbdb8ac8 |
+| C33 | = df3fc64e ff5998be 926a71d8 7836cf38 |
+| M34 | = c3d3f068 76054f12 2461107d e92fea09 |
+| C34 | = 11133bc0 6cdef5b2 0ba5cf12 b293ea83 |
+| M35 | = c6f6923a 188d53af e54a10f6 0e6e9d5a |
+| C35 | = fe95113c c42ac4c4 bd53dfcb 41d01f1a |
+| M36 | = 03d996b5 fbc820f8 a637116a 27ad04b4 |
+| C36 | = fbd5a26b 824d7a62 bdcad592 0ef8d4c8 |
+| M37 | = 44a0932d d60fbd12 671c11e1 c0ec73e7 |
+| C37 | = e75a94c8 e5b631b8 6e0f1153 f88b87aa |
+| M38 | = 89879faa 3d42c64d 20cd1252 742a3768 |
+| C38 | = 773a8452 8fb77154 baaa0445 d517de8f |
 
-\begin{tabular}{|l|l|}
-\hline C56 & = ff010e37 0ad1420e df6a5276 81b9f685 \\
-\hline M57 & = 52bc99bc 3f1d15f7 71001b70 29fedb02 \\
-\hline C57 & = a7af152e b0c0dc25 d96c9792 672c098e \\
-\hline M58 & = 8f8b852b c4407eb8 3f891c9c a733254f \\
-\hline C58 & = 957bc801 eaabe60c 27193122 a94cccb8 \\
-\hline M59 & = dd1e9edb 56919ce9 fea21c17 4072521c \\
-\hline C59 & = 3b6d3712 3ea45568 15a4c417 3f903fc3 \\
-\hline M60 & = 18319a54 b5d4efbe bddf1d8b 69b1cbf2 \\
-\hline C60 & = 656e7869 42ef502b f5838dc4 44a89253 \\
-\hline M61 & = 5f489fcc 98137254 7cf41d00 8ef0bca1 \\
-\hline C61 & = 934b5a02 5051d909 a9d84ab2 547853c6 \\
-\hline M62 & = 926f934b 735e090b 3b251eb3 3a36f82e \\
-\hline C62 & = b667b4da 06f5670f c014bb27 09e6e18c \\
-\hline M63 & = d9b29cf4 cb944188 fa0e1e38 dd778f7d \\
-\hline C63 & = 88033db1 446aaa10 a348ddaa d7d80d16 \\
-\hline M64 & = 1c9d987b 28d132df b9731fa4 f4b41693 \\
-\hline C64 & = 52d29028 818fae29 dad8c1fb 124d173f \\
-\hline M65 & = 5be49de3 0516af35 78581f2f 13f561c0 \\
-\hline C65 & = b6131b03 2cc9c6ae 96051b5d 68aa7659 \\
-\hline M66 & = 66336194 1eab249a 4bc123f8 d15cd711 \\
-\hline C66 & = 58fbdb68 61d57ded 89977624 977ce584 \\
-\hline M67 & = a956a1bf 20fe6eb7 8aea2373 361da042 \\
-\hline C67 & = b9929b5e 371a0fb6 357c864d 4ea36d30 \\
-\hline M68 & = 6c79a530 c3bb1de0 c99722ef 1fde39ac \\
-\hline C68 & = 198a06eb 2c013cab eadb6627 d555e3a6 \\
-\hline M69 & = 2b00a0a8 ee7c800a 08bc2264 f89f4eff \\
-\hline C69 & = d1f0a42a b3045545 8e69a513 14825bfc \\
-\hline M70 & = e627ac2f 0531fb55 4f6d21d7 4c590a70 \\
-\hline C70 & = 6b8c1b1a 03286dde f4ecf569 66f264d0 \\
-\hline M71 & = adfaa390 bdfbb3d6 8e46215c ab187d23 \\
-\hline C71 & = 082fe1f5 61373b7b 048b92ed 3b36c1d5 \\
-\hline M72 & = 68d5a71f 5ebec081 cd3b20c0 82dbe4cd \\
-\hline C72 & = cd304dc4 682e63df 49b7da3b 1e780f3a \\
-\hline M73 & = 2faca287 73795d6b 0c10204b 659a939e \\
-\hline C73 & = 596f4ba2 4a20bb10 a9fa3124 6a7488b9 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|l|l|}
-\hline M74 & = f29bbe10 88243624429927 a 7 eb576dd3 & & \\
-\hline C74 & = 776ca237 & 97bc8e6b bca6eafd 8409dfe3 & \\
-\hline M75 & = a00ea5e0 & 1af5d475 & 83b2272c \\
-\hline C75 & = 828637a1 & 8145e141 & 83f331c6 \\
-\hline M76 & = 6521a16f f9b0a722 & c0cf26b0 & 25d5836e \\
-\hline C76 & = d7791efa bc262f54 & 835ec67c 7a224aff & \\
-\hline M77 & = 2258a4f7 & d4773ac8 & 01e4263b \\
-\hline C77 & = af53bb31 & 351481e9 & 7a71d208 \\
-\hline M78 & = ef7fa870 & 46352588 & 7652b0b2 \\
-\hline C78 & = d4022c6e & 13ea8576 & e2828b8a \\
-\hline M79 & = a4a2a7cf 87f00914 & 871e2503 & 9113c7e1 \\
-\hline C79 & = 934e9389 & 7d051877 & 7e33d2b5 \\
-\hline M80 & = 618da340 & 64b57a43 & c463249f b8d05e0f \\
-\hline C80 & = 0d505c6e & 3820f48f & 2d9d7965 \\
-\hline M81 & = 26f4a6d8 & 4972e7a9 & 05482414 \\
-\hline C81 & = 7e83e4a2 e028cb71 & aa4d49c3 & 77cb6878 \\
-\hline M82 & = dbe39a6f 920facc6 & 59712b46 & a54ba295 \\
-\hline C82 & = e60a012c & 3604a26b & fcbd8bb8 \\
-\hline M83 & = bbe6a901 & 54e91b33 & 985a2bcd \\
-\hline C83 & = 3b571f1e & 6ac062f6 & e38133b9 \\
-\hline M84 & = 7ec9ad8e b7ac6864 & db272a51 & 6bc94c28 \\
-\hline C84 & = 64c12b59 & f3f996cf aa4600f0 bbe782c7 & \\
-\hline M85 & = 39b0a816 & 9a6bf58e & 1a0c2ada \\
-\hline C85 & = 6d697d70 & 41a532be & 99db1d5e \\
-\hline M86 & = f497a491 & 71268ed1 & 5ddd2969 \\
-\hline C86 & = e13200d9 & 02b60040 & c8d432e3 \\
-\hline M87 & = bf4aab2e c9ecc652 & 9cf629e2 df0f08a7 & \\
-\hline C87 & = bb96999a e4f1f5cb & 9f6c2787 & 1215a092 \\
-\hline M88 & = 7a65afa1 2aa9b505 & df8b287e f6cc9149 & \\
-\hline C88 & = f2ede003 & 89c33765 & 4d195eeb \\
-\hline M89 & = 3d1caa39 & 076e28ef 1ea028f5 & 118de61a \\
-\hline C89 & = bfa3ef0f 3171e7fa & 90b5b1b8 e1a002d6 & \\
-\hline M90 & = e02bb6ae fc3343a0 & 50292f19 & 9f401857 \\
-\hline C90 & = 56e2b617 3161c6c2 & 1e122148 & 86ecd966 \\
-\hline M91 & = b2bead5e 6ee2a1f1 & 91022f92 & 78016f04 \\
-\hline
-\end{tabular}
+| M39 | = c25a9015 85888ece e1e612d9 936b403b |
+| :--- | :--- |
+| C39 | = b53b90f0 6dce6530 593171f8 42eb5ab7 |
+| M40 | = 0775949a 66cdfd99 a29b1345 baa8d9d5 |
+| C40 | = 2d211e99 76cad436 d37bb281 74fd9aaf |
+| M41 | = 400c9102 4b0a6073 63b013ce 5de9ae86 |
+| C41 | = 71f3983e 65f0af4d 028c1308 6488de12 |
+| M42 | = 9d3b8d95 b0570b3c 2d391422 d32450cb |
+| C42 | = 0d292597 f79f9c95 f213724a 55e54437 |
+| M43 | = cfae9665 2286e96d ec1214a9 34652798 |
+| C43 | = 9b3ba456 072cdaa2 5bc5dae7 ab5e5c36 |
+| M44 | = 0a8192ea c1c39a3a af6f1535 1da6be76 |
+| C44 | = 0a3b8e65 0bf406a9 267783f1 69979a3e |
+| M45 | = 4df89772 ec0407d0 6e4415be fae7c925 |
+| C45 | = 6a6cb8da bfaca611 7b7f1996 b83d4c92 |
+| M46 | = 80df9bf5 07497c8f 2995160d 4e218daa |
+| C46 | = 6ed66263 70b356c4 bea4e69b fa281190 |
+| M47 | = cb02944a bf83340c e8be1686 a960faf9 |
+| C47 | = 65cf4cda 156b2025 b5b43852 022b0211 |
+| M48 | = 0e2d90c5 5cc6475b abc3171a 80a36317 |
+| C48 | = 96cff0a9 6e209fd5 065c9f34 e0edc899 |
+| M49 | = 4954955d 7101dab1 6ae81791 67e21444 |
+| C49 | = 61158848 8fb6a12b a2a155bc fa279420 |
+| M50 | = b443a9ea aa7c91de 36d118c3 9d389f8d |
+| C50 | = 79a1892a 63751231 f45163bb cb8a7729 |
+| M51 | = d4469a84 6c9a262b f7fa1848 7a79e8de |
+| C51 | = 25c71838 32d36692 22379a7b a086716c |
+| M52 | = 11699e0b 8fdf557c b48719d4 53ba7130 |
+| C52 | = 466dbaf4 10f27161 202bd3e2 ce7fc5f3 |
+| M53 | = 56109b93 a218c896 75ac195f b4fb0663 |
+| C53 | = adcb04f6 86696807 38756fa3 7a350ccc |
+| M54 | = 9b379714 4955b3c9 327d1aec 003d42ec |
+| C54 | = 802a2d59 0b3a457a f449ba39 f8bad584 |
+| M55 | = d0ea98ab f19ffb4a f3561a67 e77c35bf |
+| C55 | = b6bbd86d 5e708389 d18413f9 ddd9a92a |
+| M56 | = 15c59c24 12da881d b02b1bfb cebfac51 |
 
-\begin{tabular}{|l|l|}
-\hline & C91 = d3a15f8e 6390dafe fc41cab0 472a7670 \\
-\hline M92 & = 7791a9d1 8da7d2a6 d27f2e0e 51c2f6ea \\
-\hline C92 & = 5b666f14 2c224401 655c48e8 d1b2c12e \\
-\hline M93 & = 30e8ac49 a0604f4c 13542e85 b68381b9 \\
-\hline C93 & = 4413e8b8 94bee1f2 05e193ee b695ab3d \\
-\hline M94 & = fdcfa0ce 4b2d3413 54852d36 0245c536 \\
-\hline C94 & = 7e0693cb ed077fa8 2944064c ffc7d5d6 \\
-\hline M95 & = b612af71 f3e77c90 95ae2dbd e504b265 \\
-\hline C95 & = d25164b5 d9efcd07 17be88f0 17990efd \\
-\hline M96 & = 733dabfe 10a20fc7 d6d32c21 ccc72b8b \\
-\hline C96 & = 9e2abf1e 5f8ebdf4 2fb41ae7 d4eb6973 \\
-\hline M97 & = 3444ae66 3d65922d 17f82caa 2b865cd8 \\
-\hline C97 & = d7fe8071 8577524b 01297cf3 ae68a829 \\
-\hline M98 & = 8913d291 a6589902 6ea13284 39723c19 \\
-\hline C98 & = 0c6be895 d9e858a7 e2500452 42e2686e \\
-\hline M99 & = 8c36b0c3 c8d085bf af8a320f de334b4a \\
-\hline C99 & = 3629aeb3 673b422d 4aea4a5c 5a935941 \\
-\hline M100 & = 4919b44c 2b95f6e8 ecf73393 f7f0d2a4 \\
-\hline C100 & = 6cc0142b e8455f69 67284dc0 dd708f02 \\
-\hline M101 & = 0e60b1d4 06526b02 2ddc3318 10b1a5f7 \\
-\hline C101 & = d2839043 25718658 fac2fb23 59d3994f \\
-\hline M102 & = c347bd53 ed1f105d 6a0d30ab a477e178 \\
-\hline C102 & = a5b5a2bf 19ec33b3 d2296d4a 3735981e \\
-\hline M103 & = 889ab2ec 55d558de ab263020 4336962b \\
-\hline C103 & = e97eb2ee e9769c3d ea6ad1bb ea079a88 \\
-\hline M104 & = 4db5b663 b6902b89 e85b31bc 6af50fc5 \\
-\hline C104 & = 042f1f1c 59a41204 1484dd2b 426eb392 \\
-\hline M105 & = 0accb3fb 9b57b663 29703137 8db47896 \\
-\hline C105 & = 45e15f74 bb550567 a80a5dac acc18ebb \\
-\hline M106 & = d7fbaf6c 600add2c 67f936db 037986db \\
-\hline C106 & = 9e285b68 8a3338f8 dc2e12de d3a89153 \\
-\hline M107 & = 856eb49c f2db3f7d a6d23650 e438f188 \\
-\hline C107 & = 48f6e6c3 0b1448b7 a94983d3 1416029d \\
-\hline M108 & = 4041b013 119e4c2a e5af37cc cdfb6866 \\
-\hline C108 & = a4645c35 b9a4f509 89704523 0e98fac1 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|}
-\hline M109 & = 0738b58b 3c59d1c0 24843747 2aba1f35 \\
-\hline C109 & = f8ec48ec 33ad7364 20ea077f 16be98b8 \\
-\hline M110 & = ca1fb90c d714aa9f 635534f4 9e7c5bba \\
-\hline C110 & = 8de31e96 1bb879e2 ca169749 51afab6f \\
-\hline M111 & = 81c2b6b3 6fdee21c a27e347f 793d2ce9 \\
-\hline C111 & = f602eab6 e1373191 fc30b633 8cd82741 \\
-\hline M112 & = 44edb23c 8c9b914b e10335e3 50feb507 \\
-\hline C112 & = 762c51e6 d30a4eab 869c8827 0d698121 \\
-\hline M113 & = 0394b7a4 a15c0ca1 20283568 b7bfc254 \\
-\hline C113 & = e1db681b 5fb862fc b1c3747f ab057c1c \\
-\hline M114 & = fe838b13 7a2147ce 7c113a3a 4d65499d \\
-\hline C114 & = e77d4ba4 812e0730 4eb1ee0e c233685d \\
-\hline M115 & = 9e86b87d bcc7f03b bd3a3ab1 aa243ece \\
-\hline C115 & = 177fd714 1f206a6f 06940efd a023309f \\
-\hline M116 & = 5ba9bcf2 5f82836c fe473b2d 83e7a720 \\
-\hline C116 & = c738f59b 0715dded 2efe635d a073b5a3 \\
-\hline M117 & = 1cd0b96a 72451e86 3f6c3ba6 64a6d073 \\
-\hline C117 & = c99dbfa3 ebd3f018 bba8b961 96818130 \\
-\hline M118 & = d1f7b5ed 990865d9 78bd3815 d06094fc \\
-\hline C118 & = eebd79e4 c7378d33 3941a3c5 45ee8d37 \\
-\hline M119 & = 9a2aba52 21c22d5a b996389e 3721e3af \\
-\hline C119 & = dbdce382 e9abef5d 39f309ad a6ce7e8c \\
-\hline M120 & = 5f05bedd c2875e0d faeb3902 1ee27a41 \\
-\hline C120 & = 7f851259 1a77d8a5 2f146735 6ebec181 \\
-\hline M121 & = 187cbb45 ef40c3e7 3bc03989 f9a30d12 \\
-\hline C121 & = 8e423a41 34eca7b9 f8a1c48e 6fbc50ec \\
-\hline M122 & = c54ba7d2 141da8a8 75493e65 776ef35f \\
-\hline C122 & = b6e40968 80bfc03f c7aa655b c0e12a25 \\
-\hline M123 & = 97debc22 86cc4af9 b4623eee 902f840c \\
-\hline C123 & = 3a1a64aa b9addbd6 eb3ad3b1 1f2fe168 \\
-\hline M124 & = 52f1b8ad 658939ae f71f3f72 b9ec1de2 \\
-\hline C124 & = 1559a703 6187d461 52dbf04d 4bac3ca0 \\
-\hline M125 & = 1588bd35 484ea444 36343ff9 5ead6ab1 \\
-\hline C125 & = 16136377 e935b0fd e2c2ab4e 1718b30e \\
-\hline M126 & = d8afb1b2 a303df1b 71e53c4a ea6b2e3e \\
-\hline
-\end{tabular}
+| C56 | = ff010e37 0ad1420e df6a5276 81b9f685 |
+| :--- | :--- |
+| M57 | = 52bc99bc 3f1d15f7 71001b70 29fedb02 |
+| C57 | = a7af152e b0c0dc25 d96c9792 672c098e |
+| M58 | = 8f8b852b c4407eb8 3f891c9c a733254f |
+| C58 | = 957bc801 eaabe60c 27193122 a94cccb8 |
+| M59 | = dd1e9edb 56919ce9 fea21c17 4072521c |
+| C59 | = 3b6d3712 3ea45568 15a4c417 3f903fc3 |
+| M60 | = 18319a54 b5d4efbe bddf1d8b 69b1cbf2 |
+| C60 | = 656e7869 42ef502b f5838dc4 44a89253 |
+| M61 | = 5f489fcc 98137254 7cf41d00 8ef0bca1 |
+| C61 | = 934b5a02 5051d909 a9d84ab2 547853c6 |
+| M62 | = 926f934b 735e090b 3b251eb3 3a36f82e |
+| C62 | = b667b4da 06f5670f c014bb27 09e6e18c |
+| M63 | = d9b29cf4 cb944188 fa0e1e38 dd778f7d |
+| C63 | = 88033db1 446aaa10 a348ddaa d7d80d16 |
+| M64 | = 1c9d987b 28d132df b9731fa4 f4b41693 |
+| C64 | = 52d29028 818fae29 dad8c1fb 124d173f |
+| M65 | = 5be49de3 0516af35 78581f2f 13f561c0 |
+| C65 | = b6131b03 2cc9c6ae 96051b5d 68aa7659 |
+| M66 | = 66336194 1eab249a 4bc123f8 d15cd711 |
+| C66 | = 58fbdb68 61d57ded 89977624 977ce584 |
+| M67 | = a956a1bf 20fe6eb7 8aea2373 361da042 |
+| C67 | = b9929b5e 371a0fb6 357c864d 4ea36d30 |
+| M68 | = 6c79a530 c3bb1de0 c99722ef 1fde39ac |
+| C68 | = 198a06eb 2c013cab eadb6627 d555e3a6 |
+| M69 | = 2b00a0a8 ee7c800a 08bc2264 f89f4eff |
+| C69 | = d1f0a42a b3045545 8e69a513 14825bfc |
+| M70 | = e627ac2f 0531fb55 4f6d21d7 4c590a70 |
+| C70 | = 6b8c1b1a 03286dde f4ecf569 66f264d0 |
+| M71 | = adfaa390 bdfbb3d6 8e46215c ab187d23 |
+| C71 | = 082fe1f5 61373b7b 048b92ed 3b36c1d5 |
+| M72 | = 68d5a71f 5ebec081 cd3b20c0 82dbe4cd |
+| C72 | = cd304dc4 682e63df 49b7da3b 1e780f3a |
+| M73 | = 2faca287 73795d6b 0c10204b 659a939e |
+| C73 | = 596f4ba2 4a20bb10 a9fa3124 6a7488b9 |
+
+
+| M74 | = f29bbe10 88243624429927 a 7 eb576dd3 |  |  |
+| :--- | :--- | :--- | :--- |
+| C74 | = 776ca237 | 97bc8e6b bca6eafd 8409dfe3 |  |
+| M75 | = a00ea5e0 | 1af5d475 | 83b2272c |
+| C75 | = 828637a1 | 8145e141 | 83f331c6 |
+| M76 | = 6521a16f f9b0a722 | c0cf26b0 | 25d5836e |
+| C76 | = d7791efa bc262f54 | 835ec67c 7a224aff |  |
+| M77 | = 2258a4f7 | d4773ac8 | 01e4263b |
+| C77 | = af53bb31 | 351481e9 | 7a71d208 |
+| M78 | = ef7fa870 | 46352588 | 7652b0b2 |
+| C78 | = d4022c6e | 13ea8576 | e2828b8a |
+| M79 | = a4a2a7cf 87f00914 | 871e2503 | 9113c7e1 |
+| C79 | = 934e9389 | 7d051877 | 7e33d2b5 |
+| M80 | = 618da340 | 64b57a43 | c463249f b8d05e0f |
+| C80 | = 0d505c6e | 3820f48f | 2d9d7965 |
+| M81 | = 26f4a6d8 | 4972e7a9 | 05482414 |
+| C81 | = 7e83e4a2 e028cb71 | aa4d49c3 | 77cb6878 |
+| M82 | = dbe39a6f 920facc6 | 59712b46 | a54ba295 |
+| C82 | = e60a012c | 3604a26b | fcbd8bb8 |
+| M83 | = bbe6a901 | 54e91b33 | 985a2bcd |
+| C83 | = 3b571f1e | 6ac062f6 | e38133b9 |
+| M84 | = 7ec9ad8e b7ac6864 | db272a51 | 6bc94c28 |
+| C84 | = 64c12b59 | f3f996cf aa4600f0 bbe782c7 |  |
+| M85 | = 39b0a816 | 9a6bf58e | 1a0c2ada |
+| C85 | = 6d697d70 | 41a532be | 99db1d5e |
+| M86 | = f497a491 | 71268ed1 | 5ddd2969 |
+| C86 | = e13200d9 | 02b60040 | c8d432e3 |
+| M87 | = bf4aab2e c9ecc652 | 9cf629e2 df0f08a7 |  |
+| C87 | = bb96999a e4f1f5cb | 9f6c2787 | 1215a092 |
+| M88 | = 7a65afa1 2aa9b505 | df8b287e f6cc9149 |  |
+| C88 | = f2ede003 | 89c33765 | 4d195eeb |
+| M89 | = 3d1caa39 | 076e28ef 1ea028f5 | 118de61a |
+| C89 | = bfa3ef0f 3171e7fa | 90b5b1b8 e1a002d6 |  |
+| M90 | = e02bb6ae fc3343a0 | 50292f19 | 9f401857 |
+| C90 | = 56e2b617 3161c6c2 | 1e122148 | 86ecd966 |
+| M91 | = b2bead5e 6ee2a1f1 | 91022f92 | 78016f04 |
+
+
+|  | C91 = d3a15f8e 6390dafe fc41cab0 472a7670 |
+| :--- | :--- |
+| M92 | = 7791a9d1 8da7d2a6 d27f2e0e 51c2f6ea |
+| C92 | = 5b666f14 2c224401 655c48e8 d1b2c12e |
+| M93 | = 30e8ac49 a0604f4c 13542e85 b68381b9 |
+| C93 | = 4413e8b8 94bee1f2 05e193ee b695ab3d |
+| M94 | = fdcfa0ce 4b2d3413 54852d36 0245c536 |
+| C94 | = 7e0693cb ed077fa8 2944064c ffc7d5d6 |
+| M95 | = b612af71 f3e77c90 95ae2dbd e504b265 |
+| C95 | = d25164b5 d9efcd07 17be88f0 17990efd |
+| M96 | = 733dabfe 10a20fc7 d6d32c21 ccc72b8b |
+| C96 | = 9e2abf1e 5f8ebdf4 2fb41ae7 d4eb6973 |
+| M97 | = 3444ae66 3d65922d 17f82caa 2b865cd8 |
+| C97 | = d7fe8071 8577524b 01297cf3 ae68a829 |
+| M98 | = 8913d291 a6589902 6ea13284 39723c19 |
+| C98 | = 0c6be895 d9e858a7 e2500452 42e2686e |
+| M99 | = 8c36b0c3 c8d085bf af8a320f de334b4a |
+| C99 | = 3629aeb3 673b422d 4aea4a5c 5a935941 |
+| M100 | = 4919b44c 2b95f6e8 ecf73393 f7f0d2a4 |
+| C100 | = 6cc0142b e8455f69 67284dc0 dd708f02 |
+| M101 | = 0e60b1d4 06526b02 2ddc3318 10b1a5f7 |
+| C101 | = d2839043 25718658 fac2fb23 59d3994f |
+| M102 | = c347bd53 ed1f105d 6a0d30ab a477e178 |
+| C102 | = a5b5a2bf 19ec33b3 d2296d4a 3735981e |
+| M103 | = 889ab2ec 55d558de ab263020 4336962b |
+| C103 | = e97eb2ee e9769c3d ea6ad1bb ea079a88 |
+| M104 | = 4db5b663 b6902b89 e85b31bc 6af50fc5 |
+| C104 | = 042f1f1c 59a41204 1484dd2b 426eb392 |
+| M105 | = 0accb3fb 9b57b663 29703137 8db47896 |
+| C105 | = 45e15f74 bb550567 a80a5dac acc18ebb |
+| M106 | = d7fbaf6c 600add2c 67f936db 037986db |
+| C106 | = 9e285b68 8a3338f8 dc2e12de d3a89153 |
+| M107 | = 856eb49c f2db3f7d a6d23650 e438f188 |
+| C107 | = 48f6e6c3 0b1448b7 a94983d3 1416029d |
+| M108 | = 4041b013 119e4c2a e5af37cc cdfb6866 |
+| C108 | = a4645c35 b9a4f509 89704523 0e98fac1 |
+
+
+| M109 | = 0738b58b 3c59d1c0 24843747 2aba1f35 |
+| :--- | :--- |
+| C109 | = f8ec48ec 33ad7364 20ea077f 16be98b8 |
+| M110 | = ca1fb90c d714aa9f 635534f4 9e7c5bba |
+| C110 | = 8de31e96 1bb879e2 ca169749 51afab6f |
+| M111 | = 81c2b6b3 6fdee21c a27e347f 793d2ce9 |
+| C111 | = f602eab6 e1373191 fc30b633 8cd82741 |
+| M112 | = 44edb23c 8c9b914b e10335e3 50feb507 |
+| C112 | = 762c51e6 d30a4eab 869c8827 0d698121 |
+| M113 | = 0394b7a4 a15c0ca1 20283568 b7bfc254 |
+| C113 | = e1db681b 5fb862fc b1c3747f ab057c1c |
+| M114 | = fe838b13 7a2147ce 7c113a3a 4d65499d |
+| C114 | = e77d4ba4 812e0730 4eb1ee0e c233685d |
+| M115 | = 9e86b87d bcc7f03b bd3a3ab1 aa243ece |
+| C115 | = 177fd714 1f206a6f 06940efd a023309f |
+| M116 | = 5ba9bcf2 5f82836c fe473b2d 83e7a720 |
+| C116 | = c738f59b 0715dded 2efe635d a073b5a3 |
+| M117 | = 1cd0b96a 72451e86 3f6c3ba6 64a6d073 |
+| C117 | = c99dbfa3 ebd3f018 bba8b961 96818130 |
+| M118 | = d1f7b5ed 990865d9 78bd3815 d06094fc |
+| C118 | = eebd79e4 c7378d33 3941a3c5 45ee8d37 |
+| M119 | = 9a2aba52 21c22d5a b996389e 3721e3af |
+| C119 | = dbdce382 e9abef5d 39f309ad a6ce7e8c |
+| M120 | = 5f05bedd c2875e0d faeb3902 1ee27a41 |
+| C120 | = 7f851259 1a77d8a5 2f146735 6ebec181 |
+| M121 | = 187cbb45 ef40c3e7 3bc03989 f9a30d12 |
+| C121 | = 8e423a41 34eca7b9 f8a1c48e 6fbc50ec |
+| M122 | = c54ba7d2 141da8a8 75493e65 776ef35f |
+| C122 | = b6e40968 80bfc03f c7aa655b c0e12a25 |
+| M123 | = 97debc22 86cc4af9 b4623eee 902f840c |
+| C123 | = 3a1a64aa b9addbd6 eb3ad3b1 1f2fe168 |
+| M124 | = 52f1b8ad 658939ae f71f3f72 b9ec1de2 |
+| C124 | = 1559a703 6187d461 52dbf04d 4bac3ca0 |
+| M125 | = 1588bd35 484ea444 36343ff9 5ead6ab1 |
+| C125 | = 16136377 e935b0fd e2c2ab4e 1718b30e |
+| M126 | = d8afb1b2 a303df1b 71e53c4a ea6b2e3e |
 
 C126 = 995211d4 8695b1a2 a59b377d d2829f31
 M127 = 9372be0d 1bc99798 b0ce3cc1 0d2a596d
@@ -3475,21 +3460,22 @@ C129 = ebd5ccb0 b61ca905 29138303 f3377d22
 
 MACT = ebd5ccb0
 
-\section*{C. 3 128-EEA1}
+## C. 3 128-EEA1
 
 No new test data are provided for 128-EEA1, because the test data for UEA2 can be reused directly - there is an exact, one-to-one mapping between UEA2 inputs and 128-EEA1 inputs.
 
-\section*{C. 4 128-EIA1}
+## C. 4 128-EIA1
 
 This section includes seven test data sets; all are presented in hex, while the first is also presented in binary
 Bit ordering should be largely self explanatory, but in particular:
+
 - The 5 -bit BEARER is written in hex in a "right aligned" form, i.e. as a two-hex-digit value in the range 00 to 1 F inclusive, with BEARER [0] as the msb of the first digit.
 - Similarly the single DIRECTION bit is written in hex in "right aligned" form, i.e. the DIRECTION bit is the lsb of the hex digit.
 - Where the length of the message, or of a message sub-block, is not a multiple of 32 bits, it is written in hex in a "left aligned" form, i.e. the least significant few bits of the last word will be zero.
 
 NOTE: This section provides both byte aligned and non byte aligned test data sets. For EPS implementation verification, byte alignment test data sets ( 1,4 and 7) can be used, as EPS RRC and EPS NAS messages are byte aligned. The non byte aligned test data sets may be used to verify implementations that support non byte aligned messages.
 
-\section*{C.4.1 Test Set 1}
+## C.4.1 Test Set 1
 
 Count-I = (hex) 38a6f056
 Count-I = (bin) 00111000101001101111000001010110
@@ -3499,20 +3485,19 @@ Direction $=($ hex $) 0$
 Direction $=($ bin $) 0$
 IK = (hex) 2bd6459f 82c5b300 952c4910 4881ff48
 IK = (bin) 0010101111010110010001011001111110000010110001011011001100000000
+
 $$
 1001010100101100010010010001000001001000100000011111111101001000
 $$
 
-\begin{tabular}{|l|}
-\hline Length = 88 bits \\
-\hline Message = (hex) 33323462633938613734790000000000 \\
-\hline Message = (bin) 0011001100110010001101000110001001100011001110010011100001100001 001101110011010001111001 \\
-\hline MACT = (hex) 731f1165 \\
-\hline MACT = (bin) 01110011000111110001000101100101 \\
-\hline
-\end{tabular}
+| Length = 88 bits |
+| :--- |
+| Message = (hex) 33323462633938613734790000000000 |
+| Message = (bin) 0011001100110010001101000110001001100011001110010011100001100001 001101110011010001111001 |
+| MACT = (hex) 731f1165 |
+| MACT = (bin) 01110011000111110001000101100101 |
 
-\section*{C.4.2 Test Set 2}
+## C.4.2 Test Set 2
 
 Count-I = 36af6144
 Bearer $=18$
@@ -3522,7 +3507,7 @@ Length $=254$ bits
 Message = b3d3c917 0a4e1632 f60f8610 13d22d84 b726b6a2 78d802d1 eeaf1321 ba5929dc
 MACT = e3259f6f
 
-\section*{C.4.3 Test Set 3}
+## C.4.3 Test Set 3
 
 Count-I = c7590ea9
 Bearer $=17$
@@ -3533,7 +3518,7 @@ Message = bbb05703 8809496b cff86d6f bc8ce5b1 35a06b16 6054f2d5 65be8ace 75dc851
 
 MACT = 9a16c77d
 
-\section*{C.4.4 Test Set 4}
+## C.4.4 Test Set 4
 
 Count-I = 36af6144
 Bearer $=0 \mathrm{f}$
@@ -3543,12 +3528,14 @@ Length $=768$ bits
 Message = 35c68716 633c66fb 750c2668 65d53c11 ea05b1e9 fa49c839 8d48e1ef a5909d39
 47902837 f5ae96d5 a05bc8d6 1ca8dbef 1b13a4b4 abfe4fb1 006045b6 74bb5472
 9304c382 be53a5af 05556176 f6eaa2ef 1d05e4b0 83181ee6 74cda5a4 85f74d7a
+
 ```
 MACT = bba74492
 ```
 
 
-\section*{C.4.5 Test Set 5}
+## C.4.5 Test Set 5
+
 ```
 Count-I = 36af6144
 Bearer = 18
@@ -3561,7 +3548,8 @@ MACT = 4145e4b0
 ```
 
 
-\section*{C.4.6 Test Set 6}
+## C.4.6 Test Set 6
+
 ```
 Count-I = 7827fab2
 Bearer = 05
@@ -3582,7 +3570,7 @@ MACT = 0fa2b1ee
 ```
 
 
-\section*{C.4.7 Test Set 7}
+## C.4.7 Test Set 7
 
 Count-I = 296f393c
 Bearer = 0b
@@ -3597,17 +3585,17 @@ c02a018a e6407652 26b987c9 13e6cbf0 83570016 cf83efbc 61c08251 3e21561a 427c009d
 
 MACT = abf3e651
 
-\section*{Annex D (normative): Security for Relay Node Architectures}
+## Annex D (normative): Security for Relay Node Architectures
 
-\section*{D. 1 Introduction}
+## D. 1 Introduction
 
 This Annex provides the security procedures applied to relay nodes. Security requirements and security features applied to relay nodes can be found in the main body of the present specification.
 
 The overall stage 2 description for relay nodes can be found in 3GPP TS 23.401 [2] and 3GPP TS 36.300 [30].
 
-\section*{D. 2 Solution}
+## D. 2 Solution
 
-\section*{D.2.1 General}
+## D.2.1 General
 
 The basic idea of the solution for relay node security presented in this Annex is realizing a one-to-one binding of an RN and a USIM called USIM-RN. Such a one-to-one binding is realized in this solution either by using symmetric preshared keys (psk) or by certificates. In the psk case, the binding needs to be pre-established in the UICC and in the RN prior to deployment; in the certificate case, the binding needs to be pre-established only in the UICC prior to deployment. The use of certificates has the advantage that there is a standardized procedure for enrolling the private key corresponding to the certificate in the secure environment of the RN while the use of a psk requires manual operation for establishing the psk. A further advantage is that the name (identity) in the certificate can be given at time of enrolment, and does not have to be pre-established. On the other hand, the use of a psk has the advantage that no PKI is required and the procedure after pre-establishment of the psk is simpler. When using certificates for this one-to-one binding, a part of the usual certificate handling is replaced by subscription handling, as explained in Annex D.2.6.
 
@@ -3620,15 +3608,15 @@ When using psk only the USIM-RN is required. This USIM-RN shall perform any comm
 
 NOTE 2: USIM-INI and USIM-RN are described in TS 31.102 [3].
 
-\section*{D.2.2 Security Procedures}
+## D.2.2 Security Procedures
 
 The start-up of an RN shall proceed in the following steps, which are arranged in three phases. The Preparation Phase and Phase II procedures are the same for the certificate-based and the PSK-based case. Phase I procedures differ between the certificate-based case and the pre-shared key based case. If one of the steps fails in any of the involved entities the procedure shall be aborted by that entity, and the steps that follow the failed step shall not be executed (but the sending of failure messages is possible).
 
-\section*{Preparation Phase:}
+## Preparation Phase:
 
 The RN platform secure environment shall perform an integrity check of the RN platform. This shall include checking the integrity of the sensitive parts of the boot process and proceeding with the boot process only if the integrity checks of all these parts are successful.
 
-\section*{Phase I: Procedures prior to the RN attach procedure (certificate-based case)}
+## Phase I: Procedures prior to the RN attach procedure (certificate-based case)
 
 For the certificate-based case, the RN may skip Phase I attachment if the RN has an operator certificate available and a valid CRL list (if needed).
 
@@ -3662,7 +3650,7 @@ NOTE 6: Having two USIMs on one UICC is a standard feature available today (but 
 
 NOTE 7: The RN could distinguish a USIM-RN from a USIM-INI e.g. by the use of so-called "Application Identifiers (AID)" for UICC applications.
 
-\section*{Phase I: Procedures prior to the RN attach procedure (pre-shared key based case)}
+## Phase I: Procedures prior to the RN attach procedure (pre-shared key based case)
 
 For the psk-based case, there may be some cases when skipping of Phase I attachment is possible. Such cases are outside the scope of the present document.
 
@@ -3680,7 +3668,7 @@ NOTE 8: The use of the pre-shared key variant requires that the RN is configured
 
 NOTE 9: One may want to limit the lifetime of a secure channel between USIM-RN and RN for security reasons. Suitable counters providing such a limit include a record counter, cf. clause 6.4 of ETSI TS 102484 [29], or a transaction counter, cf. clause 5 of ETSI TS 102484 [29]. Details can be found in stage 3 specifications.
 
-\section*{Phase II: RN attach procedure (pre-shared key case and certificate-based case)}
+## Phase II: RN attach procedure (pre-shared key case and certificate-based case)
 
 It is required that a secure channel between RN and USIM-RN exists throughout the execution of phase II.
 The RN shall perform the RN attach procedure for EPS as defined in TS 36.300 [30], using the USIM-RN. In addition, the following security-related steps shall be performed:
@@ -3699,12 +3687,13 @@ A5. The RN may establish a secure connection to an OAM server in this phase to c
 
 The RN start-up is now complete from a security point of view, and UEs can start attaching to the RN.
 
-\section*{D.2.3 USIM Binding Aspects}
+## D.2.3 USIM Binding Aspects
 
 There shall be a one-to-one association between the USIM-RN and the RN.
 In the pre-shared key case, this one-to-one association is ensured by the fact that the key that is pre-shared between the USIM-RN and the RN shall not be available in any other entity.
 
 In the certificate-based case, this one-to-one association is ensured by the following requirements:
+
 - The UICC shall verify the RN identity, represented by the RN identity in the certificate, through the TLS handshake as part of the secure channel set-up, and shall check whether it coincides with the locally stored identity of the RN authorized to set up a secure channel with the USIM-RN;
 - the identity in an RN certificate shall be unique;
 - a particular RN identity shall be available in only one UICC.
@@ -3714,7 +3703,7 @@ The UICC may know the identity of the RN authorized to set up a secure channel w
 
 NOTE: The RN identity is contained in the subject name of the RN certificate. It is described in detail in clause D.3.3 of the present document and in TS 31.102 [13].
 
-\section*{D.2.4 Enrolment procedures for RNs}
+## D.2.4 Enrolment procedures for RNs
 
 This subclause applies only to the certificate-based case.
 The RN may enroll a device certificate as with macro eNBs according to TS 33.310 [6] prior to the RN attach procedure with the DeNB. This certificate may then be used for establishing the secure channel between RN and USIM-RN.
@@ -3727,7 +3716,7 @@ The IP connectivity required for enrolment may be established in the following w
 
 In both cases, the network shall ensure that the destinations the RN can reach are restricted to only the PDN(s) where the RA (Registration Authority for the certificate enrolment) and other servers to be contacted during phase I, e.g. the OAM server are located. In case (2) this shall be ensured by restricting IP traffic originating from the RN and sent only to certain destinations (APNs). The restrictions are assumed to be part of the profile relating to the subscription associated with the USIM-INI.
 
-\section*{D.2.5 Secure management procedures for RNs}
+## D.2.5 Secure management procedures for RNs
 
 The requirements on communication between the OAM systems and the eNB from clause 5.3.2 shall apply for relay nodes in both phases I and II. The mechanisms used to fulfil these requirements shall include applying security association(s) that extend between the RN and an entity in the Evolved Packet Core (EPC) or in an OAM domain trusted by the operator.
 
@@ -3736,6 +3725,7 @@ NOTE 1: No mechanisms used to fulfil these requirements are mandated in the pres
 NOTE 2: In case of offline configuration of the RN, the security measures used to fulfil the requirements from clause 5.3.2 are out of scope of the present document.
 
 NOTE 3: Examples for mechanisms to secure OAM communication to and from RNs are:
+
 - end-to-end security terminated within or just in front of the OAM server;
 - hop-by-hop security via SEG in EPC which is particularly suited for multiple management connections to separate OAM servers located within one "management domain".
 
@@ -3750,7 +3740,7 @@ For the certificate-based case in Phase I, IP connectivity established for enrol
 
 Restrictions on the destinations the RN can reach shall apply if the communication with the OAM server prior to the RN attach procedure is based on USIM-INI. They shall be realized in the same way as described in clause D.2.4.
 
-\section*{D.2.6 Certificate and subscription handling}
+## D.2.6 Certificate and subscription handling
 
 Whenever the operator intends to prevent the RN from attaching to the network the operator shall bar the subscription relating to the USIM-RN in the HSS.
 
@@ -3767,7 +3757,7 @@ As described in clause D.2.2, step Ec6, the certificate validation client on the
 
 A certificate validation client on the RN shall check the verification of the signatures in the UICC certificate chain up to the root certificate as well as the expiry time. The revocation status of the UICC certificate should be checked by means of the CRL obtained by the RN in clause D.2.2, step Ec3. The CRL check is optional to support by the RN.
 
-\section*{Further considerations on RN certificate and USIM-RN subscription handling:}
+## Further considerations on RN certificate and USIM-RN subscription handling:
 
 By using the one-to-one binding of RN and USIM-RN, a part of the usual certificate handling is replaced by subscription handling, as explained below:
 
@@ -3782,19 +3772,19 @@ RN Certificate renewal: This process may be used as normal as long as the RN ide
 
 NOTE 1: Certificate renewal with private key change may be useful even if the UICC does not check the expiry time of the certificate as, in this way, the use of the private key can be limited if desired.
 
-\section*{RN Certificate expiry:}
+## RN Certificate expiry:
 
 NOTE 2: As the UICC has no clock it cannot check the expiry time and, hence, the RN could also use an expired certificate in the secure channel set-up. As the certificate is only checked by the UICC for RN platform authentication in the secure channel set-up this is not a problem as long as the corresponding private key has not left the secure environment of the RN. More generally, if there is a risk that it has been compromised the operator will bar the corresponding subscription in the HSS. The use of the certificate is limited by the lifetime of the subscription bound to the RN. However, a UICC can be re-used with a different RN after having been re-configured with a different RN identity.
 
-\section*{D. 3 Secure channel profiles}
+## D. 3 Secure channel profiles
 
-\section*{D.3.1 General}
+## D.3.1 General
 
 The clause D. 3 profiles the algorithms to be used on the APDU secure channel, cf. ETSI TS 102484 [29]. In addition it specifies the profiles for the different key agreement methods.
 
 For the case when certificates are used for key agreement, the profiles are given for the TLS handshake used to provide key material for the Master SA of the secure channel between USIM-RN and RN, and for the certificates used in UICC and RN for mutual authentication during TLS handshake. For the psk case requirements on the key agreement with preshared keys are given.
 
-\section*{D.3.2 APDU secure channel profile}
+## D.3.2 APDU secure channel profile
 
 For communication between the USIM-RN and the RN a secure channel according to the APDU secure channel as specified in ETSI TS 102484 [29] shall be used. Further detailing of the secure channel is given in TS 31.102 [13].
 
@@ -3805,72 +3795,82 @@ For integrity protection, AES-CMAC as specified in ETSI TS 102484 [29] shall be 
 
 NOTE 2: The algorithm CRC32 is for redundancy check only, and not a cryptographic checksum. The algorithm "ANSI Retail MAC" is not fit for long-term usage in the scope of the present document.
 
-\section*{D.3.3 Key agreement based on certificate exchange}
+## D.3.3 Key agreement based on certificate exchange
 
-\section*{D.3.3.1 TLS profile}
+## D.3.3.1 TLS profile
 
 The key agreement for the certificate exchange case shall follow the mechanism "Certificate exchange" as specified in ETSI TS 102484 [29].
 
 During key agreement based on certificate exchange a TLS handshake is used to provide key material for the Master SA of the APDU secure channel between USIM-RN and RN.
 
 The TLS profile shall follow the profile given in Annex E of TS 33.310 [6] with the following restrictions and extensions:
+
 - the support of the ciphersuite mandatory for TLS 1.1 as described in TS 33.310 [6] is not required;
 - the support of fallback to TLS 1.0 as described in TS 33.310 [6] is not required;
 - neither UICC nor RN shall use TLS session resumption.
 
-\section*{D.3.3.2 Common profile for RN and UICC certificate}
+
+## D.3.3.2 Common profile for RN and UICC certificate
 
 The certificate profile for both RN and UICC certificates shall follow the TLS entity certificate profile given in clause 6.1.3a of TS 33.310 [6] with the following restrictions and extensions:
+
 - the support of the SHA-1 algorithm for use before signing the certificate as described in TS 33.310 [6] is not required;
 - the support of public key length of 1024-bit is not required;
 - only the subject name format with "(C=<country>), O=<Organization Name>, CN=<Some distinguishing name>" is mandatory to support.
 
-\section*{D.3.3.3 RN certificate profile}
+
+## D.3.3.3 RN certificate profile
 
 The RN certificate is used as client certificate in the TLS handshake between RN and UICC.
 The certificate profile for the RN certificate shall follow clause D.3.3.2 of the present document with the following restrictions and extensions:
+
 - the subject name shall be unique within all subject names issued by CAs under the same root CA;
 - the subject name may additionally contain the attribute "serialNumber=<serial number>";
 - the support of the countryName (C) and serialNumber attributes in the subject name is mandatory;
 
 NOTE 1: The usage of the countryName (C) and serialNumber attributes can support the operator in generating a unique identity for an RN.
+
 - the CRL distribution point is not used if the RN certificate is only used in the setup of the secure channel with the UICC. Therefore the CRL distribution point is optional in this case.
 
 NOTE 2: It may be desired to deploy the same RN certificate also for RN platform authentication to other network elements of the operator, e.g. if TLS with mutual authentication is used for an OAM connection. The profile given above is intended to allow such usage. Regarding the implementation of certificate handling in the UICC it should be noted that for this additional usage of the RN certificate the existence of additional fields in the certificate is possible, e.g. of the subjectAltName and/or the CRL distribution point, which are not relevant for the secure channel between RN and UICC.
 
-\section*{D.3.3.4 UICC certificate profile}
+## D.3.3.4 UICC certificate profile
 
 The UICC certificate is used as server certificate in the TLS handshake between RN and UICC.
 The certificate profile for the UICC certificate shall follow clause D.3.3.2 of the present document with the following additional provisions:
+
 - the CRL distribution point in the UICC certificate is optional.
 
 NOTE 1: The CRL distribution point and the support for CRL infrastructure for the UICC certificate is only needed if the revocation check of the UICC certificate is performed during setup of the secure channel (cf. clause D.2.6).
 
 NOTE 2: In common TLS usage, the RN learns the UICC certificate only during TLS handshake, when the IP connectivity to the core network using USIM-INI may no longer be available. Thus the CRL distribution point for CRLs having UICC certificates in scope would be known too late to allow the RN to retrieve an up-to-date CRL from the network. By reading the UICC certificate from the UICC before the establishment of the secure channel starts, the RN may learn the CRL distribution point while it still has IP connectivity based on USIM-INI, cf. step Ec3 in clause D.2.2. For access to the UICC certificate see the definition of the EF for UICC certificate in TS 31.102 [13].
 
-\section*{D.3.4 Key agreement for pre-shared key (psk) case}
+## D.3.4 Key agreement for pre-shared key (psk) case
 
 The key agreement for the psk case shall follow the mechanism "Strong Pre-shared Keys - Proprietary Pre-agreed keys" as specified in ETSI TS 102484 [29]. The pre-shared key shall be used directly to derive a Master secret for the Master SA.
 
 NOTE: The above requirement includes that the pre-shared key fulfills the requirements for WeakKey=0 as specified in clause 7.2 of ETSI TS 102484 [29].
 
-\section*{D.3.5 Identities used in key agreement}
+## D.3.5 Identities used in key agreement
 
 The key agreement mechanisms specified in ETSI TS 102484 [29] produce a value Ks_Local_Ref, which is a reference to Ks_local. It is transferred from the RN to the UICC during the Master SA setup and is used as input to the derivation of the 256 bit Master secret (MS) of the Master SA in the certificate exchange case.
 
 Ks_Local_Ref is specified in ETSI TS 102484 [29] as the concatenation of identities as follows:
 Ks_Local_Ref = Terminal_ID || Terminal_appli_ID || UICC_ID || UICC_appli_ID.
 The identities used in the scope of the present document for Ks_Local_Ref are specified as follows:
+
 - UICC_ID: This unique identifier for the UICC shall be the ICCID for the UICC as specified in ETSI TS 102221 [32].
 
 NOTE: The UICC_ID may be read by the RN from the UICC before establishment of the secure channel.
+
 - UICC_appli_ID: This unique identifier for the UICC application that hosts the UICC endpoint shall be the USIM-RN AID as specified in TS 31.102 [13].
 - Terminal_ID: This unique identifier for the RN shall be the subject name of the RN certificate as specified in clause D.3.3.3. In the psk case, where no certificate is used, the same definition as for the certificate exchange case shall apply.
 - Terminal_appli_ID: This unique identifier for the application that hosts the RN side endpoint shall be set to the UTF-8 encoded string "Relay_Node_appli".
 
-\section*{Annex E (normative): Dual connectivity}
 
-\section*{E. 1 Introduction}
+## Annex E (normative): Dual connectivity
+
+## E. 1 Introduction
 
 This clause describes the security functions necessary to support a UE that is simultaneously connected to more than one eNB for the architectures for dual connectivity as described in TS 36.300 [30]. The security functions are described in the context of the functions controlling the dual connectivity.
 
@@ -3878,23 +3878,20 @@ For dual connectivity architecture which hosts PDCP in MeNB the security functio
 
 The remainder of the present clause E deals with the architecture as shown in Figure E.1-1.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-128.jpg?height=977&width=947&top_left_y=1066&top_left_x=568}
-\captionsetup{labelformat=empty}
-\caption{Figure E.1-1 Offload architecture}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-128.jpg?height=977&width=947&top_left_y=1066&top_left_x=568)
+Figure E.1-1 Offload architecture
 
 When the MeNB establishes security between an SeNB and the UE for the first time for a given AS security context shared between the MeNB and the UE, the MeNB generates the S-K ${ }_{\text {eNB }}$ for the SeNB and sends it to the SeNB over the X2-C. To generate the S-Kenb, the MeNB associates a counter, called a SCG Counter, with the current AS security context. The SCG Counter is used as freshness input into S-K ${ }_{\text {eNB }}$ derivations as described in the clause E.2.4, and guarantees, together with the other provisions in the present clause E , that the $\mathrm{K}_{\text {UPenc }}$ derived from the same $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ is not re-used with the same input parameters as defined in Annex B of the present specification. The latter would result in key-stream re-use. The MeNB sends the value of the SCG Counter to the UE over the RRC signalling path when it is required to generate a new S-K ${ }_{\text {enb }}$.
 
 The communication established between the SeNB and the UE is protected at the PDCP layer using the AS Secondary Cell security context, or AS SC security context for short. The AS SC security context includes parameters as the AS security context described in clause 7 of the present specification, the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ replaces the $\mathrm{K}_{\mathrm{eNB}}$. The UE and the SeNB derives the $\mathrm{K}_{\mathrm{UPenc}}$ from the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ as described in clause A.7, cf. also E.2.4.2.
 
-\section*{E. 2 Dual connectivity offload architecture}
+## E. 2 Dual connectivity offload architecture
 
-\section*{E.2.1 Protection of the X2 reference point}
+## E.2.1 Protection of the X2 reference point
 
 The control plane signalling between MeNB and SeNB , that includes the transfer of the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ from the MeNB to the SeNB, over the X2 reference point shall be confidentiality and integrity protected using X2-C security protection as described in clause 5.3.4a and clause 11of the present specification. Any user plane data between MeNB and SeNB over X2 reference point shall be confidentiality and integrity protected using X2-U security protection as described in clause 5.3.4 and clause 12 of the present specification.
 
-\section*{E.2.2 Addition and modification of DRB in SeNB}
+## E.2.2 Addition and modification of DRB in SeNB
 
 When executing the SeNB Addition procedure (i.e. the initial offload of one or more radio bearers to the SeNB), or the SeNB Modification procedure requiring an update of $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$, the MeNB shall derive an $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ as defined in clause E.2.4, which results in a fresh S- $\mathrm{K}_{\mathrm{enb}}$. The MeNB shall forward the generated S- $\mathrm{K}_{\mathrm{enB}}$ to the SeNB during the SeNB Addition procedure or SeNB Modification procedure requiring key update.
 
@@ -3915,15 +3912,13 @@ If the UE receives a new SCG Counter in SeNB Addition/Modification procedure, th
 
 When the last radio bearer on the SeNB is released, the SeNB Release procedure is performed; the SeNB and the UE shall delete the $\mathrm{K}_{\text {UPenc. }}$ The SeNB and UE shall also delete the S-K ${ }_{\mathrm{eNB}}$, if it was not deleted earlier.
 
-\section*{E.2.3 Activation of encryption/decryption}
+## E.2.3 Activation of encryption/decryption
 
 The DRB offload procedure with activation of encryption/decryption follows the steps outlined on the Figure E.2.3-1.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-130.jpg?height=741&width=1326&top_left_y=278&top_left_x=342}
-\captionsetup{labelformat=empty}
-\caption{Figure E.2.3-1. SeNB encryption/decryption activation}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-130.jpg?height=741&width=1326&top_left_y=278&top_left_x=342)
+Figure E.2.3-1. SeNB encryption/decryption activation
+
 1. The UE and the MeNB establish the RRC connection.
 2. The MeNB decides to offload the DRB to the SeNB. The MeNB sends SeNB Addition Request to the SeNB over the X2-C to negotiate the available resources, configuration, and algorithms at the SeNB. The MeNB computes and delivers the S-K ${ }_{\text {eNB }}$ to the SeNB as necessary. UE EPS security capability should also be sent to SeNB.
 3. The SeNB allocates the necessary resources and chooses the ciphering algorithm which has the highest priority from its configured list and is also present in the UE EPS security capability.
@@ -3934,9 +3929,9 @@ NOTE: Since the message is sent over the RRC connection between the MeNB and the
 6. The UE accepts the RRC Connection Reconfiguration Command and shall compute the S- $\mathrm{K}_{\mathrm{eNB}}$ for the SeNB. The UE shall also compute the $\mathrm{K}_{\text {UPenc }}$ for the associated assigned DRB on the SeNB. The UE sends the RRC Reconfiguration Complete to the MeNB. The UE activates encryption/decryption once S-K ${ }_{\text {eNB }}$ and $\mathrm{K}_{\text {UPenc }}$ are derived.
 7. MeNB sends SeNB Reconfiguration Complete to the SeNB over the X2-C to inform SeNB configuration result. On receipt of this message, SeNB may activate encryption/decryption with UE. If SeNB does not activate encryption/decryption with the UE at this stage, SeNB shall activate encryption/decryption upon receiving the Random Access request from the UE.
 
-\section*{E.2.4 Derivation of keys for the DRBs in the SeNB}
+## E.2.4 Derivation of keys for the DRBs in the SeNB
 
-\section*{E.2.4.1 SCG Counter maintenance}
+## E.2.4.1 SCG Counter maintenance
 
 The MeNB shall associate a 16-bit counter, SCG Counter, with the EPS AS security context.
 The SCG Counter is used when computing the S-K ${ }_{\text {enb }}$. The UE and the MeNB shall treat the SCG Counter as a fresh input to S- $\mathrm{K}_{\mathrm{enb}}$ derivation. That is, the UE assumes that the MeNB provides a fresh SCG Counter each time and does not need to verify the freshness of the SCG Counter.
@@ -3951,23 +3946,20 @@ If the MeNB decides to turn off the offload connection and later decides to re-s
 
 The MeNB shall refresh the $\mathrm{K}_{\mathrm{eNB}}$ of the AS security context associated with the SCG Counter before the SCG Counter wraps around. Re-freshing the $\mathrm{K}_{\mathrm{eNB}}$ is done using intra cell handover as described in clause 7.2.9.3 of the present specification. When this $\mathrm{K}_{\mathrm{eNB}}$ is refreshed, the SCG Counter is reset to ' 0 ' as defined above.
 
-\section*{E.2.4.2 Security key derivation}
+## E.2.4.2 Security key derivation
 
 The UE and MeNB shall derive the security key S-K ${ }_{\text {eNB }}$ of the target SeNB as defined in Annex A. 15 of the present specification.
 
 The addition to the LTE key hierarchy with derivation of the S- $\mathrm{K}_{\mathrm{eNB}}$ is shown on Figure E.2.4.2-1.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-131.jpg?height=634&width=1370&top_left_y=1786&top_left_x=310}
-\captionsetup{labelformat=empty}
-\caption{Figure E.2.4.2-1 Addition to the Key Hierarchy for the SeNB}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-131.jpg?height=634&width=1370&top_left_y=1786&top_left_x=310)
+Figure E.2.4.2-1 Addition to the Key Hierarchy for the SeNB
 
 The SeNB and the UE shall further derive the ciphering key Kupenc for ciphering of the User Plane over the DRB. This derivation is performed according to Annex A. 7 using the S- $\mathrm{K}_{\mathrm{eNB}}$ as the input key and the input string S formed using the IDs of the SeNB selected algorithm to the KDF.
 
 NOTE: In the present specification, only a user plane encryption key is required between UE and SeNB. But the key derivation procedure permits deriving further keys according to Annex A. 7 if this should be desired in the future.
 
-\section*{E.2.4.3 Negotiation of security algorithms}
+## E.2.4.3 Negotiation of security algorithms
 
 When establishing one or more DRBs for a UE at the SeNB, as shown on Figure E.2.3-1, the MeNB shall forward the UE EPS security capabilities associated with the UE in theSeNB Addition/Modification procedure.
 
@@ -3977,43 +3969,43 @@ The MeNB shall forward the indication to the UE during the RRCConnectionReconfig
 
 NOTE: The UE uses one encryption algorithm for encryption of SRB and any potential DRB(s) established with MeNB, and a same or different encryption algorithm for encryption of DRB(s) established with SeNB.
 
-\section*{E.2.5 S-Kenb update}
+## E.2.5 S-Kenb update
 
-\section*{E.2.5.1 S-Kenb update triggers}
+## E.2.5.1 S-Kenb update triggers
 
 The system supports update of the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$. The MeNB may update the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ for any reason by using the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ update procedure defined in clause E.2. 5.2 of the current specification. The SeNB shall request the MeNB to update the S- $\mathrm{K}_{\mathrm{eNB}}$ over the X2-C, when uplink or downlink PDCP COUNTs are about to wrap around for any of the DRBs.
 
 If the MeNB re-keys its currently active $\mathrm{K}_{\mathrm{eNB}}$ in an AS security context the MeNB shall update any S- $\mathrm{K}_{\mathrm{eNB}}$ associated with that AS security context. This retains the two-hop security property for X2-handovers.
 
-\section*{E.2.5.2 $\mathrm{S}-\mathrm{K}_{\text {enb }}$ update procedure}
+## E.2.5.2 $\mathrm{S}-\mathrm{K}_{\text {enb }}$ update procedure
 
 If the MeNB receives a request for S- $\mathrm{K}_{\text {enb }}$ update from the SeNB or decides on its own to perform S- $\mathrm{K}_{\text {enb }}$ update (see clause E.2.5.1), the MeNB shall compute a fresh S- $\mathrm{K}_{\mathrm{eNB}}$ and increment the SCG Counter, as defined in clause E.2.4. Then the MeNB shall perform a SeNB Modification procedure to deliver the fresh S-K ${ }_{\mathrm{eNB}}$ to the SeNB. The MeNB shall provide the value of the SCG Counter used in the derivation of the S-K $\mathrm{K}_{\mathrm{eNB}}$ to the UE in an integrity protected RRC procedure. The UE shall derive the $\mathrm{S}-\mathrm{K}_{\mathrm{eNB}}$ and $\mathrm{K}_{\text {UPenc }}$ as described in clause E.2.4.
 
 Whenever the UE or SeNB start using a fresh S- $\mathrm{K}_{\mathrm{eNB}}$, they shall re-calculate the $\mathrm{K}_{\text {UPenc }}$ from the fresh S- $\mathrm{K}_{\mathrm{eNB}}$.
 
-\section*{E.2.6 Handover procedures}
+## E.2.6 Handover procedures
 
 During S1 and X2 handover, the offloaded DRB connection between the UE and the SeNB is released, and the AS SC security context at SeNB and UE can be deleted since it shall not be used again.
 
-\section*{E.2.7 Periodic local authentication procedure}
+## E.2.7 Periodic local authentication procedure
 
 SeNB may request the MeNB to execute a counter check procedure specified in clause 7.5 of this specification to verify the value of the PDCP COUNT(s) associated with DRB(s) offloaded to the SeNB. To accomplish this, the SeNB shall communicate this request, including the expected values of PDCP COUNT(s) and associated radio bearer identities (which are identified by E-RAB Id(s) in X2AP), to the MeNB over the X2-C.
 
 If the MeNB receives a RRC counter check response from the UE that contains one or several PDCP COUNT values (possibly associated with both MeNB and SeNB), the MeNB may release the connection or report the difference of the PDCP COUNT values to the serving MME or O\&M server for further traffic analysis for e.g. detecting the attacker.
 
-\section*{E.2.8 Radio link failure recovery}
+## E.2.8 Radio link failure recovery
 
 Since the MeNB holds the control plane functions even in dual connectivity, the UE runs the RRC re-establishment procedure with the MeNB as specified in clause 7.4.3 of the present specification.
 
 NOTE: During the RRC re-establishment procedure, the DRB(s) offloaded between the UE and the SeNB is (are) released. If MeNB still want to offload DRB(s) to SeNB, SeNB addition is performed as specified in E.2.2.
 
-\section*{E.2.9 Avoiding key stream reuse caused by DRB type change}
+## E.2.9 Avoiding key stream reuse caused by DRB type change
 
 When a MCG DRB changes to SCG DRB and then changes back to MCG DRB, the key stream reuse is possible. MeNB shall implement a mechanism to prevent key stream reuse.
 
-\section*{Annex F (informative): Isolated E-UTRAN Operation for Public Safety}
+## Annex F (informative): Isolated E-UTRAN Operation for Public Safety
 
-\section*{F. 1 General Description}
+## F. 1 General Description
 
 Isolated E-UTRAN Operation for Public Safety (IOPS) provides the ability to maintain a level of communications for Public Safety users, via an IOPS-capable eNB (or set of connected IOPS-capable eNBs), following the loss of backhaul communications.
 
@@ -4024,13 +4016,14 @@ The Isolated E-UTRAN mode of operation is also applicable to the formation of a 
 This annex provides security guidelines for the operation of Public Safety networks in the no backhaul (to Macro EPC) scenario using the Local EPC approach [2].
 
 The Local EPC approach assumes that an IOPS network can comprise either:
+
 - A Local EPC and a single isolated IOPS-capable eNB (or a deployable IOPS-capable eNB), which may be colocated or have connectivity to the Local EPC; or
 - A Local EPC and two or more IOPS-capable eNBs (or deployable IOPS-capable eNBs), which have connectity to a single Local EPC.
 
 A Local EPC includes at least MME, SGW/PGW and HSS functionality.
 The Public Safety network operator dedicates a PLMN identity to IOPS mode of operation which is broadcast in System Information by the eNB when IOPS mode is in operation. Only authorized IOPS-enabled UEs can access a PLMN indicated as an IOPS PLMN.
 
-\section*{F. 2 IOPS security solution}
+## F. 2 IOPS security solution
 
 The security features and procedures described in this specification can be used to provide a security solution for an IOPS network based upon the Local EPC approach.
 
@@ -4039,6 +4032,7 @@ In order to ensure that support for IOPS does not compromise the security of nor
 The USIM application dedicated exclusively for IOPS operation uses a distinct set of security credentials separate from those used for 'normal' operation. These credentials are configured in the Local HSS and in the UICC prior to the commencement of IOPS operation.
 
 The USIM application dedicated exclusively for IOPS operation, in an IOPS-enabled UE, has a distinct set of security credentials which contains at least:
+
 - A permanent key K (uniquely assigned for IOPS operation).
 - The PLMN identity assigned for IOPS network operation.
 - An IMSI (uniquely assigned for IOPS operation).
@@ -4050,13 +4044,13 @@ Storage of the IOPS network security credential set in the Local HSS is only per
 
 This solution provides integrity and confidentiality for IOPS networks and maintains commonality with the procedures defined in this specification. Furthermore, the approach is aligned with the implementation and deployment guidelines for IOPS as defined in 3GPP TS 23.401 [2].
 
-\section*{F. 3 Security Considerations}
+## F. 3 Security Considerations
 
-\section*{F.3.1 Malicious switching of USIM applications}
+## F.3.1 Malicious switching of USIM applications
 
 The use of a distinct set of security credentials counteracts the possibility that malicious switching of USIM applications would permit unauthorised access to an IOPS network or to a normal PLMN. eNBs operating in IOPS mode and Local EPCs support Network Domain Control Plane protection (clause 11) and backhaul link user plane protection (clause 12) as appropriate.
 
-\section*{F.3.2 Compromise of local HSSs}
+## F.3.2 Compromise of local HSSs
 
 Subscriber credentials are provisioned in all Local HSSs within the Local EPCs supporting IOPS operation where the Public Safety authority requires that the UE be provided service in the event of a loss of backhaul communication. If one of these local HSSs was compromised by an attacker, either in the form that the attacker could obtain the subscriber credentials or that the attacker could control the interface to the local HSS, and if, for any given subscriber, the credentials in the local HSSs were the same, this would imply that, for all subscribers whose credentials were stored in the compromised local HSS, the USIMs out in the field would have to be swapped and the subscriber credentials would have to be re-provisioned in all local HSS.
 
@@ -4066,19 +4060,19 @@ NOTE 0:Void.
 NOTE 1: Void
 NOTE 2: Void.
 
-\section*{F. 4 Mitigation of compromise of a local HSS}
+## F. 4 Mitigation of compromise of a local HSS
 
-\section*{F.4.0 Introduction}
+## F.4.0 Introduction
 
 The text in the present subclause is informative as the described mechanism is completely transparent to MEs, eNBs, MMEs, and, for local HSSs, requires only configuration changes in the local Authentication Centres. The corresponding configuration capability is already available in AuCs today. The mechanism does require functional changes to UICCs, but not to the UICC-ME interface. As both UICC and local Authentication Centre are under the control of one operator, the configuration in the local Authentication Centre and the functional changes to UICCs can be implemented without any normative changes to existing 3GPP specifications. However, normative changes to UICC specifications are not precluded by the present text.
 
-\section*{F.4.1 'Subscriber key separation' mechanism}
+## F.4.1 'Subscriber key separation' mechanism
 
-\section*{Subscriber key handling:}
+## Subscriber key handling:
 
 For each subscriber, there is a subscriber master key MK for IOPS purposes. This master key MK is stored in the UICC, but not in any local HSS. Assume that there are N local HSSs, HSS_1, ..., HSS_N. As part of the provisioning process for local HSS_n ( $1<=$ n<=N), a key K_n is derived from MK using a suitable representation of n as input, so that all K_n are different and the knowledge of K_n does neither allow inferring knowledge about MK nor about any K_m with m different from n. An example of a suitable key derivation function is given further below in subclause F.4.2. Each local HSS_n is then provisioned with the subscriber key K_n.
 
-\section*{Identification of a local HSS:}
+## Identification of a local HSS:
 
 A local HSS is identified by a number n between 1 and N . We assume here that $\mathrm{N}<256$. If this assumption does not hold then a grouping into subclasses is used, as described in the next subclause. The number n is represented by 8 bits, bit " 0 " to bit " 7 ". The representation of n draws on the proprietary part of the Authentication Management Field (AMF), cf. Annex H of 3GPP TS 33.102 [4], in the following way:
 
@@ -4086,17 +4080,17 @@ Bits " 0 " to " 7 " of n : The IOPS operator chooses a subset of the proprietary
 
 An example of the use of these AMF bits for IOPS purposes is as follows: Assume that there are 50 local HSSs (i.e. $\mathrm{N}=50$ ) and the IOPS operator uses bit 10 of the AMF for a proprietary purpose. By way of example, bit " 9 " and bits "11" to "15" of the AMF are chosen for IOPS purposes, which would allow addressing 64 local HSSs.
 
-\section*{Grouping into Subclasses:}
+## Grouping into Subclasses:
 
 Let us assume that the maximum number of local HSSs that can be uniquely addressed through the use of the selected AMF bits is L . (If all 8 bits are used, $\mathrm{L}=256$ ). In case the number N of local HSSs is greater than or equal to L then the local HSSs can be grouped into M subclasses where $\mathrm{M}<\mathrm{L}$. In each subclass, the subscriber credential K_n would be the same for a given subscriber. In this way, the impact of a compromise of one local HSS would be limited to the local HSSs in one subclass, and only the local HSSs of this subclass would need to be reconfigured. I.e. this would greatly reduce the impact of a compromise from N local HSSs to N/M local HSSs. There would still be no need for exchanging the UICCs.
 
 NOTE: If the available bits of the AMF are not sufficient to assign a unique ID to an IOPS operator's local HSSs, the representation of $n$ may draw on an additional source: the IND part of the sequence number SQN, as described in Annex C. 1 of TS 33.102. It is recommended to only draw on the bits in the AMF, and not use the IND part of the sequence number SQN, if the available AMF bits suffice to identify the local HSSs.
 
-\section*{Authentication Procedure:}
+## Authentication Procedure:
 
 The run of an EPS AKA procedure in the presence of the subscriber key separation mechanism is identical to that without the presence of the mechanism, except for the operation of the USIM application on the UICC dedicated to IOPS. The modified operation is described as follows: whenever the UICC receives an AUTHENTICATE command from the ME that is destined towards the USIM dedicated to IOPS, the USIM dedicated to IOPS first checks the AMF bits chosen for IOPS purposes and determines whether the local HSS uses the subscriber key separation mechanism and, if so, what is the number n of the local HSS. The USIM dedicated to IOPS then proceeds to derive K_n from MK. The key K_n then takes the role of the permanent subscriber key K, and EPS AKA proceeds as described in the present specification and in 3GPP TS 31.102 [4], with K_n replacing K in all computations.
 
-\section*{F.4.2 Key derivation mechanism for 'subscriber key separation'}
+## F.4.2 Key derivation mechanism for 'subscriber key separation'
 
 The key derivation (including input parameter encoding) for deriving K_n from MK is performed using the key derivation function (KDF) specified in Annex A. 17 of the present specification.
 
@@ -4106,7 +4100,7 @@ An example realisation of a function f could take the following form: $\mathrm{f
 
 NOTE: The advantage of using $\mathrm{f}(\mathrm{n})$, instead of n directly, as input to the KDF is that n can be re-allocated after a compromise of a local HSS once the table has been updated. The update of the table would mean a modification of the value in the table that is indexed by n .
 
-\section*{F. 5 Actions in case of compromise of a local HSS}
+## F. 5 Actions in case of compromise of a local HSS
 
 In case of a compromise of one local HSS, other local HSSs are not affected (because they have a different set of secrets and it is assumed that an attacker knowing K_n cannot use this information to retrieve the corresponding IOPS master subscriber key). Furthermore, there is no need for swapping all USIMs, only the compromised local HSS (or the local HSSs in the subclass sharing the same subscriber key, cf. NOTE above) needs to be newly provisioned with keys derived from the MK and a newly provisioned value in the table of the IOPS dedicated USIM.
 
@@ -4116,31 +4110,29 @@ NOTE 1: Sequence number handling: One of the tasks of a USIM application is hand
 
 NOTE 2: Re-synchronisation: When a UE moves from one local HSS to the next one, it could happen that the second local HSS generates authentication vectors with a sequence number that is too low as seen from the USIM with the added functions. This would then result in a re-synchronisation procedure that would be successful as the AUTS parameter in the re-synchronisation procedure causes the local HSS to update its sequence number and consequently generate an authentication vector that will be accepted by the USIM. This would then result in a successful Attach procedure, albeit at the expense of some added delay. If the delay is a concern and re-synchronisation procedures may be frequent due to frequent movements of UEs between local HSSs then this problem could be almost completely solved by using the IND value of the sequence number, cf. Annex C of 3GPP TS 33.102 [4], to distinguish among local HSSs, i.e. set up the local HSSs such that they use only particular IND.
 
-\section*{Annex G (normative): \\ LTE - WLAN aggregation}
+## Annex G (normative): <br> LTE - WLAN aggregation
 
-\section*{G. 1 Introduction}
+## G. 1 Introduction
 
 This clause describes the security functions necessary to support an UE that is simultaneously connected to an eNB and a WT for LTE-WLAN Aggregation as described in TS 36.300 [30].
 
 The LWA architecture is shown in Figure G.1-1.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-137.jpg?height=981&width=1159&top_left_y=1567&top_left_x=351}
-\captionsetup{labelformat=empty}
-\caption{Figure G.1-1 LWA architecture}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-137.jpg?height=981&width=1159&top_left_y=1567&top_left_x=351)
+Figure G.1-1 LWA architecture
 
 For LTE-WLAN Aggregation the end-points of encryption remain at the respective PDCP layers of the eNB and the UE, even though the PDCP packets traverse a different path via the WLAN Access Network The WT is the termination point of the WLAN Access Network facing the eNB.
 .The UE-WT link needs to be secured to protect the PDCP and the WLAN signalling in the eNB from possible attacks.
 Security requirements for this protection are given below.
+
 1) The UE-WT link shall be integrity and confidentiality protected.
 2) Xw interface: Control plane (Xw-C) and User plane (Xw-U) need to be integrity protected. User plane (Xw-U) encryption between eNB and WT may NOT be needed since PDCP packets are already encrypted.
 
 Sub clauses below describe how these requirements are met.
 
-\section*{G. 2 LTE-WLAN aggregation security}
+## G. 2 LTE-WLAN aggregation security
 
-\section*{G.2.1 Protection of the WLAN Link between the UE and the WT}
+## G.2.1 Protection of the WLAN Link between the UE and the WT
 
 The WLAN communication established between the WLAN AP and the UE shall be protected using the IEEE 802.11[39] security mechanisms. The security key for protecting the over the air WLAN link is computed from the current UE - eNB security context. Security protection within the WLAN network between WT and WLAN AP is out of scope for 3GPP.
 
@@ -4156,11 +4148,11 @@ To use S-K ${ }_{\mathrm{wt}}$ as PSK, the WT should support PSK AKMs suites 2 a
 
 NOTE: The combination of UE WLAN MAC address and exposure of the IMSI in the same context could impact user privacy. It is left to the implementation to mitigate the UE privacy risk, subject to regional/national regulatory requirements.
 
-\section*{G.2.2 Protection of the Xw interface}
+## G.2.2 Protection of the Xw interface
 
 The control plane signalling between eNB and WT over the Xw interface, that includes the transfer of the S-K ${ }_{\mathrm{WT}}$ and the MAC address (i.e. the UE Identity as described in TS 36.463 [40]) used to identify the S-K ${ }_{\text {WT }}$ in the the WT from the eNB to the WT, shall be confidentiality and integrity protected using security protection as described in clause 5.3.4a and clause 11of the present specification. Any user plane data between eNB and WT over Xw interface shall be allowed only for authenticated UEs.
 
-\section*{G.2.3 Addition, modification and release of DRBs in LWA}
+## G.2.3 Addition, modification and release of DRBs in LWA
 
 When executing the WT Addition procedure (i.e. the initial offload of one or more radio bearers to the WT), or the WT Modification procedure requiring an update of S-K ${ }_{\mathrm{wt}}$, the eNB shall derive an S-K ${ }_{\mathrm{wT}}$ as defined in clause G.2.4. The eNB shall forward the generated S-K ${ }_{\text {WT }}$ to the WT during the WT Addition procedure or WT Modification procedure requiring key update. When offloading additional bearers to a WT after the initial offload, the S-K ${ }_{\text {WT }}$ does not need to be refreshed.
 
@@ -4168,9 +4160,9 @@ NOTE: Refer to TS 36.300 [30] for definition of the LWA procedures.
 The UE shall derive the S-K ${ }_{\mathrm{WT}}$ as described in clause G.2.4.
 eNB releases the LWA through a WT Release procedure. Upon LWA Release Requestmessage to WT and Release LWA Configuration message to UE from eNB, both UE and WT shall release the WLAN path and delete the S-K ${ }_{\text {wt }}$ key and the subsequent keys derived.
 
-\section*{G.2.4 Derivation of keys for the DRBs in LWA}
+## G.2.4 Derivation of keys for the DRBs in LWA
 
-\section*{G.2.4.1 WT Counter maintenance}
+## G.2.4.1 WT Counter maintenance
 
 The eNB shall associate a 16 -bit counter, WT Counter, with the EPS AS security context.
 The WT Counter is used when computing the S-Kwt. The UE and the eNB shall treat the WT Counter as a fresh input to S-K ${ }_{\text {WT }}$ derivation. That is, the UE assumes that the eNB provides a fresh WT Counter for each S-K ${ }_{\text {WT }}$ derivation and does not need to verify the freshness of the WT Counter.
@@ -4183,41 +4175,38 @@ If the eNB decides to turn off the LWA offload connection and later decides to r
 
 The eNB shall refresh the $\mathrm{K}_{\mathrm{eNB}}$ of the AS security context associated with the WT Counter before the WT Counter wraps around. Re-freshing the $\mathrm{K}_{\mathrm{eNB}}$ is done using intra cell handover procedure as described in clause 7.2.9.3 of the present specification. When this $\mathrm{K}_{\mathrm{eNB}}$ is refreshed, the WT Counter is reset to ' 0 ' as defined above.
 
-\section*{G.2.4.2 Security key derivation}
+## G.2.4.2 Security key derivation
 
 The UE and eNB shall derive the security key S-K ${ }_{\mathrm{WT}}$ of the target WT as defined in Annex A. 18 of the present specification.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-139.jpg?height=351&width=926&top_left_y=2238&top_left_x=575}
-\captionsetup{labelformat=empty}
-\caption{Figure G.2.4.2-1 S-K ${ }_{\text {wт }}$ computation}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-139.jpg?height=351&width=926&top_left_y=2238&top_left_x=575)
+Figure G.2.4.2-1 S-K ${ }_{\text {wт }}$ computation
 
-\section*{G.2.5 Security key update}
+## G.2.5 Security key update
 
-\section*{G.2.5.1 Security key update triggers}
+## G.2.5.1 Security key update triggers
 
 The system supports update of the $\mathrm{S}-\mathrm{K}_{\mathrm{wt}}$. The eNB may update the $\mathrm{S}-\mathrm{K}_{\mathrm{wt}}$ for any reason by using the $\mathrm{S}-\mathrm{K}_{\mathrm{wt}}$ update procedure defined in clause G.2. 5.2 of the current specification. If the eNB re-keys its currently active $\mathrm{K}_{\mathrm{eNB}}$ in an AS security context, the eNB shall update any S-K ${ }_{\mathrm{WT}}$ associated with that AS security context.
 
-\section*{G.2.5.2 Security key update procedures}
+## G.2.5.2 Security key update procedures
 
 If the eNB decides to perform S-K ${ }_{\text {WT }}$ update (see clause G.2.5.1), the eNB shall increment the WT Counter and compute a fresh S-K ${ }_{\mathrm{wt}}$, as defined in clause G.2.4. Then the eNB shall perform a WT Modification procedure to deliver the fresh S-K ${ }_{\text {WT }}$ to the WT. The eNB shall provide the value of the WT Counter used in the derivation of the S-K ${ }_{\text {WT }}$ to the UE in an integrity protected RRC message. The UE shall derive the S-K ${ }_{\text {WT }}$ as described in clause G.2.4.
 
 Whenever the UE or WT start using a fresh S-K ${ }_{\mathrm{WT}}$ as PMK they shall refresh the IEEE 802.11 security.
 
-\section*{G.2.6 Handover procedures}
+## G.2.6 Handover procedures
 
 During S1 and X2 handover, the LWA DRB connection between the UE and the WT is released, the UE shall delete the S-K ${ }_{\text {WT }}$ and further keys derived based on it.
 
-\section*{G.2.7 Periodic local authentication procedure}
+## G.2.7 Periodic local authentication procedure
 
 The eNB terminates the PDCP for control plane and user plane for the UE. Hence, the periodic local authentication procedure can be performed between UE and eNB as described in clause 7.5 also for the case the PDCP packets that traverse the WLAN link.
 
-\section*{G.2.8 LTE and WLAN link failure}
+## G.2.8 LTE and WLAN link failure
 
 Connectivity can fail on the WLAN side as well as on the LTE side. In both cases, when WLAN or LTE link failure is discovered, the UE shall delete the S-K ${ }_{\mathrm{wt}}$, the eNB shall indicate to the WT to delete the S-K ${ }_{\mathrm{wt}}$.
 
-\section*{G. 3 Method for installing PMK}
+## G. 3 Method for installing PMK
 
 An existing IEEE 802.1x compliant AP may not support receiving S-K ${ }_{\text {WT }}$ from WT and using it as the PMK. In order to support LWA with existing WLAN deployments with such APs, the UE and the WT may leverage the existing EAP authentication procedures at the AP to install PMK and create PMKSA. A 3GPP vendor specific EAP authentication method for LWA, herein after referred to as EAP-LWA, is described in this clause.
 
@@ -4225,11 +4214,9 @@ NOTE: In order to use EAP-LWA as a vendor specific EAP method, the existing 3GPP
 
 In this method, the WT maintains an association of the current UEs instructed to use LWA offloading by an eNB, and the assigned S-K ${ }_{\text {WT }}$ for that UE. A new UE identity called the LWA-ID is used to identify the UE to the WT and is derived as shown in step 3 of figure G.1-1 and is known by the UE and WT. If the WLAN AP does not have the PMK (S-K ${ }_{\text {wt }}$ ), upon receipt of EAP-Identity Request message from the WLAN AP, the UE sends an EAP-Identity Response message to the AP with an NAI with realm portion including the identifier of the WT where the S-K ${ }_{\mathrm{wT}}$ can be found and the LWA-ID as the user portion of the NAI. The AP routes the EAP-Identity Response message to the WT identified by the realm. Upon receipt and successful identification of the UE, the WT initiates EAP-Request Challenge to the UE to perform successful EAP authentication between the UE and WLAN AP and the installation of the PMK at the WLAN AP.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-141.jpg?height=1568&width=1680&top_left_y=244&top_left_x=191}
-\captionsetup{labelformat=empty}
-\caption{Figure G.1-1: 3GPP vendor specific EAP-LWA method}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-141.jpg?height=1568&width=1680&top_left_y=244&top_left_x=191)
+Figure G.1-1: 3GPP vendor specific EAP-LWA method
+
 1) When eNB wants to start LWA for the UE, it sends WT Addition Request to the WT. This request includes the UE MAC address and the S-K ${ }_{\mathrm{wt}}$.
 2) WT acknowledges the receipt of WT Addition request.
 3) WT sets LWA-ID to SHA256 (S-Kwt, UE MAC addr, "LWA Identity") and associates with the received S-Kwt.
@@ -4240,6 +4227,7 @@ In this method, the WT maintains an association of the current UEs instructed to
 8) WLAN AP initiates EAP authentication.
 9) WLAN AP sends EAP-Identity Request message.
 10) The UE responds with EAP-Identity Response message with the LWA-ID@realm as the UE identity for EAPLWA. The LWA-ID and realm are set as follows:
+
 $$
 \begin{aligned}
 & \text { LWA-ID = SHA256 (S-K }{ }_{\mathrm{WT}}, \text { UE MAC addr, "LWA Identity"); } \\
@@ -4249,6 +4237,7 @@ $$
 & \text { MCC = MCC of Serving Network PLMN Identity. }
 \end{aligned}
 $$
+
 11) WLAN AP uses the realm and routes the EAP-Identity response to WT as AAA message.
 12) WT uses LWA-ID to locate the S-Kwt. If LWA-ID is not found, the WT sends EAP-Failure message, terminating the WLAN associtation.
 13) WT initiates EAP-LWA, by sending AAA EAP-Request/LWA-Challenge message, by including a 128-bit random nonce, ASNonce.
@@ -4265,29 +4254,24 @@ MSK $=$ SHA256 (S-K ${ }_{\text {WT }}$, ASNonce, STANonce, "LWA MSK Key Derivat
 21) Upon receiving EAP-Success, the UE and WLAN AP perform 4-way handshake and complete WLAN association.
 22) WT sends WT Association Confirm message to the eNB, confirming successful WLAN association of the UE. Note that WT may send this message anytime after step 19).
 
-\section*{Annex H (normative):LTE-WLAN RAN level integration using IPsec tunnelling}
+## Annex H (normative):LTE-WLAN RAN level integration using IPsec tunnelling
 
-\section*{H. 1 General}
+## H. 1 General
 
 This clause describes the security functions necessary to support LTE-WLAN integration using IPsec tunnelling as described in TS 36.300 [30].
 
 The LTE-WLAN integration architecture is shown in Figure H.1-1 and the protocol stack in Figure H.1-2.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-143.jpg?height=789&width=960&top_left_y=815&top_left_x=555}
-\captionsetup{labelformat=empty}
-\caption{Figure H.1-1 LTE-WLAN integration architecture using IPsec tunnelling}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-143.jpg?height=789&width=960&top_left_y=815&top_left_x=555)
+Figure H.1-1 LTE-WLAN integration architecture using IPsec tunnelling
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-143.jpg?height=442&width=1138&top_left_y=1720&top_left_x=466}
-\captionsetup{labelformat=empty}
-\caption{Figure H.1-2 LTE-WLAN integration using IPsec tunnelling protocol stack}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-143.jpg?height=442&width=1138&top_left_y=1720&top_left_x=466)
+Figure H.1-2 LTE-WLAN integration using IPsec tunnelling protocol stack
 
 For LTE-WLAN integration using IPsec tunnelling the integration happens using PDCP SDUs above the PDCP layer. The eNB controls activation of the integration based on the UE connectivity with a specific WLAN. Once the integration is activated, the eNB segregates incoming DL packets towards the UE for offloading via the WLAN at a layer above PDCP. The UL packets from the UE are aggregated by the eNB at the same logical point.
 
 Since PDCP security is bypassed for the data routed through the WLAN and security of the legacy WLAN is not assumed, security for the PDCP SDUs and protection of the operator network shall be achieved in the following way:
+
 - A LWIP-SeGW shall be placed between the eNB and the WLAN network for security of packets that traverse WLAN and to protect the Operator's network.
 - The interface between the eNB and the LWIP-SeGW shall be confidentiality and integrity protected by NDS/IP TS 33.210 [36].
 - An UE-specific IPsec security association tunnel shall be established between the UE and the public IP port of the LWIP-SeGW in tunnel mode.
@@ -4296,6 +4280,7 @@ Since PDCP security is bypassed for the data routed through the WLAN and securit
 - IP headers created by the UE in LTE WLAN integration using IPsec tunnelling shall not be parsed by the eNB.
 
 NOTE 1: The interface and protocols between eNB and LWIP-SeGW have not been fully specified in this release of the specification.
+
 - The UE and the LWIP-SeGW function shall perform mutual authentication in the phase 2 of the IKEv2 handshake during the IPsec tunnel establishment, using the authentication key derived from the current AS security association.
 - The LWIP-SeGW shall enforce binding of an authenticated UE to its IP address, and apply anti-spoofing measures on received packets for the UE's outer and inner IP source address(es).
 - The LWIP-SeGW shall ensure that uplink traffic sent by a UE is only sent towards the correct eNB.
@@ -4304,18 +4289,20 @@ NOTE 2: The requirement above can be clarified with more details after the inter
 
 In addition, before the IPsec tunnel is established between the UE and the LWIP-SeGW, and before the offload can be performed, the UE needs to obtain IP connectivity across the WLAN network, which may require an access authentication independent of the EPC authentication, and is outside the scope of this specification.
 
-\section*{H. 2 Security of LTE-WLAN integration using IPsec Tunnelling}
+## H. 2 Security of LTE-WLAN integration using IPsec Tunnelling
 
-\section*{H.2.1 eNB to UE interaction for setting up the LWIP offload}
+## H.2.1 eNB to UE interaction for setting up the LWIP offload
 
 When the eNB initially establishes LWIP with the UE, the eNB and the UE shall generate the LWIP security key, LWIP-PSK, as specified in clause H.4, to be used as the PSK for the IPsec tunnel set up between the UE and the LWIPSeGW, as described in clause H.2.2.
 
 The eNB shall provide to the UE, over the secure RRC signalling, the following parameters:
+
 - IP address of the LWIP-SeGW for the IKEv2 handshake,
 - The Initiator Identity value, IDi, that the UE shall use in the IKEv2 handshake.
 - LWIP counter that the UE shall use in LWIP-PSK derivation.
 
-\section*{H.2.2 UE to LWIP-SeGW interaction for setting up the LWIP offload}
+
+## H.2.2 UE to LWIP-SeGW interaction for setting up the LWIP offload
 
 LTE-WLAN integration (LWIP) over legacy WLAN is secured using an IPSec in a tunnel mode established between the UE, via the WLAN, and the LWIP-SeGW function. The IPsec in tunnel mode is established using the IKEv2 handshake based on the pre-shared key, PSK as specified in IETF RFC 7296 [38]. The UE and LWIP-SeGW shall use the LWIP-PSK as the PSK for authentication in the second phase of IKEv2.
 
@@ -4325,6 +4312,7 @@ IP address shall be the public IP address of the SeGW, and in DL the source IP a
 
 NOTE1: Void.
 If the UE is located behind a NAT, the following will hold for the IPsec tunnel between the UE and the LWIP-SeGW:
+
 - In UL between the UE and the NAT, the source IP address will be the local address of the UE in the WLAN.
 - In DL between the LWIP-SeGW and the NAT, the destination IP address will be the public IP address under which the UE located behind the NAT is reachable.
 - The NAT will then overwrite the address of the UE in the outer IP header during transport.
@@ -4341,23 +4329,24 @@ The LWIP-SeGW shall allow communication of the UE only to the eNB that initiated
 
 The profiles for IKEv2 and IPsec ESP as defined in TS 33.210 [36] shall be used.
 
-\section*{H.2.3 eNB to LWIP-SeGW interaction for setting the LWIP offload}
+## H.2.3 eNB to LWIP-SeGW interaction for setting the LWIP offload
 
 The PDCP SDUs between the eNB and LWIP SeGW shall be encapsulated in a tunnelling protocol in order to avoid that the eNB needs to interpret IP packets coming from the UE.
 
 The eNB shall inform the LWIP-SeGW function of the expected initiation of IKEv2 handshake by a UE, for subsequent establishment of the IPsec, and provide the following parameters:
+
 - the Initiator ID value, (IDi) that the UE will use in the IKEv2 handshake,
 - the LWIP-PSK.
 
 The standardized interface between the eNB and the LWIP-SeGW shall be confidentiality and integrity protected by NDS/IP TS 33.210 [36].
 
-\section*{H. 3 Addition and modification of DRB in LTE-WLAN integration}
+## H. 3 Addition and modification of DRB in LTE-WLAN integration
 
 All DRBs associated with the same UE and routed through WLAN shall use the same IPSec tunnel established between the UE and the LWIP-SeGW function. The eNB manages the DRB addition and deletion as specified in TS 36.300 [30]. When the last DRB between the eNB and UE is deleted, the eNB shall instruct the LWIP-SeGW and the UE to release the IPsec tunnel.
 
-\section*{H. 4 Security Key for IKEv2 handshake}
+## H. 4 Security Key for IKEv2 handshake
 
-\section*{H.4.0 LWIP counter maintenance}
+## H.4.0 LWIP counter maintenance
 
 The eNB shall associate a 16-bit counter, LWIP counter, with the EPS AS security context.
 The LWIP counter is used when computing the LWIP-PSK for the IPSec tunnel set up. The UE and the eNB shall treat the LWIP counter as a fresh input to LWIP-PSK derivation. That is, the UE assumes that the eNB provides a fresh LWIP counter for each LWIP-PSK derivation and does not need to verify the freshness of the LWIP counter.
@@ -4370,223 +4359,214 @@ If the eNB decides to turn off the LWIP and instruct the termination of the IPSe
 
 The eNB shall refresh the $\mathrm{K}_{\mathrm{eNB}}$ of the AS security context associated with the LWIP counter before the LWIP counter wraps around. Re-freshing the $\mathrm{K}_{\mathrm{eNB}}$ is done using intra cell handover procedure as described in clause 7.2.9.3 of the present specification.
 
-\section*{H.4.1 Security Key (LWIP-PSK) Derivation}
+## H.4.1 Security Key (LWIP-PSK) Derivation
 
 The UE and eNB shall derive the security key LWIP-PSK for the IPsec tunnel set up as shown on the Fig.H.4.1-1 and defined in Annex A. 16 of the present document.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-146.jpg?height=350&width=926&top_left_y=1567&top_left_x=571}
-\captionsetup{labelformat=empty}
-\caption{Fig.H.4.1-1: LWIP-PSK Derivation.}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/a8e64809-fbd1-4eff-ab20-95613cd0fdcb-146.jpg?height=350&width=926&top_left_y=1567&top_left_x=571)
+Fig.H.4.1-1: LWIP-PSK Derivation.
 
-\section*{H.4.2 Security key (LWIP-PSK) update}
+## H.4.2 Security key (LWIP-PSK) update
 
 The eNB may update the LWIP-PSK for any reason by releasing the IPSec tunnel and restarting it in the following way . The eNB shall instruct the LWIP-SeGW function to release the current IPSec tunnel, and provide a new LWIP-PSK to support establishment of the new IPsec tunnel. The eNB shall instruct the UE over the RRC signaling to re-initiate the IKEv2 using the new LWIP-PSK to establish a new IPsec tunnel.
 
-\section*{H. 5 Handover procedures}
+## H. 5 Handover procedures
 
 During S1 and X2 handover, the IPsec tunnel between the UE and the LWIP-SeGW shall be released. The eNB shall instruct the LWIP-SeGW and the UE to release the IPsec. Both the LWIP-SeGW and the UE shall delete the LWIPPSK.
 
-\section*{H. 6 LWIP radio link failure}
+## H. 6 LWIP radio link failure
 
 When a LTE radio link failure is detected, the IPsec tunnel between the UE and the LWIP SeGW shall be released, either by the eNB informing the LWIP-SeGW of this event, or at the UE. Both the LWIP-SeGW and the UE shall delete the LWIP-PSK.
 
 If the IPsec tunnel between the UE and the LWIP-SeGW is released due to WLAN connectivity issues, a fresh LWIP IPsec tunnel set up may be performed when WLAN wireless connectivity is restored.
 
-\section*{Annex I (informative): Change history}
+## Annex I (informative): Change history
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline 2009-09 & SA\#45 & SP090518 & 261 & - & Editorial correction to Algorithms for Emergency Call & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 269 & - & UE Security Capability Storage Clarification & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 277 & - & Clarification of key change on the fly (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 279 & - & KeNB handling at RRC connection re-establishment (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090518 & 281 & - & XRES corrected to RES & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 301 & 1 & Some corrections to the key hierarchy diagrams (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 287 & 1 & Correcting the details of NAS COUNT (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 285 & 1 & Correcting the setting of the key identifier to '111' (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 283 & 1 & Completing the EPS AKA description (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 361 & 1 & Clarification for Kenb and NH derivations definition & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 304 & - & Clarification to EIA2 Test Vectors & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 306 & - & Correction of rules on concurrent runs of security procedures & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 360 & 1 & Miscellaneous Modifications & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 275 & 1 & Clarification of NH usage (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 289 & 1 & Add missing details for NAS SMC (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 297 & 1 & Deleting mis-leading sentence in 7.2.9.2 (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 299 & 1 & Correction to key identification (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 291 & 1 & Clarifying the inter-RAT TAU Request behaviour (Rel-9) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 293 & 1 & Correcting the calculation of K_eNB at handover to E-UTRAN (Rel-8) & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090518 & 305 & 2 & Clarification for the Clauses 5.1.4.1 and 5.1.4.2 of the Rel-9 TS 33.401 & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090518 & 280 & 1 & EPS NAS security context handling in UE at EC when NULL algorithms are established & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090518 & 260 & 2 & Correction to Emergency Call Optimization Procedure & 9.0.0 & 9.1.0 \\
-\hline 2009-09 & SA\#45 & SP090636 & 271 & 1 & Corrections of security context & 9.0.0 & 9.1.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 310 & 1 & selected algorithms forwarding to the target eNB in intra LTE handover & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 311 & - & Clarification of Current security context & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 313 & 2 & Security interworking between E-UTRAN and GERAN in 128-bit encryption & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 316 & 1 & Correction of protection of the NAS security mode reject message (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 318 & 2 & EPS NAS security context storage & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 321 & - & Clarification of confidentiality protection in EC & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 322 & 2 & Authentication failure during emergency call & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 324 & 3 & Correction of ECM states & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 326 & 1 & Clarifications to context handling in idle mode procedures & 9.1.0 & 9.2.0 \\
-\hline
-\end{tabular}
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+| 2009-09 | SA\#45 | SP090518 | 261 | - | Editorial correction to Algorithms for Emergency Call | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 269 | - | UE Security Capability Storage Clarification | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 277 | - | Clarification of key change on the fly (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 279 | - | KeNB handling at RRC connection re-establishment (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090518 | 281 | - | XRES corrected to RES | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 301 | 1 | Some corrections to the key hierarchy diagrams (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 287 | 1 | Correcting the details of NAS COUNT (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 285 | 1 | Correcting the setting of the key identifier to '111' (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 283 | 1 | Completing the EPS AKA description (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 361 | 1 | Clarification for Kenb and NH derivations definition | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 304 | - | Clarification to EIA2 Test Vectors | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 306 | - | Correction of rules on concurrent runs of security procedures | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 360 | 1 | Miscellaneous Modifications | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 275 | 1 | Clarification of NH usage (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 289 | 1 | Add missing details for NAS SMC (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 297 | 1 | Deleting mis-leading sentence in 7.2.9.2 (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 299 | 1 | Correction to key identification (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 291 | 1 | Clarifying the inter-RAT TAU Request behaviour (Rel-9) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 293 | 1 | Correcting the calculation of K_eNB at handover to E-UTRAN (Rel-8) | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090518 | 305 | 2 | Clarification for the Clauses 5.1.4.1 and 5.1.4.2 of the Rel-9 TS 33.401 | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090518 | 280 | 1 | EPS NAS security context handling in UE at EC when NULL algorithms are established | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090518 | 260 | 2 | Correction to Emergency Call Optimization Procedure | 9.0.0 | 9.1.0 |
+| 2009-09 | SA\#45 | SP090636 | 271 | 1 | Corrections of security context | 9.0.0 | 9.1.0 |
+| 2009-12 | SA\#46 | SP090811 | 310 | 1 | selected algorithms forwarding to the target eNB in intra LTE handover | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 311 | - | Clarification of Current security context | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 313 | 2 | Security interworking between E-UTRAN and GERAN in 128-bit encryption | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 316 | 1 | Correction of protection of the NAS security mode reject message (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 318 | 2 | EPS NAS security context storage | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 321 | - | Clarification of confidentiality protection in EC | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 322 | 2 | Authentication failure during emergency call | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 324 | 3 | Correction of ECM states | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 326 | 1 | Clarifications to context handling in idle mode procedures | 9.1.0 | 9.2.0 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline 2009-12 & SA\#46 & SP090812 & 328 & 1 & Clarifications to context handling in IRAT handover & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 330 & 1 & Correction to store security context to ME & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 332 & 1 & Corrections to state transition & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 334 & - & Clarification for algorithm selection during IRAT handover to EUTRAN & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 336 & - & Corrections for 33.401 & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 338 & 1 & Concurrency of inter-MME handovers and NAS downlink messages (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 340 & - & Partial native EPS security context NAS COUNT value & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 343 & 1 & Clarification of NAS integrity protection activation & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 348 & 2 & Nas-token and key calculation at idle mobility from E-UTRAN to UTRAN/GERAN (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 352 & - & Clarifying the calculation of KeNB when there is more than one NAS SMC (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 354 & 3 & Behaviour for lost NAS SMC message when creating mapped context (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 356 & 4 & Clarification of Authentication Data and transition to EMM-DEREGISTERED and Correction of text on authentication data transfer & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 359 & - & NCC Initialization in eNB at the Initial Connection Setup & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 360 & 1 & key replacement clarification & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 362 & 1 & Replacing KDF definition with a reference & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 364 & 1 & Correction of interworking between GERAN and E-UTRAN & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 366 & - & Correcting A. 11 & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 367 & 1 & Not resetting STARTPS to 0 in HO from EUTRAN to UTRAN and not resetting STARTCS to 0 in SRVCC (Rel-9). & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 368 & - & Security considerations for emergency sessions in SRVCC & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 369 & 1 & Delete the CK keys in the MSC server enhanced for SRVCC in case there is desynchronization of CS keys between the UE and the network in SRVCC & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 371 & - & NAS COUNT handling during IRAT handover & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090811 & 373 & - & Concurrency of inter-RAT handovers and NAS SMC procedure (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090812 & 375 & 1 & Using P-TMSI signature when attaching to SGSN using a GUTI (Rel-9) & 9.1.0 & 9.2.0 \\
-\hline 2009-12 & SA\#46 & SP090889 & 376 & 4 & Key-Chaining issue in I-RAT handover to UTRAN & 9.1.0 & 9.2.0 \\
-\hline 2010-04 & SA\#47 & SP100097 & 384 & - & GPRS Kc128 handling & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100099 & 386 & - & Handling of SIM based EC handover to E-UTRAN & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100099 & 377 & - & Key derivations for unauthenticated Emergency call & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100103 & 319 & 2 & Clarification of SIM user handover from UTRAN to E-UTRAN & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100103 & 387 & 1 & Correction of text on terminal identities & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 392 & 1 & Clarification of Identification procedure in MME & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 403 & - & Handling of EPS NAS security context in state transitions & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100103 & 378 & 1 & Add the Replay protection implementation and Clarification of replay protection with integrity & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100103 & 389 & - & Clarification for NAS downlink COUNT handling in I-RAT handover to UTRAN & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 382 & 1 & GPRS Kc handling & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 399 & 1 & Desynchronization of PS keys between the UE and the network in case of PS HO failure & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 383 & 1 & Correction of SRVCC failure & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100106 & 395 & 2 & Correction on mandatory implementation of IKE and IPsec for backhaul of eNBs & 9.2.0 & 9.3.0 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline 2010-04 & SA\#47 & SP100106 & 376 & 2 & Correction of Network Domain Control Plane protection & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100101 & 397 & 1 & Not resetting START to 0 in idle mode mobility (Rel-9). & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & SA\#47 & SP100106 & 404 & - & Certificate Enrolment use & 9.2.0 & 9.3.0 \\
-\hline 2010-04 & -- & -- & -- & -- & Correction of reference [27] & 9.3.0 & 9.3.1 \\
-\hline 2010-06 & SA\#48 & SP100382 & 414 & 1 & IMEI sending clarification & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100382 & 420 & 1 & Editorial Corrections & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100383 & 408 & 1 & Correction of text on emergency call handling & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100383 & 409 & 1 & Emergency Context Lifetime & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100382 & 410 & 1 & Clarifying the uplink NAS COUNT for derivation of KeNB & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100383 & 412 & 2 & Uplink and Downlink NAS COUNT increment for EIA0 & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100383 & 413 & 1 & Correction for Emergency Attach & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100382 & 415 & 1 & Correction of TAU procedure after IRAT Handover to E-UTRAN & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100382 & 416 & 1 & Correction on key sending in S1 HANDOVER REQUIRED message & 9.3.1 & 9.4.0 \\
-\hline 2010-06 & SA\#48 & SP100382 & 418 & 1 & Correction of BEARER-ID to BEARER & 9.3.1 & 9.4.0 \\
-\hline 2010-10 & SA\#49 & SP100477 & 423 & 1 & Corrections & 9.4.0 & 9.5.0 \\
-\hline 2010-10 & SA\#49 & SP100569 & 424 & - & Emergency call corrections & 9.4.0 & 9.5.0 \\
-\hline 2010-12 & SA\#50 & SP100850 & 425 & 1 & Emergency call corrections & 9.5.0 & 9.6.0 \\
-\hline 2010-12 & SA\#50 & SP100721 & 426 & 1 & Authentication Failure Handling & 9.5.0 & 9.6.0 \\
-\hline 2010-12 & SA\#50 & SP100721 & 427 & - & Correction of algorithm selection & 9.5.0 & 9.6.0 \\
-\hline 2010-12 & SA\#50 & SP100852 & 429 & 1 & Clarification for EIA0 selection during IRAT handover to EUTRAN & 9.5.0 & 9.6.0 \\
-\hline 2011-03 & SA\#51 & SP110016 & 431 & 1 & Correction for handover from UTRAN to E-UTRAN & 9.6.0 & 10.0.0 \\
-\hline 2011-03 & SA\#51 & SP110015 & 437 & 1 & PDCP integrity for relay node security & 9.6.0 & 10.0.0 \\
-\hline 2011-03 & SA\#51 & SP110015 & 438 & 1 & Solution for relay node security & 9.6.0 & 10.0.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 440 & 1 & Corrective text for undefined wording - autonomous validation of RN platform & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 444 & 1 & Detailed binding of RN and UICC & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 445 & 1 & Clarification on initial attach procedure for PSK case & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 448 & 1 & Clarification of certificate and subscription handling & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 449 & 1 & Resolution of Editor's Notes for PDPC integrity for Relay Nodes & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 451 & 1 & Specification of secure channel profiles and certificates used for Relay nodes (RNs) and UICC (USIM-RN) & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 452 & 1 & Resolution of Editor's Notes for Relay Node security procedures & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 453 & 1 & Corrections and Clarifications for Relay Node security procedures & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 454 & 1 & Correction on communication outside secure channel for Relay Node security procedures & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110259 & 459 & 2 & Modification of security context storage rate & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110256 & 460 & - & Corrections to communication between MME and DeNB for relay nodes & 10.0.0 & 10.1.0 \\
-\hline 2011-06 & SA\#52 & SP110270 & 428 & - & EPS algorithm negotitation during UTRAN to E-UTRAN handover & 10.1.0 & 11.0.0 \\
-\hline 2011-06 & -- & -- & -- & -- & Corrections to CR implementation & 11.0.0 & 11.0.1 \\
-\hline 2011-09 & SA\#53 & SP110505 & 461 & 1 & Adding ZUC algorithm in SAE/LTE security & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 468 & 1 & Test vectors for 128-EIA1 & 11.0.1 & 11.1.0 \\
-\hline
-\end{tabular}
+| 2009-12 | SA\#46 | SP090812 | 328 | 1 | Clarifications to context handling in IRAT handover | 9.1.0 | 9.2.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2009-12 | SA\#46 | SP090811 | 330 | 1 | Correction to store security context to ME | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 332 | 1 | Corrections to state transition | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 334 | - | Clarification for algorithm selection during IRAT handover to EUTRAN | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 336 | - | Corrections for 33.401 | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 338 | 1 | Concurrency of inter-MME handovers and NAS downlink messages (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 340 | - | Partial native EPS security context NAS COUNT value | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 343 | 1 | Clarification of NAS integrity protection activation | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 348 | 2 | Nas-token and key calculation at idle mobility from E-UTRAN to UTRAN/GERAN (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 352 | - | Clarifying the calculation of KeNB when there is more than one NAS SMC (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 354 | 3 | Behaviour for lost NAS SMC message when creating mapped context (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 356 | 4 | Clarification of Authentication Data and transition to EMM-DEREGISTERED and Correction of text on authentication data transfer | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 359 | - | NCC Initialization in eNB at the Initial Connection Setup | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 360 | 1 | key replacement clarification | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 362 | 1 | Replacing KDF definition with a reference | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 364 | 1 | Correction of interworking between GERAN and E-UTRAN | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 366 | - | Correcting A. 11 | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 367 | 1 | Not resetting STARTPS to 0 in HO from EUTRAN to UTRAN and not resetting STARTCS to 0 in SRVCC (Rel-9). | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 368 | - | Security considerations for emergency sessions in SRVCC | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 369 | 1 | Delete the CK keys in the MSC server enhanced for SRVCC in case there is desynchronization of CS keys between the UE and the network in SRVCC | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 371 | - | NAS COUNT handling during IRAT handover | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090811 | 373 | - | Concurrency of inter-RAT handovers and NAS SMC procedure (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090812 | 375 | 1 | Using P-TMSI signature when attaching to SGSN using a GUTI (Rel-9) | 9.1.0 | 9.2.0 |
+| 2009-12 | SA\#46 | SP090889 | 376 | 4 | Key-Chaining issue in I-RAT handover to UTRAN | 9.1.0 | 9.2.0 |
+| 2010-04 | SA\#47 | SP100097 | 384 | - | GPRS Kc128 handling | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100099 | 386 | - | Handling of SIM based EC handover to E-UTRAN | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100099 | 377 | - | Key derivations for unauthenticated Emergency call | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100103 | 319 | 2 | Clarification of SIM user handover from UTRAN to E-UTRAN | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100103 | 387 | 1 | Correction of text on terminal identities | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100101 | 392 | 1 | Clarification of Identification procedure in MME | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100101 | 403 | - | Handling of EPS NAS security context in state transitions | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100103 | 378 | 1 | Add the Replay protection implementation and Clarification of replay protection with integrity | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100103 | 389 | - | Clarification for NAS downlink COUNT handling in I-RAT handover to UTRAN | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100101 | 382 | 1 | GPRS Kc handling | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100101 | 399 | 1 | Desynchronization of PS keys between the UE and the network in case of PS HO failure | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100101 | 383 | 1 | Correction of SRVCC failure | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100106 | 395 | 2 | Correction on mandatory implementation of IKE and IPsec for backhaul of eNBs | 9.2.0 | 9.3.0 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline 2011-09 & SA\#53 & SP110505 & 469 & 1 & Corrections on RN start-up security procedures & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 471 & 2 & Clarification of integrity protection for relay nodes & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 473 & - & Clarification on PDCP integrity requirement for Un interface & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 475 & 1 & Correction on eNB management connection security & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 477 & 1 & Correction on RN management connection security & 11.0.1 & 11.1.0 \\
-\hline 2011-09 & SA\#53 & SP110505 & 479 & 1 & Specification of profile and revocation handling for UICC certificates with relay nodes & 11.0.1 & 11.1.0 \\
-\hline 2011-12 & SA\#54 & SP110848 & 483 & 1 & CR on 33.401 DSCP use with IPsec & 11.1.0 & 11.2.0 \\
-\hline 2011-12 & SA\#54 & SP110848 & 484 & 1 & CR-Clarification for handover from E-UTRAN to UTRAN & 11.1.0 & 11.2.0 \\
-\hline 2011-12 & SA\#54 & SP110848 & 486 & 1 & Context identification at inter-RAT TAU procedures & 11.1.0 & 11.2.0 \\
-\hline 2011-12 & SA\#54 & SP110848 & 487 & 1 & Clarification of the KDF used in the key calculations & 11.1.0 & 11.2.0 \\
-\hline \multirow{4}{*}{2012-03} & \multirow{4}{*}{SA\#55} & \multirow{4}{*}{SP120039} & 488 & 1 & Clarifying Un user plane ciphering & \multirow[t]{4}{*}{11.2.0} & \multirow[b]{4}{*}{11.3.0} \\
-\hline & & & 489 & 1 & SRVCC HO from CS GERAN/UTRAN to PS E-UTRAN & & \\
-\hline & & & 491 & 1 & Clarification of security requirements for backhaul of eNBs & & \\
-\hline & & & 493 & 1 & Storing START in ME at mobility events (33.401) & & \\
-\hline 2012-06 & SA\#56 & SP120341 & 494 & - & Clarifying Un user plane ciphering & 11.3.0 & 11.4.0 \\
-\hline 2012-06 & SA\#56 & SP120341 & 495 & 1 & Alignment of rSRVCC cases for HSPA and E-UTRAN & 11.3.0 & 11.4.0 \\
-\hline 2012-06 & SA\#56 & SP120339 & 499 & 1 & Addition of confidentiality requirement for interfaces carrying subscriber specific sensitive data & 11.3.0 & 11.4.0 \\
-\hline 2012-06 & SA\#56 & SP120343 & 501 & & Miscellaneous corrections with respect to relay nodes & 11.3.0 & 11.4.0 \\
-\hline 2012-06 & SA\#56 & SP120343 & 502 & 1 & Pending downlink UP data at intra-LTE TAU & 11.3.0 & 11.4.0 \\
-\hline 2012-09 & SA\#57 & SP120605 & 504 & - & Length of truncated NAS token & 11.4.0 & 11.5.0 \\
-\hline 2012-09 & SA\#57 & SP120605 & 505 & - & Corrections to rSRVCC cases for E-UTRAN & 11.4.0 & 11.5.0 \\
-\hline 2012-09 & SA\#57 & SP120602 & 503 & - & Alignment of rule for running EPS-AKA at IRAT mobility Note that strange version number is a result of wrong version number shown on cover of this CR (12.4.0) & 11.5.0 & 12.5.0 \\
-\hline 2012-10 & & & & & Correction of previous entry in history table & 12.5.0 & 12.5.1 \\
-\hline 2012-12 & SA\#58 & SP120856 & 506 & 1 & CR-Corrections to 33.401 & 12.5.1 & 12.6.0 \\
-\hline 2012-12 & SA\#58 & SP120856 & 507 & 1 & Editorial correction to Attach in UTRAN & 12.5.1 & 12.6.0 \\
-\hline 2013-03 & SA\#59 & SP130038 & 518 & 1 & SRVCC-correction-REL-12 & 12.6.0 & 12.7.0 \\
-\hline 2013-06 & SA\#60 & SP130252 & 519 & 1 & Clarification for handover from UTRAN to E-UTRAN-R12 & 12.7.0 & 12.8.0 \\
-\hline 2013-06 & & & & & Correction of a typo in history table & 12.8.0 & 12.8.1 \\
-\hline 2013-09 & SA\#61 & SP130838 & 522 & 1 & Revision of clause on KeNB re-keying & 12.8.1 & 12.9.0 \\
-\hline 2013-12 & SA\#62 & SP130667 & 523 & - & Correction of a typo & 12.9.0 & 12.10.0 \\
-\hline 2014-06 & SA\#64 & SP140314 & 525 & 1 & Security functionality for dual connectivity & 12.10.0 & 12.11.0 \\
-\hline \multirow{3}{*}{2014-09} & \multirow{3}{*}{SA\#65} & \multirow{3}{*}{SP140590} & 526 & - & Solving editor's note on SCC length & \multirow[t]{3}{*}{12.11.0} & \multirow[t]{3}{*}{12.12.0} \\
-\hline & & & 532 & 1 & Removal of Editor Notes from Sections and clean up related to Dual Connectivity & & \\
-\hline & & & 535 & 1 & Add Dual Connectivity Acronyms & & \\
-\hline \multirow{5}{*}{2014-12} & \multirow{5}{*}{SA-66} & SP140827 & 540 & - & Modifying undetermined reference clauses and Correcting the title heading of E. 2 & \multirow{5}{*}{12.12.0} & \multirow{5}{*}{12.13.0} \\
-\hline & & SP140830 & 541 & - & Clarification on implementation requirement of EIAO in RN & & \\
-\hline & & SP140827 & 542 & 1 & Key stream re-using caused by DRB type change (+ Editorial correction changing font from Body Text to Normal in Annex C) & & \\
-\hline & & & 543 & 1 & Clarification on radio link failure recovery & & \\
-\hline & & SP140824 & 544 & 1 & S-KeNB update in UE & & \\
-\hline 2015-03 & SA-67 & SP150076 & 546 & 1 & Correntions on SCG security algorithm negotiation & 12.13.0 & 12.14.0 \\
-\hline \multirow{2}{*}{2015-09} & \multirow{2}{*}{SA-69} & & 551 & 1 & Adapting KeNB* derivation function due to extended range of EARFCN-DL & 12.14.0 & 12.15.0 \\
-\hline & & SP150475 & 552 & 1 & Adapting KeNB* derivation function due to extended range of EARFCN-DL & 12.15.0 & 13.0.0 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multirow{3}{*}{2015-12} & \multirow{3}{*}{SA-70} & SP150727 & 561 & 1 & Clarification on MME behaviour for selection of integrity and confidentiality algorithms for VoLTE emergency calls & \multirow[t]{3}{*}{13.0.0} & \multirow[t]{3}{*}{13.1.0} \\
-\hline & & \multirow[b]{2}{*}{SP150730} & 562 & 1 & Security considerations on the proposed security solution for IOPS & & \\
-\hline & & & 563 & - & Addition of an informative annex to TS 33.401 containing security guidelines for IOPS & & \\
-\hline 2016-03 & SA-71 & SP160055 & 570 & 1 & LWIP Security Support & 13.1.0 & 13.2.0 \\
-\hline 2016-03 & SA-71 & SP160198 & 566 & 2 & Update to IOPS security considerations & 13.1.0 & 13.2.0 \\
-\hline 2016-03 & SA-71 & SP160052 & 564 & 2 & Add NB-IoT keys and processes & 13.1.0 & 13.2.0 \\
-\hline 2016-03 & SA-71 & SP160197 & 568 & 3 & Security aspects of LTE-WLAN aggregation & 13.1.0 & 13.2.0 \\
-\hline
-\end{tabular}
+| 2010-04 | SA\#47 | SP100106 | 376 | 2 | Correction of Network Domain Control Plane protection | 9.2.0 | 9.3.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2010-04 | SA\#47 | SP100101 | 397 | 1 | Not resetting START to 0 in idle mode mobility (Rel-9). | 9.2.0 | 9.3.0 |
+| 2010-04 | SA\#47 | SP100106 | 404 | - | Certificate Enrolment use | 9.2.0 | 9.3.0 |
+| 2010-04 | -- | -- | -- | -- | Correction of reference [27] | 9.3.0 | 9.3.1 |
+| 2010-06 | SA\#48 | SP100382 | 414 | 1 | IMEI sending clarification | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100382 | 420 | 1 | Editorial Corrections | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100383 | 408 | 1 | Correction of text on emergency call handling | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100383 | 409 | 1 | Emergency Context Lifetime | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100382 | 410 | 1 | Clarifying the uplink NAS COUNT for derivation of KeNB | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100383 | 412 | 2 | Uplink and Downlink NAS COUNT increment for EIA0 | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100383 | 413 | 1 | Correction for Emergency Attach | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100382 | 415 | 1 | Correction of TAU procedure after IRAT Handover to E-UTRAN | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100382 | 416 | 1 | Correction on key sending in S1 HANDOVER REQUIRED message | 9.3.1 | 9.4.0 |
+| 2010-06 | SA\#48 | SP100382 | 418 | 1 | Correction of BEARER-ID to BEARER | 9.3.1 | 9.4.0 |
+| 2010-10 | SA\#49 | SP100477 | 423 | 1 | Corrections | 9.4.0 | 9.5.0 |
+| 2010-10 | SA\#49 | SP100569 | 424 | - | Emergency call corrections | 9.4.0 | 9.5.0 |
+| 2010-12 | SA\#50 | SP100850 | 425 | 1 | Emergency call corrections | 9.5.0 | 9.6.0 |
+| 2010-12 | SA\#50 | SP100721 | 426 | 1 | Authentication Failure Handling | 9.5.0 | 9.6.0 |
+| 2010-12 | SA\#50 | SP100721 | 427 | - | Correction of algorithm selection | 9.5.0 | 9.6.0 |
+| 2010-12 | SA\#50 | SP100852 | 429 | 1 | Clarification for EIA0 selection during IRAT handover to EUTRAN | 9.5.0 | 9.6.0 |
+| 2011-03 | SA\#51 | SP110016 | 431 | 1 | Correction for handover from UTRAN to E-UTRAN | 9.6.0 | 10.0.0 |
+| 2011-03 | SA\#51 | SP110015 | 437 | 1 | PDCP integrity for relay node security | 9.6.0 | 10.0.0 |
+| 2011-03 | SA\#51 | SP110015 | 438 | 1 | Solution for relay node security | 9.6.0 | 10.0.0 |
+| 2011-06 | SA\#52 | SP110256 | 440 | 1 | Corrective text for undefined wording - autonomous validation of RN platform | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 444 | 1 | Detailed binding of RN and UICC | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 445 | 1 | Clarification on initial attach procedure for PSK case | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 448 | 1 | Clarification of certificate and subscription handling | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 449 | 1 | Resolution of Editor's Notes for PDPC integrity for Relay Nodes | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 451 | 1 | Specification of secure channel profiles and certificates used for Relay nodes (RNs) and UICC (USIM-RN) | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 452 | 1 | Resolution of Editor's Notes for Relay Node security procedures | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 453 | 1 | Corrections and Clarifications for Relay Node security procedures | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 454 | 1 | Correction on communication outside secure channel for Relay Node security procedures | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110259 | 459 | 2 | Modification of security context storage rate | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110256 | 460 | - | Corrections to communication between MME and DeNB for relay nodes | 10.0.0 | 10.1.0 |
+| 2011-06 | SA\#52 | SP110270 | 428 | - | EPS algorithm negotitation during UTRAN to E-UTRAN handover | 10.1.0 | 11.0.0 |
+| 2011-06 | -- | -- | -- | -- | Corrections to CR implementation | 11.0.0 | 11.0.1 |
+| 2011-09 | SA\#53 | SP110505 | 461 | 1 | Adding ZUC algorithm in SAE/LTE security | 11.0.1 | 11.1.0 |
+| 2011-09 | SA\#53 | SP110505 | 468 | 1 | Test vectors for 128-EIA1 | 11.0.1 | 11.1.0 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & Meeting & TDoc & CR & Rev & Cat & Subject/Comment & New version \\
-\hline 2016-06 & SA\#72 & SP-160390 & 0574 & 1 & F & Change of the LWA architecture & 13.3.0 \\
-\hline 2016-06 & SA\#72 & SP-160456 & 0579 & 1 & F & Change of the LWA architecture description & 13.3.0 \\
-\hline 2016-06 & SA\#72 & SP-160386 & 0580 & 1 & B & Security for RRC suspend and resume & 13.3.0 \\
-\hline 2016-06 & SA\#72 & SP-160390 & 0585 & 1 & F & Risk of User Privacy in LWA & 13.3.0 \\
-\hline 2016-06 & SA\#72 & SP-160386 & 0588 & 1 & F & Partial ciphering mechanism for user data via the MME and NAS COUNTs clarification & 13.3.0 \\
-\hline 2016-09 & SA\#73 & SP-160579 & 0591 & - & F & Editor Notes in RRC Suspend and Resume & 13.4.0 \\
-\hline 2016-09 & SA\#73 & SP-160582 & 0592 & 1 & F & LWA editorial corrections & 13.4.0 \\
-\hline 2016-09 & SA\#73 & SP-160582 & 0593 & - & F & LWIP - Correction of the UEs IP address & 13.4.0 \\
-\hline 2016-09 & SA\#73 & SP-160580 & 0584 & 2 & C & Protecting against the modification of Attach/TAU Request attacks & 14.0.0 \\
-\hline 2016-09 & SA\#73 & SP-160580 & 0594 & 1 & B & Installing PMK at the WLAN AP using EAP & 14.0.0 \\
-\hline 2016-12 & SA\#74 & SP-160788 & 0599 & - & F & Correcting LWA-ID derivation mismatch & 14.1.0 \\
-\hline
-\end{tabular}
+
+| 2011-09 | SA\#53 | SP110505 | 469 | 1 | Corrections on RN start-up security procedures | 11.0.1 | 11.1.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2011-09 | SA\#53 | SP110505 | 471 | 2 | Clarification of integrity protection for relay nodes | 11.0.1 | 11.1.0 |
+| 2011-09 | SA\#53 | SP110505 | 473 | - | Clarification on PDCP integrity requirement for Un interface | 11.0.1 | 11.1.0 |
+| 2011-09 | SA\#53 | SP110505 | 475 | 1 | Correction on eNB management connection security | 11.0.1 | 11.1.0 |
+| 2011-09 | SA\#53 | SP110505 | 477 | 1 | Correction on RN management connection security | 11.0.1 | 11.1.0 |
+| 2011-09 | SA\#53 | SP110505 | 479 | 1 | Specification of profile and revocation handling for UICC certificates with relay nodes | 11.0.1 | 11.1.0 |
+| 2011-12 | SA\#54 | SP110848 | 483 | 1 | CR on 33.401 DSCP use with IPsec | 11.1.0 | 11.2.0 |
+| 2011-12 | SA\#54 | SP110848 | 484 | 1 | CR-Clarification for handover from E-UTRAN to UTRAN | 11.1.0 | 11.2.0 |
+| 2011-12 | SA\#54 | SP110848 | 486 | 1 | Context identification at inter-RAT TAU procedures | 11.1.0 | 11.2.0 |
+| 2011-12 | SA\#54 | SP110848 | 487 | 1 | Clarification of the KDF used in the key calculations | 11.1.0 | 11.2.0 |
+| 2012-03 | SA\#55 | SP120039 | 488 | 1 | Clarifying Un user plane ciphering | 11.2.0 | 11.3.0 |
+|  |  |  | 489 | 1 | SRVCC HO from CS GERAN/UTRAN to PS E-UTRAN |  |  |
+|  |  |  | 491 | 1 | Clarification of security requirements for backhaul of eNBs |  |  |
+|  |  |  | 493 | 1 | Storing START in ME at mobility events (33.401) |  |  |
+| 2012-06 | SA\#56 | SP120341 | 494 | - | Clarifying Un user plane ciphering | 11.3.0 | 11.4.0 |
+| 2012-06 | SA\#56 | SP120341 | 495 | 1 | Alignment of rSRVCC cases for HSPA and E-UTRAN | 11.3.0 | 11.4.0 |
+| 2012-06 | SA\#56 | SP120339 | 499 | 1 | Addition of confidentiality requirement for interfaces carrying subscriber specific sensitive data | 11.3.0 | 11.4.0 |
+| 2012-06 | SA\#56 | SP120343 | 501 |  | Miscellaneous corrections with respect to relay nodes | 11.3.0 | 11.4.0 |
+| 2012-06 | SA\#56 | SP120343 | 502 | 1 | Pending downlink UP data at intra-LTE TAU | 11.3.0 | 11.4.0 |
+| 2012-09 | SA\#57 | SP120605 | 504 | - | Length of truncated NAS token | 11.4.0 | 11.5.0 |
+| 2012-09 | SA\#57 | SP120605 | 505 | - | Corrections to rSRVCC cases for E-UTRAN | 11.4.0 | 11.5.0 |
+| 2012-09 | SA\#57 | SP120602 | 503 | - | Alignment of rule for running EPS-AKA at IRAT mobility Note that strange version number is a result of wrong version number shown on cover of this CR (12.4.0) | 11.5.0 | 12.5.0 |
+| 2012-10 |  |  |  |  | Correction of previous entry in history table | 12.5.0 | 12.5.1 |
+| 2012-12 | SA\#58 | SP120856 | 506 | 1 | CR-Corrections to 33.401 | 12.5.1 | 12.6.0 |
+| 2012-12 | SA\#58 | SP120856 | 507 | 1 | Editorial correction to Attach in UTRAN | 12.5.1 | 12.6.0 |
+| 2013-03 | SA\#59 | SP130038 | 518 | 1 | SRVCC-correction-REL-12 | 12.6.0 | 12.7.0 |
+| 2013-06 | SA\#60 | SP130252 | 519 | 1 | Clarification for handover from UTRAN to E-UTRAN-R12 | 12.7.0 | 12.8.0 |
+| 2013-06 |  |  |  |  | Correction of a typo in history table | 12.8.0 | 12.8.1 |
+| 2013-09 | SA\#61 | SP130838 | 522 | 1 | Revision of clause on KeNB re-keying | 12.8.1 | 12.9.0 |
+| 2013-12 | SA\#62 | SP130667 | 523 | - | Correction of a typo | 12.9.0 | 12.10.0 |
+| 2014-06 | SA\#64 | SP140314 | 525 | 1 | Security functionality for dual connectivity | 12.10.0 | 12.11.0 |
+| 2014-09 | SA\#65 | SP140590 | 526 | - | Solving editor's note on SCC length | 12.11.0 | 12.12.0 |
+|  |  |  | 532 | 1 | Removal of Editor Notes from Sections and clean up related to Dual Connectivity |  |  |
+|  |  |  | 535 | 1 | Add Dual Connectivity Acronyms |  |  |
+| 2014-12 | SA-66 | SP140827 | 540 | - | Modifying undetermined reference clauses and Correcting the title heading of E. 2 | 12.12.0 | 12.13.0 |
+|  |  | SP140830 | 541 | - | Clarification on implementation requirement of EIAO in RN |  |  |
+|  |  | SP140827 | 542 | 1 | Key stream re-using caused by DRB type change (+ Editorial correction changing font from Body Text to Normal in Annex C) |  |  |
+|  |  |  | 543 | 1 | Clarification on radio link failure recovery |  |  |
+|  |  | SP140824 | 544 | 1 | S-KeNB update in UE |  |  |
+| 2015-03 | SA-67 | SP150076 | 546 | 1 | Correntions on SCG security algorithm negotiation | 12.13.0 | 12.14.0 |
+| 2015-09 | SA-69 |  | 551 | 1 | Adapting KeNB* derivation function due to extended range of EARFCN-DL | 12.14.0 | 12.15.0 |
+|  |  | SP150475 | 552 | 1 | Adapting KeNB* derivation function due to extended range of EARFCN-DL | 12.15.0 | 13.0.0 |
+
+
+| 2015-12 | SA-70 | SP150727 | 561 | 1 | Clarification on MME behaviour for selection of integrity and confidentiality algorithms for VoLTE emergency calls | 13.0.0 | 13.1.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|  |  | SP150730 | 562 | 1 | Security considerations on the proposed security solution for IOPS |  |  |
+|  |  |  | 563 | - | Addition of an informative annex to TS 33.401 containing security guidelines for IOPS |  |  |
+| 2016-03 | SA-71 | SP160055 | 570 | 1 | LWIP Security Support | 13.1.0 | 13.2.0 |
+| 2016-03 | SA-71 | SP160198 | 566 | 2 | Update to IOPS security considerations | 13.1.0 | 13.2.0 |
+| 2016-03 | SA-71 | SP160052 | 564 | 2 | Add NB-IoT keys and processes | 13.1.0 | 13.2.0 |
+| 2016-03 | SA-71 | SP160197 | 568 | 3 | Security aspects of LTE-WLAN aggregation | 13.1.0 | 13.2.0 |
+
+
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | Meeting | TDoc | CR | Rev | Cat | Subject/Comment | New version |
+| 2016-06 | SA\#72 | SP-160390 | 0574 | 1 | F | Change of the LWA architecture | 13.3.0 |
+| 2016-06 | SA\#72 | SP-160456 | 0579 | 1 | F | Change of the LWA architecture description | 13.3.0 |
+| 2016-06 | SA\#72 | SP-160386 | 0580 | 1 | B | Security for RRC suspend and resume | 13.3.0 |
+| 2016-06 | SA\#72 | SP-160390 | 0585 | 1 | F | Risk of User Privacy in LWA | 13.3.0 |
+| 2016-06 | SA\#72 | SP-160386 | 0588 | 1 | F | Partial ciphering mechanism for user data via the MME and NAS COUNTs clarification | 13.3.0 |
+| 2016-09 | SA\#73 | SP-160579 | 0591 | - | F | Editor Notes in RRC Suspend and Resume | 13.4.0 |
+| 2016-09 | SA\#73 | SP-160582 | 0592 | 1 | F | LWA editorial corrections | 13.4.0 |
+| 2016-09 | SA\#73 | SP-160582 | 0593 | - | F | LWIP - Correction of the UEs IP address | 13.4.0 |
+| 2016-09 | SA\#73 | SP-160580 | 0584 | 2 | C | Protecting against the modification of Attach/TAU Request attacks | 14.0.0 |
+| 2016-09 | SA\#73 | SP-160580 | 0594 | 1 | B | Installing PMK at the WLAN AP using EAP | 14.0.0 |
+| 2016-12 | SA\#74 | SP-160788 | 0599 | - | F | Correcting LWA-ID derivation mismatch | 14.1.0 |
+

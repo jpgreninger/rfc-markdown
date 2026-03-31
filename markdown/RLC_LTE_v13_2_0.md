@@ -1,17 +1,10 @@
-\title{
-$3{ }^{\text {rd }}$ Generation Partnership Project; \\ Technical Specification Group Radio Access Network; Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Link Control (RLC) protocol specification (Release 13)
-}
+# $3{ }^{\text {rd }}$ Generation Partnership Project; <br> Technical Specification Group Radio Access Network; Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Link Control (RLC) protocol specification (Release 13) 
+
 ![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-01.jpg?height=241&width=270&top_left_y=1119&top_left_x=203)
 ![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-01.jpg?height=220&width=449&top_left_y=1149&top_left_x=1477)
 
-\footnotetext{
-The present document has been developed within the $3{ }^{\text {rd }}$ Generation Partnership Project ( $3 \mathrm{GPP}{ }^{\mathrm{TM}}$ ) and may be further elaborated for the purposes of 3GPP.
-The present document has not been subject to any approval process by the 3GPP Organisational Partners and shall not be implemented.
-This Specification is provided for future development work within 3GPP only. The Organisational Partners accept no liability for any use of this Specification.
-Specifications and reports for implementation of the 3GPP ${ }^{\text {TM }}$ system should be obtained via the 3GPP Organisational Partners' Publications Offices.
-}
-
-\section*{3GPP}
+[^0]
+## 3GPP
 
 Postal address
 
@@ -23,7 +16,7 @@ Tel.: +33 492944200 Fax: +33 493654716
 Internet
 http://www.3gpp.org
 
-\section*{Copyright Notification}
+## Copyright Notification
 
 No part may be reproduced except as authorized by written permission.
 The copyright and the foregoing restriction extend to reproduction in all media.
@@ -34,7 +27,8 @@ UMTS ${ }^{\text {TM }}$ is a Trade Mark of ETSI registered for the benefit of i
 LTE ${ }^{\text {TM }}$ is a Trade Mark of ETSI currently being registered for the benefit of its Members and of the 3GPP Organizational Partners
 GSM ${ }^{\circledR}$ and the GSM logo are registered and owned by the GSM Association
 
-\section*{Contents}
+## Contents
+
 Foreword ..... 5
 1 Scope ..... 6
 2 References ..... 6
@@ -135,7 +129,7 @@ Foreword ..... 5
 7.4 Configurable parameters ..... 40
 Annex A (informative): Change history ..... 41
 
-\section*{Foreword}
+## Foreword
 
 This Technical Specification has been produced by the $3{ }^{\text {rd }}$ Generation Partnership Project (3GPP).
 The contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:
@@ -151,10 +145,11 @@ y the second digit is incremented for all changes of substance, i.e. technical e
 Z
 the third digit is incremented when editorial only changes have been incorporated in the document.
 
-\section*{1 Scope}
+## 1 Scope
 
 The present document specifies the E-UTRA Radio Link Control (RLC) protocol for the UE - E-UTRAN radio interface.
 The specification describes:
+
 - E-UTRA RLC sublayer architecture;
 - E-UTRA RLC entities;
 - services expected from lower layers by E-UTRA RLC;
@@ -163,9 +158,11 @@ The specification describes:
 - elements for peer-to-peer E-UTRA RLC communication including protocol data units, formats and parameters;
 - handling of unknown, unforeseen and erroneous protocol data at E-UTRA RLC.
 
-\section*{2 References}
+
+## 2 References
 
 The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
 - References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.
 - For a specific reference, subsequent revisions do not apply.
 - For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document in the same Release as the present document.
@@ -176,9 +173,10 @@ The following documents contain provisions which, through reference in this text
 [5] 3GPP TS 36.331: "E-UTRA RRC Protocol specification".
 [6] 3GPP TS 24.301: "Non-Access-Stratum (NAS) protocol for Evolved Packet System (EPS); Stage 3".
 
-\section*{3 Definitions, symbols and abbreviations}
 
-\subsection*{3.1 Definitions}
+## 3 Definitions, symbols and abbreviations
+
+### 3.1 Definitions
 
 For the purposes of the present document, the terms and definitions given in TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in TR 21.905 [1].
 byte segment: A byte of the Data field of an AMD PDU. Specifically, byte segment number 0 corresponds to the first byte of the Data field of an AMD PDU.
@@ -189,64 +187,62 @@ NB-IoT UE: A UE that uses NB-IoT.
 
 RLC SDU segment: A segment of an RLC SDU.
 
-\subsection*{3.2 Abbreviations}
+### 3.2 Abbreviations
 
 For the purposes of the present document, the following abbreviations apply:
 
-\begin{tabular}{|l|l|}
-\hline AM & Acknowledged Mode \\
-\hline AMD & AM Data \\
-\hline ARQ & Automatic Repeat reQuest \\
-\hline BCCH & Broadcast Control CHannel \\
-\hline BCH & Broadcast CHannel \\
-\hline CCCH & Common Control CHannel \\
-\hline DCCH & Dedicated Control CHannel \\
-\hline DL & DownLink \\
-\hline DL-SCH & DL-Shared CHannel \\
-\hline DTCH & Dedicated Traffic CHannel \\
-\hline E & Extension bit \\
-\hline eNB & E-UTRAN Node B \\
-\hline E-UTRA & Evolved UMTS Terrestrial Radio Access \\
-\hline E-UTRAN & Evolved UMTS Terrestrial Radio Access Network \\
-\hline FI & Framing Info \\
-\hline HARQ & Hybrid ARQ \\
-\hline LI & Length Indicator \\
-\hline LSF & Last Segment Flag \\
-\hline MAC & Medium Access Control \\
-\hline MCCH & Multicast Control Channel \\
-\hline MTCH & Multicast Traffic Channel \\
-\hline NB-IoT & NarrowBand Internet of Things \\
-\hline PCCH & Paging Control CHannel \\
-\hline PDU & Protocol Data Unit \\
-\hline RLC & Radio Link Control \\
-\hline RRC & Radio Resource Control \\
-\hline SAP & Service Access Point \\
-\hline SBCCH & Sidelink Broadcast Control Channel \\
-\hline SC-MCCH & Single Cell Multicast Control Channel \\
-\hline SC-MTCH & Single Cell Multicast Transport Channel \\
-\hline SDU & Service Data Unit \\
-\hline SN & Sequence Number \\
-\hline SO & Segment Offset \\
-\hline STCH & Sidelink Traffic Channel \\
-\hline TB & Transport Block \\
-\hline TM & Transparent Mode \\
-\hline TMD & TM Data \\
-\hline UE & User Equipment \\
-\hline UL & UpLink \\
-\hline UM & Unacknowledged Mode \\
-\hline UMD & UM Data \\
-\hline
-\end{tabular}
+| AM | Acknowledged Mode |
+| :--- | :--- |
+| AMD | AM Data |
+| ARQ | Automatic Repeat reQuest |
+| BCCH | Broadcast Control CHannel |
+| BCH | Broadcast CHannel |
+| CCCH | Common Control CHannel |
+| DCCH | Dedicated Control CHannel |
+| DL | DownLink |
+| DL-SCH | DL-Shared CHannel |
+| DTCH | Dedicated Traffic CHannel |
+| E | Extension bit |
+| eNB | E-UTRAN Node B |
+| E-UTRA | Evolved UMTS Terrestrial Radio Access |
+| E-UTRAN | Evolved UMTS Terrestrial Radio Access Network |
+| FI | Framing Info |
+| HARQ | Hybrid ARQ |
+| LI | Length Indicator |
+| LSF | Last Segment Flag |
+| MAC | Medium Access Control |
+| MCCH | Multicast Control Channel |
+| MTCH | Multicast Traffic Channel |
+| NB-IoT | NarrowBand Internet of Things |
+| PCCH | Paging Control CHannel |
+| PDU | Protocol Data Unit |
+| RLC | Radio Link Control |
+| RRC | Radio Resource Control |
+| SAP | Service Access Point |
+| SBCCH | Sidelink Broadcast Control Channel |
+| SC-MCCH | Single Cell Multicast Control Channel |
+| SC-MTCH | Single Cell Multicast Transport Channel |
+| SDU | Service Data Unit |
+| SN | Sequence Number |
+| SO | Segment Offset |
+| STCH | Sidelink Traffic Channel |
+| TB | Transport Block |
+| TM | Transparent Mode |
+| TMD | TM Data |
+| UE | User Equipment |
+| UL | UpLink |
+| UM | Unacknowledged Mode |
+| UMD | UM Data |
 
-\section*{4 General}
+## 4 General
 
-\subsection*{4.1 Introduction}
+### 4.1 Introduction
 
 The objective is to describe the RLC architecture and the RLC entities from a functional point of view.
 
-\subsection*{4.2 RLC architecture}
+### 4.2 RLC architecture
 
-\subsection*{4.2.1 RLC entities}
+### 4.2.1 RLC entities
 
 The description in this sub clause is a model and does not specify or restrict implementations.
 
@@ -266,72 +262,76 @@ An AM RLC entity consists of a transmitting side and a receiving side. The trans
 
 Figure 4.2.1-1 illustrates the overview model of the RLC sub layer.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-09.jpg?height=949&width=1552&top_left_y=246&top_left_x=255}
-\captionsetup{labelformat=empty}
-\caption{Figure 4.2.1-1: Overview model of the RLC sub layer}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-09.jpg?height=949&width=1552&top_left_y=246&top_left_x=255)
+Figure 4.2.1-1: Overview model of the RLC sub layer
 
 The following applies to all RLC entity types (i.e. TM, UM and AM RLC entity):
+
 - RLC SDUs of variable sizes which are byte aligned (i.e. multiple of 8 bits) are supported;
 - RLC PDUs are formed only when a transmission opportunity has been notified by lower layer (i.e. by MAC) and are then delivered to lower layer.
 
 Description of different RLC entity types are provided below.
 
-\subsection*{4.2.1.1 TM RLC entity}
+### 4.2.1.1 TM RLC entity
 
-\subsection*{4.2.1.1.1 General}
+### 4.2.1.1.1 General
 
 A TM RLC entity can be configured to deliver/receive RLC PDUs through the following logical channels:
+
 - BCCH, DL/UL CCCH, PCCH and SBCCH.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-10.jpg?height=684&width=1185&top_left_y=388&top_left_x=440}
-\captionsetup{labelformat=empty}
-\caption{Figure 4.2.1.1.1-1: Model of two transparent mode peer entities}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-10.jpg?height=684&width=1185&top_left_y=388&top_left_x=440)
+Figure 4.2.1.1.1-1: Model of two transparent mode peer entities
 
 A TM RLC entity delivers/receives the following RLC data PDU:
+
 - TMD PDU.
 
-\subsection*{4.2.1.1.2 Transmitting TM RLC entity}
+
+### 4.2.1.1.2 Transmitting TM RLC entity
 
 When a transmitting TM RLC entity forms TMD PDUs from RLC SDUs, it shall:
+
 - not segment nor concatenate the RLC SDUs;
 - not include any RLC headers in the TMD PDUs.
 
-\subsection*{4.2.1.1.3 Receiving TM RLC entity}
+
+### 4.2.1.1.3 Receiving TM RLC entity
 
 When a receiving TM RLC entity receives TMD PDUs, it shall:
+
 - deliver the TMD PDUs (which are just RLC SDUs) to upper layer.
 
-\subsection*{4.2.1.2 UM RLC entity}
 
-\subsection*{4.2.1.2.1 General}
+### 4.2.1.2 UM RLC entity
+
+### 4.2.1.2.1 General
 
 An UM RLC entity can be configured to deliver/receive RLC PDUs through the following logical channels:
+
 - DL/UL DTCH, MCCH, MTCH, SC-MCCH, SC-MTCH or STCH.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-11.jpg?height=1009&width=1187&top_left_y=264&top_left_x=438}
-\captionsetup{labelformat=empty}
-\caption{Figure 4.2.1.2.1-1: Model of two unacknowledged mode peer entities}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-11.jpg?height=1009&width=1187&top_left_y=264&top_left_x=438)
+Figure 4.2.1.2.1-1: Model of two unacknowledged mode peer entities
 
 An UM RLC entity delivers/receives the following RLC data PDU:
+
 - UMD PDU.
 
 NOTE: HARQ reordering is not applicable for MCCH, MTCH, SC-MCCH, SC-MTCH or STCH reception.
 
-\subsection*{4.2.1.2.2 Transmitting UM RLC entity}
+### 4.2.1.2.2 Transmitting UM RLC entity
 
 When a transmitting UM RLC entity forms UMD PDUs from RLC SDUs, it shall:
+
 - segment and/or concatenate the RLC SDUs so that the UMD PDUs fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity notified by lower layer;
 - include relevant RLC headers in the UMD PDU.
 
-\subsection*{4.2.1.2.3 Receiving UM RLC entity}
+
+### 4.2.1.2.3 Receiving UM RLC entity
 
 When a receiving UM RLC entity receives UMD PDUs, it shall:
+
 - detect whether or not the UMD PDUs have been received in duplication, and discard duplicated UMD PDUs;
 - reorder the UMD PDUs if they are received out of sequence;
 - detect the loss of UMD PDUs at lower layers and avoid excessive reordering delays;
@@ -339,73 +339,88 @@ When a receiving UM RLC entity receives UMD PDUs, it shall:
 - discard received UMD PDUs that cannot be re-assembled into a RLC SDU due to loss at lower layers of an UMD PDU which belonged to the particular RLC SDU.
 
 At the time of RLC re-establishment, the receiving UM RLC entity shall:
+
 - if possible, reassemble RLC SDUs from the UMD PDUs that are received out of sequence and deliver them to upper layer;
 - discard any remaining UMD PDUs that could not be reassembled into RLC SDUs;
 - initialize relevant state variables and stop relevant timers.
 
-\subsection*{4.2.1.3 AM RLC entity}
 
-\subsection*{4.2.1.3.1 General}
+### 4.2.1.3 AM RLC entity
+
+### 4.2.1.3.1 General
 
 An AM RLC entity can be configured to deliver/receive RLC PDUs through the following logical channels:
+
 - DL/UL DCCH or DL/UL DTCH.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-12.jpg?height=1212&width=1183&top_left_y=681&top_left_x=440}
-\captionsetup{labelformat=empty}
-\caption{Figure 4.2.1.3.1-1: Model of an acknowledged mode enttiy}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-12.jpg?height=1212&width=1183&top_left_y=681&top_left_x=440)
+Figure 4.2.1.3.1-1: Model of an acknowledged mode enttiy
 
 An AM RLC entity delivers/receives the following RLC data PDUs:
+
 - AMD PDU;
 - AMD PDU segment.
 
 An AM RLC entity delivers/receives the following RLC control PDU:
+
 - STATUS PDU.
 
-\subsection*{4.2.1.3.2 Transmitting side}
+
+### 4.2.1.3.2 Transmitting side
 
 When the transmitting side of an AM RLC entity forms AMD PDUs from RLC SDUs, it shall:
+
 - segment and/or concatenate the RLC SDUs so that the AMD PDUs fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity notified by lower layer.
 
 The transmitting side of an AM RLC entity supports retransmission of RLC data PDUs (ARQ):
+
 - if the RLC data PDU to be retransmitted does not fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity notified by lower layer, the AM RLC entity can re-segment the RLC data PDU into AMD PDU segments;
 - the number of re-segmentation is not limited.
 
 When the transmitting side of an AM RLC entity forms AMD PDUs from RLC SDUs received from upper layer or AMD PDU segments from RLC data PDUs to be retransmitted, it shall:
+
 - include relevant RLC headers in the RLC data PDU.
 
-\subsection*{4.2.1.3.3 Receiving side}
+
+### 4.2.1.3.3 Receiving side
 
 When the receiving side of an AM RLC entity receives RLC data PDUs, it shall:
+
 - detect whether or not the RLC data PDUs have been received in duplication, and discard duplicated RLC data PDUs;
 - reorder the RLC data PDUs if they are received out of sequence;
 - detect the loss of RLC data PDUs at lower layers and request retransmissions to its peer AM RLC entity;
 - reassemble RLC SDUs from the reordered RLC data PDUs and deliver the RLC SDUs to upper layer in sequence.
 
 At the time of RLC re-establishment, the receiving side of an AM RLC entity shall:
+
 - if possible, reassemble RLC SDUs from the RLC data PDUs that are received out of sequence and deliver them to upper layer;
 - discard any remaining RLC data PDUs that could not be reassembled into RLC SDUs;
 - initialize relevant state variables and stop relevant timers.
 
-\subsection*{4.3 Services}
 
-\subsection*{4.3.1 Services provided to upper layers}
+### 4.3 Services
+
+### 4.3.1 Services provided to upper layers
 
 The following services are provided by RLC to upper layer:
+
 - TM data transfer;
 - UM data transfer;
 - AM data transfer, including indication of successful delivery of upper layers PDUs.
 
-\subsection*{4.3.2 Services expected from lower layers}
+
+### 4.3.2 Services expected from lower layers
 
 The following services are expected by RLC from lower layer (i.e. MAC):
+
 - data transfer;
 - notification of a transmission opportunity, together with the total size of the RLC PDU(s) to be transmitted in the transmission opportunity.
 
-\subsection*{4.4 Functions}
+
+### 4.4 Functions
 
 The following functions are supported by the RLC sub layer:
+
 - transfer of upper layer PDUs;
 - error correction through ARQ (only for AM data transfer);
 - concatenation, segmentation and reassembly of RLC SDUs (only for UM and AM data transfer);
@@ -416,71 +431,86 @@ The following functions are supported by the RLC sub layer:
 - RLC re-establishment (except for NB-IoT using only the Control Plane CIoT EPS optimisation (TS 24.301 [6]));
 - Protocol error detection (only for AM data transfer).
 
-\subsection*{4.5 Data available for transmission}
+
+### 4.5 Data available for transmission
 
 For the purpose of MAC buffer status reporting, the UE shall consider the following as data available for transmission in the RLC layer:
+
 - RLC SDUs, or segments thereof, that have not yet been included in an RLC data PDU;
 - RLC data PDUs, or portions thereof, that are pending for retransmission (RLC AM).
 
 In addition, if a STATUS PDU has been triggered and $t$-StatusProhibit is not running or has expired, the UE shall estimate the size of the STATUS PDU that will be transmitted in the next transmission opportunity, and consider this as data available for transmission in the RLC layer.
 
-\section*{5 Procedures}
+## 5 Procedures
 
-\subsection*{5.1 Data transfer procedures}
+### 5.1 Data transfer procedures
 
-\subsection*{5.1.1 TM data transfer}
+### 5.1.1 TM data transfer
 
-\subsection*{5.1.1.1 Transmit operations}
+### 5.1.1.1 Transmit operations
 
-\subsection*{5.1.1.1.1 General}
+### 5.1.1.1.1 General
 
 When submitting a new TMD PDU to lower layer, the transmitting TM RLC entity shall:
+
 - submit a RLC SDU without any modification to lower layer.
 
-\subsection*{5.1.1.2 Receive operations}
 
-\subsection*{5.1.1.2.1 General}
+### 5.1.1.2 Receive operations
+
+### 5.1.1.2.1 General
 
 When receiving a new TMD PDU from lower layer, the receiving TM RLC entity shall:
+
 - deliver the TMD PDU without any modification to upper layer.
 
-\subsection*{5.1.2 UM data transfer}
 
-\subsection*{5.1.2.1 Transmit operations}
+### 5.1.2 UM data transfer
 
-\subsection*{5.1.2.1.1 General}
+### 5.1.2.1 Transmit operations
+
+### 5.1.2.1.1 General
 
 When delivering a new UMD PDU to lower layer, the transmitting UM RLC entity shall:
+
 - set the SN of the UMD PDU to VT(US), and then increment VT(US) by one.
 
-\subsection*{5.1.2.2 Receive operations}
 
-\subsection*{5.1.2.2.1 General}
+### 5.1.2.2 Receive operations
+
+### 5.1.2.2.1 General
 
 The receiving UM RLC entity shall maintain a reordering window according to state variable VR(UH) as follows:
+
 - a SN falls within the reordering window if (VR(UH) - UM_Window_Size) <= SN < VR(UH);
 - a SN falls outside of the reordering window otherwise.
 
 When receiving an UMD PDU from lower layer, the receiving UM RLC entity shall:
+
 - either discard the received UMD PDU or place it in the reception buffer (see sub clause 5.1.2.2.2);
 - if the received UMD PDU was placed in the reception buffer:
 - update state variables, reassemble and deliver RLC SDUs to upper layer and start/stop $t$-Reordering as needed (see sub clause 5.1.2.2.3);
 
 When $t$-Reordering expires, the receiving UM RLC entity shall:
+
 - update state variables, reassemble and deliver RLC SDUs to upper layer and start $t$-Reordering as needed (see sub clause 5.1.2.2.4).
 
-\subsection*{5.1.2.2.2 Actions when an UMD PDU is received from lower layer}
+
+### 5.1.2.2.2 Actions when an UMD PDU is received from lower layer
 
 When an UMD PDU with $\mathrm{SN}=\mathrm{x}$ is received from lower layer, the receiving UM RLC entity shall:
+
 - if $\mathrm{VR}(\mathrm{UR})<\mathrm{x}<\mathrm{VR}(\mathrm{UH})$ and the UMD PDU with $\mathrm{SN}=\mathrm{x}$ has been received before; or
 - if (VR(UH) - UM_Window_Size) <= $\mathrm{x}<\mathrm{VR}(\mathrm{UR})$ :
 - discard the received UMD PDU;
 - else:
 - place the received UMD PDU in the reception buffer.
 
-\subsection*{5.1.2.2.3 Actions when an UMD PDU is placed in the reception buffer}
+
+### 5.1.2.2.3 Actions when an UMD PDU is placed in the reception buffer
 
 When an UMD PDU with SN $=\mathrm{x}$ is placed in the reception buffer, the receiving UM RLC entity shall:
+
 - if x falls outside of the reordering window:
 - update $\mathrm{VR}(\mathrm{UH})$ to $\mathrm{x}+1$;
 - reassemble RLC SDUs from any UMD PDUs with SN that falls outside of the reordering window, remove RLC headers when doing so and deliver the reassembled RLC SDUs to upper layer in ascending order of the RLC SN if not delivered before;
@@ -498,62 +528,76 @@ When an UMD PDU with SN $=\mathrm{x}$ is placed in the reception buffer, the rec
 - start $t$-Reordering;
 - set VR(UX) to VR(UH).
 
-\subsection*{5.1.2.2.4 Actions when $t$-Reordering expires}
+
+### 5.1.2.2.4 Actions when $t$-Reordering expires
 
 When $t$-Reordering expires, the receiving UM RLC entity shall:
+
 - update VR(UR) to the SN of the first UMD PDU with SN >= VR(UX) that has not been received;
 - reassemble RLC SDUs from any UMD PDUs with SN < updated VR(UR), remove RLC headers when doing so and deliver the reassembled RLC SDUs to upper layer in ascending order of the RLC SN if not delivered before;
 - if VR(UH) > VR(UR):
 - start $t$-Reordering;
 - set VR(UX) to VR(UH).
 
-\subsection*{5.1.3 AM data transfer}
 
-\subsection*{5.1.3.1 Transmit operations}
+### 5.1.3 AM data transfer
 
-\subsection*{5.1.3.1.1 General}
+### 5.1.3.1 Transmit operations
+
+### 5.1.3.1.1 General
 
 The transmitting side of an AM RLC entity shall prioritize transmission of RLC control PDUs over RLC data PDUs. The transmitting side of an AM RLC entity shall prioritize retransmission of RLC data PDUs over transmission of new AMD PDUs.
 
 The transmitting side of an AM RLC entity shall maintain a transmitting window according to state variables VT(A) and VT(MS) as follows:
+
 - a SN falls within the transmitting window if VT(A) <= SN < VT(MS);
 - a SN falls outside of the transmitting window otherwise.
 
 The transmitting side of an AM RLC entity shall not deliver to lower layer any RLC data PDU whose SN falls outside of the transmitting window.
 
 When delivering a new AMD PDU to lower layer, the transmitting side of an AM RLC entity shall:
+
 - set the SN of the AMD PDU to VT(S), and then increment VT(S) by one.
 
 The transmitting side of an AM RLC entity can receive a positive acknowledgement (confirmation of successful reception by its peer AM RLC entity) for a RLC data PDU by the following:
+
 - STATUS PDU from its peer AM RLC entity.
 
 When receiving a positive acknowledgement for an AMD PDU with SN $=\mathrm{VT}(\mathrm{A})$, the transmitting side of an AM RLC entity shall:
+
 - set $\mathrm{VT}(\mathrm{A})$ equal to the SN of the AMD PDU with the smallest SN, whose SN falls within the range VT(A)<= SN <= VT(S) and for which a positive acknowledgment has not been received yet.
 - if positive acknowledgements have been received for all AMD PDUs associated with a transmitted RLC SDU:
 - send an indication to the upper layers of successful delivery of the RLC SDU.
 
-\subsection*{5.1.3.2 Receive operations}
 
-\subsection*{5.1.3.2.1 General}
+### 5.1.3.2 Receive operations
+
+### 5.1.3.2.1 General
 
 The receiving side of an AM RLC entity shall maintain a receiving window according to state variables VR(R) and VR(MR) as follows:
+
 - a SN falls within the receiving window if $\mathrm{VR}(\mathrm{R})<=\mathrm{SN}<\mathrm{VR}(\mathrm{MR})$;
 - a SN falls outside of the receiving window otherwise.
 
 When receiving a RLC data PDU from lower layer, the receiving side of an AM RLC entity shall:
+
 - either discard the received RLC data PDU or place it in the reception buffer (see sub clause 5.1.3.2.2);
 - if the received RLC data PDU was placed in the reception buffer:
 - update state variables, reassemble and deliver RLC SDUs to upper layer and start/stop $t$-Reordering as needed (see sub clause 5.1.3.2.3).
 
 When $t$-Reordering expires, the receiving side of an AM RLC entity shall:
+
 - update state variables and start $t$-Reordering as needed (see sub clause 5.1.3.2.4).
 
 For NB-IoT;
+
 - The receiving side of an RLC entity shall behave such that the timer values of $t$-Reordering and $t$-StatusProhibit are 0 .
 
-\subsection*{5.1.3.2.2 Actions when a RLC data PDU is received from lower layer}
+
+### 5.1.3.2.2 Actions when a RLC data PDU is received from lower layer
 
 When a RLC data PDU is received from lower layer, where the RLC data PDU contains byte segment numbers y to z of an AMD PDU with $\mathrm{SN}=\mathrm{x}$, the receiving side of an AM RLC entity shall:
+
 - if x falls outside of the receiving window; or
 - if byte segment numbers y to z of the AMD PDU with $\mathrm{SN}=\mathrm{x}$ have been received before:
 - discard the received RLC data PDU;
@@ -562,9 +606,11 @@ When a RLC data PDU is received from lower layer, where the RLC data PDU contain
 - if some byte segments of the AMD PDU contained in the RLC data PDU have been received before:
 - discard the duplicate byte segments.
 
-\subsection*{5.1.3.2.3 Actions when a RLC data PDU is placed in the reception buffer}
+
+### 5.1.3.2.3 Actions when a RLC data PDU is placed in the reception buffer
 
 When a RLC data PDU with SN $=\mathrm{x}$ is placed in the reception buffer, the receiving side of an AM RLC entity shall:
+
 - if $\mathrm{x}>=\mathrm{VR}(\mathrm{H})$
 - update $\operatorname{VR}(\mathrm{H})$ to $\mathrm{x}+1$;
 - if all byte segments of the AMD PDU with SN $=\mathrm{VR}(\mathrm{MS})$ are received:
@@ -583,28 +629,34 @@ When a RLC data PDU with SN $=\mathrm{x}$ is placed in the reception buffer, the
 - start $t$-Reordering;
 - set VR(X) to VR(H).
 
-\subsection*{5.1.3.2.4 Actions when $t$-Reordering expires}
+
+### 5.1.3.2.4 Actions when $t$-Reordering expires
 
 When $t$-Reordering expires, the receiving side of an AM RLC entity shall:
+
 - update VR(MS) to the SN of the first AMD PDU with SN >= VR(X) for which not all byte segments have been received;
 - if VR(H) > VR(MS):
 - start $t$-Reordering;
 - set VR(X) to VR(H).
 
-\subsection*{5.2 ARQ procedures}
+
+### 5.2 ARQ procedures
 
 ARQ procedures are only performed by an AM RLC entity.
 
-\subsection*{5.2.1 Retransmission}
+### 5.2.1 Retransmission
 
 The transmitting side of an AM RLC entity can receive a negative acknowledgement (notification of reception failure by its peer AM RLC entity) for an AMD PDU or a portion of an AMD PDU by the following:
+
 - STATUS PDU from its peer AM RLC entity.
 
 When receiving a negative acknowledgement for an AMD PDU or a portion of an AMD PDU by a STATUS PDU from its peer AM RLC entity, the transmitting side of the AM RLC entity shall:
+
 - if the SN of the corresponding AMD PDU falls within the range VT(A) $<=\mathrm{SN}<\mathrm{VT}(\mathrm{S})$ :
 - consider the AMD PDU or the portion of the AMD PDU for which a negative acknowledgement was received for retransmission.
 
 When an AMD PDU or a portion of an AMD PDU is considered for retransmission, the transmitting side of the AM RLC entity shall:
+
 - if the AMD PDU is considered for retransmission for the first time:
 - set the RETX_COUNT associated with the AMD PDU to zero;
 - else, if it (the AMD PDU or the portion of the AMD PDU that is considered for retransmission) is not pending for retransmission already, or a portion of it is not pending for retransmission already:
@@ -613,26 +665,31 @@ When an AMD PDU or a portion of an AMD PDU is considered for retransmission, the
 - indicate to upper layers that max retransmission has been reached.
 
 When retransmitting an AMD PDU, the transmitting side of an AM RLC entity shall:
+
 - if the AMD PDU can entirely fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity:
 - deliver the AMD PDU as it is except for the P field (the P field should be set according to sub clause 5.2.2) to lower layer;
 - otherwise:
 - segment the AMD PDU, form a new AMD PDU segment which will fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity and deliver the new AMD PDU segment to lower layer.
 
 When retransmitting a portion of an AMD PDU, the transmitting side of an AM RLC entity shall:
+
 - segment the portion of the AMD PDU as necessary, form a new AMD PDU segment which will fit within the total size of RLC PDU(s) indicated by lower layer at the particular transmission opportunity and deliver the new AMD PDU segment to lower layer.
 
 When forming a new AMD PDU segment, the transmitting side of an AM RLC entity shall:
+
 - only map the Data field of the original AMD PDU to the Data field of the new AMD PDU segment;
 - set the header of the new AMD PDU segment in accordance with the description in sub clause 6.;
 - set the P field according to sub clause 5.2.2.
 
-\subsection*{5.2.2 Polling}
+
+### 5.2.2 Polling
 
 An AM RLC entity can poll its peer AM RLC entity in order to trigger STATUS reporting at the peer AM RLC entity.
 
-\subsection*{5.2.2.1 Transmission of a AMD PDU or AMD PDU segment}
+### 5.2.2.1 Transmission of a AMD PDU or AMD PDU segment
 
 Upon assembly of a new AMD PDU, the transmitting side of an AM RLC entity except for NB-IoT shall:
+
 - increment PDU_WITHOUT_POLL by one;
 - increment BYTE_WITHOUT_POLL by every new byte of Data field element that it maps to the Data field of the RLC data PDU;
 - if PDU_WITHOUT_POLL >= pollPDU; or
@@ -640,6 +697,7 @@ Upon assembly of a new AMD PDU, the transmitting side of an AM RLC entity except
 - include a poll in the RLC data PDU as described below.
 
 Upon assembly of an AMD PDU or AMD PDU segment, the transmitting side of an AM RLC entity shall:
+
 - if both the transmission buffer and the retransmission buffer becomes empty (excluding transmitted RLC data PDU awaiting for acknowledgements) after the transmission of the RLC data PDU; or
 - if no new RLC data PDU can be transmitted after the transmission of the RLC data PDU (e.g. due to window stalling);
 - include a poll in the RLC data PDU as described below.
@@ -647,40 +705,48 @@ Upon assembly of an AMD PDU or AMD PDU segment, the transmitting side of an AM R
 NOTE: E mpty RLC buffer (excluding transmitted RLC data PDU awaiting for acknowledgements) should not lead to unnecessary polling when data awaits in the upper layer. Details are left up to UE implementation.
 
 To include a poll in a RLC data PDU, the transmitting side of an AM RLC entity shall:
+
 - set the P field of the RLC data PDU to " 1 ";
 - set PDU_WITHOUT_POLL to 0 , except for NB-IoT;
 - set BYTE_WITHOUT_POLL to 0, except for NB-IoT;
 
 After delivering a RLC data PDU including a poll to lower layer and after incrementing of VT(S) if necessary, the transmitting side of an AM RLC entity shall:
+
 - set POLL_SN to VT(S) - 1;
 - if $t$-PollRetransmit is not running:
 - start $t$-PollRetransmit;
 - else:
 - restart $t$-PollRetransmit;
 
-\subsection*{5.2.2.2 Reception of a STATUS report}
+
+### 5.2.2.2 Reception of a STATUS report
 
 Upon reception of a STATUS report from the receiving RLC AM entity the transmitting side of an AM RLC entity shall:
+
 - if the STATUS report comprises a positive or negative acknowledgement for the RLC data PDU with sequence number equal to POLL_SN:
 - if $t$-PollRetransmit is running:
 - stop and reset $t$-PollRetransmit.
 
-\subsection*{5.2.2.3 Expiry of $t$-PollRetransmit}
+
+### 5.2.2.3 Expiry of $t$-PollRetransmit
 
 Upon expiry of $t$-PollRetransmit, the transmitting side of an AM RLC entity shall:
+
 - if both the transmission buffer and the retransmission buffer are empty (excluding transmitted RLC data PDU awaiting for acknowledgements); or
 - if no new RLC data PDU can be transmitted (e.g. due to window stalling):
 - consider the AMD PDU with $\mathrm{SN}=\mathrm{VT}(\mathrm{S})-1$ for retransmission; or
 - consider any AMD PDU which has not been positively acknowledged for retransmission;
 - include a poll in a RLC data PDU as described in section 5.2.2.1.
 
-\subsection*{5.2.3 Status reporting}
+
+### 5.2.3 Status reporting
 
 An AM RLC entity sends STATUS PDUs to its peer AM RLC entity in order to provide positive and/or negative acknowledgements of RLC PDUs (or portions of them).
 
 Except for NB-IoT, RRC configures whether or not the status prohibit function is to be used for an AM RLC entity. For NB-IoT, RRC configures whether or not the status reporting due to detection of reception failure of an RLC data PDU is to be used for an AM RLC entity.
 
 Triggers to initiate STATUS reporting include:
+
 - Polling from its peer AM RLC entity:
 - When a RLC data PDU with $\mathrm{SN}=\mathrm{x}$ and the P field set to " 1 " is received from lower layer, the receiving side of an AM RLC entity shall:
 - if the PDU is to be discarded as specified in subclause 5.1.3.2.2; or
@@ -690,21 +756,25 @@ Triggers to initiate STATUS reporting include:
 - delay triggering the STATUS report until $\mathrm{x}<\mathrm{VR}(\mathrm{MS})$ or $\mathrm{x}>=\mathrm{VR}(\mathrm{MR})$.
 
 NOTE 1: This ensures that the RLC Status report is transmitted after HARQ reordering.
+
 - Detection of reception failure of an RLC data PDU, except for an NB-IoT UE not configured with enableStatusReportSN-Gap:
 - The receiving side of an AM RLC entity shall trigger a STATUS report when $t$-Reordering expires.
 
 NOTE 2: The expiry of $t$-Reordering triggers both VR(MS) to be updated and a STATUS report to be triggered, but the STATUS report shall be triggered after VR(MS) is updated.
 
 When STATUS reporting has been triggered, the receiving side of an AM RLC entity shall:
+
 - if $t$-StatusProhibit is not running:
 - at the first transmission opportunity indicated by lower layer, construct a STATUS PDU and deliver it to lower layer;
 - else:
 - at the first transmission opportunity indicated by lower layer after $t$-StatusProhibit expires, construct a single STATUS PDU even if status reporting was triggered several times while $t$-StatusProhibit was running and deliver it to lower layer;
 
 When a STATUS PDU has been delivered to lower layer, the receiving side of an AM RLC entity shall:
+
 - start $t$-StatusProhibit.
 
 When constructing a STATUS PDU, the AM RLC entity shall:
+
 - for the AMD PDUs with SN such that $\operatorname{VR}(\mathrm{R})<=\mathrm{SN}<\operatorname{VR}(\mathrm{MS})$ that has not been completely received yet, in increasing SN order of PDUs and increasing byte segment order within PDUs, starting with SN $=\mathrm{VR}(\mathrm{R})$ up to the point where the resulting STATUS PDU still fits to the total size of RLC PDU(s) indicated by lower layer:
 - for an AMD PDU for which no byte segments have been received yet::
 - include in the STATUS PDU a NACK_SN which is set to the SN of the AMD PDU;
@@ -712,15 +782,17 @@ When constructing a STATUS PDU, the AM RLC entity shall:
 - include in the STATUS PDU a set of NACK_SN, SOstart and SOend
 - set the ACK_SN to the SN of the next not received RLC Data PDU which is not indicated as missing in the resulting STATUS PDU.
 
-\subsection*{5.3 SDU discard procedures}
+
+### 5.3 SDU discard procedures
 
 When indicated from upper layer (i.e. PDCP) to discard a particular RLC SDU, the transmitting side of an AM RLC entity or the transmitting UM RLC entity shall discard the indicated RLC SDU if no segment of the RLC SDU has been mapped to a RLC data PDU yet.
 
-\subsection*{5.4 Re-establishment procedure}
+### 5.4 Re-establishment procedure
 
 RLC re-establishment is performed upon request by RRC, and the function is applicable for AM, UM and TM RLC entities.
 
 When RRC indicates that an RLC entity should be re-established, the RLC entity shall:
+
 - if it is a transmitting TM RLC entity:
 - discard all RLC SDUs;
 - if it is a receiving UM RLC entity:
@@ -736,20 +808,24 @@ When RRC indicates that an RLC entity should be re-established, the RLC entity s
 - stop and reset all timers;
 - reset all state variables to their initial values.
 
-\subsection*{5.5 Handling of unknown, unforeseen and erroneous protocol data}
 
-\subsection*{5.5.1 Reception of PDU with reserved or invalid values}
+### 5.5 Handling of unknown, unforeseen and erroneous protocol data
+
+### 5.5.1 Reception of PDU with reserved or invalid values
 
 When an RLC entity receives an RLC PDU that contains reserved or invalid values, the RLC entity shall:
+
 - discard the received PDU.
 
-\section*{6 Protocol data units, formats and parameters}
 
-\subsection*{6.1 Protocol data units}
+## 6 Protocol data units, formats and parameters
+
+### 6.1 Protocol data units
 
 RLC PDUs can be categorized into RLC data PDUs and RLC control PDUs. RLC data PDUs in sub clause 6.1.1 are used by TM, UM and AM RLC entities to transfer upper layer PDUs (i.e. RLC SDUs). RLC control PDUs in sub clause 6.1.2 are used by AM RLC entity to perform ARQ procedures.
 
-\subsection*{6.1.1 RLC data PDU}
+### 6.1.1 RLC data PDU
+
 a) TMD PDU
 
 TMD PDU is used to transfer upper layer PDUs by a TM RLC entity.
@@ -763,34 +839,32 @@ d) AMD PDU segment
 
 AMD PDU segment is used to transfer upper layer PDUs by an AM RLC entity. It is used when the AM RLC entity needs to retransmit a portion of an AMD PDU.
 
-\subsection*{6.1.2 RLC control PDU}
+### 6.1.2 RLC control PDU
+
 a) STATUS PDU
 
 STATUS PDU is used by the receiving side of an AM RLC entity to inform the peer AM RLC entity about RLC data PDUs that are received successfully, and RLC data PDUs that are detected to be lost by the receiving side of an AM RLC entity.
 
-\subsection*{6.2 Formats and parameters}
+### 6.2 Formats and parameters
 
 The formats of RLC PDUs are described in sub clause 6.2.1 and their parameters are described in sub clause 6.2.2.
 
-\subsection*{6.2.1 Formats}
+### 6.2.1 Formats
 
-\subsection*{6.2.1.1 General}
+### 6.2.1.1 General
 
 RLC PDU is a bit string. In the figures in sub clause 6.2.1.2 to 6.2.1.6, bit strings are represented by tables in which the first and most significant bit is the left most bit of the first line of the table, the last and least significant bit is the rightmost bit of the last line of the table, and more generally the bit string is to be read from left to right and then in the reading order of the lines.
 
 RLC SDUs are bit strings that are byte aligned (i.e. multiple of 8 bits) in length. An RLC SDU is included into an RLC PDU from first bit onward.
 
-\subsection*{6.2.1.2 TMD PDU}
+### 6.2.1.2 TMD PDU
 
 TMD PDU consists only of a Data field and does not consist of any RLC headers.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-23.jpg?height=221&width=915&top_left_y=897&top_left_x=591}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.2-1: TMD PDU}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-23.jpg?height=221&width=915&top_left_y=897&top_left_x=591)
+Figure 6.2.1.2-1: TMD PDU
 
-\subsection*{6.2.1.3 UMD PDU}
+### 6.2.1.3 UMD PDU
 
 UMD PDU consists of a Data field and an UMD PDU header.
 UMD PDU header consists of a fixed part (fields that are present for every UMD PDU) and an extension part (fields that are present for an UMD PDU when necessary). The fixed part of the UMD PDU header itself is byte aligned and consists of a FI, an E and a SN. The extension part of the UMD PDU header itself is byte aligned and consists of E(s) and LI(s).
@@ -799,91 +873,54 @@ An UM RLC entity is configured by RRC to use either a 5 bit SN or a 10 bit SN. W
 
 An UMD PDU header consists of an extension part only when more than one Data field elements are present in the UMD PDU, in which case an E and a LI are present for every Data field element except the last. Furthermore, when an UMD PDU header consists of an odd number of LI(s), four padding bits follow after the last LI.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-23.jpg?height=270&width=917&top_left_y=1946&top_left_x=607}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-1: UMD PDU with 5 bit SN (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-23.jpg?height=270&width=917&top_left_y=1946&top_left_x=607)
+Figure 6.2.1.3-1: UMD PDU with 5 bit SN (No LI)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-24.jpg?height=321&width=917&top_left_y=278&top_left_x=607}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-2: UMD PDU with 10 bit SN (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-24.jpg?height=321&width=917&top_left_y=278&top_left_x=607)
+Figure 6.2.1.3-2: UMD PDU with 10 bit SN (No LI)
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline \multirow{5}{*}{} & \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{} & \\
-\hline & & E & \multicolumn{2}{|c|}{SN} & \multirow[t]{5}{*}{\begin{tabular}{l}
-Oct 1 \\
-Oct 2 Oct 3 \\
-Oct 4
-\end{tabular}} \\
-\hline & E & \multicolumn{3}{|c|}{$\mathrm{Li}_{1}$} & \\
-\hline & \multicolumn{2}{|c|}{$\mathrm{LI}_{1}$} & E & $\mathrm{LI}_{2}$ (if $\mathrm{K}>=3$ ) & \\
-\hline & \multicolumn{4}{|c|}{$\mathrm{LI}_{2}$} & \\
-\hline & \multicolumn{4}{|c|}{⋯} & \\
-\hline \multirow[t]{8}{*}{Present if $\mathrm{K}>=3$} & E & \multicolumn{3}{|c|}{$\mathrm{LI}_{\mathrm{K}-2}$} & Oct [2.5+1.5*K-5] \\
-\hline & \multicolumn{4}{|c|}{\begin{tabular}{l}
-$\mathrm{LI}_{\mathrm{K}-2}$ \\
-E \\
-$\mathrm{LI}_{\mathrm{K}-1}$
-\end{tabular}} & Oct $[2.5+1.5 * \mathrm{~K}-4]$ \\
-\hline & \multicolumn{4}{|c|}{$\mathrm{LI}_{\mathrm{K}-1}$} & Oct [ $2.5+1.5 * \mathrm{~K}-3$ ] \\
-\hline & E & \multicolumn{3}{|c|}{$\mathrm{LI}_{\mathrm{K}}$} & Oct $[2.5+1.5 * \mathrm{~K}-2]$ \\
-\hline & \multicolumn{2}{|c|}{$\mathrm{LI}_{\mathrm{K}}$} & & Padding & Oct $[2.5+1.5 * \mathrm{~K}-1]$ \\
-\hline & \multicolumn{4}{|c|}{Data} & \\
-\hline & \multicolumn{4}{|c|}{⋯} & \\
-\hline & \multicolumn{4}{|c|}{} & Oct N \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-3: UMD PDU with 5 bit SN (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )}
-\end{table}
+|  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+|  |  | E | SN |  | Oct 1 <br> Oct 2 Oct 3 <br> Oct 4 |
+|  | E | $\mathrm{Li}_{1}$ |  |  |  |
+|  | $\mathrm{LI}_{1}$ |  | E | $\mathrm{LI}_{2}$ (if $\mathrm{K}>=3$ ) |  |
+|  | $\mathrm{LI}_{2}$ |  |  |  |  |
+|  | ⋯ |  |  |  |  |
+| Present if $\mathrm{K}>=3$ | E | $\mathrm{LI}_{\mathrm{K}-2}$ |  |  | Oct [2.5+1.5*K-5] |
+|  | $\mathrm{LI}_{\mathrm{K}-2}$ <br> E <br> $\mathrm{LI}_{\mathrm{K}-1}$ |  |  |  | Oct $[2.5+1.5 * \mathrm{~K}-4]$ |
+|  | $\mathrm{LI}_{\mathrm{K}-1}$ |  |  |  | Oct [ $2.5+1.5 * \mathrm{~K}-3$ ] |
+|  | E | $\mathrm{LI}_{\mathrm{K}}$ |  |  | Oct $[2.5+1.5 * \mathrm{~K}-2]$ |
+|  | $\mathrm{LI}_{\mathrm{K}}$ |  |  | Padding | Oct $[2.5+1.5 * \mathrm{~K}-1]$ |
+|  | Data |  |  |  |  |
+|  | ⋯ |  |  |  |  |
+|  |  |  |  |  | Oct N |
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-24.jpg?height=620&width=1093&top_left_y=1786&top_left_x=475}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-4: UMD PDU with 5 bit SN (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )}
-\end{figure}
+Figure 6.2.1.3-3: UMD PDU with 5 bit SN (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-25.jpg?height=766&width=1320&top_left_y=278&top_left_x=376}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-5: UMD PDU with 10 bit SN (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-24.jpg?height=620&width=1093&top_left_y=1786&top_left_x=475)
+Figure 6.2.1.3-4: UMD PDU with 5 bit SN (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline \multicolumn{7}{|c|}{} \\
-\hline R1 & R1 & R1 & FI & E & SN & \multirow[t]{6}{*}{\begin{tabular}{l}
-Oct 1 \\
-Oct 2 \\
-Oct 3 \\
-Oct 4 \\
-Oct 5
-\end{tabular}} \\
-\hline \multicolumn{6}{|c|}{SN} & \\
-\hline E & \multicolumn{5}{|c|}{$\mathrm{LI}_{1}$} & \\
-\hline \multicolumn{3}{|c|}{$\mathrm{LI}_{1}$} & E & \multicolumn{2}{|c|}{$\mathrm{LI}_{2}$} & \\
-\hline \multicolumn{6}{|c|}{$\mathrm{LI}_{2}$} & \\
-\hline \multicolumn{6}{|c|}{...} & \\
-\hline E & \multicolumn{5}{|c|}{$\mathrm{LI}_{\mathrm{K}-1}$} & Oct $\left[2+1.5^{*} \mathrm{~K}-2\right]$ \\
-\hline \multicolumn{3}{|c|}{$\mathrm{LI}_{\mathrm{K}-1}$} & E & & $\mathrm{Ll}_{\mathrm{K}}$ & Oct $[2+1.5 * \mathrm{~K}-1]$ \\
-\hline \multicolumn{6}{|c|}{$\mathrm{Ll}_{\mathrm{K}}$} & \multirow{2}{*}{\begin{tabular}{l}
-Oct $\left[2+1.5^{*} \mathrm{~K}\right]$ \\
-Oct $\left[2+1.5^{*} \mathrm{~K}+1\right]$
-\end{tabular}} \\
-\hline \multicolumn{6}{|c|}{Data} & \\
-\hline \multicolumn{6}{|c|}{⋯} & \\
-\hline \multicolumn{6}{|c|}{} & Oct N \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.3-6: UMD PDU with 10 bit SN (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )}
-\end{table}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-25.jpg?height=766&width=1320&top_left_y=278&top_left_x=376)
+Figure 6.2.1.3-5: UMD PDU with 10 bit SN (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )
 
-\subsection*{6.2.1.4 AMD PDU}
+|  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| R1 | R1 | R1 | FI | E | SN | Oct 1 <br> Oct 2 <br> Oct 3 <br> Oct 4 <br> Oct 5 |
+| SN |  |  |  |  |  |  |
+| E | $\mathrm{LI}_{1}$ |  |  |  |  |  |
+| $\mathrm{LI}_{1}$ |  |  | E | $\mathrm{LI}_{2}$ |  |  |
+| $\mathrm{LI}_{2}$ |  |  |  |  |  |  |
+| ... |  |  |  |  |  |  |
+| E | $\mathrm{LI}_{\mathrm{K}-1}$ |  |  |  |  | Oct $\left[2+1.5^{*} \mathrm{~K}-2\right]$ |
+| $\mathrm{LI}_{\mathrm{K}-1}$ |  |  | E |  | $\mathrm{Ll}_{\mathrm{K}}$ | Oct $[2+1.5 * \mathrm{~K}-1]$ |
+| $\mathrm{Ll}_{\mathrm{K}}$ |  |  |  |  |  | Oct $\left[2+1.5^{*} \mathrm{~K}\right]$ <br> Oct $\left[2+1.5^{*} \mathrm{~K}+1\right]$ |
+| Data |  |  |  |  |  |  |
+| ⋯ |  |  |  |  |  |  |
+|  |  |  |  |  |  | Oct N |
+
+Figure 6.2.1.3-6: UMD PDU with 10 bit SN (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )
+
+### 6.2.1.4 AMD PDU
 
 AMD PDU consists of a Data field and an AMD PDU header.
 AMD PDU header consists of a fixed part (fields that are present for every AMD PDU) and an extension part (fields that are present for an AMD PDU when necessary). The fixed part of the AMD PDU header itself is byte aligned and consists of a D/C, a RF, a P, a FI, an E and a SN. The extension part of the AMD PDU header itself is byte aligned and consists of E(s) and LI(s).
@@ -892,29 +929,17 @@ An AM RLC entity is configured by RRC to use either a 10 bit SN or a 16 bit SN. 
 
 An AMD PDU header consists of an extension part only when more than one Data field elements are present in the AMD PDU, in which case an E and a LI are present for every Data field element except the last. Furthermore, when an AMD PDU header consists of an odd number of $\mathrm{LI}(\mathrm{s})$ and the length of the LI field is 11 bits, four padding bits follow after the last LI. The default value for LI field length used by an AM RLC entity is 11 bits.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=321&width=917&top_left_y=278&top_left_x=589}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-1: AMD PDU with 10 bit SN (length of LI field is 11 bits) (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=321&width=917&top_left_y=278&top_left_x=589)
+Figure 6.2.1.4-1: AMD PDU with 10 bit SN (length of LI field is 11 bits) (No LI)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=366&width=913&top_left_y=742&top_left_x=593}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-1a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=366&width=913&top_left_y=742&top_left_x=593)
+Figure 6.2.1.4-1a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (No LI)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=762&width=1310&top_left_y=1288&top_left_x=370}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-2: AMD PDU with 10 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3$, 5, ...)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-26.jpg?height=762&width=1310&top_left_y=1288&top_left_x=370)
+Figure 6.2.1.4-2: AMD PDU with 10 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3$, 5, ...)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-27.jpg?height=821&width=999&top_left_y=242&top_left_x=370}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-2a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3$, 5, ...)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-27.jpg?height=821&width=999&top_left_y=242&top_left_x=370)
+Figure 6.2.1.4-2a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3$, 5, ...)
 
 Oct 1
 Oct 2
@@ -932,17 +957,11 @@ Oct $[2.5+1.5 * \mathrm{~K}+2]$
 
 Oct N
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-27.jpg?height=671&width=1093&top_left_y=1274&top_left_x=493}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-3: AMD PDU with 10 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-27.jpg?height=671&width=1093&top_left_y=1274&top_left_x=493)
+Figure 6.2.1.4-3: AMD PDU with 10 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-28.jpg?height=712&width=803&top_left_y=246&top_left_x=493}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-3a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-28.jpg?height=712&width=803&top_left_y=246&top_left_x=493)
+Figure 6.2.1.4-3a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)
 
 Oct 1
 Oct 2
@@ -958,59 +977,39 @@ Oct $[2+1.5 * \mathrm{~K}+2]$
 
 Oct N
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-3a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline D/C & RF & P & FI & E & SN & \multirow[t]{5}{*}{\begin{tabular}{l}
-Oct 1 \\
-Oct 2 \\
-Oct 3 \\
-Oct 4
-\end{tabular}} \\
-\hline \multicolumn{6}{|c|}{SN} & \\
-\hline E & \multicolumn{5}{|c|}{$\mathrm{Li}_{1}$} & \\
-\hline \multicolumn{6}{|c|}{$\mathrm{LI}_{1}$} & \\
-\hline \multicolumn{6}{|c|}{⋯} & \\
-\hline E & \multicolumn{5}{|c|}{$\mathrm{Li}_{\mathrm{k}}$} & Oct [ $2 * \mathrm{~K}+1$ ] \\
-\hline \multicolumn{6}{|c|}{$\mathrm{L}_{\mathrm{k}}$} & Oct [ $2 * \mathrm{~K}+2$ ] \\
-\hline \multicolumn{6}{|c|}{Data} & Oct [ $2 * \mathrm{~K}+3$ ] \\
-\hline \multicolumn{6}{|c|}{...} & \\
-\hline \multicolumn{6}{|c|}{} & Oct N \\
-\hline
-\end{tabular}
-\end{table}
+Figure 6.2.1.4-3a: AMD PDU with 16 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4$, 6, ...)
+| D/C | RF | P | FI | E | SN | Oct 1 <br> Oct 2 <br> Oct 3 <br> Oct 4 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| SN |  |  |  |  |  |  |
+| E | $\mathrm{Li}_{1}$ |  |  |  |  |  |
+| $\mathrm{LI}_{1}$ |  |  |  |  |  |  |
+| ⋯ |  |  |  |  |  |  |
+| E | $\mathrm{Li}_{\mathrm{k}}$ |  |  |  |  | Oct [ $2 * \mathrm{~K}+1$ ] |
+| $\mathrm{L}_{\mathrm{k}}$ |  |  |  |  |  | Oct [ $2 * \mathrm{~K}+2$ ] |
+| Data |  |  |  |  |  | Oct [ $2 * \mathrm{~K}+3$ ] |
+| ... |  |  |  |  |  |  |
+|  |  |  |  |  |  | Oct N |
+
 
 Figure 6.2.1.4-4: AMD PDU with 10 bit SN (length of LI field is 15 bits)
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|l|}{![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-28.jpg?height=40\&width=795\&top_left_y=1852\&top_left_x=474)} \\
-\hline D/C & RF & P & FI & E & R1 & R1 & Oct 1 \\
-\hline \multicolumn{7}{|c|}{SN} & Oct 2 \\
-\hline \multicolumn{7}{|c|}{\multirow{2}{*}{}} & \multirow[t]{4}{*}{\begin{tabular}{l}
-Oct 3 \\
-Oct 4
-\end{tabular}} \\
-\hline E & \multicolumn{6}{|c|}{$\mathrm{Li}_{1}$} & \\
-\hline \multicolumn{7}{|c|}{$\mathrm{LI}_{1}$} & \\
-\hline \multicolumn{7}{|c|}{⋯} & \\
-\hline E & \multicolumn{6}{|c|}{$\mathrm{Li}_{\mathrm{k}}$} & \multirow{3}{*}{\begin{tabular}{l}
-Oct $[2 * \mathrm{~K}+2]$ \\
-Oct $[2 * \mathrm{~K}+3]$ \\
-Oct $[2 * \mathrm{~K}+4]$
-\end{tabular}} \\
-\hline \multicolumn{7}{|c|}{$\mathrm{L}_{\mathrm{k}}$} & \\
-\hline \multicolumn{7}{|c|}{Data} & \\
-\hline \multicolumn{7}{|c|}{...} & \\
-\hline \multicolumn{7}{|c|}{} & Oct N \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.4-4a: AMD PDU with 16 bit SN (length of LI field is 15 bits)}
-\end{table}
+| ![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-28.jpg?height=40&width=795&top_left_y=1852&top_left_x=474) |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| D/C | RF | P | FI | E | R1 | R1 | Oct 1 |
+| SN |  |  |  |  |  |  | Oct 2 |
+|  |  |  |  |  |  |  | Oct 3 <br> Oct 4 |
+|  |  |  |  |  |  |  |  |
+| $\mathrm{LI}_{1}$ |  |  |  |  |  |  |  |
+| ⋯ |  |  |  |  |  |  |  |
+| E | $\mathrm{Li}_{\mathrm{k}}$ |  |  |  |  |  | Oct $[2 * \mathrm{~K}+2]$ <br> Oct $[2 * \mathrm{~K}+3]$ <br> Oct $[2 * \mathrm{~K}+4]$ |
+| $\mathrm{L}_{\mathrm{k}}$ |  |  |  |  |  |  |  |
+| Data |  |  |  |  |  |  |  |
+| ... |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  | Oct N |
 
-\subsection*{6.2.1.5 AMD PDU segment}
+Figure 6.2.1.4-4a: AMD PDU with 16 bit SN (length of LI field is 15 bits)
+
+### 6.2.1.5 AMD PDU segment
 
 AMD PDU segment consists of a Data field and an AMD PDU segment header.
 AMD PDU segment header consists of a fixed part (fields that are present for every AMD PDU segment) and an extension part (fields that are present for an AMD PDU segment when necessary). The fixed part of the AMD PDU segment header itself is byte aligned and consists of a D/C, a RF, a P, a FI, an E, a SN, a LSF and a SO. The extension part of the AMD PDU segment header itself is byte aligned and consists of $\mathrm{E}(\mathrm{s})$ and $\mathrm{LI}(\mathrm{s})$.
@@ -1019,23 +1018,14 @@ AM RLC entity is configured by RRC to use either a 10 bit SN or a 16 bit SN. Whe
 
 An AMD PDU segment header consists of an extension part only when more than one Data field elements are present in the AMD PDU segment, in which case an E and a LI are present for every Data field element except the last. Furthermore, when an AMD PDU segment header consists of an odd number of LI(s) and the length of the LI field is 11 bits, four padding bits follow after the last LI. The default value for LI field length used by an AM RLC entity is 11 bits.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-29.jpg?height=416&width=917&top_left_y=1005&top_left_x=589}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-1: AMD PDU segment with 10 bit SN (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-29.jpg?height=416&width=917&top_left_y=1005&top_left_x=589)
+Figure 6.2.1.5-1: AMD PDU segment with 10 bit SN (No LI)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-29.jpg?height=467&width=915&top_left_y=1564&top_left_x=591}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-1a: AMD PDU segment with 16 bit SN and with 16 bit SO (No LI)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-29.jpg?height=467&width=915&top_left_y=1564&top_left_x=591)
+Figure 6.2.1.5-1a: AMD PDU segment with 16 bit SN and with 16 bit SO (No LI)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-30.jpg?height=862&width=997&top_left_y=278&top_left_x=370}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-2: AMD PDU segment with 10 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-30.jpg?height=862&width=997&top_left_y=278&top_left_x=370)
+Figure 6.2.1.5-2: AMD PDU segment with 10 bit SN (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )
 
 Oct 1
 Oct 2
@@ -1054,64 +1044,50 @@ Oct [4.5+1.5*K+1]
 
 Oct N
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
-\hline \multirow{18}{*}{Present if $\mathrm{K}\rangle=3$} & & & & & & & & & \\
-\hline & D/C & RF & P & FI & & E & LSF & R1 & Oct 1 \\
-\hline & \multicolumn{8}{|c|}{SN} & Oct 2 \\
-\hline & \multicolumn{8}{|c|}{SN} & Oct 3 \\
-\hline & \multicolumn{8}{|c|}{SO} & Oct 4 \\
-\hline & \multicolumn{8}{|c|}{SO} & Oct 5 \\
-\hline & E & \multicolumn{7}{|c|}{$\mathrm{Li}_{1}$} & Oct 6 \\
-\hline & \multicolumn{4}{|c|}{$\mathrm{Li}_{1}$} & E & \multicolumn{3}{|c|}{$\mathrm{L}_{2}$ (if $\mathrm{K}>=3$ )} & Oct 7 \\
-\hline & \multicolumn{8}{|c|}{$\mathrm{Li}_{2}$} & Oct 8 \\
-\hline & \multicolumn{8}{|c|}{⋯} & \\
-\hline & E & \multicolumn{7}{|c|}{$\mathrm{Li}_{\mathrm{K}-2}$} & Oct [4.5+1.5*K-3] \\
-\hline & \multicolumn{4}{|c|}{$\mathrm{Li}_{\mathrm{k}-2}$} & E & \multicolumn{3}{|c|}{$\mathrm{Li}_{\mathrm{K}-1}$} & Oct $[4.5+1.5 * \mathrm{~K}-2]$ \\
-\hline & \multicolumn{8}{|c|}{$\mathrm{L}_{\mathrm{K}-1}$} & \\
-\hline & E & \multicolumn{7}{|c|}{$\mathrm{Li}_{\mathrm{k}}$} & Oct $[4.5+1.5 * \mathrm{~K}]$ \\
-\hline & \multicolumn{8}{|c|}{\begin{tabular}{l}
-$\mathrm{L}_{\mathrm{k}}$ \\
-Padding
-\end{tabular}} & Oct $[4.5+1.5 * \mathrm{~K}+1]$ \\
-\hline & \multicolumn{8}{|c|}{Data} & Oct $[4.5+1.5 * \mathrm{~K}+2]$ \\
-\hline & \multicolumn{8}{|c|}{…} & \\
-\hline & \multicolumn{8}{|c|}{} & Oct N \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-2a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )}
-\end{table}
+| Present if $\mathrm{K}\rangle=3$ |  |  |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|  | D/C | RF | P | FI |  | E | LSF | R1 | Oct 1 |
+|  | SN |  |  |  |  |  |  |  | Oct 2 |
+|  | SN |  |  |  |  |  |  |  | Oct 3 |
+|  | SO |  |  |  |  |  |  |  | Oct 4 |
+|  | SO |  |  |  |  |  |  |  | Oct 5 |
+|  | E | $\mathrm{Li}_{1}$ |  |  |  |  |  |  | Oct 6 |
+|  | $\mathrm{Li}_{1}$ |  |  |  | E | $\mathrm{L}_{2}$ (if $\mathrm{K}>=3$ ) |  |  | Oct 7 |
+|  | $\mathrm{Li}_{2}$ |  |  |  |  |  |  |  | Oct 8 |
+|  | ⋯ |  |  |  |  |  |  |  |  |
+|  | E | $\mathrm{Li}_{\mathrm{K}-2}$ |  |  |  |  |  |  | Oct [4.5+1.5*K-3] |
+|  | $\mathrm{Li}_{\mathrm{k}-2}$ |  |  |  | E | $\mathrm{Li}_{\mathrm{K}-1}$ |  |  | Oct $[4.5+1.5 * \mathrm{~K}-2]$ |
+|  | $\mathrm{L}_{\mathrm{K}-1}$ |  |  |  |  |  |  |  |  |
+|  | E | $\mathrm{Li}_{\mathrm{k}}$ |  |  |  |  |  |  | Oct $[4.5+1.5 * \mathrm{~K}]$ |
+|  | $\mathrm{L}_{\mathrm{k}}$ <br> Padding |  |  |  |  |  |  |  | Oct $[4.5+1.5 * \mathrm{~K}+1]$ |
+|  | Data |  |  |  |  |  |  |  | Oct $[4.5+1.5 * \mathrm{~K}+2]$ |
+|  | … |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  | Oct N |
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-31.jpg?height=766&width=1093&top_left_y=278&top_left_x=493}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-3: AMD PDU segment with 10 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $K=2,4,6, \ldots$ )}
-\end{figure}
+Figure 6.2.1.5-2a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 11 bits) (Odd number of LIs, i.e. $\mathrm{K}=1,3,5, \ldots$ )
 
-\begin{table}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline \multicolumn{7}{|c|}{} \\
-\hline D/C & RF & P & FI & E & LSF & R1 \\
-\hline \multicolumn{7}{|c|}{SN} \\
-\hline \multicolumn{7}{|c|}{SN} \\
-\hline \multicolumn{7}{|c|}{SO} \\
-\hline \multicolumn{7}{|c|}{SO} \\
-\hline E & \multicolumn{6}{|c|}{$\mathrm{LI}_{1}$} \\
-\hline \multicolumn{3}{|c|}{$\mathrm{LI}_{1}$} & E & \multicolumn{3}{|c|}{$\mathrm{Li}_{2}$} \\
-\hline \multicolumn{7}{|c|}{$\mathrm{Li}_{2}$} \\
-\hline \multicolumn{7}{|c|}{…} \\
-\hline E & \multicolumn{6}{|c|}{$\mathrm{Li}_{\mathrm{K}-1}$} \\
-\hline \multicolumn{3}{|c|}{$\mathrm{Li}_{\mathrm{K}-1}$} & E & \multicolumn{3}{|c|}{$\mathrm{L}_{\mathrm{k}}$} \\
-\hline \multicolumn{7}{|c|}{$\mathrm{Li}_{\mathrm{k}}$} \\
-\hline \multicolumn{7}{|c|}{Data} \\
-\hline \multicolumn{7}{|c|}{⋯} \\
-\hline & & & & & & \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-3a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )}
-\end{table}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-31.jpg?height=766&width=1093&top_left_y=278&top_left_x=493)
+Figure 6.2.1.5-3: AMD PDU segment with 10 bit SN (length of LI field is 11 bits) (Even number of LIs, i.e. $K=2,4,6, \ldots$ )
+
+|  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| D/C | RF | P | FI | E | LSF | R1 |
+| SN |  |  |  |  |  |  |
+| SN |  |  |  |  |  |  |
+| SO |  |  |  |  |  |  |
+| SO |  |  |  |  |  |  |
+| E | $\mathrm{LI}_{1}$ |  |  |  |  |  |
+| $\mathrm{LI}_{1}$ |  |  | E | $\mathrm{Li}_{2}$ |  |  |
+| $\mathrm{Li}_{2}$ |  |  |  |  |  |  |
+| … |  |  |  |  |  |  |
+| E | $\mathrm{Li}_{\mathrm{K}-1}$ |  |  |  |  |  |
+| $\mathrm{Li}_{\mathrm{K}-1}$ |  |  | E | $\mathrm{L}_{\mathrm{k}}$ |  |  |
+| $\mathrm{Li}_{\mathrm{k}}$ |  |  |  |  |  |  |
+| Data |  |  |  |  |  |  |
+| ⋯ |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |
+
+Figure 6.2.1.5-3a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 11 bits) (Even number of LIs, i.e. $\mathrm{K}=2,4,6, \ldots$ )
 
 Oct 1
 Oct 2
@@ -1129,53 +1105,44 @@ Oct $\left[4+1.5^{\star} \mathrm{K}+2\right]$
 
 Oct N
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-32.jpg?height=675&width=1029&top_left_y=248&top_left_x=475}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-4: AMD PDU segment with 10 bit SN (length of LI field is 15 bits)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-32.jpg?height=675&width=1029&top_left_y=248&top_left_x=475)
+Figure 6.2.1.5-4: AMD PDU segment with 10 bit SN (length of LI field is 15 bits)
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-32.jpg?height=720&width=1033&top_left_y=1055&top_left_x=493}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.5-4a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 15 bits)}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-32.jpg?height=720&width=1033&top_left_y=1055&top_left_x=493)
+Figure 6.2.1.5-4a: AMD PDU segment with 16 bit SN and with 16 bit SO (length of LI field is 15 bits)
 
-\subsection*{6.2.1.6 STATUS PDU}
+### 6.2.1.6 STATUS PDU
 
 STATUS PDU consists of a STATUS PDU payload and a RLC control PDU header.
 RLC control PDU header consists of a D/C and a CPT field.
 The STATUS PDU payload starts from the first bit following the RLC control PDU header, and it consists of one ACK_SN and one E1, zero or more sets of a NACK_SN, an E1 and an E2, and possibly a set of a SOstart and a SOend for each NACK_SN. When necessary one to seven padding bits are included in the end of the STATUS PDU to achieve octet alignment.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-33.jpg?height=570&width=917&top_left_y=278&top_left_x=607}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.6-1: STATUS PDU with 10 bit SN}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-33.jpg?height=570&width=917&top_left_y=278&top_left_x=607)
+Figure 6.2.1.6-1: STATUS PDU with 10 bit SN
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-33.jpg?height=716&width=938&top_left_y=995&top_left_x=584}
-\captionsetup{labelformat=empty}
-\caption{Figure 6.2.1.6-2: STATUS PDU with 16 bit SN and with 16 bit SOstart and SOend fields}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-33.jpg?height=716&width=938&top_left_y=995&top_left_x=584)
+Figure 6.2.1.6-2: STATUS PDU with 16 bit SN and with 16 bit SOstart and SOend fields
 
-\subsection*{6.2.2 Parameters}
+### 6.2.2 Parameters
 
-\subsection*{6.2.2.1 General}
+### 6.2.2.1 General
 
 In the definition of each field in sub clauses 6.2.2.2 to 6.2.2.19, the bits in the parameters are represented in which the first and most significant bit is the left most bit and the last and least significant bit is the rightmost bit. Unless mentioned otherwise, integers are encoded in standard binary encoding for unsigned integers.
 
-\subsection*{6.2.2.2 Data field}
+### 6.2.2.2 Data field
 
 Data field elements are mapped to the Data field in the order which they arrive to the RLC entity at the transmitter.
 For TMD PDU, UMD PDU and AMD PDU:
+
 - The granularity of the Data field size is one byte;
 - The maximum Data field size is the maximum TB size minus the sum of minimum MAC PDU header size and minimum RLC PDU header size.
 
 For TMD PDU:
+
 - Only one RLC SDU can be mapped to the Data field of one TMD PDU.
 
 For UMD PDU, AMD PDU and AMD PDU segment:
+
 - Either of the following can be mapped to the Data field of one UMD PDU, AMD PDU or AMD PDU segment:
 - Zero RLC SDU segments and one or more RLC SDUs;
 - One or two RLC SDU segments and zero or more RLC SDUs;
@@ -1183,211 +1150,169 @@ For UMD PDU, AMD PDU and AMD PDU segment:
 - A RLC SDU or RLC SDU segment larger than 2047 octets for 11 bits LI can only be mapped to the end of the Data field;
 - When there are two RLC SDU segments, they belong to different RLC SDUs.
 
-\subsection*{6.2.2.3 Sequence Number (SN) field}
+
+### 6.2.2.3 Sequence Number (SN) field
 
 Length: 10 bits or 16 bits (configurable) for AMD PDU and AMD PDU segments. 5 bits or 10 bits (configurable) for UMD PDU.
 
 The SN field indicates the sequence number of the corresponding UMD or AMD PDU. For an AMD PDU segment, the SN field indicates the sequence number of the original AMD PDU from which the AMD PDU segment was constructed from. The sequence number is incremented by one for every UMD or AMD PDU.
 
-\subsection*{6.2.2.4 Extension bit (E) field}
+### 6.2.2.4 Extension bit (E) field
 
 Length: 1 bit.
 The E field indicates whether Data field follows or a set of E field and LI field follows. The interpretation of the E field is provided in Table 6.2.2.4-1 and Table 6.2.2.4-2.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.4-1: E field interpretation (for E field in the fixed part of the header)}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & Data field follows from the octet following the fixed part of the header \\
-\hline 1 & A set of E field and LI field follows from the octet following the fixed part of the header \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.4-1: E field interpretation (for E field in the fixed part of the header)
+| Value | Description |
+| :--- | :---: |
+| 0 | Data field follows from the octet following the fixed part of the header |
+| 1 | A set of E field and LI field follows from the octet following the fixed part of the header |
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.4-2: E field interpretation (for E field in the extension part of the header)}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & Data field follows from the octet following the LI field following this E field \\
-\hline 1 & A set of E field and LI field follows from the bit following the LI field following this E field \\
-\hline
-\end{tabular}
-\end{table}
 
-\subsection*{6.2.2.5 Length Indicator (LI) field}
+Table 6.2.2.4-2: E field interpretation (for E field in the extension part of the header)
+| Value | Description |
+| :--- | :---: |
+| 0 | Data field follows from the octet following the LI field following this E field |
+| 1 | A set of E field and LI field follows from the bit following the LI field following this E field |
+
+
+### 6.2.2.5 Length Indicator (LI) field
 
 Length: 11 bits for RLC UM, 11 bits or 15 bits for RLC AM. The length of the LI field for RLC AM is configured by upper layers.
 
 The LI field indicates the length in bytes of the corresponding Data field element present in the RLC data PDU delivered/received by an UM or an AM RLC entity. The first LI present in the RLC data PDU header corresponds to the first Data field element present in the Data field of the RLC data PDU, the second LI present in the RLC data PDU header corresponds to the second Data field element present in the Data field of the RLC data PDU, and so on. The value 0 is reserved.
 
-\subsection*{6.2.2.6 Framing Info (FI) field}
+### 6.2.2.6 Framing Info (FI) field
 
 Length: 2 bits.
 The FI field indicates whether a RLC SDU is segmented at the beginning and/or at the end of the Data field. Specifically, the FI field indicates whether the first byte of the Data field corresponds to the first byte of a RLC SDU, and whether the last byte of the Data field corresponds to the last byte of a RLC SDU. The interpretation of the FI field is provided in Table 6.2.2.6-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.6-1: FI field interpretation}
-\begin{tabular}{|l|l|}
-\hline Value & Description \\
-\hline 00 & First byte of the Data field corresponds to the first byte of a RLC SDU. Last byte of the Data field corresponds to the last byte of a RLC SDU. \\
-\hline 01 & First byte of the Data field corresponds to the first byte of a RLC SDU. Last byte of the Data field does not correspond to the last byte of a RLC SDU. \\
-\hline 10 & First byte of the Data field does not correspond to the first byte of a RLC SDU. Last byte of the Data field corresponds to the last byte of a RLC SDU. \\
-\hline 11 & First byte of the Data field does not correspond to the first byte of a RLC SDU. Last byte of the Data field does not correspond to the last byte of a RLC SDU. \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.6-1: FI field interpretation
+| Value | Description |
+| :--- | :--- |
+| 00 | First byte of the Data field corresponds to the first byte of a RLC SDU. Last byte of the Data field corresponds to the last byte of a RLC SDU. |
+| 01 | First byte of the Data field corresponds to the first byte of a RLC SDU. Last byte of the Data field does not correspond to the last byte of a RLC SDU. |
+| 10 | First byte of the Data field does not correspond to the first byte of a RLC SDU. Last byte of the Data field corresponds to the last byte of a RLC SDU. |
+| 11 | First byte of the Data field does not correspond to the first byte of a RLC SDU. Last byte of the Data field does not correspond to the last byte of a RLC SDU. |
 
-\subsection*{6.2.2.7 Segment Offset (SO) field}
+
+### 6.2.2.7 Segment Offset (SO) field
 
 Length: 15 bits or 16 bits (configurable).
 The SO field indicates the position of the AMD PDU segment in bytes within the original AMD PDU. Specifically, the SO field indicates the position within the Data field of the original AMD PDU to which the first byte of the Data field of the AMD PDU segment corresponds to. The first byte in the Data field of the original AMD PDU is referred by the SO field value " 000000000000000 " or " 0000000000000000 ", i.e., numbering starts at zero.
 
-\subsection*{6.2.2.8 Last Segment Flag (LSF) field}
+### 6.2.2.8 Last Segment Flag (LSF) field
 
 Length: 1 bit.
 The LSF field indicates whether or not the last byte of the AMD PDU segment corresponds to the last byte of an AMD PDU. The interpretation of the LSF field is provided in Table 6.2.2.8-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.8-1: LSF field interpretation}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & Last byte of the AMD PDU segment does not correspond to the last byte of an AMD PDU. \\
-\hline 1 & Last byte of the AMD PDU segment corresponds to the last byte of an AMD PDU. \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.8-1: LSF field interpretation
+| Value | Description |
+| :--- | :---: |
+| 0 | Last byte of the AMD PDU segment does not correspond to the last byte of an AMD PDU. |
+| 1 | Last byte of the AMD PDU segment corresponds to the last byte of an AMD PDU. |
 
-\subsection*{6.2.2.9 Data/Control (D/C) field}
+
+### 6.2.2.9 Data/Control (D/C) field
 
 Length: 1 bit.
 The D/C field indicates whether the RLC PDU is a RLC data PDU or RLC control PDU. The interpretation of the D/C field is provided in Table 6.2.2.9-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.9-1: D/C field interpretation}
-\begin{tabular}{|l|l|}
-\hline Value & \multicolumn{1}{|c|}{ Description } \\
-\hline 0 & Control PDU \\
-\hline 1 & Data PDU \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.9-1: D/C field interpretation
+| Value | Description |
+| :--- | :--- |
+| 0 | Control PDU |
+| 1 | Data PDU |
 
-\subsection*{6.2.2.10 Re-segmentation Flag (RF) field}
+
+### 6.2.2.10 Re-segmentation Flag (RF) field
 
 Length: 1 bit.
 The RF field indicates whether the RLC PDU is an AMD PDU or AMD PDU segment. The interpretation of the RF field is provided in Table 6.2.2.10-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.10-1: RF field interpretation}
-\begin{tabular}{|l|l|}
-\hline Value & Description \\
-\hline 0 & AMD PDU \\
-\hline 1 & AMD PDU segment \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.10-1: RF field interpretation
+| Value | Description |
+| :--- | :--- |
+| 0 | AMD PDU |
+| 1 | AMD PDU segment |
 
-\subsection*{6.2.2.11 Polling bit (P) field}
+
+### 6.2.2.11 Polling bit (P) field
 
 Length: 1 bit.
 The P field indicates whether or not the transmitting side of an AM RLC entity requests a STATUS report from its peer AM RLC entity. The interpretation of the P field is provided in Table 6.2.2.11-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.11-1: P field interpretation}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & Status report not requested \\
-\hline 1 & Status report is requested \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.11-1: P field interpretation
+| Value | Description |
+| :--- | :---: |
+| 0 | Status report not requested |
+| 1 | Status report is requested |
 
-\subsection*{6.2.2.12 Reserved 1 (R1) field}
+
+### 6.2.2.12 Reserved 1 (R1) field
 
 Length: 1 bit.
 The R 1 field is a reserved field for this release of the protocol. The transmitting entity shall set the R 1 field to " 0 ". The receiving entity shall ignore this field.
 
-\subsection*{6.2.2.13 Control PDU Type (CPT) field}
+### 6.2.2.13 Control PDU Type (CPT) field
 
 Length: 3 bits.
 The CPT field indicates the type of the RLC control PDU. The interpretation of the CPT field is provided in Table 6.2.2.13-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.13-1: CPT field interpretation}
-\begin{tabular}{|l|l|}
-\hline Value & \multicolumn{1}{c|}{ Description } \\
-\hline 000 & STATUS PDU \\
-\hline $001-111$ & \begin{tabular}{l} 
-Reserved \\
-(PDUs with this coding will be discarded by the receiving entity for this release of the protocol)
-\end{tabular} \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.13-1: CPT field interpretation
+| Value | Description |
+| :--- | :--- |
+| 000 | STATUS PDU |
+| $001-111$ | Reserved <br> (PDUs with this coding will be discarded by the receiving entity for this release of the protocol) |
 
-\subsection*{6.2.2.14 Acknowledgement SN (ACK_SN) field}
+
+### 6.2.2.14 Acknowledgement SN (ACK_SN) field
 
 Length: 10 bits or 16 bits (configurable).
 The ACK_SN field indicates the SN of the next not received RLC Data PDU which is not reported as missing in the STATUS PDU. When the transmitting side of an AM RLC entity receives a STATUS PDU, it interprets that all AMD PDUs up to but not including the AMD PDU with SN = ACK_SN have been received by its peer AM RLC entity, excluding those AMD PDUs indicated in the STATUS PDU with NACK_SN and portions of AMD PDUs indicated in the STATUS PDU with NACK_SN, SOstart and SOend.
 
-\subsection*{6.2.2.15 Extension bit 1 (E1) field}
+### 6.2.2.15 Extension bit 1 (E1) field
 
 Length: 1 bit.
 The E1 field indicates whether or not a set of NACK_SN, E1 and E2 follows. The interpretation of the E1 field is provided in Table 6.2.2.15-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.15-1: E1 field interpretation}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & A set of NACK_SN, E1 and E2 does not follow. \\
-\hline 1 & A set of NACK_SN, E1 and E2 follows. \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.15-1: E1 field interpretation
+| Value | Description |
+| :--- | :---: |
+| 0 | A set of NACK_SN, E1 and E2 does not follow. |
+| 1 | A set of NACK_SN, E1 and E2 follows. |
 
-\subsection*{6.2.2.16 Negative Acknowledgement SN (NACK_SN) field}
+
+### 6.2.2.16 Negative Acknowledgement SN (NACK_SN) field
 
 Length: 10 bits or 16 bits (configurable).
 The NACK_SN field indicates the SN of the AMD PDU (or portions of it) that has been detected as lost at the receiving side of the AM RLC entity.
 
-\subsection*{6.2.2.17 Extension bit 2 (E2) field}
+### 6.2.2.17 Extension bit 2 (E2) field
 
 Length: 1 bit.
 The E2 field indicates whether or not a set of SOstart and SOend follows. The interpretation of the E2 field is provided in Table 6.2.2.17-1.
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 6.2.2.17-1: E2 field interpretation}
-\begin{tabular}{|l|c|}
-\hline Value & Description \\
-\hline 0 & A set of SOstart and SOend does not follow for this NACK_SN. \\
-\hline 1 & A set of SOstart and SOend follows for this NACK_SN. \\
-\hline
-\end{tabular}
-\end{table}
+Table 6.2.2.17-1: E2 field interpretation
+| Value | Description |
+| :--- | :---: |
+| 0 | A set of SOstart and SOend does not follow for this NACK_SN. |
+| 1 | A set of SOstart and SOend follows for this NACK_SN. |
 
-\subsection*{6.2.2.18 SO start (SOstart) field}
+
+### 6.2.2.18 SO start (SOstart) field
 
 Length: 15 bits or 16 bits (configurable).
 The SOstart field (together with the SOend field) indicates the portion of the AMD PDU with SN = NACK_SN (the NACK_SN for which the SOstart is related to) that has been detected as lost at the receiving side of the AM RLC entity. Specifically, the SOstart field indicates the position of the first byte of the portion of the AMD PDU in bytes within the Data field of the AMD PDU. The first byte in the Data field of the original AMD PDU is referred by the SOstart field value " 000000000000000 " or " 0000000000000000 ", i.e., numbering starts at zero.
 
-\subsection*{6.2.2.19 SO end (SOend) field}
+### 6.2.2.19 SO end (SOend) field
 
 Length: 15 bits or 16 bits (configurable).
 The SOend field (together with the SOstart field) indicates the portion of the AMD PDU with SN = NACK_SN (the NACK_SN for which the SOend is related to) that has been detected as lost at the receiving side of the AM RLC entity. Specifically, the SOend field indicates the position of the last byte of the portion of the AMD PDU in bytes within the Data field of the AMD PDU. The first byte in the Data field of the original AMD PDU is referred by the SOend field value " 000000000000000 " or " 0000000000000000 ", i.e., numbering starts at zero. The special SOend value "1111111111111111" or "11111111111111111" is used to indicate that the missing portion of the AMD PDU includes all bytes to the last byte of the AMD PDU.
 
-\section*{7 Variables, constants and timers}
+## 7 Variables, constants and timers
 
-\subsection*{7.1 State variables}
+### 7.1 State variables
 
 This sub clause describes the state variables used in AM and UM entities in order to specify the RLC protocol. The state variables defined in this subclause are normative.
 
@@ -1461,7 +1386,8 @@ c) VR(UH) - UM highest received state variable
 
 This state variable holds the value of the SN following the SN of the UMD PDU with the highest SN among received UMD PDUs, and it serves as the higher edge of the reordering window. It is initially set to 0 . For RLC entity configured for STCH, it is initially set to the SN of the first received UMD PDU.
 
-\subsection*{7.2 Constants}
+### 7.2 Constants
+
 a) AM_Window_Size
 
 This constant is used by both the transmitting side and the receiving side of each AM RLC entity to calculate VT(MS) from VT(A), and VR(MR) from VR(R). AM_Window_Size = 512 when a 10 bit SN is used, AM_Window_Size = 32768 when a 16 bit SN is used.
@@ -1469,7 +1395,7 @@ b) UM_Window_Size
 
 This constant is used by the receiving UM RLC entity to define SNs of those UMD PDUs that can be received without causing an advancement of the receiving window. UM_Window_Size $=16$ when a 5 bit SN is configured, UM_Window_Size = 512 when a 10 bit SN is configured and UM_Window_Size = 0 when the receiving UM RLC entity is configured for MCCH, MTCH, SC-MCCH, SC-MTCH or STCH.
 
-\subsection*{7.3 Timers}
+### 7.3 Timers
 
 The following timers are configured by RRC [5]:
 a) $t$-PollRetransmit
@@ -1482,7 +1408,7 @@ c) $t$-StatusProhibit
 
 This timer is used by the receiving side of an AM RLC entity in order to prohibit transmission of a STATUS PDU (see sub clause 5.2.3).
 
-\subsection*{7.4 Configurable parameters}
+### 7.4 Configurable parameters
 
 The following parameters are configured by RRC [5]:
 a) maxRetxThreshold
@@ -1498,257 +1424,129 @@ d) sn-FieldLength
 
 This parameter gives the UM SN field size in bits (see subclause 7.1).
 
-\section*{Annex A (informative): Change history}
+## Annex A (informative): Change history
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline 2007-06 & RAN2\#58 bis & R2-072715 & & & \begin{tabular}{l}
-First version; \\
-Endorsed as v0.1.0.
-\end{tabular} & x.y.z & 0.1.0 \\
-\hline 2007-06 & RAN2\#58 bis & R2-072910 & & & \begin{tabular}{l}
-Added definition for Data field element and RLC SDU segment; Removed Editor's note on non-byte-aligned RLC SDUs; Added description for Data field for AMD PDU; Added Align Info for AMD PDU header element; Added description on extension part of AMD PDU header at concatenation; \\
-Added figure for AMD PDU; \\
-Added Segment Offset and Length Field for AMD PDU segment header element; \\
-Added Editor's note for STATUS PDU; \\
-Added general text on parameters; \\
-Added description for Extension bit, Length Indicator, Align Info, Segment Offset and Last Segment Flag; \\
-Removed Editor's note on Length Indicator.
-\end{tabular} & 0.1.0 & 0.1.1 \\
-\hline 2007-06 & RAN2\#58 bis & R2-072995 & & & \begin{tabular}{l}
-Moved description of Data field for AMD PDU and TMD PDU to the section dedicated to Data field; \\
-Changed terminology for Align Info to Segmentation Info; Added Segmentation Info for UMD PDU header element; Removed figure for AMD PDU; \\
-Corrected error for AMD PDU segment header element (replaced Length Field by Last Segment Flag); \\
-Added place holders to specify the number of bits for the individual RLC header elements; \\
-Modified description for Extension bit, Segmentation Info and Last Segment Flag using tables.
-\end{tabular} & 0.1.1 & 0.1.2 \\
-\hline 2007-06 & RAN2\#58 bis & R2-072996 & & & \begin{tabular}{l}
-Bracketed terminology for Segmentation Info; \\
-Corrected section numbering; \\
-Clarified description of Extension bit and Segment Offset.
-\end{tabular} & 0.1.2 & 0.1.3 \\
-\hline 2007-08 & RAN2\#59 & R2-073554 & & & \begin{tabular}{l}
-Added receive operation descriptions for the case AM RLC entity receives AMD PDU segments; \\
-Modified general texts regarding retransmissions; \\
-Added a general description text for Segmentation Info; Added an Editor's note for Segment Offset.
-\end{tabular} & 0.1.3 & 0.1.4 \\
-\hline 2007-08 & RAN2\#59 & R2-073712 & & & v0.1.4 was endorsed by RAN WG2 as v0.2.0. & 0.1.4 & 0.2.0 \\
-\hline 2007-08 & RAN2\#59 & R2-073844 & & & \begin{tabular}{l}
-Added some missing abbreviations in section 3.2; Added description and a figure regarding RLC entity configuration in section 4.2.1, and removed Editor's note on this aspect; Added new sub clauses under sections 4.2.1.1-4.2.1.3 (purely editorial modification) \\
-Added description on SN, i.e. RLC PDU based SN, and removed Editor's note on the possibility of having the same header structure for AMD PDU and AMD PDU segment due to PDCP SN reuse; Added description of the AM receive window operation; Added description that fixed header part should be byte aligned and extension header part should be byte aligned; Modified description on extension header part (LI and E are not required for the last Data field element) and removed Editor's note on this aspect; \\
-Added further description on Data field; \\
-LI field size is set to 11bits; \\
-Corrected editorial errors (reference number to tables) \\
-Added 3 state variables: VT(S), VR(R), VR(MR).
-\end{tabular} & 0.2.0 & 0.2.1 \\
-\hline 2007-08 & RAN2\#59 & R2-073868 & & & \begin{tabular}{l}
-Corrected editorial errors; \\
-Added 1 constant: Rx_Wndow_Size; \\
-Added description of modulus operation on VT(S), VR(R), VT(MR).
-\end{tabular} & 0.2.1 & 0.2.2 \\
-\hline 2007-08 & RAN2\#59 & R2-073881 & & & Removed reference to RLC UM for VT(R) and VT(MR). & 0.2.2 & 0.2.3 \\
-\hline 2007-09 & RAN\#37 & RP-070689 & & & v0.2.3 was endorsed by RAN WG2 as v1.0.0 and presented to RAN plenary for information. & 0.2.3 & 1.0.0 \\
-\hline 2007-11 & RAN2\#60 & R2-074583 & & & \begin{tabular}{l}
-Added description of the AM transmit window operation; \\
-Added Editor's note that PDU loss detection should be after HARQ reordering; \\
-Added description on AM retransmission and resegmentation; Added description of the polling trigger "transmission of last data in
-\end{tabular} & 1.0.0 & 1.0.1 \\
-\hline
-\end{tabular}
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+| 2007-06 | RAN2\#58 bis | R2-072715 |  |  | First version; <br> Endorsed as v0.1.0. | x.y.z | 0.1.0 |
+| 2007-06 | RAN2\#58 bis | R2-072910 |  |  | Added definition for Data field element and RLC SDU segment; Removed Editor's note on non-byte-aligned RLC SDUs; Added description for Data field for AMD PDU; Added Align Info for AMD PDU header element; Added description on extension part of AMD PDU header at concatenation; <br> Added figure for AMD PDU; <br> Added Segment Offset and Length Field for AMD PDU segment header element; <br> Added Editor's note for STATUS PDU; <br> Added general text on parameters; <br> Added description for Extension bit, Length Indicator, Align Info, Segment Offset and Last Segment Flag; <br> Removed Editor's note on Length Indicator. | 0.1.0 | 0.1.1 |
+| 2007-06 | RAN2\#58 bis | R2-072995 |  |  | Moved description of Data field for AMD PDU and TMD PDU to the section dedicated to Data field; <br> Changed terminology for Align Info to Segmentation Info; Added Segmentation Info for UMD PDU header element; Removed figure for AMD PDU; <br> Corrected error for AMD PDU segment header element (replaced Length Field by Last Segment Flag); <br> Added place holders to specify the number of bits for the individual RLC header elements; <br> Modified description for Extension bit, Segmentation Info and Last Segment Flag using tables. | 0.1.1 | 0.1.2 |
+| 2007-06 | RAN2\#58 bis | R2-072996 |  |  | Bracketed terminology for Segmentation Info; <br> Corrected section numbering; <br> Clarified description of Extension bit and Segment Offset. | 0.1.2 | 0.1.3 |
+| 2007-08 | RAN2\#59 | R2-073554 |  |  | Added receive operation descriptions for the case AM RLC entity receives AMD PDU segments; <br> Modified general texts regarding retransmissions; <br> Added a general description text for Segmentation Info; Added an Editor's note for Segment Offset. | 0.1.3 | 0.1.4 |
+| 2007-08 | RAN2\#59 | R2-073712 |  |  | v0.1.4 was endorsed by RAN WG2 as v0.2.0. | 0.1.4 | 0.2.0 |
+| 2007-08 | RAN2\#59 | R2-073844 |  |  | Added some missing abbreviations in section 3.2; Added description and a figure regarding RLC entity configuration in section 4.2.1, and removed Editor's note on this aspect; Added new sub clauses under sections 4.2.1.1-4.2.1.3 (purely editorial modification) <br> Added description on SN, i.e. RLC PDU based SN, and removed Editor's note on the possibility of having the same header structure for AMD PDU and AMD PDU segment due to PDCP SN reuse; Added description of the AM receive window operation; Added description that fixed header part should be byte aligned and extension header part should be byte aligned; Modified description on extension header part (LI and E are not required for the last Data field element) and removed Editor's note on this aspect; <br> Added further description on Data field; <br> LI field size is set to 11bits; <br> Corrected editorial errors (reference number to tables) <br> Added 3 state variables: VT(S), VR(R), VR(MR). | 0.2.0 | 0.2.1 |
+| 2007-08 | RAN2\#59 | R2-073868 |  |  | Corrected editorial errors; <br> Added 1 constant: Rx_Wndow_Size; <br> Added description of modulus operation on VT(S), VR(R), VT(MR). | 0.2.1 | 0.2.2 |
+| 2007-08 | RAN2\#59 | R2-073881 |  |  | Removed reference to RLC UM for VT(R) and VT(MR). | 0.2.2 | 0.2.3 |
+| 2007-09 | RAN\#37 | RP-070689 |  |  | v0.2.3 was endorsed by RAN WG2 as v1.0.0 and presented to RAN plenary for information. | 0.2.3 | 1.0.0 |
+| 2007-11 | RAN2\#60 | R2-074583 |  |  | Added description of the AM transmit window operation; <br> Added Editor's note that PDU loss detection should be after HARQ reordering; <br> Added description on AM retransmission and resegmentation; Added description of the polling trigger "transmission of last data in | 1.0.0 | 1.0.1 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline & & & & & \begin{tabular}{l}
-the buffer"; \\
-Added polling trigger "poll retransmit timer" and its description; Added Editor's note that either PDU count based or window based polling trigger should be supported; \\
-Added description of the status reporting trigger "polling from its peer AM RLC entity"; \\
-Removed old Editor's note in the polling sub clause; \\
-Added status reporting trigger "detection of reception failure of an RLC data PDU" and its description; \\
-Added status prohibit function and its description; \\
-Added Editor's note that at least a 1byte fixed header for the UMD PDU should be supported; \\
-Complete AMD PDU and AMD PDU segment headers captured and 3 new figures inserted for each of them; \\
-Added Editor's note that STATUS PDU will only have 1 format; Modified description of the Data field so that it also applies to AMD PDU segment; \\
-Added description of the SN field in relation to the AMD PDU segment; \\
-Corrected description of the E field; \\
-Defined SO field length to be 15bits; \\
-Completed the description of the SO field and removed the related Editor's note; \\
-Added description of the D/C field, RF field and P field; \\
-Added 2 state variables: VT(A) and VT(MS); \\
-Added to the description of VT(S) and VR(MR); \\
-Added 1 constant: Tx_Window_Size; \\
-Added 2 timers: T_poll_prohibit and T_status_prohibit.r
-\end{tabular} & & \\
-\hline 2007-11 & RAN2\#60 & R2-075061 & & & \begin{tabular}{l}
-Cleaned up terminology related to PDUs; \\
-Editorial corrections (aligned wording, corrected Figure numbering, clarifications, etc.) \\
-Added Editor's note that exception cases when a negatively acknowledged RLC data PDU should not be transmitted will be captured when identified; \\
-Added description that the use of status prohibit function and particular polling triggers are configurable; \\
-Modified receiver operation for RLC-AM regarding AMD PDU segments (aligned with AMD PDU); \\
-Added description that DL CCCH is handled by RLC-UM and removed corresponding Editor's note; \\
-Added Editor's note that wording "considered" regarding retransmission of AMD PDU / AMD PDU segment in sub clause 5.2.1 should be improved; \\
-Added to the description of SN field that it is 10bits for AMD PDU and AMD PDU segment; \\
-Removed Editor's note regarding the need for status prohibit function; \\
-Added Editor's note that the need for [SI] field for UMD PDU can be challenged.
-\end{tabular} & 1.0.1 & 1.0.2 \\
-\hline 2007-11 & RAN2\#60 & R2-075154 & & & \begin{tabular}{l}
-Added an Editor's note regarding Local NACK; \\
-Modified wording in sub clause 5.2.1 on the object of retransmission (RLC data PDU changed to AMD PDU / portion of AMD PDU); Clarified that STATUS PDU is triggered after the PDU containing th poll bit is "HARQ reordered", rather than just "reordered"; Removed incorrect inclusion of a T_status_prohibit and added an Editor's which just says status prohibit function is supported.
-\end{tabular} & 1.0.2 & 1.0.3 \\
-\hline 2007-11 & RAN2\#60 & R2-075198 & & & Description regarding the modulus operation involving state variables was changed in order to align with TS 25.322; Figures on PDUs were slightly modified (editorial). & 1.0.3 & 1.0.4 \\
-\hline 2007-11 & RAN2\#60 & R2-075430 & & & Text on receiver operation in sub clause 5.1.3 was revised to align the description regarding modulus operation with TS 25.322; Further cleaned up terminology related to PDUs; V1.0.4 was endorsed by RAN WG2 as v1.1.0 with the above revisions. & 1.0.4 & 1.1.0 \\
-\hline 2007-11 & RAN2\#60 & R2-075500 & & & \begin{tabular}{l}
-Added RLC architecture model figures (Figures 4.2.1.1.1-1, 4.2.1.2.1-1, 4.2.1.3.1-1); \\
-Added Editor's note that the SDU discard functionality may not be specified in RLC; \\
-Added description of receive operations for RLC-UM in sub clause 5.1.2; \\
-Added to the description of receive operations for RLC-AM in sub clause 5.1.3 including: STATUS transmitting window definition, procedures for the case RLC data PDU within receiving window is received, actions at T_reordering expiry and RLC SDU reassembly;
-\end{tabular} & 1.1.0 & 1.1.1 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline & & & & & \begin{tabular}{l}
-T_and in sub clause 5.1.3; \\
-Removed Editor's note which said that PDU loss detection should be after HARQ reordering; \\
-Clarified the description of the polling trigger "transmission of last data in the buffer"; \\
-Added description of STATUS PDU construction in sub clause 5.2.3 and removed an Editor's note in this sub clause; \\
-Modified trigger for RLC SDU discard to "indication from PDCP"; Removed Editor's note on the type of PDUs to be specified; Removed Editor's notes regarding STATUS PDU piggybacking; Complete UMD PDU headers captured and 2 new figures inserted for them, and removed Editor's note on UMD PDU; Defined one STATUS PDU format with a new figure and an Editor's note, and removed old Editor's note in sub clause 6.2.1.6; Added description of the R1 field, CPT field, ACK_SN field, E1 field, NACK_SN field, E2 field, SOstart field and SOend field. \\
-Added 7 state variables: VR(R-SO), VR(X), VR(X-SO), VR(MS), VR(UR), VR(UMR) and VR(UX); \\
-Constants Rx_Window_Size and Tx Window size were converged into one constant "Window_Size" of which the value is defined to half the SN space, and constants "AM_Window_Size" and "UM_Window_Size" were newly defined; Added 1 timer: T_reordering.
-\end{tabular} & & \\
-\hline 2007-11 & RAN2\#60 & R2-075501 & & & \begin{tabular}{l}
-Added definition for "byte segment"; \\
-Removed Editor's note which said that the SDU discard functionality may not be specified in RLC; \\
-Added missing description for RLC-UM receive operation (the case when UMD PDU with SN that falls within the reordering window but not equal to $\mathrm{VR}(\mathrm{R})$ is received); \\
-Added missing description for RLC-AM receive operation (the case when only part of the received RLC data PDU is received in duplication); \\
-Added text related to updating state variable VR(MS); \\
-Added Editor's note that it has to be decided whether T_reordering can be triggered by a missing RLC data PDU for which status reporting has already been triggered once; Editorial clarification / corrections were made.
-\end{tabular} & 1.1.1 & 1.1.2 \\
-\hline 2007-11 & RAN2\#60 & R2-075502 & & & \begin{tabular}{l}
-Added text related to updating state variable VR(MS); \\
-Editorial clarification / corrections were made.
-\end{tabular} & 1.1.2 & 1.1.3 \\
-\hline 2007-11 & RAN2\#60 & R2-075503 & & & Modified description of VR(MS) update procedure; Modified description of VR(X) / VR(X-SO) update procedure; Editorial corrections were made. & 1.1.3 & 1.1.4 \\
-\hline 2007-11 & RAN2\#60 & R2-075504 & & & \begin{tabular}{l}
-Added missing description with regards to RLC-AM receive operation; \\
-Added Editor's note on the delivery of RLC control PDUs; Editorial corrections were made.
-\end{tabular} & 1.1.4 & 1.1.5 \\
-\hline 2007-11 & RAN2\#60 & R2-074589 & & & v1.1.5 was endorsed by RAN WG2 as v1.2.0. & 1.1.5 & 1.2.0 \\
-\hline
-\end{tabular}
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+|  |  |  |  |  | the buffer"; <br> Added polling trigger "poll retransmit timer" and its description; Added Editor's note that either PDU count based or window based polling trigger should be supported; <br> Added description of the status reporting trigger "polling from its peer AM RLC entity"; <br> Removed old Editor's note in the polling sub clause; <br> Added status reporting trigger "detection of reception failure of an RLC data PDU" and its description; <br> Added status prohibit function and its description; <br> Added Editor's note that at least a 1byte fixed header for the UMD PDU should be supported; <br> Complete AMD PDU and AMD PDU segment headers captured and 3 new figures inserted for each of them; <br> Added Editor's note that STATUS PDU will only have 1 format; Modified description of the Data field so that it also applies to AMD PDU segment; <br> Added description of the SN field in relation to the AMD PDU segment; <br> Corrected description of the E field; <br> Defined SO field length to be 15bits; <br> Completed the description of the SO field and removed the related Editor's note; <br> Added description of the D/C field, RF field and P field; <br> Added 2 state variables: VT(A) and VT(MS); <br> Added to the description of VT(S) and VR(MR); <br> Added 1 constant: Tx_Window_Size; <br> Added 2 timers: T_poll_prohibit and T_status_prohibit.r |  |  |
+| 2007-11 | RAN2\#60 | R2-075061 |  |  | Cleaned up terminology related to PDUs; <br> Editorial corrections (aligned wording, corrected Figure numbering, clarifications, etc.) <br> Added Editor's note that exception cases when a negatively acknowledged RLC data PDU should not be transmitted will be captured when identified; <br> Added description that the use of status prohibit function and particular polling triggers are configurable; <br> Modified receiver operation for RLC-AM regarding AMD PDU segments (aligned with AMD PDU); <br> Added description that DL CCCH is handled by RLC-UM and removed corresponding Editor's note; <br> Added Editor's note that wording "considered" regarding retransmission of AMD PDU / AMD PDU segment in sub clause 5.2.1 should be improved; <br> Added to the description of SN field that it is 10bits for AMD PDU and AMD PDU segment; <br> Removed Editor's note regarding the need for status prohibit function; <br> Added Editor's note that the need for [SI] field for UMD PDU can be challenged. | 1.0.1 | 1.0.2 |
+| 2007-11 | RAN2\#60 | R2-075154 |  |  | Added an Editor's note regarding Local NACK; <br> Modified wording in sub clause 5.2.1 on the object of retransmission (RLC data PDU changed to AMD PDU / portion of AMD PDU); Clarified that STATUS PDU is triggered after the PDU containing th poll bit is "HARQ reordered", rather than just "reordered"; Removed incorrect inclusion of a T_status_prohibit and added an Editor's which just says status prohibit function is supported. | 1.0.2 | 1.0.3 |
+| 2007-11 | RAN2\#60 | R2-075198 |  |  | Description regarding the modulus operation involving state variables was changed in order to align with TS 25.322; Figures on PDUs were slightly modified (editorial). | 1.0.3 | 1.0.4 |
+| 2007-11 | RAN2\#60 | R2-075430 |  |  | Text on receiver operation in sub clause 5.1.3 was revised to align the description regarding modulus operation with TS 25.322; Further cleaned up terminology related to PDUs; V1.0.4 was endorsed by RAN WG2 as v1.1.0 with the above revisions. | 1.0.4 | 1.1.0 |
+| 2007-11 | RAN2\#60 | R2-075500 |  |  | Added RLC architecture model figures (Figures 4.2.1.1.1-1, 4.2.1.2.1-1, 4.2.1.3.1-1); <br> Added Editor's note that the SDU discard functionality may not be specified in RLC; <br> Added description of receive operations for RLC-UM in sub clause 5.1.2; <br> Added to the description of receive operations for RLC-AM in sub clause 5.1.3 including: STATUS transmitting window definition, procedures for the case RLC data PDU within receiving window is received, actions at T_reordering expiry and RLC SDU reassembly; | 1.1.0 | 1.1.1 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline 2007-11 & RP-38 & RP-070918 & & & v1.2.0 was stepped to v2.0.0 and presented to RAN plenary for approval. & 1.2.0 & 2.0.0 \\
-\hline 2007-12 & RP-38 & - & & & Approved at TSG RAN-38 and placed under change control & 2.0.0 & 8.0.0 \\
-\hline 2008-03 & RP-39 & RP-080196 & 0001 & ![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-44.jpg?height=15\&width=9\&top_left_y=447\&top_left_x=714) & \begin{tabular}{l}
-CR0001 for TS 36.322 E-UTRA RLC: \\
-Added reference to TS 36.321; \\
-Clarified definition of "byte segment"; \\
-Renamed "Segmentation Info" to "Framing Info"; \\
-Aligned texts to refer to "upper layer" and "lower layer" instead of RRC/PDCP and MAC; \\
-Specified that BCCH and DL CCCH is handled by RLC-TM; Added support for duplicate detection by receiving RLC UM entity;; Clarified that RLC SDUs should be delivered to upper layers in sequence; \\
-Modified description so that MAC indicates "total size of RLC PDUs" together with notification of transmission opportunity instead of "TB size"; \\
-Specified that RLC SDU discard is applied for RLC-AM and RLC UM, and introduced the detailed RLC SDU discard procedure; Renamed "RLC reset" to "RLC re-establishment", and introduced the detailed RLC re-establishment procedure; \\
-Removed Editor's note on RLC flow control (flow control will not be supported by RLC); \\
-Restructured the texts on RLC AM and RLC UM receive operations, and added/modified the detailed descriptions; \\
-Added description on prioritization of data to transmit (control > data; retransmission > new data); \\
-Removed the term STATUS transmitting window; \\
-Clarified that retransmission of negatively acknowledged data by STATUS PDU is mandatory and that retransmission of negatively acknowledged data by HARQ delivery failure is optional; Removed Editor's note on retransmission prohibit (there will be no conditions where negatively acknowledged data shall not be retransmitted); \\
-Clarified description on polling trigger "Transmission of last data in buffer"; \\
-Added new polling triggers "Every Poll_PDU PDUs" and "Every Poll_Byte Bytes", introduced their descriptions, and added an Editor's note that their configurability is FFS; \\
-Added description on status reporting trigger "detection of reception failure of an RLC data PDU"; \\
-Introduced description of the status prohibit function; \\
-Removed Editor's note on the possibility to define more RLC control PDUs (no more RLC control PDUs will be defined); \\
-Clarified the "most significant bit" and "least significant bit" in an RLC PDU; \\
-Removed reference to bit numbers in RLC PDU; \\
-Modified the order of fields in the 1byte UMD PDU header; Removed Editor's note on the order of fields in the AMD PDU / AMD PDU segment header (they are now confirmed); \\
-Modified definition of ACK_SN; \\
-Defined the special value of SOend; \\
-Added description on the UM modulus operation; \\
-Removed state variables VR(R-SO), VR(X-SO) and VR(UMR); Modified description/definition of state variables VR(MR), VR(X), VR(MS), VR(UR) and VR(UX); \\
-Introduced new state variables VR(H) and VR(UH) and their descriptions; \\
-Introduced new constants Poll_PDU and Poll_Byte and their descriptions; \\
-Clarified that only one T_reordering will be running at one time for an RLC entity; \\
-Introduced new timer T_status_prohibit and its description; Editorial corrections were made.
-\end{tabular} & 8.0.0 & 8.1.0 \\
-\hline 2008-05 & RP-40 & RP-080411 & 0002 & 1 & Clarification on STATUS PDU size for BSR & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0003 & - & Removal of Editor's Note on updating of VR(MS) upon expiry of T_reordering & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0004 & - & Removal of STATUS receiving window & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0005 & - & Duplicate detection in UM RLC & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0006 & - & Correction to Polling Procedure & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0007 & - & Miscellaneous corrections to TS 36.322 & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0008 & - & Small corrections to RLC & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0012 & - & CR to 36.322 on correction to RLC PDU reassembly & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0015 & 1 & 36.322 CR on 'RLC retransmission count and addition of Configurable Parameters' & 8.1.0 & 8.2.0 \\
-\hline
-\end{tabular}
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|}
-\hline \multicolumn{8}{|c|}{Change history} \\
-\hline Date & TSG \# & TSG Doc. & CR & Rev & Subject/Comment & Old & New \\
-\hline & RP-40 & RP-080411 & 0017 & - & Service alignments with TS 36.323 (PDCP) & 8.1.0 & 8.2.0 \\
-\hline & RP-40 & RP-080411 & 0018 & - & CR on the procedure to construct the STATUS PDU & 8.1.0 & 8.2.0 \\
-\hline 2008-09 & RP-41 & RP-080691 & 0019 & 1 & Clarification of polling & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0020 & - & Corrections to formatting & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0021 & 2 & The value of ACK_SN for partial STATUS PDU & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0022 & 1 & Error cases for RLC & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0024 & - & RLC entity re-establishment & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0025 & - & Miscellaneous corrections to RLC specification & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0029 & - & Clarification of the reordering timer & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0032 & - & Clarification of Triggering Conditions for Status Reports & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0033 & - & RLC UMD PDU formats with LI & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0036 & - & Correction on UM Receive Operation & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0039 & - & Correction for TM RLC entity: 6.1.2.3 & 8.2.0 & 8.3.0 \\
-\hline & RP-41 & RP-080691 & 0040 & - & Removal of MBMS channels: 6.1.2.3 & 8.2.0 & 8.3.0 \\
-\hline 2008-12 & RP-42 & RP-081019 & 0043 & - & Proposed CR for aligning the construction of partial Status PDUs with intended operation & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0046 & - & Error Handling in RLC & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0047 & - & Miscellaneous corrections to 36.322 & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0048 & - & Correction to Segment Offset fields & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0049 & - & Correction to the description of the delivery of RLC SDU & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0050 & - & Minor issues on RLC & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0054 & - & The setting of VR(X) & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0055 & - & Adding RLC TM operation & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0056 & - & Removing a redundant text on VT(A) setting & 8.3.0 & 8.4.0 \\
-\hline & RP-42 & RP-081019 & 0057 & - & Counting RLC Retransmissions & 8.3.0 & 8.4.0 \\
-\hline 2009-03 & RP-43 & RP-090129 & 0058 & - & CR to 36.322 on RRC Parameters & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0059 & - & Local NACKing in UE & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0060 & - & Supporting RLC SDU larger than 2047 octets & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0061 & - & CR on the in sequence delivery function for UM & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0062 & - & Correction to Delivery of PDU & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0063 & 1 & Issues with SO, SOstart, and SOend fields & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0064 & - & Miscellaneous corrections to RLC specification & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0065 & - & Correction to status reporting triggering condition & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0066 & - & Alignment of one condition on setting the poll bit & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0067 & 1 & Proposed CR to 36.322 on Clarification on Polling procedure & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0068 & 1 & Every Poll_PDU PDUs and Every Poll_Byte bytes triggers & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0069 & - & UE behaviour when T_poll_retransmit expires & 8.4.0 & 8.5.0 \\
-\hline & RP-43 & RP-090129 & 0076 & - & Definition of RETX_COUNT missing & 8.4.0 & 8.5.0 \\
-\hline 2009-06 & RP-44 & RP-090514 & 0080 & - & Reset of T_poll_retransmission & 8.5.0 & 8.6.0 \\
-\hline & RP-44 & RP-090514 & 0081 & - & RLC functions & 8.5.0 & 8.6.0 \\
-\hline & RP-44 & RP-090514 & 0082 & 1 & Correction to handling of reserved field & 8.5.0 & 8.6.0 \\
-\hline & RP-44 & RP-090514 & 0083 & - & Correction to condition for stopping t-Reordering in AM mode & 8.5.0 & 8.6.0 \\
-\hline 2009-09 & RP-45 & RP-090906 & 0084 & - & Possible misinterpretation on incrementing RETX_COUNT & 8.6.0 & 8.7.0 \\
-\hline 2009-12 & RP-46 & RP-091341 & 0087 & - & Capturing MBMS agreements in RLC & 8.7.0 & 9.0.0 \\
-\hline 2010-03 & RP-47 & RP-100305 & 0089 & - & Correction to RLC entity & 9.0.0 & 9.1.0 \\
-\hline 2010-06 & RP-48 & RP-100536 & 0091 & 1 & Correction of RLC VR(H) update & 9.1.0 & 9.2.0 \\
-\hline 2010-09 & RP-49 & RP-100851 & 0092 & 1 & Miscellaneous corrections to RLC & 9.2.0 & 9.3.0 \\
-\hline 2010-12 & RP-50 & - & - & - & Upgrade to Release 10 - no technical change & 9.3.0 & 10.0.0 \\
-\hline 2012-09 & RP-57 & - & - & - & Upgrade to Release 11 - no technical change & 10.0.0 & 11.0.0 \\
-\hline 2014-06 & RP-64 & RP-140892 & 0099 & 1 & Extended RLC LI field & 11.0.0 & 12.0.0 \\
-\hline 2014-09 & RP-65 & RP-141511 & 0101 & - & Corrections to configuration of extended RLC LI field & 12.0.0 & 12.1.0 \\
-\hline 2014-12 & RP-66 & - & - & - & MCC editorial update & 12.1.0 & 12.1.1 \\
-\hline 2015-03 & RP-67 & RP-150376 & 0105 & 1 & RLC concatenation for extended LI field & 12.1.1 & 12.2.0 \\
-\hline & RP-67 & RP-150374 & 0107 & - & Introduction of ProSe Direct Communication & 12.1.1 & 12.2.0 \\
-\hline 2015-09 & RP-69 & RP-151441 & 0108 & - & Corrections for STCH in 36.322 & 12.2.0 & 12.3.0 \\
-\hline 2015-12 & RP-70 & RP-152071 & 0114 & - & Introduction of extended RLC protocol formats for CA enhancement & 12.3.0 & 13.0.0 \\
-\hline & RP-70 & RP-152080 & 0115 & - & Introduction of SC-PTM in RLC & 12.3.0 & 13.0.0 \\
-\hline 2016-03 & RP-71 & RP-160470 & 0116 & 1 & Clarification on Polling for last data & 13.0.0 & 13.1.0 \\
-\hline 2016-06 & RP-72 & RP-161078 & 0120 & 1 & Addition of sidelink in the overview model & 13.1.0 & 13.2.0 \\
-\hline & RP-72 & RP-161081 & 0121 & 2 & Introduction of NB-IoT & 13.1.0 & 13.2.0 \\
-\hline
-\end{tabular}
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+|  |  |  |  |  | T_and in sub clause 5.1.3; <br> Removed Editor's note which said that PDU loss detection should be after HARQ reordering; <br> Clarified the description of the polling trigger "transmission of last data in the buffer"; <br> Added description of STATUS PDU construction in sub clause 5.2.3 and removed an Editor's note in this sub clause; <br> Modified trigger for RLC SDU discard to "indication from PDCP"; Removed Editor's note on the type of PDUs to be specified; Removed Editor's notes regarding STATUS PDU piggybacking; Complete UMD PDU headers captured and 2 new figures inserted for them, and removed Editor's note on UMD PDU; Defined one STATUS PDU format with a new figure and an Editor's note, and removed old Editor's note in sub clause 6.2.1.6; Added description of the R1 field, CPT field, ACK_SN field, E1 field, NACK_SN field, E2 field, SOstart field and SOend field. <br> Added 7 state variables: VR(R-SO), VR(X), VR(X-SO), VR(MS), VR(UR), VR(UMR) and VR(UX); <br> Constants Rx_Window_Size and Tx Window size were converged into one constant "Window_Size" of which the value is defined to half the SN space, and constants "AM_Window_Size" and "UM_Window_Size" were newly defined; Added 1 timer: T_reordering. |  |  |
+| 2007-11 | RAN2\#60 | R2-075501 |  |  | Added definition for "byte segment"; <br> Removed Editor's note which said that the SDU discard functionality may not be specified in RLC; <br> Added missing description for RLC-UM receive operation (the case when UMD PDU with SN that falls within the reordering window but not equal to $\mathrm{VR}(\mathrm{R})$ is received); <br> Added missing description for RLC-AM receive operation (the case when only part of the received RLC data PDU is received in duplication); <br> Added text related to updating state variable VR(MS); <br> Added Editor's note that it has to be decided whether T_reordering can be triggered by a missing RLC data PDU for which status reporting has already been triggered once; Editorial clarification / corrections were made. | 1.1.1 | 1.1.2 |
+| 2007-11 | RAN2\#60 | R2-075502 |  |  | Added text related to updating state variable VR(MS); <br> Editorial clarification / corrections were made. | 1.1.2 | 1.1.3 |
+| 2007-11 | RAN2\#60 | R2-075503 |  |  | Modified description of VR(MS) update procedure; Modified description of VR(X) / VR(X-SO) update procedure; Editorial corrections were made. | 1.1.3 | 1.1.4 |
+| 2007-11 | RAN2\#60 | R2-075504 |  |  | Added missing description with regards to RLC-AM receive operation; <br> Added Editor's note on the delivery of RLC control PDUs; Editorial corrections were made. | 1.1.4 | 1.1.5 |
+| 2007-11 | RAN2\#60 | R2-074589 |  |  | v1.1.5 was endorsed by RAN WG2 as v1.2.0. | 1.1.5 | 1.2.0 |
+
+
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+| 2007-11 | RP-38 | RP-070918 |  |  | v1.2.0 was stepped to v2.0.0 and presented to RAN plenary for approval. | 1.2.0 | 2.0.0 |
+| 2007-12 | RP-38 | - |  |  | Approved at TSG RAN-38 and placed under change control | 2.0.0 | 8.0.0 |
+| 2008-03 | RP-39 | RP-080196 | 0001 | ![](https://cdn.mathpix.com/cropped/92c4ac03-4559-463a-9463-67b5bf50e4bb-44.jpg?height=15&width=9&top_left_y=447&top_left_x=714) | CR0001 for TS 36.322 E-UTRA RLC: <br> Added reference to TS 36.321; <br> Clarified definition of "byte segment"; <br> Renamed "Segmentation Info" to "Framing Info"; <br> Aligned texts to refer to "upper layer" and "lower layer" instead of RRC/PDCP and MAC; <br> Specified that BCCH and DL CCCH is handled by RLC-TM; Added support for duplicate detection by receiving RLC UM entity;; Clarified that RLC SDUs should be delivered to upper layers in sequence; <br> Modified description so that MAC indicates "total size of RLC PDUs" together with notification of transmission opportunity instead of "TB size"; <br> Specified that RLC SDU discard is applied for RLC-AM and RLC UM, and introduced the detailed RLC SDU discard procedure; Renamed "RLC reset" to "RLC re-establishment", and introduced the detailed RLC re-establishment procedure; <br> Removed Editor's note on RLC flow control (flow control will not be supported by RLC); <br> Restructured the texts on RLC AM and RLC UM receive operations, and added/modified the detailed descriptions; <br> Added description on prioritization of data to transmit (control > data; retransmission > new data); <br> Removed the term STATUS transmitting window; <br> Clarified that retransmission of negatively acknowledged data by STATUS PDU is mandatory and that retransmission of negatively acknowledged data by HARQ delivery failure is optional; Removed Editor's note on retransmission prohibit (there will be no conditions where negatively acknowledged data shall not be retransmitted); <br> Clarified description on polling trigger "Transmission of last data in buffer"; <br> Added new polling triggers "Every Poll_PDU PDUs" and "Every Poll_Byte Bytes", introduced their descriptions, and added an Editor's note that their configurability is FFS; <br> Added description on status reporting trigger "detection of reception failure of an RLC data PDU"; <br> Introduced description of the status prohibit function; <br> Removed Editor's note on the possibility to define more RLC control PDUs (no more RLC control PDUs will be defined); <br> Clarified the "most significant bit" and "least significant bit" in an RLC PDU; <br> Removed reference to bit numbers in RLC PDU; <br> Modified the order of fields in the 1byte UMD PDU header; Removed Editor's note on the order of fields in the AMD PDU / AMD PDU segment header (they are now confirmed); <br> Modified definition of ACK_SN; <br> Defined the special value of SOend; <br> Added description on the UM modulus operation; <br> Removed state variables VR(R-SO), VR(X-SO) and VR(UMR); Modified description/definition of state variables VR(MR), VR(X), VR(MS), VR(UR) and VR(UX); <br> Introduced new state variables VR(H) and VR(UH) and their descriptions; <br> Introduced new constants Poll_PDU and Poll_Byte and their descriptions; <br> Clarified that only one T_reordering will be running at one time for an RLC entity; <br> Introduced new timer T_status_prohibit and its description; Editorial corrections were made. | 8.0.0 | 8.1.0 |
+| 2008-05 | RP-40 | RP-080411 | 0002 | 1 | Clarification on STATUS PDU size for BSR | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0003 | - | Removal of Editor's Note on updating of VR(MS) upon expiry of T_reordering | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0004 | - | Removal of STATUS receiving window | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0005 | - | Duplicate detection in UM RLC | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0006 | - | Correction to Polling Procedure | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0007 | - | Miscellaneous corrections to TS 36.322 | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0008 | - | Small corrections to RLC | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0012 | - | CR to 36.322 on correction to RLC PDU reassembly | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0015 | 1 | 36.322 CR on 'RLC retransmission count and addition of Configurable Parameters' | 8.1.0 | 8.2.0 |
+
+
+| Change history |  |  |  |  |  |  |  |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Date | TSG \# | TSG Doc. | CR | Rev | Subject/Comment | Old | New |
+|  | RP-40 | RP-080411 | 0017 | - | Service alignments with TS 36.323 (PDCP) | 8.1.0 | 8.2.0 |
+|  | RP-40 | RP-080411 | 0018 | - | CR on the procedure to construct the STATUS PDU | 8.1.0 | 8.2.0 |
+| 2008-09 | RP-41 | RP-080691 | 0019 | 1 | Clarification of polling | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0020 | - | Corrections to formatting | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0021 | 2 | The value of ACK_SN for partial STATUS PDU | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0022 | 1 | Error cases for RLC | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0024 | - | RLC entity re-establishment | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0025 | - | Miscellaneous corrections to RLC specification | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0029 | - | Clarification of the reordering timer | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0032 | - | Clarification of Triggering Conditions for Status Reports | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0033 | - | RLC UMD PDU formats with LI | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0036 | - | Correction on UM Receive Operation | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0039 | - | Correction for TM RLC entity: 6.1.2.3 | 8.2.0 | 8.3.0 |
+|  | RP-41 | RP-080691 | 0040 | - | Removal of MBMS channels: 6.1.2.3 | 8.2.0 | 8.3.0 |
+| 2008-12 | RP-42 | RP-081019 | 0043 | - | Proposed CR for aligning the construction of partial Status PDUs with intended operation | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0046 | - | Error Handling in RLC | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0047 | - | Miscellaneous corrections to 36.322 | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0048 | - | Correction to Segment Offset fields | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0049 | - | Correction to the description of the delivery of RLC SDU | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0050 | - | Minor issues on RLC | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0054 | - | The setting of VR(X) | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0055 | - | Adding RLC TM operation | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0056 | - | Removing a redundant text on VT(A) setting | 8.3.0 | 8.4.0 |
+|  | RP-42 | RP-081019 | 0057 | - | Counting RLC Retransmissions | 8.3.0 | 8.4.0 |
+| 2009-03 | RP-43 | RP-090129 | 0058 | - | CR to 36.322 on RRC Parameters | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0059 | - | Local NACKing in UE | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0060 | - | Supporting RLC SDU larger than 2047 octets | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0061 | - | CR on the in sequence delivery function for UM | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0062 | - | Correction to Delivery of PDU | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0063 | 1 | Issues with SO, SOstart, and SOend fields | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0064 | - | Miscellaneous corrections to RLC specification | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0065 | - | Correction to status reporting triggering condition | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0066 | - | Alignment of one condition on setting the poll bit | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0067 | 1 | Proposed CR to 36.322 on Clarification on Polling procedure | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0068 | 1 | Every Poll_PDU PDUs and Every Poll_Byte bytes triggers | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0069 | - | UE behaviour when T_poll_retransmit expires | 8.4.0 | 8.5.0 |
+|  | RP-43 | RP-090129 | 0076 | - | Definition of RETX_COUNT missing | 8.4.0 | 8.5.0 |
+| 2009-06 | RP-44 | RP-090514 | 0080 | - | Reset of T_poll_retransmission | 8.5.0 | 8.6.0 |
+|  | RP-44 | RP-090514 | 0081 | - | RLC functions | 8.5.0 | 8.6.0 |
+|  | RP-44 | RP-090514 | 0082 | 1 | Correction to handling of reserved field | 8.5.0 | 8.6.0 |
+|  | RP-44 | RP-090514 | 0083 | - | Correction to condition for stopping t-Reordering in AM mode | 8.5.0 | 8.6.0 |
+| 2009-09 | RP-45 | RP-090906 | 0084 | - | Possible misinterpretation on incrementing RETX_COUNT | 8.6.0 | 8.7.0 |
+| 2009-12 | RP-46 | RP-091341 | 0087 | - | Capturing MBMS agreements in RLC | 8.7.0 | 9.0.0 |
+| 2010-03 | RP-47 | RP-100305 | 0089 | - | Correction to RLC entity | 9.0.0 | 9.1.0 |
+| 2010-06 | RP-48 | RP-100536 | 0091 | 1 | Correction of RLC VR(H) update | 9.1.0 | 9.2.0 |
+| 2010-09 | RP-49 | RP-100851 | 0092 | 1 | Miscellaneous corrections to RLC | 9.2.0 | 9.3.0 |
+| 2010-12 | RP-50 | - | - | - | Upgrade to Release 10 - no technical change | 9.3.0 | 10.0.0 |
+| 2012-09 | RP-57 | - | - | - | Upgrade to Release 11 - no technical change | 10.0.0 | 11.0.0 |
+| 2014-06 | RP-64 | RP-140892 | 0099 | 1 | Extended RLC LI field | 11.0.0 | 12.0.0 |
+| 2014-09 | RP-65 | RP-141511 | 0101 | - | Corrections to configuration of extended RLC LI field | 12.0.0 | 12.1.0 |
+| 2014-12 | RP-66 | - | - | - | MCC editorial update | 12.1.0 | 12.1.1 |
+| 2015-03 | RP-67 | RP-150376 | 0105 | 1 | RLC concatenation for extended LI field | 12.1.1 | 12.2.0 |
+|  | RP-67 | RP-150374 | 0107 | - | Introduction of ProSe Direct Communication | 12.1.1 | 12.2.0 |
+| 2015-09 | RP-69 | RP-151441 | 0108 | - | Corrections for STCH in 36.322 | 12.2.0 | 12.3.0 |
+| 2015-12 | RP-70 | RP-152071 | 0114 | - | Introduction of extended RLC protocol formats for CA enhancement | 12.3.0 | 13.0.0 |
+|  | RP-70 | RP-152080 | 0115 | - | Introduction of SC-PTM in RLC | 12.3.0 | 13.0.0 |
+| 2016-03 | RP-71 | RP-160470 | 0116 | 1 | Clarification on Polling for last data | 13.0.0 | 13.1.0 |
+| 2016-06 | RP-72 | RP-161078 | 0120 | 1 | Addition of sidelink in the overview model | 13.1.0 | 13.2.0 |
+|  | RP-72 | RP-161081 | 0121 | 2 | Introduction of NB-IoT | 13.1.0 | 13.2.0 |
+
+
+[^0]:    The present document has been developed within the $3{ }^{\text {rd }}$ Generation Partnership Project ( $3 \mathrm{GPP}{ }^{\mathrm{TM}}$ ) and may be further elaborated for the purposes of 3GPP.
+    The present document has not been subject to any approval process by the 3GPP Organisational Partners and shall not be implemented.
+    This Specification is provided for future development work within 3GPP only. The Organisational Partners accept no liability for any use of this Specification.
+    Specifications and reports for implementation of the 3GPP ${ }^{\text {TM }}$ system should be obtained via the 3GPP Organisational Partners' Publications Offices.
+

@@ -1,6 +1,6 @@
-\section*{Supplement to InfiniBand ${ }^{\mathbf{T M}}$ Architecture Specification Volume 1 Release 1.2.1}
+## Supplement to InfiniBand ${ }^{\mathbf{T M}}$ Architecture Specification Volume 1 Release 1.2.1
 
-\section*{Annex A17: RoCEv2}
+## Annex A17: RoCEv2
 
 Copyright (c) 2010 by InfiniBand ${ }^{\text {TM }}$ Trade Association.
 All rights reserved.
@@ -8,9 +8,10 @@ All trademarks and brands are the property of their respective owners.
 This document contains information proprietary to the InfiniBand ${ }^{\mathrm{TM}}$ Trade Association. Use or disclosure without written permission by an officer of the InfiniBand ${ }^{\mathrm{TM}}$ Trade Association is prohibited.
 Table 0 Revision History
 
-\section*{Revision Date}
+## Revision Date
 
-\section*{Legal Disclaimer}
+## Legal Disclaimer
+
 This specification provided "AS IS" and without any ..... 9
 warranty of any kind, including, without limitation, ..... 10any express or implied warranty of non-infringement,merchantability or fitness for a particular purpose.111213
 14In no event shall IBTA or any member of IBTA be liablefor any direct, indirect, special, exemplary, punitive,15
@@ -18,7 +19,8 @@ warranty of any kind, including, without limitation, ..... 10any express or impl
 17tion lost profits even if advised of the possibility of18
 such damages. ..... 192021222324252627282930313233
 
-\section*{Annex A17: RoCEv2 (IP Routable RoCE)}
+## Annex A17: RoCEv2 (IP Routable RoCE)
+
 A17.1 Introduction
 This document is an annex to Volume 1 release 1.2.1 of the InfiniBand Ar-chitecture, herein referred to as the base specification. This annex is Op- 8tional Normative, meaning that implementation of the feature described by 9this annex is Optional, but if present, the implementation must comply with 10
 the compliance statements contained within this annex. This specification ..... 11
@@ -56,31 +58,23 @@ Ethernet L2 domain. ..... 363738
 5. Including VLANs and all other Ethernet header variations as defined by IEEE 802 ..... 40
 6. $0 \times 8915$ ..... 4142
 
-\section*{A17.2.4 RoCEv2 (IP Routable RoCE)}
+## A17.2.4 RoCEv2 (IP Routable RoCE)
 
 RoCEv2 is a straightforward extension of the RoCE protocol that involves a simple modification of the RoCE packet format. Instead of the GRH, RoCEv2 packets carry an IP header which allows traversal of IP L3 Routers and a UDP header that serves as a stateless encapsulation layer for the RDMA Transport Protocol Packets over IP.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-05.jpg?height=738&width=1728&top_left_y=657&top_left_x=206}
-\captionsetup{labelformat=empty}
-\caption{Figure 3 RoCEv2 and RoCE Frame Format Differences}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-05.jpg?height=738&width=1728&top_left_y=657&top_left_x=206)
+Figure 3 RoCEv2 and RoCE Frame Format Differences
+
 RoCEv2 packets use a well-known UDP Destination Port (dport) value that unambiguously distinguishes them in a stateless manner.As an additional benefit, following common practices in UDP encapsu-
 lated protocols, the UDP Source Port (sport) field of RoCEv2 packetsserves as an opaque flow identifier that can be used by the networking in-frastructure for packet forwarding optimizations - see Section 17.9.4, 3"ECMP for RoCEv2," on page 21.
 Since this approach exclusively affects the packet format on the wire, and due to the fact that with RDMA semantics packets are generated and con- sumed below the API, applications can operate over any form of RDMA service (including RoCEv2) in a completely transparent way ${ }^{7}$ (see Figure 4).
 7. Widespread RDMA APIs are IP based for all existing RDMA technologies31323334
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-06.jpg?height=880&width=1413&top_left_y=433&top_left_x=361}
-\captionsetup{labelformat=empty}
-\caption{Figure 4 RoCEv2 Protocol Stack}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-06.jpg?height=880&width=1413&top_left_y=433&top_left_x=361)
+Figure 4 RoCEv2 Protocol Stack
 
-\begin{figure}
-\captionsetup{labelformat=empty}
-\caption{Figure 4 RoCEv2 Protocol Stack}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-06.jpg?height=519&width=1797&top_left_y=1486&top_left_x=176}
-\end{figure}
+Figure 4 RoCEv2 Protocol Stack
+![](https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-06.jpg?height=519&width=1797&top_left_y=1486&top_left_x=176)
 
 Figure 5 RoCEv2 Packet Format
 A17.3.1 Ethertypes and IP Header Fields
@@ -101,9 +95,9 @@ A17.3.1.1.4 Total LengthCA17-6: For RoCEv2 packets with IPv4, the Total Length f
 A17.3.1.1.5 Flags
 CA17-7: For RoCEv2 packets with IPv4 the Flags field shall be set to '010' (don't fragment bit is set).1234567891112131415161718192021232425262728293031323334
 
-\section*{A17.3.1.1.6 Fragment Offset}
+## A17.3.1.1.6 Fragment Offset
 
-\section*{A17.3.1.1.7 Time to Live}
+## A17.3.1.1.7 Time to Live
 
 CA17-8: For RoCEv2 packets with IPv4 the Fragment Offset field shall be set to 0 .
 
@@ -114,20 +108,20 @@ CA17-9: For RoCEv2 packets with IPv4 the Time to Live field shall be set to the 
 
 CA17-11: The Source IP Address of RoCEv2 packets with IPv4 shall be set to the IPv4 address encoded in the Port GID entry referenced by the "port" and "SGID index" components of the Address Vector associated with the packet.
 
-\section*{A17.3.1.1.9 Source and Destination IP Addresses}
+## A17.3.1.1.9 Source and Destination IP Addresses
 
-\section*{A17.3.1.1.8 Protocol}
+## A17.3.1.1.8 Protocol
 
-\section*{A17.3.1.2 RoCEv2 with IPv6}
+## A17.3.1.2 RoCEv2 with IPv6
 
 The Ethertype value for IPv6 as assigned by IEEE is 0x86DD.
 The format of the IPv6 header and its fields are specified by the IETF in RFC2460, RFC2474 and RFC3168. The sub-sections below define the values for relevant fields in the IPv6 header of RoCEv2 packets.
 
-\section*{A17.3.1.2.1 Differentiated Services Codepoint (DSCP)}
+## A17.3.1.2.1 Differentiated Services Codepoint (DSCP)
 
 CA17-13: For RoCEv2 packets with IPv6, the DSCP field shall be set to the value in the Traffic Class component of the Address Vector associated with the packet.
 
-\section*{A17.3.1.2.2 Explicit Congestion Notification (ECN)}
+## A17.3.1.2.2 Explicit Congestion Notification (ECN)
 
 RoCEv2 makes use of the ECN field in the IPv6 header for signaling of congestion as defined by the IETF in RFC3168. See Section 17.9.3, "RoCEv2 Congestion Management," on page 20.
 
@@ -135,45 +129,45 @@ For HCAs that support RoCEv2 Congestion Management, the ECN field in the IPv6 he
 
 CA17-14: For HCAs that don't support RoCEv2 Congestion Management, the ECN field in the IPv6 header of a RoCEv2 packet shall be set to '00'.
 
-\section*{A17.3.1.2.3 Payload Length}
+## A17.3.1.2.3 Payload Length
 
 CA17-15: For RoCEv2 packets with IPv6, the Payload Length field shall be set to the length of the IPv6 packet payload starting from the first byte after the IPv6 header (i.e. the BTH) up to and including the 4 bytes of the ICRC
 
-\section*{A17.3.1.2.4 Next Header}
+## A17.3.1.2.4 Next Header
 
 CA17-16: For RoCEv2 packets with IPv6 the Next Header field shall be set to $0 \times 11$ (UDP).
 
-\section*{A17.3.1.2.5 Hop Limit}
+## A17.3.1.2.5 Hop Limit
 
 CA17-17: For RoCEv2 packets with IPv6 the Hop Limit field shall be set to the value in the Hop Limit component of the Address Vector associated with the packet.
 
-\section*{A17.3.1.2.6 Source and Destination IP Addresses}
+## A17.3.1.2.6 Source and Destination IP Addresses
 
 CA17-18: The Source IP Address of RoCEv2 packets with IPv6 shall be set to the IPv6 address in the Port GID entry referenced by the "port" and "SGID index" components of the Address Vector associated with the packet.
 
 CA17-19: The Destination IP Address of RoCEv2 packets with IPv6 shall be set to the IPv6 address in the DGID component of the Address Vector associated with the packet.
 
-\section*{A17.3.2 UDP Header Fields}
+## A17.3.2 UDP Header Fields
 
 The UDP header format is defined by IETF in RFC768. The sub-sections below define the values for relevant fields in the UDP header of RoCEv2 packets.
 
-\section*{A17.3.2.1 Source Port}
+## A17.3.2.1 Source Port
 
 The Source Port field in the UDP header of a RoCEv2 packet may be used by network devices as a component in the selection of a route among multiple possible alternative routes - see Section 17.9.4, "ECMP for RoCEv2," on page 21 . For that reason, HCAs should use a fixed value across packets where ordering matters between them (e.g. packets of a connected QP).
 
-\section*{A17.3.2.2 Destination Port}
+## A17.3.2.2 Destination Port
 
 CA17-20: The Destination Port field in the UDP header of RoCEv2 packets shall be set to the value allocated by IANA ${ }^{8}$ for use with RoCEv2.
 
-\section*{A17.3.2.3 Length}
+## A17.3.2.3 Length
 
 CA17-21: The Length field in the UDP header of RoCEv2 packets shall be set to the number of bytes counting from the beginning of the UDP header up to and including the 4 bytes of the ICRC.
 
-\section*{A17.3.2.4 Checksum}
+## A17.3.2.4 Checksum
 
 The Checksum field in the UDP header of RoCEv2 packets should be set to 0 .
 
-\section*{A17.3.3 ICRC for RoCEv2 Packets}
+## A17.3.3 ICRC for RoCEv2 Packets
 
 > RoCEv2 implements a 32b end-to-end CRC (denoted ICRC) that covers all invariant fields of the packet and offers protection beyond the coverage of the Ethernet Frame Checksum (FCS) that is usually updated hop-byhop in the fabric.
 CA17-22: The rules for generation/checking of the ICRC of RoCEv2 packets follow the ICRC calculation in RoCE and InfiniBand as defined in Volume 1 of the InfiniBand Specification Section 7.8.1 subject to:
@@ -182,19 +176,22 @@ CA17-22: The rules for generation/checking of the ICRC of RoCEv2 packets follow 
 (c) The variant fields in the IP header are replaced with '1s for the purpose of the ICRC calculation/check so that changes to these fields along the way don't affect the calculated ICRC value.
 
 For RoCEv2 over IPv4 the fields replaced with '1s for the purpose of ICRC
- calculation are:
+calculation are:
 
-\section*{- Time to Live}
+## - Time to Live
 
-\section*{- Header Checksum}
+## - Header Checksum
 
-\section*{- Type of Service (DSCP and ECN).}
+## - Type of Service (DSCP and ECN).
 
-\section*{For RoCEv2 over IPv6 the fields replaced with '1s for the purpose of ICRC calculation are:}
+## For RoCEv2 over IPv6 the fields replaced with '1s for the purpose of ICRC calculation are:
+
 - Traffic Class (DSCP and ECN)
 - Flow Label
+
 8. Once allocated by IANA will be updated to include the actual value
 9. This is to make it equivalent to the RoCE(v1) ICRC that runs 64 bits of ' 1 ' (dummyLRH) prior to the GRH through the ICRC machine following the spirit of the IB ICRCcalculation (IB Spec Vol. 1 Section 7.8.1)
+
 - Hop Limit.
 (d) UDP Checksum field is replaced with '1s for the purpose of the ICRC calculation/check.
 A17.3.4 RoCEv2 Inbound Packet Validation ..... 6
@@ -210,7 +207,8 @@ IPv4-mapped IPv6 addresses namely: GID =::ffff:<IPv4 Address>. ..... 37
 39
 All references in the Base Specification to the LRH and its fields are Not ..... 40Applicable to RoCEv2 ports.41
 
-\section*{A17.4.2 Address Vector}
+
+## A17.4.2 Address Vector
 
 The InfiniBand Specification defines an Address Vector that is used to denote a remote destination and the path parameters selected to communicate with it. (InfiniBand Specification Vol. 1 Rev 1.2.1 Section 11.2.2 and Section 11.2.4.2).
 
@@ -233,29 +231,30 @@ The "Source Path Bits" component of the Address Vector is not applicable for RoC
 
 CA17-27: For RoCEv2 with IPv6, if the version number is anything other than 6 , the packet shall be silently dropped. For RoCEv2 with IPv4, if the version number is anything other than 4 , the packet shall be silently dropped.
 
-\section*{A17.4.4.2 Address Validation Rules}
+## A17.4.4.2 Address Validation Rules
 
 The Base Specification mandates L3 Address validation rules for inbound packets (InfiniBand Specification Vol. 1 Rev 1.2.1 Section 9.6.1.2.3). These rules apply to RoCEv2 packets. For the purpose of these checks, the Source and Destination GIDs of RoCEv2 packets with IPv6 are the IPv6 SIP and DIP addresses respectively. For RoCEv2 with IPv4, the SGID and DGID are respectively obtained from the IPv4 SIP and DIP addresses following the common practice used to map an IPv4 address into an IPv6 one namely: GID =::fff: <|Pv4>.
 
 In addition, the DGID check is amended to include verification of protocol type as detailed in Section 17.8, "Interoperability with RoCE Endnodes," on page 18
 
-\section*{A17.4.5 Unreliable Datagram (UD)}
+## A17.4.5 Unreliable Datagram (UD)
 
-\section*{A17.4.5.1 UD Completion Queue Entries (CQEs)}
+## A17.4.5.1 UD Completion Queue Entries (CQEs)
 
 For UD, the Completion Queue Entry (CQE) includes remote address information (InfiniBand Specification Vol. 1 Rev 1.2.1 Section 11.4.2.1). For RoCEv2, the remote address information comprises the source L2 Address and a flag that indicates if the received frame is an IPv4, IPv6 or RoCE packet.
 
-\section*{A17.4.5.2 Scattering of the L3 Header in UD}
+## A17.4.5.2 Scattering of the L3 Header in UD
 
 The first 40 bytes of user posted UD Receive Buffers are reserved for the L3 header of the incoming packet (as per the InfiniBand Spec Section 11.4.1.2). In RoCEv2, this area is filled up with the IP header. IPv6 header uses the entire 40 bytes. IPv4 headers use the 20 bytes in the second half of the reserved 40 bytes area (i.e. offset 20 from the beginning of the receive buffer). In this case, the content of the first 20 bytes is undefined.
 
-\section*{A17.4.6 IB Raw Datagrams}
+## A17.4.6 IB Raw Datagrams
 
 The InfiniBand Architecture defines a Raw service which does not use the InfiniBand transport (InfiniBand Specification Vol. 1 Rev 1.2.1 Section 9.8.4). The Raw services as defined in the base specification are provided by the InfiniBand link layer. Similarly to RoCE, since RoCEv2 does not use the InfiniBand link layer, IB RAW datagrams, namely Raw Ethertype and Raw IPv6, are not applicable for RoCEv2.
 
 CA17-28: An implementation of an HCA claiming conformance to this annex shall not support the concept of IB Raw Datagrams on a RoCEv2 port.
 
 ![](https://cdn.mathpix.com/cropped/927de098-2d2d-4155-a85c-bb8cec058cb4-15.jpg?height=2452&width=1889&top_left_y=140&top_left_x=165)
+
 - The maximum number of virtual lanes supported by this HCA is unused and shall be ignored.
 - The Optional InitTypeReply value is unused and shall be ignored.
 - The Subnet Manager address information for each RoCE port of this HCA is unused and shall be ignored.
@@ -263,58 +262,66 @@ CA17-28: An implementation of an HCA claiming conformance to this annex shall no
 - A new value ("RoCEv2") shall be added for the port-type attribute of the Port Attributes list to denote that the port is of RoCEv2 type
 - A new "RoCE Supported" capability bit shall be added to the Port Attributes list. This capability bit applies exclusively to ports of the new "RoCEv2" type. When set, it denotes that the port is capable of operating simultaneously in RoCEv2 and RoCE modes. See Section 17.8, "Interoperability with RoCE Endnodes," on page 18.
 
-\section*{A17.5.2 MODIFY HCA}
+
+## A17.5.2 MODIFY HCA
 
 The Port Attribute List Input Modifier for this verb when associated with a RoCEv2 port shall be changed as follows:
+
 - The CapabilityMask bits IsSM, IsSNMPTunnelingSupported are unused and are reserved.
 
-\section*{A17.5.3 CREATE/MODIFY/QUERY ADDRESS HANDLE}
+
+## A17.5.3 CREATE/MODIFY/QUERY ADDRESS HANDLE
 
 The Address Vector component shall be modified in accordance with Section 17.4.2, "Address Vector," on page 10.
 
 For CREATE/MODIFY ADDRESS HANDLE, the Invalid Address Vector error may be returned due to the use of a reserved SL value (SL 8-15 are reserved) when the QP is associated with a RoCEv2 port.
 
-\section*{A17.5.4 MODIFY/QUERY QUEUE PAIR / MODIFY/QUERY XRC TARGET QP}
+## A17.5.4 MODIFY/QUERY QUEUE PAIR / MODIFY/QUERY XRC TARGET QP
 
 The Address Vector and Alternate Path components shall be modified in accordance with Section 17.4.2, "Address Vector," on page 10.
 
 For MODIFY QUEUE PAIR / MODIFY XRC TARGET QP, the Invalid Address Vector error may be returned due to the use of a reserved SL value (SL 8-15 are reserved) when this QP is associated with a RoCEv2 port.
 
-\section*{A17.5.5 MODIFY/QUERY EE CONTEXT}
+## A17.5.5 MODIFY/QUERY EE CONTEXT
 
 The Primary Address Vector and Alternate Path components shall be modified in accordance with Section 17.4.2, "Address Vector," on page 10.
 
-\section*{For MODIFY EE CONTEXT, the Invalid Address Vector error may be returned due to the use of a reserved SL value (SL 8-15 are reserved) when this EE CONTEXT is associated with a RoCEv2 port.}
+## For MODIFY EE CONTEXT, the Invalid Address Vector error may be returned due to the use of a reserved SL value (SL 8-15 are reserved) when this EE CONTEXT is associated with a RoCEv2 port.
 
-\section*{A17.5.6 ATTACH/DETACH QP TO/FROM MULTICAST GROUP}
+## A17.5.6 ATTACH/DETACH QP TO/FROM MULTICAST GROUP
 
 If the QP is associated with a RoCEv2 port, the Input Modifiers for this verb shall be changed as follows:
+
 - The Multicast group MLID is unused and shall be ignored.
 
 The Output Modifiers for this verb when associated with a RoCE port shall be changed as follows:
+
 - "Invalid multicast MLID" is removed as a valid Verb Result
 
-\section*{A17.5.7 POLL FOR COMPLETION}
+
+## A17.5.7 POLL FOR COMPLETION
 
 The output modifier of the Poll for Completion shall be changed as follows:
+
 - If the port is a RoCEv2 port, the remote port address and QP information returned for datagram services (shown in Table 97 of the base specification) shall be modified in accordance with Section 17.4.5.1, "UD Completion Queue Entries (CQEs)," on page 12
 
-\section*{A17.5.8 GET SPECIAL QP}
+
+## A17.5.8 GET SPECIAL QP
 
 Since there is no QP0 associated with a RoCEv2 port, and since a RoCEv2 port does not support either Raw datagram type, for a RoCEv2 port, Get Special QP only applies to the GSI QP (QP1).
 
 Thus compliance statement C11-13 in Section 11.2.5 of the base specification does not apply to a RoCEv2 port with respect to QP0, and compliance statement o11-1 does not apply. An attempt to call GET SPECIAL QP on a RoCEv2 port for a QP other than QP1 shall return an "Invalid Special QP Type" error.
 
-\section*{A17.5.9 POST SEND REQUEST}
+## A17.5.9 POST SEND REQUEST
 
 The Post Send Request verb shall be modified to eliminate Raw as one of the possible service types. The "Operation Type Matrix" under the POST SEND REQUEST verb in the base document is modified to effectively eliminate the row of the table governing the Raw service type.
 
-\section*{A17.5.10 UNAFFILIATED ASYNCHRONOUS EVENTS}
+## A17.5.10 UNAFFILIATED ASYNCHRONOUS EVENTS
 
 CA17-31: A RoCEv2 port shall not support Client Reregistration.
 CA17-32: A RoCEv2 port shall not support the optional Port Change Event
 
-\section*{A17.6 InfiniBand Management Considerations}
+## A17.6 InfiniBand Management Considerations
 
 The following management classes specified in the InfiniBand Architecture as well as their associated normative statements are not applicable to RoCEv2 ports: Subnet Management, Subnet Administration, Performance Management, Device Management, Baseboard Management, SNMP Tunneling, Vendor specific, Application specific classes, Congestion Control, Boot Management and BIS. Instead, RoCEv2 ports are attached to IP subnets that are managed using common Ethernet/IP management practices and standards that are out of scope of this specification.
 
@@ -324,7 +331,7 @@ CA17-33: A packet arriving at a RoCEv2 port containing a BTH with the destinatio
 
 It is expected that there is no InfiniBand management communication between an Ethernet and an InfiniBand management domain. Therefore, any InfiniBand method/attribute combination that refers to a RoCE port may return error code 7 in the "Code for invalid field" of the MAD Common Status field (One or more fields in the attribute or attribute modifier contains an invalid value. Invalid values include reserved values and values that exceed architecturally defined limits).
 
-\section*{A17.6.1 Communication Management}
+## A17.6.1 Communication Management
 
 RoCEv2 utilizes the InfiniBand Architecture Communication Management protocol as defined in Chapter 12 of the base specification. Modifications to the specific MADs required to eliminate references to local addresses are contained in this section.
 
@@ -332,57 +339,61 @@ Communication Management packets for RoCEv2 connections are regular RoCEv2 packe
 
 Communication Management packets for RoCE connections involving RoCEv2 ports that are also capable of generating and processing RoCE packets (Section 17.5.1, "QUERY HCA," on page 13), are RoCE packets.
 
-\section*{A17.6.1.1 REQ Message}
+## A17.6.1.1 REQ Message
 
 CA17-34: When a connection is being established between RoCEv2 ports, the Primary Local Port LID, Primary Remote Port LID, Alternate Local Port LID and Alternate Remote Port LID fields of the REQ message are Reserved and shall be ignored on receipt. The value of these fields shall not be checked or validated by a recipient of a REQ message.
 
-\section*{A17.6.1.2 REJ Message}
+## A17.6.1.2 REJ Message
 
 CA17-35: When a connection is being established between RoCEv2 ports, the following reject reason codes shall not be sent as part of a REJ message:
+
 - code 13: Primary Remote Port LID rejected
 - code 19: Alternate Remote Port LID rejected
 
-\section*{A17.6.1.3 LAP Message}
+
+## A17.6.1.3 LAP Message
 
 CA17-36: When alternate paths are being established between RoCEv2 ports, the Alternate Local Port LID and Alternate Remote Port LID fields are Reserved and shall be ignored on receipt. The value of these fields shall not be checked or validated by a recipient of a LAP message.
 
-\section*{A17.6.1.4 APR Message}
+## A17.6.1.4 APR Message
 
 CA17-37: When alternate paths are being established between RoCEv2 ports, the following APR status code shall not be sent as part of an APR message:
+
 - code 7: Proposed Alternate Remote Port LID rejected.
 
-\section*{A17.6.1.5 SAP Message}
+
+## A17.6.1.5 SAP Message
 
 CA17-38: The value of the Alternate Local Port LID is reserved and shall be ignored on receipt.
 
-\section*{A17.7 Channel Adapters}
+## A17.7 Channel Adapters
 
 The base specification defines specific hardware entities such as channel adapters and switches which implement all layers of the InfiniBand Architecture including the InfiniBand-defined physical and link layers. Chapter 17 of the base specification sets forth specific requirements for a channel adapter. Most of the compliance statements contained in Chapter 17 of the base specification apply to a CA which supports one or more RoCEv2 ports. This section describes the exceptions.
 
-\section*{A17.7.1 Loading The P_KEY Table}
+## A17.7.1 Loading The P_KEY Table
 
 Compliance statement C17-7 describes requirements for setting the P_Key table based on an assumption that the P_Key table is set directly by a Subnet Manager. However, RoCEv2 ports do not support InfiniBand Subnet Management. Therefore, compliance statement C17-7 does not apply to RoCEv2 ports.
 
 Methods for setting the P_Key table associated with a RoCEv2 port are not defined in this specification, except for the requirements for a default P_Key described elsewhere in this annex.
 
-\section*{A17.7.2 Locally Routed Packets}
+## A17.7.2 Locally Routed Packets
 
 Compliance statement C17-9 refers to locally routed packets which don't exist with RoCEv2 Thus, C17-9 is not applicable to RoCEv2 ports.
 
-\section*{A17.7.3 Backpressure and Deadlock Prevention}
+## A17.7.3 Backpressure and Deadlock Prevention
 
 Compliance statements C17-19 and C17-20 place specific limitations on a CA's ability to apply backpressure. For a CA claiming compliance to this annex, these requirements do not apply to RoCEv2 ports.
 
-\section*{A17.7.4 Inbound Packet Checking}
+## A17.7.4 Inbound Packet Checking
 
 Compliance statement C17-21 is replaced as follows:
 CA17-39: For RoCEv2 ports, the CA shall check for transport layer errors in all incoming packets
 
-\section*{A17.7.5 Support for QP0}
+## A17.7.5 Support for QP0
 
 Compliance statement C17-24 is not applicable to RoCEv2 ports.
 
-\section*{A17.8 Interoperability with RoCE Endnodes}
+## A17.8 Interoperability with RoCE Endnodes
 
 RoCEv2 and RoCE Ports can interoperate with each other. For this purpose, RoCEv2 ports are optionally capable of generating and processing RoCE packets. (Section 17.5.1, "QUERY HCA," on page 13)
 
@@ -396,9 +407,9 @@ CA17-42: UD QPs on RoCEv2 ports that support RoCE shall generate packets in the 
 
 CA17-43: UD QPs on RoCEv2 ports that support RoCE shall accept as valid both RoCE and RoCEv2 packets.
 
-\section*{A17.9 RoCEv2 Network Considerations}
+## A17.9 RoCEv2 Network Considerations
 
-\section*{A17.9.1 Lossless Network}
+## A17.9.1 Lossless Network
 
 As with RoCE, the underlying networks for RoCEv2 should be configured as lossless. In this context, lossless doesn't mean that packets are absolutely never lost. Moreover, the Transport Protocol in RoCEv2 includes an end-to-end reliable delivery mechanism with built-in packet retransmission logic. This logic is typically implemented in HW and is triggered to recover from lost packets without the need for intervention by the software stack. The requirement for an underlying lossless network is aimed at preventing RoCEv2 packet drops as a result of contention in the fabric.
 
@@ -408,11 +419,11 @@ In order to ensure end-to-end lossless behavior for RoCEv2 packets that traverse
 
 This lossless recommendation does not impose a constraint on nonRoCEv2 traffic that could coexist with RoCEv2 on a converged network scenario. Such traffic should be configured to use a distinct set of priorities where Link Level Flow Control could be disabled. Network devices (L2 switches and L3 routers) typically allocate separate queues and buffer resources to traffic on distinct priorities. This creates an effective isolation that decouples the RoCEv2 lossless traffic from the other flows (e.g. TCP) that usually operate in lossy mode.
 
-\section*{A17.9.2 RoCEv2 QoS}
+## A17.9.2 RoCEv2 QoS
 
 RoCEv2 traffic can take advantage of IP/Ethernet L3/L2 QoS. Given some of the most prevalent use cases for RDMA technology (e.g. low latency, high bandwidth), the use of QoS becomes particularly relevant in a converged environment where RoCEv2 traffic shares the underlying network with other TCP/UDP packets. In this regard, RoCEv2 traffic is no different than other IP flows: QoS is achieved through proper configuration of relevant mechanisms in the fabric such as the Enhanced Transmission Selection (ETS) defined in 802.1 Qaz. Packet/flow identification follows standard practices of IP/Ethernet networks (i.e. DSCP/802.1Q) and is controlled through the Traffic Class parameter in the Address Vector - see Section 17.4.2, "Address Vector," on page 10.
 
-\section*{A17.9.3 RoCEv2 Congestion Management}
+## A17.9.3 RoCEv2 Congestion Management
 
 RoCEv2 Congestion Management (RCM) provides the capability to avoid congestion hot spots and optimize the throughput of the fabric. With RCM, incipient congestion in the fabric is reported back to the sources of traffic that in turn react by throttling down their injection rates thus preventing the negative effects of fabric buffer saturation and increased queuing delays.
 
@@ -429,38 +440,21 @@ CA17-45: If RoCEv2 Congestion Management is supported, upon reception of a RoCEv
 CA17-46: If RoCEv2 Congestion Management is supported, the HCA should increase the injection rate on a QP when a configurable amount of elapsed time and/or a configurable number of bytes have been transmitted on that QP since the reception of the most recent RoCEv2 CNP for
 12. IEEE 802.1Qaz ETS or similar mechanisms
 
-\begin{table}
-\begin{tabular}{|l|l|}
-\hline \begin{tabular}{l}
-InfiniBand ${ }^{\mathrm{TM}}$ Architecture \\
-Volume 1 - General Specifications
-\end{tabular} & RoCEv2 (IP Routable RoCE) \\
-\hline & \begin{tabular}{l}
-that QP. The configuration for the amount of time, number of bytes mitted and rate of increase are outside the scope of this specification \\
-The RoCEv2 Congestion Notification Packet format is shown in Fig
-\end{tabular} \\
-\hline \multicolumn{2}{|c|}{} \\
-\hline \multicolumn{2}{|c|}{IPv4/IPv6 Header} \\
-\hline \multicolumn{2}{|c|}{UDP Header} \\
-\hline \multicolumn{2}{|l|}{\begin{tabular}{l}
-BTH \\
-DestQP set to QPN for which the RoCEv2 CNP is generated \\
-Opcode set to b'10000001 \\
-PSN set to 0 \\
-SE set to 0 \\
-M set to 0 \\
-P_Key set to the same value as in the BTH of the ECN packet marked
-\end{tabular}} \\
-\hline \multicolumn{2}{|l|}{(16 bytes) - Reserved. MUST be set to 0 by sender. Ignored by receiver} \\
-\hline & ICRC \\
-\hline \multicolumn{2}{|c|}{FCS} \\
-\hline
-\end{tabular}
-\captionsetup{labelformat=empty}
-\caption{Figure 6 RoCEv2 CNP Format}
-\end{table}
+| InfiniBand ${ }^{\mathrm{TM}}$ Architecture <br> Volume 1 - General Specifications | RoCEv2 (IP Routable RoCE) |
+| :--- | :--- |
+|  | that QP. The configuration for the amount of time, number of bytes mitted and rate of increase are outside the scope of this specification <br> The RoCEv2 Congestion Notification Packet format is shown in Fig |
+|  |  |
+| IPv4/IPv6 Header |  |
+| UDP Header |  |
+| BTH <br> DestQP set to QPN for which the RoCEv2 CNP is generated <br> Opcode set to b'10000001 <br> PSN set to 0 <br> SE set to 0 <br> M set to 0 <br> P_Key set to the same value as in the BTH of the ECN packet marked |  |
+| (16 bytes) - Reserved. MUST be set to 0 by sender. Ignored by receiver |  |
+|  | ICRC |
+| FCS |  |
 
-\section*{A17.9.4 ECMP FOR RoCEv2}
+Figure 6 RoCEv2 CNP Format
+
+## A17.9.4 ECMP FOR RoCEv2
+
 Data Center IP networks usually implement path selection mechanisms
 for load balancing and improved utilization of the fabric topology. Equal
 Cost Multiple Paths (ECMP) is one prevalent method to achieve this goal.
@@ -470,3 +464,4 @@ multiple paths while preserving the ordering requirements of individual
 flows.
 
 RoCEv2 packets carry an opaque flow identifier in their UDP Source Port field Section 17.3.2.1, "Source Port," on page 7 which is part of said hash for UDP packets. Consequently, RoCEv2 endnodes set this field so that packets in a sequence that has ordering constraints (e.g. packets from a connected QP) will all carry a constant value. For packets that have no ordering constraints with respect to each other, the UDP Source Port field can be set to different values.
+

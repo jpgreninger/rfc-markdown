@@ -1,16 +1,13 @@
-\title{
-Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3
-}
+# Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3 
 
-\author{
 Document 3: Implementor's Test Data
-}
 
-\section*{Blank Page}
+## Blank Page
 
-\section*{PREFACE}
+## PREFACE
 
 This specification has been prepared by the 3GPP Task Force, and gives detailed test data for implementors of the algorithm set. It provides visibility of the internal state of the ZUC algorithm to aid in its realization, as well as black box input-output test data. The test data has been selected to give a high degree of confidence that the implementation is correct. However, no claim is made that conformance with this test data guarantees a correct implementation. This document is the third of three, which between them form the entire specification of the 3GPP Confidentiality and Integrity Algorithms:
+
 - Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
 Document 1: 128-EEA3 and 128-EIA3 Specifications.
 - Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
@@ -19,9 +16,11 @@ Document 2: ZUC Specification.
 Document 3: Implementor's Test Data.
 This document is purely informative. The normative part of the specification of the 128-EEA3 (confidentiality) and the 128-EIA3 (integrity) algorithms is in the main body of document 1. The normative part of the specification of ZUC is found in document 2.
 
-\section*{Blank Page}
 
-\section*{TABLE OF CONTENTS}
+## Blank Page
+
+## TABLE OF CONTENTS
+
 1 OUTLINE OF THE DESIGN CONFORMANCE TEST DATA ..... 8
 2 INTRODUCTORY INFORMATION ..... 8
 2.1 Introduction ..... 8
@@ -52,7 +51,8 @@ This document is purely informative. The normative part of the specification of 
 5.5 Test Set 4 ..... 20
 5.6 Test Set 5 ..... 21
 
-\section*{REFERENCES}
+## REFERENCES
+
 [1] 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3G Security; Security Architecture (3G TS 33.102 version 6.3.0)
 [2] 3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; 3G Security; Cryptographic Algorithm Requirements; (3G TS 33.105 version 6.0.0)
 [3] Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
@@ -64,47 +64,49 @@ Document 3: Implementor's Test Data.
 [6] Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
 Document 4: Design and Evaluation Report.
 
-\section*{1 OUTLINE OF THE TEST DATA}
+## 1 OUTLINE OF THE TEST DATA
 
 Section 2 introduces the algorithms and describes the notation used in the subsequent sections.
 Section 3 provides test data for the ZUC algorithm.
 Section 4 provides test data for the confidentiality algorithm 128-EEA3.
 Section 5 provides test data for the integrity algorithm 128-EIA3.
 
-\section*{2 INTRODUCTORY INFORMATION}
+## 2 INTRODUCTORY INFORMATION
 
-\subsection*{2.1 Introduction}
+### 2.1 Introduction
 
 Within the security architecture of the 3GPP system there are two standardised algorithms; a confidentiality algorithm 128-EEA3, and an integrity algorithm 128-EIA3. These algorithms are specified in a companion document[3].
 
 This document provides sets of input/output test data for 'black box' testing of physical realisations of the ZUC, 128-EEA3 and 128-EIA3 algorithms. It also provides some internal values within the ZUC algorithm, to aid in its implementation.
 
-\subsection*{2.2 Radix}
+### 2.2 Radix
 
 Unless stated otherwise, all test data values presented in this document are in hexadecimal.
 
-\subsection*{2.3 Bit/Byte ordering}
+### 2.3 Bit/Byte ordering
 
 All data variables in this specification are presented with the most significant bit (or byte) on the left hand side and the least significant bit (or byte) on the right hand side.
 
-\subsection*{2.4 Presentation of input/output data}
+### 2.4 Presentation of input/output data
 
 The basic data processed by the 128-EEA3 and 128-EIA3 algorithms are bit streams. In general in this document the data is presented in hexadecimal format as bytes, thus the last byte shown as part of an input or output data stream may include between 0 and 7 bits that are ignored once the LENGTH parameter is taken into account. (The least significant bits of the byte are ignored).
 
-\subsection*{2.5 Coverage}
+### 2.5 Coverage
 
 For each of the algorithms the test data have been selected such that, provided the entire test set is run:
+
 - Each key bit will have been in both the '1' and the '0' states,
 - Each bit of the initialisation fields (COUNT, FRESH, BEARER, DIRECTION) will have been in both the ' 1 ' and the ' 0 ' states,
 - If the test set for 128-EEA3 is run every entry in the internal S -boxes $\mathrm{S}_{0}$ and $\mathrm{S}_{1}$ will have been accessed.
 
-\section*{3 ZUC}
 
-\subsection*{3.1 Overview}
+## 3 ZUC
+
+### 3.1 Overview
 
 The test data sets presented here are for the ZUC stream cipher algorithm.
 
-\subsection*{3.2 Format}
+### 3.2 Format
 
 Each test set starts by showing the input and output data values.
 This is followed by a table showing the state of the LFSR at the beginning of the computation.
@@ -115,7 +117,8 @@ Then the state of the LFSR and the nonlinear function F at the end of the initia
 
 For the first 3 steps of keystream generation $\mathrm{X}_{0}, \mathrm{X}_{1}, \mathrm{X}_{2}, \mathrm{X}_{3}, \mathrm{R}_{1}, \mathrm{R}_{2}$ are given in a table.
 
-\subsection*{3.3 Test Set 1}
+### 3.3 Test Set 1
+
 input:
 
 Key: $00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00 \quad 00$
@@ -127,21 +130,19 @@ Initialisation Mode
 
 LFSR-state at the beginning:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 0044d700 & 0026bc00 & 00626b00 & 00135e00 & 00578900 & 0035e200 & 00713500 & 0009af00 \\
-\hline 8 & 004d7800 & 002f1300 & 006bc400 & 001af100 & 005e2600 & 003c4d00 & 00789a00 & 0047ac00 \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 0044d700 | 0026bc00 | 00626b00 | 00135e00 | 00578900 | 0035e200 | 00713500 | 0009af00 |
+| 8 | 004d7800 | 002f1300 | 006bc400 | 001af100 | 005e2600 | 003c4d00 | 00789a00 | 0047ac00 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & W & $\mathrm{S}_{15}$ \\
-\hline 0 & 008f9a00 & f100005e & af00006b & 6b000089 & 67822141 & 62a3a55f & 008f9a00 & 4563cb1b \\
-\hline 1 & 8ac7ac00 & 260000d7 & 780000e2 & 5e00004d & 474a2e7e & 119e94bb & 4fe932a0 & 28652a0f \\
-\hline 2 & 50cacb1b & 4d000035 & 13000013 & 890000c4 & c29687a5 & e9b6eb51 & 291f7a20 & 7464f744 \\
-\hline 3 & e8c92a0f & 9a0000bc & c400009a & e2000026 & 29c272f3 & 8cac7f5d & 141698fb & 3f5644ba \\
-\hline
-\end{tabular}
+
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | W | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 008f9a00 | f100005e | af00006b | 6b000089 | 67822141 | 62a3a55f | 008f9a00 | 4563cb1b |
+| 1 | 8ac7ac00 | 260000d7 | 780000e2 | 5e00004d | 474a2e7e | 119e94bb | 4fe932a0 | 28652a0f |
+| 2 | 50cacb1b | 4d000035 | 13000013 | 890000c4 | c29687a5 | e9b6eb51 | 291f7a20 | 7464f744 |
+| 3 | e8c92a0f | 9a0000bc | c400009a | e2000026 | 29c272f3 | 8cac7f5d | 141698fb | 3f5644ba |
+
 ```
 4 |7eacf744 ac000078 f100005e 350000af 2c85a655 24259cb0 e41b0514 006a144c
 5 00d444ba cb1b00f1 260000d7 af00006b cbfbc5c0 44c10b3a 50777f9f 07038b9b
@@ -151,30 +152,26 @@ LFSR-state at the beginning:
 9 f6b213ea 144ce8c9 cb1b00f1 f100005e e14727d6 d0225869 5f2ffdde 70e21147
 ```
 
-
 LFSR-state after completion of the initialisation mode:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 7ce15b8b & 747ca0c4 & 6259dd0b & 47a94c2b & 3a89c82e & 32b433fc & 231ea13f & 31711e42 \\
-\hline 8 & 4ccce955 & 3fb6071e & 161d3512 & 7114b136 & 5154d452 & 78c69a74 & 4f26ba6b & 3e1b8d6a \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 7ce15b8b | 747ca0c4 | 6259dd0b | 47a94c2b | 3a89c82e | 32b433fc | 231ea13f | 31711e42 |
+| 8 | 4ccce955 | 3fb6071e | 161d3512 | 7114b136 | 5154d452 | 78c69a74 | 4f26ba6b | 3e1b8d6a |
 
 FSM-state after completion of the initialisation mode:
 $\mathrm{R}_{1}=14 \mathrm{cfd} 44 \mathrm{c}$
 $\mathrm{R}_{2}=8 \mathrm{c} 6 \mathrm{de} 800$
 Keystream mode
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & z & $\mathrm{S}_{15}$ \\
-\hline 0 & 7c37ba6b & b1367f6c & 1e426568 & dd0bf9c2 & 3512bf50 & a0920453 & 286dafe5 & 7f08e141 \\
-\hline 1 & fe118d6a & d4522c3a & e955463d & 4c2be8f9 & c7ee7f13 & 0c0fa817 & 27bede74 & 3d383d04 \\
-\hline 2 & 7a70e141 & 9a74e229 & 071e62e2 & c82ec4b3 & dde63da7 & b9dd6a41 & 018082da & 13d6d780 \\
-\hline
-\end{tabular}
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | z | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 7c37ba6b | b1367f6c | 1e426568 | dd0bf9c2 | 3512bf50 | a0920453 | 286dafe5 | 7f08e141 |
+| 1 | fe118d6a | d4522c3a | e955463d | 4c2be8f9 | c7ee7f13 | 0c0fa817 | 27bede74 | 3d383d04 |
+| 2 | 7a70e141 | 9a74e229 | 071e62e2 | c82ec4b3 | dde63da7 | b9dd6a41 | 018082da | 13d6d780 |
 
-\subsection*{3.4 Test Set 2}
+### 3.4 Test Set 2
+
 input:
 Key: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
 IV: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
@@ -184,47 +181,42 @@ $\mathrm{z}_{2}: 7096398 \mathrm{~b}$
 Initialisation Mode
 LFSR-state at the beginning:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 7fc4d7ff & 7fa6bcff & 7fe26bff & 7f935eff & 7fd789ff & 7fb5e2ff & 7ff135ff & 7f89afff \\
-\hline 8 & 7fcd78ff & 7faf13ff & 7febc4ff & 7f9af1ff & 7fde26ff & 7fbc4dff & 7ff89aff & 7fc7acff \\
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & W & $\mathrm{S}_{15}$ \\
-\hline 0 & ff8f9aff & f1ffff5e & afffff6b & 6bffff89 & b51c2110 & 30a3629a & ff8f9aff & 76e49a1a \\
-\hline 1 & edc9acff & 26ffffd7 & 78ffffe2 & 5effff4d & a75b6f4b & $1 a 079628$ & 8978 f 089 & 5e2d8983 \\
-\hline 2 & bc5b9a1a & 4dffff35 & 13ffff13 & 89 ffffc 4 & 9810b315 & 99296735 & 35088b79 & 5b9484b8 \\
-\hline 3 & b7298983 & 9affffbc & c4ffff9a & e2ffff26 & 4c5bd8eb & 2d577790 & c862a1cb & 2db5c755 \\
-\hline 4 & 5b6b84b8 & acffff78 & f1ffff5e & 35ffffaf & a13dcb66 & 21d0939f & 4487 d 3 e 3 & 60579232 \\
-\hline 5 & c0afc755 & 9a1afff1 & 26ffffd7 & afffff6b & cc5ce260 & 0c50a8e2 & 83629fd2 & 29d4e960 \\
-\hline 6 & 53a99232 & 8983ff8f & 4dffff35 & 78ffffe2 & dada0730 & b516b128 & ac461934 & 5e02d9e5 \\
-\hline 7 & bc05e960 & 84b8edc9 & 9affffbc & 13ffff13 & 2bbe53a4 & 12a8a16e & 1bf69f78 & 7904dddc \\
-\hline 8 & f209d9e5 & c755bc5b & acffff78 & c4ffff9a & 4a90d661 & d9c744b4 & ec602baf & 0c3c9016 \\
-\hline 9 & 1879dddc & 9232b729 & 9a1afff1 & f1ffff5e & 76bc13d7 & a49ea404 & 2cb05071 & 0b9d257b \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 7fc4d7ff | 7fa6bcff | 7fe26bff | 7f935eff | 7fd789ff | 7fb5e2ff | 7ff135ff | 7f89afff |
+| 8 | 7fcd78ff | 7faf13ff | 7febc4ff | 7f9af1ff | 7fde26ff | 7fbc4dff | 7ff89aff | 7fc7acff |
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | W | $\mathrm{S}_{15}$ |
+| 0 | ff8f9aff | f1ffff5e | afffff6b | 6bffff89 | b51c2110 | 30a3629a | ff8f9aff | 76e49a1a |
+| 1 | edc9acff | 26ffffd7 | 78ffffe2 | 5effff4d | a75b6f4b | $1 a 079628$ | 8978 f 089 | 5e2d8983 |
+| 2 | bc5b9a1a | 4dffff35 | 13ffff13 | 89 ffffc 4 | 9810b315 | 99296735 | 35088b79 | 5b9484b8 |
+| 3 | b7298983 | 9affffbc | c4ffff9a | e2ffff26 | 4c5bd8eb | 2d577790 | c862a1cb | 2db5c755 |
+| 4 | 5b6b84b8 | acffff78 | f1ffff5e | 35ffffaf | a13dcb66 | 21d0939f | 4487 d 3 e 3 | 60579232 |
+| 5 | c0afc755 | 9a1afff1 | 26ffffd7 | afffff6b | cc5ce260 | 0c50a8e2 | 83629fd2 | 29d4e960 |
+| 6 | 53a99232 | 8983ff8f | 4dffff35 | 78ffffe2 | dada0730 | b516b128 | ac461934 | 5e02d9e5 |
+| 7 | bc05e960 | 84b8edc9 | 9affffbc | 13ffff13 | 2bbe53a4 | 12a8a16e | 1bf69f78 | 7904dddc |
+| 8 | f209d9e5 | c755bc5b | acffff78 | c4ffff9a | 4a90d661 | d9c744b4 | ec602baf | 0c3c9016 |
+| 9 | 1879dddc | 9232b729 | 9a1afff1 | f1ffff5e | 76bc13d7 | a49ea404 | 2cb05071 | 0b9d257b |
 
 LFSR-state after completion of the initialisation mode:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 09a339ad & 1291d190 & 25554227 & 36c09187 & 0697773b & 443cf9cd & 6a4cd899 & 49e34bd0 \\
-\hline 8 & 56130b14 & 20e8f24c & 7a5b1dcc & 0c3cc2d1 & 1cc082c8 & 7f5904a2 & 55b61ce8 & 1 fe46106 \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 09a339ad | 1291d190 | 25554227 | 36c09187 | 0697773b | 443cf9cd | 6a4cd899 | 49e34bd0 |
+| 8 | 56130b14 | 20e8f24c | 7a5b1dcc | 0c3cc2d1 | 1cc082c8 | 7f5904a2 | 55b61ce8 | 1 fe46106 |
 
 FSM-state after completion of the initialisation mode:
 $\mathrm{R}_{1}=\mathrm{b} 8017 \mathrm{bd} 5$
 $\mathrm{R}_{2}=9 \mathrm{ce} 2 \mathrm{de} 5 \mathrm{c}$
 Keystream mode
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{6}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & z & $\mathrm{S}_{15}$ \\
-\hline 0 & 3fc81ce8 & c2d141d1 & 4bd08879 & 42271346 & aa131b11 & 09d7706c & 668b56df & 13f56dbf \\
-\hline 1 & 27ea6106 & 82c8f4b6 & 0b14d499 & 91872523 & 251e7804 & caac5d66 & 0657cfa0 & 0c0fe353 \\
-\hline 2 & 181f6dbf & 04a21879 & f24c93c6 & 773b4aaa & d94e9228 & 91d88fba & 7096398b & 10f1eecf \\
-\hline
-\end{tabular}
+| t | $\mathrm{X}_{6}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | z | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 3fc81ce8 | c2d141d1 | 4bd08879 | 42271346 | aa131b11 | 09d7706c | 668b56df | 13f56dbf |
+| 1 | 27ea6106 | 82c8f4b6 | 0b14d499 | 91872523 | 251e7804 | caac5d66 | 0657cfa0 | 0c0fe353 |
+| 2 | 181f6dbf | 04a21879 | f24c93c6 | 773b4aaa | d94e9228 | 91d88fba | 7096398b | 10f1eecf |
 
-\subsection*{3.5 Test Set 3}
+### 3.5 Test Set 3
+
 input:
 
 Key: 3d 4c 4b e9 6a 82 fd ae b5 8f 64 1d b1 7b 45 5b
@@ -236,36 +228,31 @@ $\mathrm{z}_{2}$ : 3279c419
 Initialisation Mode
 LFSR-state at the beginning:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 1ec4d784 & 2626bc31 & 25e26b9a & 74935ea8 & 355789de & 4135e269 & 7ef13515 & 5709afca \\
-\hline 8 & 5acd781f & 47af136b & 326bc4da & 0e9af16b & 58de26fb & 3dbc4dd8 & 22f89ac7 & 2dc7ac66 \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 1ec4d784 | 2626bc31 | 25e26b9a | 74935ea8 | 355789de | 4135e269 | 7ef13515 | 5709afca |
+| 8 | 5acd781f | 47af136b | 326bc4da | 0e9af16b | 58de26fb | 3dbc4dd8 | 22f89ac7 | 2dc7ac66 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & W & $\mathrm{S}_{15}$ \\
-\hline 0 & 5b8f9ac7 & f16b8f5e & afca826b & 6b9a3d89 & 9c62829f & 5df00831 & 5b8f9ac7 & 3c7b93c0 \\
-\hline 1 & 78f7ac66 & 26fb64d7 & 781ffde2 & 5ea84c4d & 3d533f3a & 80ff1faf & 4285372a & 41901ee9 \\
-\hline 2 & 832093c0 & 4dd81d35 & 136bae13 & 89de4bc4 & 2ca57e9d & d1db72f9 & 3f72cca9 & 411efa99 \\
-\hline 3 & 823d1ee9 & 9ac7b1bc & c4dab59a & e269e926 & 0e8dc40f & 60921a4f & 8073d36d & 24b3f49f \\
-\hline 4 & 4967fa99 & ac667b78 & f16b8f5e & 35156aaf & 16c81467 & da8e7d8a & a87c58e5 & 74265785 \\
-\hline 5 & e84cf49f & 93c045f1 & 26fb64d7 & afca826b & 50c9eaa4 & 3c3b2dfd & d9135e82 & 481c5b9d \\
-\hline 6 & 90385785 & 1ee95b8f & 4dd81d35 & 781ffde2 & 59857b80 & be0fbdc1 & fd2ceb1e & 4b7f87ed \\
-\hline 7 & 96ff5b9d & fa9978f7 & 9ac7b1bc & 136bae13 & 9528f8ea & bcc7f7eb & 8d89ddde & 0e633ce7 \\
-\hline 8 & 1cc687ed & f49f8320 & ac667b78 & c4dab59a & c59d2932 & e1098a64 & 46b676f2 & 643ae5a6 \\
-\hline 9 & c8753ce7 & 5785823d & 93c045f1 & f16b8f5e & 755ebae8 & 3f9e6e86 & eef1a039 & 625ac5d7 \\
-\hline
-\end{tabular}
+
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | W | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 5b8f9ac7 | f16b8f5e | afca826b | 6b9a3d89 | 9c62829f | 5df00831 | 5b8f9ac7 | 3c7b93c0 |
+| 1 | 78f7ac66 | 26fb64d7 | 781ffde2 | 5ea84c4d | 3d533f3a | 80ff1faf | 4285372a | 41901ee9 |
+| 2 | 832093c0 | 4dd81d35 | 136bae13 | 89de4bc4 | 2ca57e9d | d1db72f9 | 3f72cca9 | 411efa99 |
+| 3 | 823d1ee9 | 9ac7b1bc | c4dab59a | e269e926 | 0e8dc40f | 60921a4f | 8073d36d | 24b3f49f |
+| 4 | 4967fa99 | ac667b78 | f16b8f5e | 35156aaf | 16c81467 | da8e7d8a | a87c58e5 | 74265785 |
+| 5 | e84cf49f | 93c045f1 | 26fb64d7 | afca826b | 50c9eaa4 | 3c3b2dfd | d9135e82 | 481c5b9d |
+| 6 | 90385785 | 1ee95b8f | 4dd81d35 | 781ffde2 | 59857b80 | be0fbdc1 | fd2ceb1e | 4b7f87ed |
+| 7 | 96ff5b9d | fa9978f7 | 9ac7b1bc | 136bae13 | 9528f8ea | bcc7f7eb | 8d89ddde | 0e633ce7 |
+| 8 | 1cc687ed | f49f8320 | ac667b78 | c4dab59a | c59d2932 | e1098a64 | 46b676f2 | 643ae5a6 |
+| 9 | c8753ce7 | 5785823d | 93c045f1 | f16b8f5e | 755ebae8 | 3f9e6e86 | eef1a039 | 625ac5d7 |
 
 LFSR-state after completion of the initialisation mode:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 10da5941 & 5b6acbf6 & 17060ce1 & 35368174 & 5cf4385a & 479943df & 2753bab2 & 73775d6a \\
-\hline 8 & 43930a37 & 77b4af31 & 15b2e89f & 24ff6e20 & 740c40b9 & 026a5503 & 194b2a57 & 7a9a1cff \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 10da5941 | 5b6acbf6 | 17060ce1 | 35368174 | 5cf4385a | 479943df | 2753bab2 | 73775d6a |
+| 8 | 43930a37 | 77b4af31 | 15b2e89f | 24ff6e20 | 740c40b9 | 026a5503 | 194b2a57 | 7a9a1cff |
 
 FSM-state after completion of the initialisation mode:
 $\mathrm{R}_{1}=860 \mathrm{a} 7 \mathrm{dfa}$
@@ -273,15 +260,14 @@ $\mathrm{R}_{2}=\mathrm{bf} 0 \mathrm{e} 0 \mathrm{ffc}$
 
 Keystream mode
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & z & $\mathrm{S}_{15}$ \\
-\hline 0 & f5342a57 & 6e20ef69 & 5d6a8f32 & 0ce121b4 & 129d8b39 & 2d7cdce1 & 3ead461d & 3d4aa9e7 \\
-\hline 1 & 7a951cff & 40b92b65 & 0a374ea7 & 8174b6d5 & ab7cf688 & c1598aa6 & 14f1c272 & 71db1828 \\
-\hline 2 & e3b6a9e7 & 550349fe & af31e6ee & 385a2e0c & 3cec1a4a & 9053cc0e & 3279c419 & 258937 da \\
-\hline
-\end{tabular}
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | z | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | f5342a57 | 6e20ef69 | 5d6a8f32 | 0ce121b4 | 129d8b39 | 2d7cdce1 | 3ead461d | 3d4aa9e7 |
+| 1 | 7a951cff | 40b92b65 | 0a374ea7 | 8174b6d5 | ab7cf688 | c1598aa6 | 14f1c272 | 71db1828 |
+| 2 | e3b6a9e7 | 550349fe | af31e6ee | 385a2e0c | 3cec1a4a | 9053cc0e | 3279c419 | 258937 da |
 
-\subsection*{3.6 Test Set 4}
+### 3.6 Test Set 4
+
 input:
 
 Key: 4d 32 0b fa d4 c2 85 bf d6 b8 bd 00 f3 9d 8b 41
@@ -295,19 +281,18 @@ $\mathrm{Z}_{2000}$ : 7a574cdb
 Initialisation Mode
 LFSR-state at the beginning:
 
-\begin{tabular}{c|cccccccc}
-i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 26c4d752 & 1926bc95 & 05e26b9d & 7d135eab & 6a5789a0 & 6135e2bf & 42f13517 & 5f89af6e \\
-8 & 6b4d78ce & 5c2f132d & 5eebc4c3 & 001af115 & 79de2604 & 4ebc4d9e & 45f89ab5 & 20c7ac74
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0 | 26c4d752 | 1926bc95 | 05e26b9d | 7d135eab | 6a5789a0 | 6135e2bf | 42f13517 | 5f89af6e |
+| 8 | 6b4d78ce | 5c2f132d | 5eebc4c3 | 001af115 | 79de2604 | 4ebc4d9e | 45f89ab5 | 20c7ac74 |
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{0}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & W & $\mathrm{S}_{15}$ \\
-\hline 0 & 418f9ab5 & f115b85e & af6ec26b & 6b9d4d89 & 8d1ca588 & 4a6d1a2f & 418f9ab5 & 30605895 \\
-\hline 1 & 60c0ac74 & 2604bdd7 & 78ce85e2 & 5eab324d & df86fb65 & bf68d8ca & 3849242b & 0c59d998 \\
-\hline 2 & 18b35895 & 4d9e0035 & 132dbf13 & 89a00bc4 & 89b82f4b & b04ce56f & 869e7cba & 0368ac2f \\
-\hline
-\end{tabular}
+
+| t | $\mathrm{X}_{0}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | W | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 418f9ab5 | f115b85e | af6ec26b | 6b9d4d89 | 8d1ca588 | 4a6d1a2f | 418f9ab5 | 30605895 |
+| 1 | 60c0ac74 | 2604bdd7 | 78ce85e2 | 5eab324d | df86fb65 | bf68d8ca | 3849242b | 0c59d998 |
+| 2 | 18b35895 | 4d9e0035 | 132dbf13 | 89a00bc4 | 89b82f4b | b04ce56f | 869e7cba | 0368ac2f |
+
 ```
 3 |06d1d998 9ab5f3bc c4c3d69a e2bffa26 65351ba4 b802da85 3fb6dc42 624f5dfa
 4 c49eac2f ac749d78 f115b85e 3517d4af 90956c83 9bd47e1e 59ae9210 3484ef0a
@@ -318,15 +303,12 @@ i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\
 9 f0ea675b ef0a06d1 58958bf1 f115b85e 541bf315 96f17e15 961f6321 2d0f02fc
 ```
 
-
 LFSR-state after completion of the initialisation mode:
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline i & $\mathrm{S}_{0+\mathrm{i}}$ & $\mathrm{S}_{1+\mathrm{i}}$ & $\mathrm{S}_{2+\mathrm{i}}$ & $\mathrm{S}_{3+\mathrm{i}}$ & $\mathrm{S}_{4+\mathrm{i}}$ & $\mathrm{S}_{5+\mathrm{i}}$ & $\mathrm{S}_{6+\mathrm{i}}$ & $\mathrm{S}_{7+\mathrm{i}}$ \\
-\hline 0 & 1 f808882 & 4 fc 08639 & 246a9891 & 1f77c16f & 50f0e1c9 & 723e8fac & 24334616 & 4471b734 \\
-\hline 8 & 7dba1992 & 25180096 & 4637117c & 2a92aac8 & 7da8d7b5 & 58f45afe & 42814800 & 56d7e7d8 \\
-\hline
-\end{tabular}
+| i | $\mathrm{S}_{0+\mathrm{i}}$ | $\mathrm{S}_{1+\mathrm{i}}$ | $\mathrm{S}_{2+\mathrm{i}}$ | $\mathrm{S}_{3+\mathrm{i}}$ | $\mathrm{S}_{4+\mathrm{i}}$ | $\mathrm{S}_{5+\mathrm{i}}$ | $\mathrm{S}_{6+\mathrm{i}}$ | $\mathrm{S}_{7+\mathrm{i}}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 1 f808882 | 4 fc 08639 | 246a9891 | 1f77c16f | 50f0e1c9 | 723e8fac | 24334616 | 4471b734 |
+| 8 | 7dba1992 | 25180096 | 4637117c | 2a92aac8 | 7da8d7b5 | 58f45afe | 42814800 | 56d7e7d8 |
 
 FSM-state after completion of the initialisation mode:
 $\mathrm{R}_{1}=52761 \mathrm{a} 25$
@@ -334,34 +316,31 @@ $\mathrm{R}_{2}=38 \mathrm{f} 712 \mathrm{e} 1$
 
 Keystream mode
 
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline t & $\mathrm{X}_{6}$ & $\mathrm{X}_{1}$ & $\mathrm{X}_{2}$ & $\mathrm{X}_{3}$ & $\mathrm{R}_{1}$ & $\mathrm{R}_{2}$ & z & $\mathrm{S}_{15}$ \\
-\hline 0 & adaf4800 & aac84a30 & b734e47d & 98913f01 & 1c5787fc & fbc03f42 & a0415a07 & 161e714b \\
-\hline 1 & 2c3ce7d8 & d7b58c6e & 19924866 & c16f9f81 & 43a6b863 & cdcfe3e8 & ed4400e7 & 2cc64c79 \\
-\hline 2 & 598c714b & 5afe5525 & 009688e3 & e1c948d5 & ebd7843d & eb24cf11 & 0633e5c5 & 5d15229e \\
-\hline
-\end{tabular}
+| t | $\mathrm{X}_{6}$ | $\mathrm{X}_{1}$ | $\mathrm{X}_{2}$ | $\mathrm{X}_{3}$ | $\mathrm{R}_{1}$ | $\mathrm{R}_{2}$ | z | $\mathrm{S}_{15}$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | adaf4800 | aac84a30 | b734e47d | 98913f01 | 1c5787fc | fbc03f42 | a0415a07 | 161e714b |
+| 1 | 2c3ce7d8 | d7b58c6e | 19924866 | c16f9f81 | 43a6b863 | cdcfe3e8 | ed4400e7 | 2cc64c79 |
+| 2 | 598c714b | 5afe5525 | 009688e3 | e1c948d5 | ebd7843d | eb24cf11 | 0633e5c5 | 5d15229e |
 
-\section*{4 CONFIDENTIALITY ALGORITHM 128-EEA3}
+## 4 CONFIDENTIALITY ALGORITHM 128-EEA3
 
-\subsection*{4.1 Overview}
+### 4.1 Overview
 
 The test data sets presented here are for the 128-EEA3 confidentiality algorithm.
 
-\subsection*{4.2 Format}
+### 4.2 Format
 
 Each test set shows the various inputs to the algorithm including the plain text data stream to be encrypted/decrypted. (The length field is in decimal).
 
 The fields are:
 
-\begin{tabular}{ll} 
-Key & $=$ CK[0] $\|\ldots\|$ CK[127] \\
-Count & $=$ COUNT-C[0] $\|\ldots\|$ COUNT-C[31] \\
-Bearer & $=$ BEARER[0] $\|\ldots\|$ BEARER[4] \\
-Direction & $=$ DIRECTION[0] \\
-Length & $=$ Length of data in decimal \\
-Plaintext & $=$ PT[0] $\|$ PT[1] $\|\ldots\|$ PT[Length-1]
-\end{tabular}
+| Key | $=$ CK[0] $\\|\ldots\\|$ CK[127] |
+| :--- | :--- |
+| Count | $=$ COUNT-C[0] $\\|\ldots\\|$ COUNT-C[31] |
+| Bearer | $=$ BEARER[0] $\\|\ldots\\|$ BEARER[4] |
+| Direction | $=$ DIRECTION[0] |
+| Length | $=$ Length of data in decimal |
+| Plaintext | $=$ PT[0] $\\|$ PT[1] $\\|\ldots\\|$ PT[Length-1] |
 
 This is followed by the modified input data, i.e. it is the bitwise exclusive-or of the corresponding keystream and the input data to the algorithm.
 
@@ -372,7 +351,8 @@ The first test set is shown twice, once in binary format, once in hexadecimal fo
 
 The remainder of the test sets are presented in hexadecimal format only.
 
-\subsection*{4.3 Test Set 1}
+### 4.3 Test Set 1
+
 ```
 Key = (hex) 17 3d 14 ba 50 03 73 1d 7a 60 04 94 70 f0 0a 29
 Key = (bin) 00010111 00111101 00010100 10111010
@@ -410,7 +390,7 @@ Ciphertext:
 ```
 
 
-\subsection*{4.4 Test Set 2}
+### 4.4 Test Set 2
 
 Key = e5 bd 3e a0 eb 55 ad e8 66 c6 ac 58 bd 5430 2a
 
@@ -431,7 +411,7 @@ Ciphertext:
 131d43e0 dea1be5c 5a1bfd97 1d852cbf 712d7b4f 57961fea 3208afa8 bca433f4 56ad09c7 417e58bc 69cf8866 d1353f74 865e8078 1d202dfb 3ecff7fc bc3b190f
 e82a204e d0e350fc 0f6f2613 b2f2bca6 df5a473a 57a4a00d 985ebad8 80d6f238 64a07b01
 
-\subsection*{4.5 Test Set 3}
+### 4.5 Test Set 3
 
 Key $=$ d4 55 2a 8f d6 e6 1c c8 1a 200914 1a 29 c1 0b
 Count $=76452 \mathrm{ec} 1$
@@ -450,7 +430,7 @@ Ciphertext:
 
 8383b022 9fcc0b9d 2295ec41 c977e9c2 bb72e220 378141f9 c8318f3a 270dfbcd ee6411c2 b3044f17 6dc6e00f 8960f97a facd131a d6a3b49b 16b7babc f2a509eb b16a75dc ab14ff27 5dbeeea1 a2b155f9 d52c2645 2d0187c3 10a4ee55 beaa78ab 4024615b a9f5d5ad c7728f73 560671f0 13e5e550 085d3291 df7d5fec edded559 641b6c2f 585233bc 71e9602b d2305855 bbd25ffa 7f17ecbc 042daae3 8c1f57ad 8e8ebd37 346f71be fdbb7432 e0e0bb2c fc09bcd9 6570cb0c 0c39df5e 29294e82 703a637f 80000000
 
-\subsection*{4.6 Test Set 4}
+### 4.6 Test Set 4
 
 Key $\quad=\mathrm{db} 84 \mathrm{~b} 4 \mathrm{fb} \mathrm{cc}$ da 56 3b 6622 7b fe 45 6f 0f 77
 
@@ -468,7 +448,7 @@ Ciphertext:
 
 4bbfa91b a25d47db 9a9f190d 962a19ab 323926b3 51fbd39e 351e05da 8b8925e3 0b1cce0d 12211010 95815cc7 cb631950 9ec0d679 40491987 e13f0aff ac332aa6 aa64626d 3e9a1917 519e0b97 b655c6a1 65e44ca9 feac0790 d2a321ad 3d86b79c 5138739f a38d887e c7def449 ce8abdd3 e7f8dc4c a9e7b733 14ad310f 9025e619 46b3a56d c649ec0d a0d63943 dff592cf 962a7efb 2c8524e3 5a2a6e78 79d62604 ef268695 fa400302 7e22e608 30775220 64bd4a5b 906b5f53 1274f235 ed506cff 0154c754 928a0ce5 476f2cb1 020a1222 d32c1455 ecaef1e3 68fb344d 1735bfbe deb71d0a 33a2a54b 1da5a294 e679144d df11eb1a 3de8cf0c c0619179 74f35c1d 9ca0ac81 807f8fcc e6199a6c 7712da86 5021b04c e0439516 f1a526cc da9fd9ab bd53c3a6 84f9ae1e 7ee6b11d a138ea82 6c5516b5 aadf1abb e36fa7ff f92e3a11 76064e8d 95f2e488 2b5500b9 3228b219 4a475c1a 27f63f9f fd264989 a1bc0000
 
-\subsection*{4.7 Test Set 5}
+### 4.7 Test Set 5
 
 Key = e1 3f ed 21 b4 6e 4e 7e c3 1253 b2 bb 17 b3 e0
 
@@ -488,25 +468,25 @@ Ciphertext:
 
 94eaa4aa 30a57137 ddf09b97 b25618a2 0a13e2f1 0fa5bf81 61a879cc 2ae797a6 b4cf2d9d f31debb9 905ccfec 97de605d 21c61ab8 531b7f3c 9da5f039 31f8a064 2de48211 f5f52ffe a10f392a 04766998 5da454a2 8f080961 a6c2b62d aa17f33c d60a4971 f48d2d90 9394a55f 48117ace 43d708e6 b77d3dc4 6d8bc017 d4d1abb7 7b7428c0 42b06f2f 99d8d07c 9879d996 00127a31 985f1099 bbd7d6c1 519ede8f 5eeb4a61 0b349ac0 1ea23506 91756bd1 05c974a5 3eddb35d 1d4100b0 12e522ab 41f4c5f2 fde76b59 cb8b96d8 85cfe408 0d1328a0 d636cc0e dc05800b 76acca8f ef672084 d1f52a8b bd8e0993 320992c7 ffbae17c 408441e0 ee883fc8 a8b05e22 f5ff7f8d 1b48c74c 468c467a 028f09fd 7ce91109 a570a2d5 c4d5f4fa 18c5dd3e 4562afe2 4ef77190 1f59af64 5898acef 088abae0 7e92d52e b2de5504 5bb1b7c4 164ef2d7 a6cac15e eb926d7e a2f08b66 e1f759f3 aee44614 725aa3c7 482b3084 4c143ff8 5b53f1e5 83c50125 7dddd096 b81268da a303f172 34c23335 41f0bb8e 190648c5 807c866d 71932286 09adb948 686f7de2 94a802cc 38f7fe52 08f5ea31 96d0167b 9bdd02f0 d2a5221c a508f893 af5c4b4b b9f4f520 fd84289b 3dbe7e61 497a7e2a 584037ea 637b6981 127174af 57b471df 4b2768fd 79c1540f b3edf2ea 22cb69be c0cf8d93 3d9c6fdd 645e8505 91cca3d6 2c0cc000
 
-\section*{5 INTEGRITY ALORITHM 128-EIA3}
+## 5 INTEGRITY ALORITHM 128-EIA3
 
-\subsection*{5.1 Overview}
+### 5.1 Overview
 
 The test data sets presented here are for the 128-EIA3 integrity algorithm.
 Each test set shows the various inputs to the algorithm including the plain text data stream to be 'MAC'd. The length field is in decimal.
 
 The fields are:
 
-\begin{tabular}{ll} 
-Key & $=\mathrm{IK}[0]\|\ldots\| \mathrm{IK}[127]$ \\
-Count & $=$ COUNT-I[0] $\|\ldots\|$ COUNT-I[31] \\
-Bearer & $=$ BEARER[0] $\|\ldots\|$ BEARER[4] \\
-Direction & $=$ DIRECTION[0] \\
-Length & $=$ Length of data in decimal \\
-Message & $=$ MESSAGE[0] $\|\ldots\|$ MESSAGE[Length-1]
-\end{tabular}
+| Key | $=\mathrm{IK}[0]\\|\ldots\\| \mathrm{IK}[127]$ |
+| :--- | :--- |
+| Count | $=$ COUNT-I[0] $\\|\ldots\\|$ COUNT-I[31] |
+| Bearer | $=$ BEARER[0] $\\|\ldots\\|$ BEARER[4] |
+| Direction | $=$ DIRECTION[0] |
+| Length | $=$ Length of data in decimal |
+| Message | $=$ MESSAGE[0] $\\|\ldots\\|$ MESSAGE[Length-1] |
 
 This is followed by the calculated value for MAC-I.
+
 $$
 \text { Output } \quad=\text { MAC-I[0] }\|\ldots\| \text { MAC-I[31] }
 $$
@@ -515,7 +495,8 @@ The first test set is shown twice, once in binary format, once in hexadecimal fo
 
 The remainder of the test sets are presented in hexadecimal format only.
 
-\subsection*{5.2 Test Set 1}
+### 5.2 Test Set 1
+
 ```
 Key = (hex) 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 Key = (hex) 00000000 00000000 00000000 00000000
@@ -534,11 +515,10 @@ Message:
     (bin) 0
 ```
 
-
 MAC: (hex) c8a9595e
 (bin) 11001000101010010101100101011110
 
-\subsection*{5.3 Test Set 2}
+### 5.3 Test Set 2
 
 Key $\quad=47054125561 \mathrm{e}$ b2 dd a94059 da 05097850
 Count = 561eb2dd
@@ -549,7 +529,7 @@ Message:
 000000000000000000000000
 MAC: 6719a088
 
-\subsection*{5.4 Test Set 3}
+### 5.4 Test Set 3
 
 Key = c9 e6 ce c4 60 7c 72 db 00 0a ef a8 8385 ab 0a
 Count = a94059da
@@ -561,7 +541,7 @@ Message:
 
 MAC: fae8ff0b
 
-\subsection*{5.5 Test Set 4}
+### 5.5 Test Set 4
 
 Key = c8 a4 8262 d0 c2 e2 ba c4 b9 6e f7 7e 80 ca 59
 Count = 05097850
@@ -574,7 +554,7 @@ f2e062f4 0839d932 48b1eb92 cdfed530 0bc14828 0430b6d0 caa094b6 ec8911ab 7dc36824
 
 MAC: 004ac4d6
 
-\subsection*{5.6 Test Set 5}
+### 5.6 Test Set 5
 
 Key = 6b 8b 08 ee 79 e0 b5 98 2d 6d 12 8e a9 f2 20 cb
 
@@ -592,3 +572,4 @@ Message:
 
 MAC: 0ca12792
 <End of Document>
+

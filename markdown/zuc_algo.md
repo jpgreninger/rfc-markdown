@@ -4,28 +4,23 @@ Specification
 Version: 1.6
 Date: $28{ }^{\text {th }}$ June 2011
 
-\title{
-Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3. \\ Document 2: ZUC Specification
-}
+# Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3. <br> Document 2: ZUC Specification 
 
-\begin{tabular}{|l|l|l|}
-\hline \multicolumn{3}{|c|}{Document History} \\
-\hline 1.0 & 18-06-2010 & Publication \\
-\hline 1.2 & 26-07-2010 & Improvements to C code \\
-\hline 1.3 & 27-07-2010 & Minor corrections to C code \\
-\hline 1.4 & 30-07-2010 & Corrected preface \\
-\hline 1.5 & 04-01-2011 & A modification of ZUC in the initialization \\
-\hline 1.6 & 28-06-2011 & Minor adjustment to C code \\
-\hline
-\end{tabular}
+| Document History |  |  |
+| :--- | :--- | :--- |
+| 1.0 | 18-06-2010 | Publication |
+| 1.2 | 26-07-2010 | Improvements to C code |
+| 1.3 | 27-07-2010 | Minor corrections to C code |
+| 1.4 | 30-07-2010 | Corrected preface |
+| 1.5 | 04-01-2011 | A modification of ZUC in the initialization |
+| 1.6 | 28-06-2011 | Minor adjustment to C code |
 
-\author{
 Blank Page
-}
 
-\section*{PREFACE}
+## PREFACE
 
 This specification has been prepared by the 3GPP Task Force, and gives a detailed specification of the 3GPP algorithm ZUC. ZUC is a stream cipher that forms the heart of the 3GPP confidentiality algorithm 128-EEA3 and the 3GPP integrity algorithm 128-EIA3. This document is the second of three, which between them form the entire specification of the 3GPP Confidentiality and Integrity Algorithms:
+
 - Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
 Document 1: 128-EEA3 and 128-EIA3 Specifications.
 - Specification of the 3GPP Confidentiality and Integrity Algorithms 128-EEA3 \& 128-EIA3.
@@ -34,7 +29,9 @@ Document 2: ZUC Specification.
 Document 3: Implementor's Test Data.
 The normative part of the specification of ZUC is in the main body of this document. Annex A, which is purely informative, contains an implementation program listing of the cryptographic algorithm specified in the main body of this document, written in the programming language C .
 
-\section*{TABLE OF CONTENTS}
+
+## TABLE OF CONTENTS
+
 1 Introduction ..... 7
 2 Notations and conventions ..... 7
 2.1 Radix ..... 7
@@ -49,23 +46,24 @@ The normative part of the specification of ZUC is in the main body of this docum
 3.6 The execution of ZUC ..... 14
 Appendix A: A C implementation of ZUC ..... 15
 
-\section*{NORMATIVE SECTION}
+## NORMATIVE SECTION
 
 This part of the document contains the normative specification of the ZUC algorithm.
 
-\section*{1 Introduction}
+## 1 Introduction
 
 ZUC is a word-oriented stream cipher. It takes a 128-bit initial key and a 128-bit initial vector (IV) as input, and outputs a keystream of 32-bit words (where each 32-bit word is hence called a key-word). This keystream can be used for encryption/decryption.
 
 The execution of ZUC has two stages: initialization stage and working stage. In the first stage, a key/IV initialization is performed, i.e., the cipher is clocked without producing output (see section 3.6.1). The second stage is a working stage. In this stage, with every clock pulse, it produces a 32-bit word of output (see section 3.6.2).
 
-\section*{2 Notations and conventions}
+## 2 Notations and conventions
 
-\subsection*{2.1 Radix}
+### 2.1 Radix
 
 In this document, integers are represented as decimal numbers unless specified otherwise. We use the prefix "0x" to indicate hexadecimal numbers, and the subscript "2" to indicate a number in binary representation.
 
 Example 1 Integer $a$ can be written in different representations:
+
 $$
 \begin{aligned}
 a & =1234567890 & & \text { decimal representation } \\
@@ -74,13 +72,14 @@ a & =1234567890 & & \text { decimal representation } \\
 \end{aligned}
 $$
 
-\subsection*{2.2 Bit ordering}
+### 2.2 Bit ordering
 
 In this document, all data variables are presented with the most significant bit(byte) on the left hand side and the least significant bit(byte) on the right hand side.
 
 Example 2 Let $a=1001001100101100000001011010010_{2}$. Then its most significant bit is 1 (the leftmost bit) and its least significant bit is 0 (the rightmost bit).
 
-\subsection*{2.3 Notations}
+### 2.3 Notations
+
 + The addition of two integers.
 $a b$ The product of integers $a$ and $b$.
 $=\quad$ The assignment operator.
@@ -89,6 +88,7 @@ mod The modulo operation of integers.
 
 ⿴ The modulo $2^{32}$ addition .
 $a \| b \quad$ The concatenation of strings $a$ and $b$.
+
 $$
 \begin{aligned}
 \begin{aligned}
@@ -99,8 +99,10 @@ a \gg 1 & \text { The l-bit right shift of integer } a .
 \end{aligned}
 \end{aligned}
 $$
+
 $\left(a_{1}, a_{2}, \ldots, a_{\mathrm{n}}\right) \rightarrow\left(b_{1}, b_{2}, \ldots, b_{n}\right) \quad$ The assignment of the values of $a_{i}$ to $b_{i}$ in parallel.
 Example 3 For any two strings $a$ and $b$, the presentation of string $c$ created by the concatenation of $a$ and $b$ also follows the rules defined in section 2.2 i.e., the most significant digits are on the left hand side and the least significant digits are on the right hand side. For instance,
+
 $$
 \begin{aligned}
 & a=0 \times 1234, \\
@@ -109,16 +111,19 @@ $$
 $$
 
 Then we have
+
 $$
 c=a \| b=0 \times 12345678 .
 $$
 
 Example 4 Let
+
 $$
 a=1001001100101100000001011010010_{2}
 $$
 
 Then we have
+
 $$
 \begin{aligned}
 & a_{\mathrm{H}}=1001001100101100_{2} \\
@@ -127,36 +132,38 @@ $$
 $$
 
 Example 5 Let
+
 $$
 a=11001001100101100000001011010010_{2} .
 $$
 
 Then we have
+
 $$
 a \gg 1=1100100110010110000000101101001_{2 .}
 $$
 
 Example 6 Let $a_{0}, a_{1}, \ldots, a_{15}, b_{0}, b_{1}, \ldots, b_{15}$ be all integer variables. Then
+
 $$
 \left(a_{0}, a_{1}, \ldots, a_{15}\right) \rightarrow\left(b_{0}, b_{1}, \ldots, b_{15}\right)
 $$
+
 will result in $b_{i}=a_{i}, 0 \leq i \leq 15$.
 
-\section*{3 Algorithm description}
+## 3 Algorithm description
 
-\subsection*{3.1 General structure of the algorithm}
+### 3.1 General structure of the algorithm
 
 ZUC has three logical layers, see Fig. 1. The top layer is a linear feedback shift register (LFSR) of 16 stages, the middle layer is for bit-reorganization (BR), and the bottom layer is a nonlinear function $F$.
 
-\begin{figure}
-\includegraphics[alt={},max width=\textwidth]{https://cdn.mathpix.com/cropped/e5cf7652-f3e6-4edf-a180-7a057f63548c-09.jpg?height=1097&width=1294&top_left_y=630&top_left_x=386}
-\captionsetup{labelformat=empty}
-\caption{Figure 1. General structure of ZUC}
-\end{figure}
+![](https://cdn.mathpix.com/cropped/e5cf7652-f3e6-4edf-a180-7a057f63548c-09.jpg?height=1097&width=1294&top_left_y=630&top_left_x=386)
+Figure 1. General structure of ZUC
 
-\subsection*{3.2 The linear feedback shift register (LFSR)}
+### 3.2 The linear feedback shift register (LFSR)
 
 The linear feedback shift register (LFSR) has 16 of 31 -bit cells ( $s_{0}, s_{1}, \ldots, s_{15}$ ). Each cell $s_{i}(0 \leq i \leq 15$ ) is restricted to take values from the following set
+
 $$
 \left\{1,2,3, \ldots, 2^{31}-1\right\} .
 $$
@@ -166,6 +173,7 @@ In the initialization mode, the LFSR receives a 31-bit input word $u$, which is 
 
 LFSRWithInitialisationMode(u)
 \{
+
 1. $v=2^{15} s_{15}+2^{17} s_{13}+2^{21} s_{10}+2^{20} s_{4}+\left(1+2^{8}\right) s_{0} \bmod \left(2^{31}-1\right)$;
 2. $s_{16}=(v+u) \bmod \left(2^{31}-1\right)$;
 3. If $s_{16}=0$, then set $s_{16}=2^{31}-1$;
@@ -174,28 +182,32 @@ LFSRWithInitialisationMode(u)
 }
 ```
 
-
 In the working mode, the LFSR does not receive any input, and it works as follows:
 
-\section*{LFSRWithWorkMode()}
+## LFSRWithWorkMode()
+
 \{
+
 1. $s_{16}=2^{15} s_{15}+2^{17} s_{13}+2^{21} s_{10}+2^{20} s_{4}+\left(1+2^{8}\right) s_{0} \bmod \left(2^{31}-1\right)$;
 2. If $s_{16}=0$, then set $s_{16}=2^{31}-1$;
 3. $\left(s_{1}, s_{2}, \ldots, s_{15}, s_{16}\right) \rightarrow\left(s_{0}, s_{1}, \ldots, s_{14}, s_{15}\right)$.
 \}
 Informative note: Since the multiplication of a 31 -bit string $s$ by $2^{i}$ over $\mathrm{GF}\left(2^{31}-1\right)$ can be implemented by a cyclic shift of $s$ to the left by $i$ bits, only addition modulo $2^{31}-1$ is needed in step 1 of the above functions. More precisely, step 1 of the function
 LFSRWithInitialisationMode can be implemented by
+
 $$
 v=\left(s_{15} \lll_{31} 15\right)+\left(s_{13} \lll_{31} 17\right)+\left(s_{10} \lll_{31} 21\right)+\left(s_{4} \lll_{31} 20\right)+\left(s_{0} \lll_{31} 8\right)+s_{0} \bmod \left(2^{31}-1\right),
 $$
+
 and the same implementation is needed for step 1 of the function LFSRWithWorkMode.
 Informative note: For two elements $a, b$ over $\operatorname{GF}\left(2^{31}-1\right)$, the computation of $v=a+b \bmod \left(2^{31}-1\right)$ can be done by (1) compute $v=a+b$; and (2) if the carry bit is 1 , then set $v=v+1$. Alternatively (and better if the implementation should resist possible timing attacks): (1) compute $\mathrm{w}=\mathrm{a}+\mathrm{b}$, where w is a 32-bit value; and (2) set $\mathrm{v}=$ (least significant 31 bits of w ) + (most significant bit of w).
 
-\subsection*{3.3 The bit-reorganization}
+### 3.3 The bit-reorganization
 
 The middle layer of the algorithm is the bit-reorganization. It extracts 128 bits from the cells of the LFSR and forms 4 of 32-bit words, where the first three words will be used by the nonlinear function $F$ in the bottom layer, and the last word will be involved in producing the keystream.
 
 Let $s_{0}, s_{2}, s_{5}, s_{7}, s_{9}, s_{11}, s_{14}, s_{15}$ be 8 cells of LFSR as in section 3.2. Then the bitreorganization forms 4 of 32-bit words $X_{0}, X_{1}, X_{2}, X_{3}$ from the above cells as follows:
+
 ```
 Bitreorganization()
 {
@@ -206,12 +218,12 @@ Bitreorganization()
 }
 ```
 
-
 Note: The $s_{i}$ are 31 -bit integers, so $s_{i \mathrm{H}}$ means bits $30 \ldots 15$ and not $31 \ldots 16$ of $s_{i}$, for $0 \leq i \leq 15$.
 
-\subsection*{3.4 The nonlinear function $\boldsymbol{F}$}
+### 3.4 The nonlinear function $\boldsymbol{F}$
 
 The nonlinear function $F$ has 2 of 32-bit memory cells $R_{1}$ and $R_{2}$. Let the inputs to $F$ be $X_{0}, X_{1}$ and $X_{2}$, which come from the outputs of the bit-reorganization (see section 3.3), then the function $F$ outputs a 32-bit word $W$. The detailed process of $F$ is as follows:
+
 ```
 $\mathrm{F}\left(X_{0}, X_{1}, X_{2}\right)$
 \{
@@ -225,7 +237,7 @@ $\mathrm{F}\left(X_{0}, X_{1}, X_{2}\right)$
 
 where $S$ is a $32 \times 32 \mathrm{~S}$-box, see section 3.4.1, $L_{1}$ and $L_{2}$ are linear transforms as defined in section 3.4.2.
 
-\subsection*{3.4.1 The S-box S}
+### 3.4.1 The S-box S
 
 The $32 \times 32$ S-box $S$ is composed of 4 juxtaposed $8 \times 8$ S-boxes, i.e., $S=\left(S_{0}, S_{1}, S_{2}, S_{3}\right)$, where $S_{0}=S_{2}, S_{1}=S_{3}$. The definitions of $S_{0}$ and $S_{1}$ can be found in table 3.1 and table 3.2 respectively.
 
@@ -233,77 +245,74 @@ Let $x$ be an 8 -bit input to $S_{0}$ (or $S_{1}$ ). Write $x$ into two hexadeci
 
 Example $7 S_{0}(0 \times 12)=0 \times F 9$ and $S_{1}(0 \times 34)=0 \times C 0$.
 Let the 32 -bit input X and the 32 -bit output Y of the S -box $S$ be as follows:
+
 $$
 \begin{aligned}
 & X=x_{0}\left\|x_{1}\right\| x_{2} \| x_{3}, \\
 & Y=y_{0}\left\|y_{1}\right\| y_{2} \| y_{3},
 \end{aligned}
 $$
+
 where $x_{i}$ and $y_{i}$ are all bytes, $i=0,1,2,3$. Then we have
+
 $$
 y_{i}=S_{i}\left(x_{i}\right), i=0,1,2,3 .
 $$
 
 Example 8 Let $X=0 \times 12345678$ be a 32-bit input to the S-box and $Y$ its 32-bit output. Then we have
+
 $$
 Y=S(X)=S_{0}(0 \times 12)\left\|S_{1}(0 \times 34)\right\| S_{2}(0 \times 56) \| S_{3}(0 \times 78)=0 \times F 9 \text { C05A4E. }
 $$
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 3.1. The S-box $\boldsymbol{S}_{\mathbf{0}}$}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & A & B & C & D & E & F \\
-\hline 0 & 3E & 72 & 5B & 47 & CA & E0 & 00 & 33 & 04 & D1 & 54 & 98 & 09 & B9 & 6D & CB \\
-\hline 1 & 7B & 1B & F9 & 32 & AF & 9D & 6A & A5 & B8 & 2D & FC & 1D & 08 & 53 & 03 & 90 \\
-\hline 2 & 4D & 4E & 84 & 99 & E4 & CE & D9 & 91 & DD & B6 & 85 & 48 & 8B & 29 & 6E & AC \\
-\hline 3 & CD & C1 & F8 & 1E & 73 & 43 & 69 & C6 & B5 & BD & FD & 39 & 63 & 20 & D4 & 38 \\
-\hline 4 & 76 & 7D & B2 & A7 & CF & ED & 57 & C5 & F3 & 2C & BB & 14 & 21 & 06 & 55 & 9B \\
-\hline 5 & E3 & EF & 5E & 31 & 4F & 7F & 5A & A4 & 0D & 82 & 51 & 49 & 5F & BA & 58 & 1C \\
-\hline 6 & 4A & 16 & D5 & 17 & A8 & 92 & 24 & 1F & 8C & FF & D8 & AE & 2E & 01 & D3 & AD \\
-\hline 7 & 3B & 4B & DA & 46 & EB & C9 & DE & 9A & 8F & 87 & D7 & 3A & 80 & 6F & 2F & C8 \\
-\hline 8 & B1 & B4 & 37 & F7 & 0A & 22 & 13 & 28 & 7C & CC & 3C & 89 & C7 & C3 & 96 & 56 \\
-\hline 9 & 07 & BF & 7E & F0 & 0B & 2B & 97 & 52 & 35 & 41 & 79 & 61 & A6 & 4C & 10 & FE \\
-\hline A & BC & 26 & 95 & 88 & 8A & B0 & A3 & FB & C 0 & 18 & 94 & F2 & E1 & E5 & E9 & 5D \\
-\hline B & D0 & DC & 11 & 66 & 64 & 5C & EC & 59 & 42 & 75 & 12 & F5 & 74 & 9C & AA & 23 \\
-\hline C & 0E & 86 & AB & BE & 2A & 02 & E7 & 67 & E6 & 44 & A2 & 6C & C2 & 93 & 9F & F1 \\
-\hline D & F6 & FA & 36 & D2 & 50 & 68 & 9E & 62 & 71 & 15 & 3D & D6 & 40 & C4 & E2 & 0F \\
-\hline E & 8E & 83 & 77 & 6B & 25 & 05 & 3F & 0C & 30 & EA & 70 & B7 & A1 & E8 & A9 & 65 \\
-\hline F & 8D & 27 & 1A & DB & 81 & B3 & A0 & F4 & 45 & 7A & 19 & DF & EE & 78 & 34 & 60 \\
-\hline
-\end{tabular}
-\end{table}
+Table 3.1. The S-box $\boldsymbol{S}_{\mathbf{0}}$
+|  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 3E | 72 | 5B | 47 | CA | E0 | 00 | 33 | 04 | D1 | 54 | 98 | 09 | B9 | 6D | CB |
+| 1 | 7B | 1B | F9 | 32 | AF | 9D | 6A | A5 | B8 | 2D | FC | 1D | 08 | 53 | 03 | 90 |
+| 2 | 4D | 4E | 84 | 99 | E4 | CE | D9 | 91 | DD | B6 | 85 | 48 | 8B | 29 | 6E | AC |
+| 3 | CD | C1 | F8 | 1E | 73 | 43 | 69 | C6 | B5 | BD | FD | 39 | 63 | 20 | D4 | 38 |
+| 4 | 76 | 7D | B2 | A7 | CF | ED | 57 | C5 | F3 | 2C | BB | 14 | 21 | 06 | 55 | 9B |
+| 5 | E3 | EF | 5E | 31 | 4F | 7F | 5A | A4 | 0D | 82 | 51 | 49 | 5F | BA | 58 | 1C |
+| 6 | 4A | 16 | D5 | 17 | A8 | 92 | 24 | 1F | 8C | FF | D8 | AE | 2E | 01 | D3 | AD |
+| 7 | 3B | 4B | DA | 46 | EB | C9 | DE | 9A | 8F | 87 | D7 | 3A | 80 | 6F | 2F | C8 |
+| 8 | B1 | B4 | 37 | F7 | 0A | 22 | 13 | 28 | 7C | CC | 3C | 89 | C7 | C3 | 96 | 56 |
+| 9 | 07 | BF | 7E | F0 | 0B | 2B | 97 | 52 | 35 | 41 | 79 | 61 | A6 | 4C | 10 | FE |
+| A | BC | 26 | 95 | 88 | 8A | B0 | A3 | FB | C 0 | 18 | 94 | F2 | E1 | E5 | E9 | 5D |
+| B | D0 | DC | 11 | 66 | 64 | 5C | EC | 59 | 42 | 75 | 12 | F5 | 74 | 9C | AA | 23 |
+| C | 0E | 86 | AB | BE | 2A | 02 | E7 | 67 | E6 | 44 | A2 | 6C | C2 | 93 | 9F | F1 |
+| D | F6 | FA | 36 | D2 | 50 | 68 | 9E | 62 | 71 | 15 | 3D | D6 | 40 | C4 | E2 | 0F |
+| E | 8E | 83 | 77 | 6B | 25 | 05 | 3F | 0C | 30 | EA | 70 | B7 | A1 | E8 | A9 | 65 |
+| F | 8D | 27 | 1A | DB | 81 | B3 | A0 | F4 | 45 | 7A | 19 | DF | EE | 78 | 34 | 60 |
 
-\begin{table}
-\captionsetup{labelformat=empty}
-\caption{Table 3.2. The S-box $\boldsymbol{S}_{\mathbf{1}}$}
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & A & B & C & D & E & F \\
-\hline 0 & 55 & C2 & 63 & 71 & 3B & C8 & 47 & 86 & 9F & 3C & DA & 5B & 29 & AA & FD & 77 \\
-\hline 1 & 8C & C5 & 94 & 0C & A6 & 1A & 13 & 00 & E3 & A8 & 16 & 72 & 40 & F9 & F8 & 42 \\
-\hline 2 & 44 & 26 & 68 & 96 & 81 & D9 & 45 & 3E & 10 & 76 & C6 & A7 & 8B & 39 & 43 & E1 \\
-\hline 3 & 3A & B5 & 56 & 2A & C0 & 6D & B3 & 05 & 22 & 66 & BF & DC & 0B & FA & 62 & 48 \\
-\hline 4 & DD & 20 & 11 & 06 & 36 & C9 & C1 & CF & F6 & 27 & 52 & BB & 69 & F5 & D4 & 87 \\
-\hline 5 & 7F & 84 & 4C & D2 & 9C & 57 & A4 & BC & 4F & 9A & DF & FE & D6 & 8D & 7A & EB \\
-\hline 6 & 2B & 53 & D8 & 5C & A1 & 14 & 17 & FB & 23 & D5 & 7D & 30 & 67 & 73 & 08 & 09 \\
-\hline 7 & EE & B7 & 70 & 3F & 61 & B2 & 19 & 8E & 4E & E5 & 4B & 93 & 8F & 5D & DB & A9 \\
-\hline 8 & AD & F1 & AE & 2E & CB & 0D & FC & F4 & 2D & 46 & 6E & 1D & 97 & E8 & D1 & E9 \\
-\hline 9 & 4D & 37 & A5 & 75 & 5E & 83 & 9E & AB & 82 & 9D & B9 & 1C & E0 & CD & 49 & 89 \\
-\hline A & 01 & B6 & BD & 58 & 24 & A2 & 5F & 38 & 78 & 99 & 15 & 90 & 50 & B8 & 95 & E4 \\
-\hline B & D0 & 91 & C7 & CE & ED & 0F & B4 & 6F & A0 & CC & F0 & 02 & 4A & 79 & C3 & DE \\
-\hline C & A3 & EF & EA & 51 & E6 & 6B & 18 & EC & 1B & 2C & 80 & F7 & 74 & E7 & FF & 21 \\
-\hline D & 5A & 6A & 54 & 1E & 41 & 31 & 92 & 35 & C4 & 33 & 07 & 0A & BA & 7E & 0E & 34 \\
-\hline E & 88 & B1 & 98 & 7C & F3 & 3D & 60 & 6C & 7B & CA & D3 & 1F & 32 & 65 & 04 & 28 \\
-\hline F & 64 & BE & 85 & 9B & 2F & 59 & 8A & D7 & B0 & 25 & AC & AF & 12 & 03 & E2 & F2 \\
-\hline
-\end{tabular}
-\end{table}
+
+Table 3.2. The S-box $\boldsymbol{S}_{\mathbf{1}}$
+|  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 55 | C2 | 63 | 71 | 3B | C8 | 47 | 86 | 9F | 3C | DA | 5B | 29 | AA | FD | 77 |
+| 1 | 8C | C5 | 94 | 0C | A6 | 1A | 13 | 00 | E3 | A8 | 16 | 72 | 40 | F9 | F8 | 42 |
+| 2 | 44 | 26 | 68 | 96 | 81 | D9 | 45 | 3E | 10 | 76 | C6 | A7 | 8B | 39 | 43 | E1 |
+| 3 | 3A | B5 | 56 | 2A | C0 | 6D | B3 | 05 | 22 | 66 | BF | DC | 0B | FA | 62 | 48 |
+| 4 | DD | 20 | 11 | 06 | 36 | C9 | C1 | CF | F6 | 27 | 52 | BB | 69 | F5 | D4 | 87 |
+| 5 | 7F | 84 | 4C | D2 | 9C | 57 | A4 | BC | 4F | 9A | DF | FE | D6 | 8D | 7A | EB |
+| 6 | 2B | 53 | D8 | 5C | A1 | 14 | 17 | FB | 23 | D5 | 7D | 30 | 67 | 73 | 08 | 09 |
+| 7 | EE | B7 | 70 | 3F | 61 | B2 | 19 | 8E | 4E | E5 | 4B | 93 | 8F | 5D | DB | A9 |
+| 8 | AD | F1 | AE | 2E | CB | 0D | FC | F4 | 2D | 46 | 6E | 1D | 97 | E8 | D1 | E9 |
+| 9 | 4D | 37 | A5 | 75 | 5E | 83 | 9E | AB | 82 | 9D | B9 | 1C | E0 | CD | 49 | 89 |
+| A | 01 | B6 | BD | 58 | 24 | A2 | 5F | 38 | 78 | 99 | 15 | 90 | 50 | B8 | 95 | E4 |
+| B | D0 | 91 | C7 | CE | ED | 0F | B4 | 6F | A0 | CC | F0 | 02 | 4A | 79 | C3 | DE |
+| C | A3 | EF | EA | 51 | E6 | 6B | 18 | EC | 1B | 2C | 80 | F7 | 74 | E7 | FF | 21 |
+| D | 5A | 6A | 54 | 1E | 41 | 31 | 92 | 35 | C4 | 33 | 07 | 0A | BA | 7E | 0E | 34 |
+| E | 88 | B1 | 98 | 7C | F3 | 3D | 60 | 6C | 7B | CA | D3 | 1F | 32 | 65 | 04 | 28 |
+| F | 64 | BE | 85 | 9B | 2F | 59 | 8A | D7 | B0 | 25 | AC | AF | 12 | 03 | E2 | F2 |
+
 
 Note: The entries in the above S -boxes $S_{0}$ and $S_{1}$ are all in hexadecimal representation.
 
-\subsection*{3.4.2 The linear transforms $L_{\mathbf{1}}$ and $L_{\mathbf{2}}$}
+### 3.4.2 The linear transforms $L_{\mathbf{1}}$ and $L_{\mathbf{2}}$
 
 Both $L_{1}$ and $L_{2}$ are linear transforms from 32-bit words to 32-bit words, and are defined as follows:
+
 $$
 \begin{aligned}
 & L_{1}(X)=X \oplus\left(X \lll_{32} 2\right) \oplus\left(X \lll_{32} 10\right) \oplus\left(X \lll_{32} 18\right) \oplus\left(X \lll_{32} 24\right), \\
@@ -311,22 +320,30 @@ $$
 \end{aligned}
 $$
 
-\subsection*{3.5 Key loading}
+### 3.5 Key loading
 
 The key loading procedure will expand the initial key and the initial vector into 16 of 31-bit integers as the initial state of the LFSR. Let the 128-bit initial key $k$ and the 128-bit initial vector iv be
+
 $$
 k=k_{0}\left\|k_{1}\right\| k_{2}\|\ldots\| k_{15}
 $$
+
 and
+
 $$
 i v=i v_{0}\left\|i v_{1}\right\| i v_{2}\|\ldots\| i v_{15}
 $$
+
 respectively, where $k_{i}$ and $i v_{i}, 0 \leq i \leq 15$, are all bytes. Then $k$ and $i v$ are loaded to the cells $s_{0}$, $s_{1}, \ldots, s_{15}$ of LFSR as follows:
+
 1. Let $D$ be a 240 -bit long constant string composed of 16 substrings of 15 bits:
+
 $$
 D=d_{0}\left\|d_{1}\right\| \ldots \| d_{15},
 $$
+
 where
+
 $$
 \begin{aligned}
 & d_{0}=100010011010111_{2} \\
@@ -343,6 +360,7 @@ $$
 & d_{11}=001101011110001_{2}
 \end{aligned}
 $$
+
 $$
 \begin{aligned}
 & d_{12}=101111000100110_{2}, \\
@@ -351,32 +369,37 @@ $$
 & d_{15}=100011110101100_{2} .
 \end{aligned}
 $$
+
 2. For $0 \leq i \leq 15$, let $s_{i}=k_{i}\left\|d_{i}\right\| i v_{i}$.
 
-\subsection*{3.6 The execution of ZUC}
+### 3.6 The execution of ZUC
 
 The execution of ZUC has two stages: the initialization stage and the working stage.
 
-\subsection*{3.6.1 The initialization stage}
+### 3.6.1 The initialization stage
 
 During the initialization stage, the algorithm calls the key loading procedure (see section 3.5) to load the 128-bit initial key $k$ and the 128-bit initial vector $i v$ into the LFSR, and set the 32bit memory cells $R_{1}$ and $R_{2}$ to be all 0 . Then the cipher runs the following operations 32 times:
+
 1. Bitreorganization(); // see section 3.3
 2. $w=F\left(X_{0}, X_{1}, X_{2}\right)$; // see section 3.4
 3. LFSRWithInitialisationMode( $w \gg 1$ ). // see section 3.2
 
-\subsection*{3.6.2 The working stage}
+### 3.6.2 The working stage
 
 After the initialization stage, the algorithm moves into the working stage. At the working stage, the algorithm executes the following operations once, and discards the output $W$ of $F$ :
+
 1. Bitreorganization(); // see section 3.3
 2. $F\left(X_{0}, X_{1}, X_{2}\right)$; //output discarded, see section 3.4
 3. LFSRWithWorkMode(). // see section 3.2
 
 Then the algorithm goes into the stage of producing keystream, i.e., for each iteration, the following operations are executed once, and a 32-bit word Z is produced as an output:
+
 1. Bitreorganization(); // see section 3.3
 2. $Z=F\left(X_{0}, X_{1}, X_{2}\right) \oplus X_{3}$; // for the definition of $X_{3}$, see section 3.3
 3. LFSRWithWorkMode() . // see section 3.2
 
-\section*{Appendix A: A C implementation of ZUC}
+## Appendix A: A C implementation of ZUC
+
 ```
 /* - */
 typedef unsigned char u8;
@@ -619,3 +642,4 @@ void GenerateKeystream(u32* pKeystream, int KeystreamLen)
     }
 }
 ```
+
