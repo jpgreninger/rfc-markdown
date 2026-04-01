@@ -283,7 +283,7 @@ $$
 $$
 
 $$
-f(z)=\left\{\begin{array}{rll}
+f(z)=\{\begin{array}{rll}
 \overline{\overline{z^{2}}+\cos z} & \text { for } & |z|<3 \\
 0 & \text { for } & 3 \leq|z| \leq 5 \\
 \sin \bar{z} & \text { for } & |z|>5
