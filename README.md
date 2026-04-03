@@ -40,7 +40,7 @@ All files are located in the `markdown/` directory.
 
 _TurboQuant, QJL Transform, PolarQuant_
 
-- [TurboQuant: Online Vector Quantization with Near-optimal](markdown/TurboQuant.md)
+- [TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate](markdown/TurboQuant.md)
 - [PolarQuant: Quantizing KV Caches with Polar Transformation](markdown/PolarQuant.md)
 - [QJL: 1-Bit Quantized JL Transform for KV Cache Quantization with Zero Overhead](markdown/qjlTransform.md)
 
